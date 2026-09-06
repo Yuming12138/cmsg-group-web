@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>机器学习揭示二维材料热膨胀的力学密码：从面内拉伸、面外弯曲到二维 Invar</title>
+    <meta name="description" content="以二维弹性模量和弯曲刚度为力学描述符，机器学习发现二维 Invar 与反 Invar 单层材料。">
+    <meta itemprop="name" content="机器学习揭示二维材料热膨胀的力学密码：从面内拉伸、面外弯曲到二维 Invar">
+    <meta itemprop="description" content="以二维弹性模量和弯曲刚度为力学描述符，机器学习发现二维 Invar 与反 Invar 单层材料。">
+    <link rel="canonical" href="https://www.comates.group/members/zhouke/work_1.html">
+    <meta property="og:title" content="机器学习揭示二维材料热膨胀的力学密码：从面内拉伸、面外弯曲到二维 Invar">
+    <meta property="og:description" content="以二维弹性模量和弯曲刚度为力学描述符，机器学习发现二维 Invar 与反 Invar 单层材料。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.comates.group/members/zhouke/work_1.html">
+    <meta property="og:image" content="https://www.comates.group/static/images/members/zhouke/work_1/invar-article.png">
+    <meta property="og:image:secure_url" content="https://www.comates.group/static/images/members/zhouke/work_1/invar-article.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1175">
+    <meta property="og:image:height" content="884">
+    <meta property="og:image:alt" content="二维材料热膨胀研究论文首页">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="Computational Materials Science Group">
+    <meta itemprop="image" content="https://www.comates.group/static/images/members/zhouke/work_1/invar-article.png">
+    <link rel="image_src" href="https://www.comates.group/static/images/members/zhouke/work_1/invar-article.png">
+    <link rel="shortcut icon" type="image/icon" href="{{ url_for('static', filename='images/web_logo.svg') }}">
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap_4.0.0.beta.min.css') }}"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <script>
+        window.MathJax = {
+            tex: {inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']]},
+            options: {skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']}
+        };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .work-page {
+            clear: both;
+            padding: 42px 20px 68px;
+            background: #f4f7f8;
+        }
+
+        .work-article {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 44px 58px 54px;
+            border: 1px solid #e3e9ec;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 12px 36px rgba(24, 50, 68, 0.08);
+            color: #263238;
+        }
+
+        .work-back {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 24px;
+            color: #006fae;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .work-back:hover,
+        .work-back:focus {
+            color: #004f7d;
+            text-decoration: underline;
+        }
+
+        .work-back .fa {
+            margin-right: 7px;
+        }
+
+        .work-kicker {
+            margin-bottom: 12px;
+            color: #0079bd;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .work-title {
+            margin: 0;
+            color: #17242c;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.45;
+        }
+
+        .work-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 18px;
+            margin: 18px 0 30px;
+            color: #65747d;
+            font-size: 14px;
+        }
+
+        .work-lead,
+        .work-article p {
+            margin: 0 0 20px;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            font-size: 17px;
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        .work-lead {
+            padding: 18px 22px;
+            border-left: 4px solid #0091ea;
+            background: #f1f8fc;
+            color: #334955;
+        }
+
+        .work-figure {
+            margin: 28px 0 32px;
+        }
+
+        .work-figure img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .work-figure a {
+            display: block;
+        }
+
+        .work-figure--paper img {
+            max-width: 650px;
+            border: 1px solid #e0e5e8;
+            box-shadow: 0 8px 24px rgba(24, 50, 68, 0.08);
+        }
+
+        .work-figure figcaption {
+            margin-top: 12px;
+            color: #586971;
+            font-size: 14px;
+            line-height: 1.65;
+            text-align: left;
+        }
+
+        .work-section-title {
+            margin: 38px 0 16px;
+            padding-bottom: 9px;
+            border-bottom: 2px solid #e8f1f6;
+            color: #17394b;
+            font-size: 23px;
+            font-weight: 700;
+        }
+
+        .math-display {
+            margin: 20px 0 24px;
+            padding: 15px 14px;
+            overflow-x: auto;
+            border-radius: 8px;
+            background: #f7fafb;
+            color: #17394b;
+            text-align: center;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .math-display mjx-container {
+            margin: 0 !important;
+        }
+
+        .work-note {
+            margin: 22px 0 26px;
+            padding: 17px 20px;
+            border-left: 4px solid #6aa9c8;
+            background: #f6fafc;
+            color: #405660;
+            font-size: 15px;
+            line-height: 1.75;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin: 22px 0 26px;
+        }
+
+        .result-card {
+            padding: 18px 14px;
+            border: 1px solid #dfe9ee;
+            border-radius: 8px;
+            background: #f8fbfc;
+            text-align: center;
+        }
+
+        .result-card strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #006fae;
+            font-size: 25px;
+            line-height: 1.2;
+        }
+
+        .result-card span {
+            color: #52636c;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .work-citation {
+            margin-top: 38px;
+            padding: 23px;
+            border-radius: 8px;
+            background: #f4f7f8;
+        }
+
+        .work-citation h2 {
+            margin: 0 0 12px;
+            color: #17394b;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .work-citation p {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 16px;
+            line-height: 1.75;
+            overflow-wrap: anywhere;
+            text-align: left;
+        }
+
+        .work-citation a {
+            color: #006fae;
+            word-break: break-word;
+        }
+
+        @media (max-width: 767.98px) {
+            .work-page {
+                padding: 24px 12px 44px;
+            }
+
+            .work-article {
+                padding: 28px 22px 36px;
+                border-radius: 8px;
+            }
+
+            .work-title {
+                font-size: 28px;
+                line-height: 1.42;
+            }
+
+            .work-meta {
+                margin-bottom: 24px;
+            }
+
+            .work-lead,
+            .work-article p {
+                font-size: 16px;
+                line-height: 1.82;
+            }
+
+            .work-lead {
+                padding: 16px;
+            }
+
+            .work-figure {
+                margin: 24px 0 28px;
+            }
+
+            .work-section-title {
+                margin-top: 32px;
+                font-size: 21px;
+            }
+
+            .math-display {
+                margin: 18px -6px 22px;
+                padding: 14px 8px;
+                font-size: 0.93em;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .result-grid {
+                grid-template-columns: 1fr;
+                gap: 9px;
+            }
+
+            .result-card {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
+                padding: 13px;
+            }
+
+            .result-card strong {
+                margin: 0;
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 399.98px) {
+            .work-page {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .work-article {
+                padding: 24px 16px 32px;
+                border-right: 0;
+                border-left: 0;
+                border-radius: 0;
+            }
+
+            .work-title {
+                font-size: 25px;
+            }
+
+            .work-figure figcaption {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+<a class="scrollToTop" href="#" aria-label="返回页首">
+    <i class="fa fa-angle-up" aria-hidden="true"></i>
+</a>
+
+{% include "client/header.html" %}
+
+<main class="work-page">
+    <article class="work-article">
+        <a class="work-back" href="{{ url_for('members', mem_id='zhouke') }}">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>返回周柯个人主页
+        </a>
+
+        <div class="work-kicker">近期工作 · Nature Communications</div>
+        <h1 class="work-title">机器学习揭示二维材料热膨胀的力学密码：从面内拉伸、面外弯曲到二维 Invar</h1>
+        <div class="work-meta">
+            <span>发布日期：2024 年 8 月 14 日</span>
+            <span>研究团队：苏州大学周柯</span>
+        </div>
+
+        <p class="work-lead">材料受热后一定会膨胀吗？周柯团队从连续介质力学与统计力学出发，把热膨胀理解为<strong>面内键伸长</strong>与<strong>面外热弯曲</strong>的竞争，并借助可解释机器学习在大规模材料空间中发现二维 Invar 与反 Invar 单层材料。</p>
+
+        <p>2024 年 8 月 14 日，<em>Nature Communications</em> 在线发表田顺、周柯、尹万健和西安交通大学刘益伦等人的研究论文。该工作首次为二维晶体的正、负和近零热膨胀建立统一的力学描述符，并将其用于高通量材料发现。</p>
+
+        <figure class="work-figure work-figure--paper">
+            <a href="https://doi.org/10.1038/s41467-024-51379-6" target="_blank" rel="noopener noreferrer" aria-label="打开论文页面">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_1/invar-article.png') }}"
+                     alt="Nature Communications 论文首页" width="1175" height="884" decoding="async">
+            </a>
+            <figcaption>论文首页。点击图片可前往论文页面。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">研究背景：为什么二维 Invar 如此难找？</h2>
+
+        <p>绝大多数材料受热膨胀，少数材料会负热膨胀，而在一定温区内几乎“不胀不缩”的 Invar 材料更为稀少。自 1897 年 Invar 效应被发现以来，这类材料已用于精密机械、光学仪器和抗热冲击构件。进入二维尺度后，温度变化引起的晶格失配与热应力会直接影响纳米电子和光电器件的稳定性，但此前尚未发现满足严格判据的二维单层 Invar。</p>
+
+        <p>二维材料又具有一个块体材料不明显的自由度：它很容易弯曲。石墨烯在 300 K 时的线热膨胀系数约为 \(-3.33\times10^{-6}\,\mathrm{K}^{-1}\)，而 MoS₂ 在 600 K 时约为 \(7.3\times10^{-6}\,\mathrm{K}^{-1}\)。一正一负提示研究者，答案不只藏在化学键里，也藏在薄膜的面外变形中。</p>
+
+        <h2 class="work-section-title">热膨胀，是面内拉伸与面外弯曲的竞争</h2>
+
+        <p>在有限温度下，面内非谐振动使化学键伸长，倾向于产生正热膨胀；面外热涨落则形成长波起伏，缩短材料在平面内的投影，产生负贡献。线热膨胀系数定义为：</p>
+
+        <div class="math-display" role="math" aria-label="线热膨胀系数定义">
+            \[
+            \alpha(T)=\frac{1}{a(T)}\frac{\mathrm{d}a(T)}{\mathrm{d}T}
+            \]
+        </div>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_1/invar-mechanism.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_1/invar-mechanism.png') }}"
+                     alt="二维材料面内伸长、面外弯曲以及热膨胀响应示意图" width="1405" height="348" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 1. 二维晶格既会发生面内伸长，也会因热涨落产生面外起伏；两种变形对投影晶格常数的作用方向相反。点击图片可查看高清原图。</figcaption>
+        </figure>
+
+        <p>研究用二维弹性模量 \(E_{2D}\) 衡量面内抗拉能力，用弯曲刚度 \(D\) 衡量面外抗弯能力。二者可分别由弹性常数和 ZA 弯曲声学支的长波色散得到：</p>
+
+        <div class="math-display" role="math" aria-label="二维弹性模量与弯曲刚度的计算关系">
+            \[
+            E_{2D}=\frac{C_{11}C_{22}-C_{12}C_{21}}{C_{22}},
+            \qquad
+            \omega^2=\frac{D}{\rho}q^4
+            \]
+        </div>
+
+        <p>更关键的是，弯曲能与波数的四次方相关。结合 Boltzmann 分布，可得到面外热涨落引起的平均投影收缩：</p>
+
+        <div class="math-display" role="math" aria-label="弯曲能、Boltzmann 分布和平均面内收缩">
+            \[
+            U_b=\frac{L_0^2}{2}\sum_{\mathbf q}D|\mathbf q|^4|\bar w(\mathbf q)|^2,
+            \quad
+            \rho_i\propto e^{-U_b/(k_BT)},
+            \quad
+            \langle\varepsilon_x\rangle=-\frac{\mu_n k_BT}{16\pi^2D}
+            \]
+        </div>
+
+        <p>因此，面外负贡献随 \(1/D\) 增强；面内正贡献则近似随 \(1/E_{2D}^{2}\) 增强。热膨胀可被凝练为一场清晰的力学竞争：</p>
+
+        <div class="math-display" role="math" aria-label="热膨胀的面内和面外竞争关系">
+            \[
+            \alpha\sim
+            \underbrace{\frac{A}{E_{2D}^{,2}}}_{\text{面内键伸长}}
+            -\underbrace{\frac{B}{D}}_{\text{面外热弯曲}}
+            \]
+        </div>
+
+        <h2 class="work-section-title">两个力学描述符，构成一张可解释的材料地图</h2>
+
+        <p>研究先从厚度、原子体积、平均键长、键密度等候选特征中寻找主导量。随机森林表明，\(E_{2D}\) 与 \(D\) 的重要性最高；随后 SISSO 符号回归进一步给出两个简洁描述符：</p>
+
+        <div class="math-display" role="math" aria-label="SISSO 使用的两个力学描述符">
+            \[
+            S_1=\frac{1}{D},\qquad S_2=\frac{1}{E_{2D}^{,2}}
+            \]
+        </div>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_1/invar-map.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_1/invar-map.png') }}"
+                     alt="基于弯曲刚度和二维弹性模量的热膨胀材料分类图" width="1000" height="393" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 2. \(1/D\) 与 \(1/E_{2D}^{2}\) 构成二维材料的热膨胀地图，支持向量机分界线将训练集中的正、负热膨胀材料完全分开。</figcaption>
+        </figure>
+
+        <p>分界线附近意味着面内、面外效应接近平衡，是寻找零热膨胀材料的区域；远离分界线的两侧，则分别对应极端正、负热膨胀。例如 WSe₂ 与 SnO₂ 的 \(E_{2D}\) 接近，但 WSe₂ 的 \(D\) 约为后者的 2.73 倍，因此面外收缩更弱，500 K 下的正热膨胀系数也更大。</p>
+
+        <h2 class="work-section-title">从分类到定量预测</h2>
+
+        <p>为了在数千种晶体中快速估计热膨胀，研究进一步建立 500 K 热膨胀系数的符号回归模型，将面内刚度、弯曲刚度、等温压缩性 \(K_T\) 和原胞体积 \(V\) 组合起来：</p>
+
+        <div class="math-display" role="math" aria-label="500 K 热膨胀系数符号回归模型">
+            \[
+            \alpha_{500\mathrm K}=\left(14.31K_T-\frac{0.038}{D}\right)E_{2D}
+            +14.27\frac{D}{V}
+            \]
+        </div>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_1/invar-prediction.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_1/invar-prediction.png') }}"
+                     alt="弯曲刚度、二维弹性模量与热膨胀系数的回归关系" width="1305" height="385" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 3. 力学量与热膨胀的定量关系。模型在训练集和测试集上的决定系数分别达到 0.91 和 0.93，测试集均方根误差为 \(1.35\times10^{-6}\,\mathrm{K}^{-1}\)。</figcaption>
+        </figure>
+
+        <p class="work-note">上式中的数值与量纲沿用论文数据表的单位约定，主要用于高通量粗筛；最终热膨胀曲线仍需经过 Grüneisen 理论、全布里渊区动力学稳定性和准谐近似计算验证。</p>
+
+        <h2 class="work-section-title">从 3814 个晶体到 8 种 Invar / 反 Invar</h2>
+
+        <p>研究从 C2DB 数据库的 3814 个二维晶体出发，依次检查弹性、动力学与热力学稳定性，得到 1224 个稳定候选体系。机器学习模型和力学判据完成快速粗筛后，再用 Grüneisen 理论进行精筛，并以准谐近似计算最终确认。</p>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_1/invar-screening.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_1/invar-screening.png') }}"
+                     alt="二维零热膨胀和极端热膨胀材料的高通量筛选流程" width="1485" height="470" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 4. 高通量筛选流程：稳定性筛选、力学描述符粗筛、Grüneisen 理论精筛和 QHA 验证逐级收敛到最终候选材料。</figcaption>
+        </figure>
+
+        <p>最终，ZrO₂ 和 HfO₂ 在 500 K 下的热膨胀系数分别仅为 \(0.47\times10^{-6}\) 和 \(1.80\times10^{-6}\,\mathrm{K}^{-1}\)，满足 \(|\alpha|&lt;2\times10^{-6}\,\mathrm{K}^{-1}\) 的二维 Invar 判据。同时，研究还找到三种极端正热膨胀和三种极端负热膨胀材料，其 \(|\alpha|\) 超过 \(15\times10^{-6}\,\mathrm{K}^{-1}\)，表现出反 Invar 效应。</p>
+
+        <div class="result-grid" aria-label="材料筛选结果">
+            <div class="result-card"><strong>2</strong><span>近零热膨胀<br>ZrO₂、HfO₂</span></div>
+            <div class="result-card"><strong>3</strong><span>极端正热膨胀<br>Nb₂I₄、HfBi₂、HfSb₂</span></div>
+            <div class="result-card"><strong>3</strong><span>极端负热膨胀<br>As₂、Ge₂、Sn₂</span></div>
+        </div>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_1/invar-results.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_1/invar-results.png') }}"
+                     alt="八种二维 Invar 与反 Invar 候选材料的结构和热膨胀曲线" width="1403" height="960" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 5. 八种候选材料的原子结构与热膨胀曲线。Nb₂I₄、HfBi₂、HfSb₂ 强烈正膨胀；As₂、Ge₂、Sn₂ 在低温区出现显著负膨胀。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">力学意义与适用边界</h2>
+
+        <p>这项工作把“结构—性能”搜索转化为“拉伸—弯曲”竞争的力学问题。由于层数增加时 \(E_{2D}\) 近似线性增长，而 \(D\) 增长更快，少层化可推动部分负热膨胀材料接近零膨胀；正、负热膨胀层的组合还可用于构造低热应力异质结构，或利用失配应变诱导可控曲率。</p>
+
+        <p>需要注意的是，本文描述符针对自由悬空、无限尺寸的二维晶体，采用 0 K 平整构型的 \(E_{2D}\) 和 \(D\) 表征其本征力学性质。有限尺寸、基底约束和局域几何会改变弯曲声子与热涨落谱，因此具体器件仍需结合边界条件重新评估。即便如此，这套物理透明的描述符仍为低热应力器件、柔性电子和温度敏感结构提供了可计算、可解释的设计路径。</p>
+
+        <section class="work-citation" aria-labelledby="citation-title">
+            <h2 id="citation-title">论文信息</h2>
+            <p>Shun Tian, Ke Zhou*, Wanjian Yin, Yilun Liu*, “Machine learning enables the discovery of 2D Invar and anti-Invar monolayers,” <em>Nature Communications</em> 15, 6977 (2024). <a href="https://doi.org/10.1038/s41467-024-51379-6" target="_blank" rel="noopener noreferrer">https://doi.org/10.1038/s41467-024-51379-6</a></p>
+        </section>
+    </article>
+</main>
+
+<footer id="mu-footer">
+    <div class="mu-footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mu-footer-bottom-area">
+                        <p class="mu-copy-right">&copy; Copyright &nbsp;&nbsp;&nbsp;&nbsp; Wanjian Yin Group</p>
+                        <p class="mu-copy-right">
+                            <a target="_blank" rel="noopener noreferrer" href="http://www.beian.miit.gov.cn/">赣ICP备20002676号-1</a>
+                        </p>
+                        <p class="mu-copy-right">
+                            <a target="_blank" rel="noopener noreferrer" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36113002000138">
+                                <img src="{{ url_for('static', filename='images/beian.png') }}" alt="">赣公网安备 36113002000138号
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/popper.min.js') }}"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/bootstrap_4.0.0.beta.min.js') }}"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>限域离子的结晶和溶解——限域调节离子水合状态构建高性能力敏纳米通道</title>
+    <meta name="description" content="极端纳米限域下离子水合与离子-离子作用竞争驱动的二维离子团簇化，以及由此构建的力敏离子晶体管和机械逻辑门。">
+    <meta itemprop="name" content="限域离子的结晶和溶解——限域调节离子水合状态构建高性能力敏纳米通道">
+    <meta itemprop="description" content="极端纳米限域下离子水合与离子-离子作用竞争驱动的二维离子团簇化，以及由此构建的力敏离子晶体管和机械逻辑门。">
+    <link rel="canonical" href="https://www.comates.group/members/zhouke/work_4.html">
+    <meta property="og:title" content="限域离子的结晶和溶解——限域调节离子水合状态构建高性能力敏纳米通道">
+    <meta property="og:description" content="极端纳米限域下离子水合与离子-离子作用竞争驱动的二维离子团簇化，以及由此构建的力敏离子晶体管和机械逻辑门。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.comates.group/members/zhouke/work_4.html">
+    <meta property="og:image" content="https://www.comates.group/static/images/members/zhouke/work_4/force-ion-transistor.png">
+    <meta property="og:image:secure_url" content="https://www.comates.group/static/images/members/zhouke/work_4/force-ion-transistor.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1312">
+    <meta property="og:image:height" content="961">
+    <meta property="og:image:alt" content="限域离子构建的力敏离子晶体管">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="Computational Materials Science Group">
+    <meta itemprop="image" content="https://www.comates.group/static/images/members/zhouke/work_4/force-ion-transistor.png">
+    <link rel="image_src" href="https://www.comates.group/static/images/members/zhouke/work_4/force-ion-transistor.png">
+    <link rel="shortcut icon" type="image/icon" href="{{ url_for('static', filename='images/web_logo.svg') }}">
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap_4.0.0.beta.min.css') }}"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <script>
+        window.MathJax = {
+            tex: {inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']]},
+            options: {skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']}
+        };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .work-page {
+            clear: both;
+            padding: 42px 20px 68px;
+            background: #f4f7f8;
+        }
+
+        .work-article {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 44px 58px 54px;
+            border: 1px solid #e3e9ec;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 12px 36px rgba(24, 50, 68, 0.08);
+            color: #263238;
+        }
+
+        .work-back {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 24px;
+            color: #006fae;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .work-back:hover,
+        .work-back:focus {
+            color: #004f7d;
+            text-decoration: underline;
+        }
+
+        .work-back .fa {
+            margin-right: 7px;
+        }
+
+        .work-kicker {
+            margin-bottom: 12px;
+            color: #b85d12;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .work-title {
+            margin: 0;
+            color: #17242c;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.45;
+        }
+
+        .work-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 18px;
+            margin: 18px 0 30px;
+            color: #65747d;
+            font-size: 14px;
+        }
+
+        .work-lead,
+        .work-article p {
+            margin: 0 0 20px;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            font-size: 17px;
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        .work-lead {
+            padding: 18px 22px;
+            border-left: 4px solid #db7a2a;
+            background: #fff7f0;
+            color: #334955;
+        }
+
+        .work-figure {
+            margin: 28px 0 32px;
+        }
+
+        .work-figure a {
+            display: block;
+        }
+
+        .work-figure img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .work-figure--overview img {
+            max-width: 690px;
+        }
+
+        .work-figure--paper img {
+            max-width: 720px;
+            border: 1px solid #e0e5e8;
+            box-shadow: 0 8px 24px rgba(24, 50, 68, 0.08);
+        }
+
+        .work-figure figcaption {
+            margin-top: 12px;
+            color: #586971;
+            font-size: 14px;
+            line-height: 1.65;
+            text-align: left;
+        }
+
+        .work-section-title {
+            margin: 38px 0 16px;
+            padding-bottom: 9px;
+            border-bottom: 2px solid #f3e6dc;
+            color: #5b3520;
+            font-size: 23px;
+            font-weight: 700;
+        }
+
+        .math-display {
+            margin: 20px 0 24px;
+            padding: 15px 14px;
+            overflow-x: auto;
+            border-radius: 8px;
+            background: #fbf8f5;
+            color: #5b3520;
+            text-align: center;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .math-display mjx-container {
+            margin: 0 !important;
+        }
+
+        .work-note {
+            margin: 22px 0 26px;
+            padding: 17px 20px;
+            border-left: 4px solid #d59a6b;
+            background: #fbf7f4;
+            color: #405660;
+            font-size: 15px;
+            line-height: 1.75;
+        }
+
+        .result-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin: 22px 0 26px;
+        }
+
+        .result-card {
+            padding: 17px 13px;
+            border: 1px solid #eaded5;
+            border-radius: 8px;
+            background: #fcf9f7;
+            text-align: center;
+        }
+
+        .result-card strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #b85d12;
+            font-size: 23px;
+            line-height: 1.2;
+        }
+
+        .result-card span {
+            color: #52636c;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .work-citation {
+            margin-top: 38px;
+            padding: 23px;
+            border-radius: 8px;
+            background: #f4f7f8;
+        }
+
+        .work-citation h2 {
+            margin: 0 0 12px;
+            color: #5b3520;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .work-citation p {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 16px;
+            line-height: 1.75;
+            overflow-wrap: anywhere;
+            text-align: left;
+        }
+
+        .work-citation a {
+            color: #b85d12;
+            word-break: break-word;
+        }
+
+        @media (max-width: 767.98px) {
+            .work-page {
+                padding: 24px 12px 44px;
+            }
+
+            .work-article {
+                padding: 28px 22px 36px;
+                border-radius: 8px;
+            }
+
+            .work-title {
+                font-size: 28px;
+                line-height: 1.42;
+            }
+
+            .work-meta {
+                margin-bottom: 24px;
+            }
+
+            .work-lead,
+            .work-article p {
+                font-size: 16px;
+                line-height: 1.82;
+            }
+
+            .work-lead {
+                padding: 16px;
+            }
+
+            .work-figure {
+                margin: 24px 0 28px;
+            }
+
+            .work-section-title {
+                margin-top: 32px;
+                font-size: 21px;
+            }
+
+            .math-display {
+                margin: 18px -6px 22px;
+                padding: 14px 8px;
+                font-size: 0.93em;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .result-grid {
+                grid-template-columns: 1fr;
+                gap: 9px;
+            }
+
+            .result-card {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 12px;
+                padding: 13px;
+            }
+
+            .result-card strong {
+                margin: 0;
+                font-size: 21px;
+            }
+        }
+
+        @media (max-width: 399.98px) {
+            .work-page {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .work-article {
+                padding: 24px 16px 32px;
+                border-right: 0;
+                border-left: 0;
+                border-radius: 0;
+            }
+
+            .work-title {
+                font-size: 25px;
+            }
+
+            .work-figure figcaption {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+<a class="scrollToTop" href="#" aria-label="返回页首">
+    <i class="fa fa-angle-up" aria-hidden="true"></i>
+</a>
+
+{% include "client/header.html" %}
+
+<main class="work-page">
+    <article class="work-article">
+        <a class="work-back" href="{{ url_for('members', mem_id='zhouke') }}">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>返回周柯个人主页
+        </a>
+
+        <div class="work-kicker">近期工作 · J. Phys. Chem. Lett.</div>
+        <h1 class="work-title">限域离子的结晶和溶解——限域调节离子水合状态构建高性能力敏纳米通道</h1>
+        <div class="work-meta">
+            <span>发布日期：2026 年 1 月 30 日</span>
+            <span>研究团队：苏州大学周柯</span>
+        </div>
+
+        <p class="work-lead">该研究揭示，单层水极端限域下通道高度会改变离子水合与离子-离子作用的竞争，使离子在自由载流态与二维团簇态之间切换，并将机械压力转换为离子电流的百倍开关。</p>
+
+        <figure class="work-figure work-figure--overview">
+            <img src="{{ url_for('static', filename='images/members/zhouke/work_4/force-ion-transistor.png') }}"
+                 alt="外力调节限域离子通道并构建力敏离子晶体管和逻辑门" width="1312" height="961" decoding="async">
+            <figcaption>图形摘要：外力改变二维通道高度 \(h\)，使离子从水合导电态转为团簇绝缘态，形成力敏离子晶体管和机械 NOT 门。</figcaption>
+        </figure>
+
+        <figure class="work-figure work-figure--paper">
+            <a href="https://doi.org/10.1021/acs.jpclett.5c03717" target="_blank" rel="noopener noreferrer" aria-label="打开论文页面">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_4/article.png') }}"
+                     alt="J. Phys. Chem. Lett. 论文首页，已裁去下半页正文" width="1519" height="1095" loading="lazy" decoding="async">
+            </a>
+            <figcaption>论文首页，保留期刊标识、标题、作者、日期和摘要区域；点击图片可前往论文页面。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">从构象门控到载流子门控：力敏通道的新路径</h2>
+
+        <p>生物体中的 Piezo、TREK 和 TRAAK 等机械敏感离子通道，通常通过膜蛋白构象变化调节离子通过。人工纳米孔道若只依赖几何形变，通道尺寸的微小变化很难带来大的电流调制。论文提出另一条力学路径：不直接改变离子通道的几何通量，而是用机械力控制“真正能够导电的自由离子”数量 \(n_c\)。</p>
+
+        <p>把自由离子数 \(n_f\) 看作反应坐标，对其自由能面进行配分加权，可得到有效载流子数：</p>
+
+        <div class="math-display" role="math" aria-label="自由离子自由能面决定有效载流子数">
+            \[
+            n_c=\frac{\displaystyle\int_0^N n_f\exp\!\left[-\frac{\Delta F_f(n_f)}{k_{\mathrm B}T}\right]\,\mathrm dn_f}
+            {\displaystyle\int_0^N\exp\!\left[-\frac{\Delta F_f(n_f)}{k_{\mathrm B}T}\right]\,\mathrm dn_f},
+            \qquad I\propto n_c
+            \]
+        </div>
+
+        <p>其中，成对束缚的阳离子和阴离子对净电荷贡献近似抵消，或者因尺寸变大而迁移率大幅下降，因此 \(n_c\) 比总离子数更接近实际的导电自由度。</p>
+
+        <h2 class="work-section-title">极端限域：自由离子为何变成二维岩盐团簇</h2>
+
+        <p>研究在 \(h=0.8\,\mathrm{nm}\) 的单层水通道中放入 30 对 NaCl 和 600 个水分子，并使用经过第一性原理修正的力场与微秒尺度增强采样分子动力学。即使浓度只有 \(2.4\,\mathrm{mol\,kg^{-1}}\)，离子也会在约 100 ns 内从分散状态逐渐组装为二维岩盐样团簇；LiCl、KCl 和 RbCl 也表现出相同的趋势。</p>
+
+        <p>论文用水合数 \(S_H\) 和反离子局部配位数 \(S_O\) 描述离子状态。由增强采样得到的二维自由能面满足：</p>
+
+        <div class="math-display" role="math" aria-label="水合数和局部离子配位数的二维自由能面">
+            \[
+            F(S_O,S_H)=-k_{\mathrm B}T\ln P(S_O,S_H)+C
+            \]
+        </div>
+
+        <p>在体相水中，自由能最低点靠近 \(S_O\to0\)，对应充分水合的自由离子；在单层水中，最低点转移到 \(S_H\to0\)，对应水合壳层塌缩和高度有序的离子团簇。这是“限域越强，离子反而越容易结晶”的核心反直觉现象。</p>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_4/clustering-fes.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_4/clustering-fes.png') }}"
+                     alt="单层限域水中离子团簇化演化和水合自由能面" width="1066" height="1089" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 1. 离子由分散态演化为二维岩盐团簇，以及单层水与体相水中 \(S_O-S_H\) 自由能面的反转。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">水合与离子-离子作用的热力学竞争</h2>
+
+        <p>离子结晶不是单一作用力造成的，而是水合、离子-离子吸引和熵损失共同竞争的结果。将聚集过程中的焓变化拆开，可写成：</p>
+
+        <div class="math-display" role="math" aria-label="限域离子团簇化的焓贡献分解">
+            \[
+            \Delta H=\Delta H_{i-i}+\Delta H_{\mathrm{hy}},
+            \qquad
+            \Delta H_{\mathrm{hy}}=\Delta H_{i-w}+\Delta H_{w-w}
+            \]
+        </div>
+
+        <p>在单层水中，限域增强的 \(\Delta H_{i-i}\) 下降幅度超过水合项的代价，驱动体系从自由水合态进入束缚团簇态；当 \(h\) 增大到双层水及以上，水合效应重新占优。对单个离子对的平均力势 \(W(d)\) 而言，接触离子对（CIP）和溶剂共享/分离离子对（SSIP）之间的势垒可表示为：</p>
+
+        <div class="math-display" role="math" aria-label="离子对平均力势和解离势垒">
+            \[
+            W(d)=-k_{\mathrm B}T\ln g_{+-}(d)+C,
+            \qquad
+            \Delta W_{c-s}=W(d_{\mathrm{SSIP}})-W(d_{\mathrm{CIP}})
+            \]
+        </div>
+
+        <p>当 \(h\lesssim8\,\text{Å}\) 时，\(\Delta W_{c-s}\) 可达到约 \(10k_{\mathrm B}T\)，使已经形成的离子对难以重新解离；即便势垒达到 \(5k_{\mathrm B}T\)，由 \(1-\exp[-\Delta W_{c-s}/(k_{\mathrm B}T)]\) 估算的阻滞率也已超过 99%。</p>
+
+        <h2 class="work-section-title">埃级高度窗口：成核力学放大限域效应</h2>
+
+        <p>自由能面显示，\(h\lt9.5\,\text{Å}\) 时 \(\Delta F_f(n_f)\) 近似单调下降，体系偏好 \(n_f\approx0\) 的完全团簇态；当 \(h\ge9.5\,\text{Å}\) 时，自由能曲线恢复体相水的抛物形状。\(h\approx8.5\,\text{Å}\) 附近出现最强的团簇稳定性，原因是单层水厚度、离子尺寸和二维盐晶格间距形成几何相容。</p>
+
+        <p>把有效可用宽度记为 \(h^*=h-3.4\,\text{Å}\)，平面限域下的经典成核自由能可写成：</p>
+
+        <div class="math-display" role="math" aria-label="平面限域下二维离子团簇的成核自由能">
+            \[
+            \Delta G(r)\sim-4\pi r^2h^*\Delta\mu+2\pi rh^*\sigma,
+            \qquad h^*=h-3.4\,\text{Å}
+            \]
+        </div>
+
+        <p>因此，离子团簇的自由能代价同时受离子对有效能量密度和可用厚度控制，论文得到现象学标度：</p>
+
+        <div class="math-display" role="math" aria-label="离子团簇自由能的限域标度">
+            \[
+            \Delta F_f(N)\sim\Delta W_{c-s}h^*,
+            \qquad
+            \frac{\Delta F_f(N)}{Nh^*}\sim\Delta W_{c-s}
+            \]
+        </div>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_4/carrier-switch.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_4/carrier-switch.png') }}"
+                     alt="自由离子自由能曲线和有效载流子数随通道高度的开关行为" width="1482" height="609" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 2. 自由离子自由能曲线随 \(h\) 的变化，以及有效载流子数在埃级通道高度上的跃迁。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">从机械压力到离子 NOT 门</h2>
+
+        <p>通道高度只需从 \(10.0\,\text{Å}\) 压缩到 \(9.0\,\text{Å}\)，自由离子数就会从有限值降至近零，离子流随之关闭。由于 \(I\propto n_c\)，开关比主要由载流子密度而非几何截面积决定：</p>
+
+        <div class="math-display" role="math" aria-label="力敏离子晶体管的电流开关比">
+            \[
+            R=\frac{I_{\mathrm{on}}}{I_{\mathrm{off}}}
+            \approx\frac{n_{c,\mathrm{on}}}{n_{c,\mathrm{off}}}\sim10^2,
+            \qquad
+            10.0\,\text{Å}\xrightarrow{\,\text{pressure}\,}9.0\,\text{Å}
+            \]
+        </div>
+
+        <p>模拟中开放态电流约为 \(1.25\,\text{nA}\)，受压后的团簇态接近 \(0\)；若只考虑孔道几何缩小，面积比例带来的开关比约为 \(1.18\)，远小于团簇相变提供的约 100 倍放大。机械输入“pressed/free”与离子输出“off/on”构成反向响应，因此可以直接实现离子机械 NOT 门，进一步通过串并联组合扩展到 NAND 和 NOR。</p>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_4/force-ion-transistor.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_4/force-ion-transistor.png') }}"
+                     alt="力敏离子通道的开放态、关闭态和机械 NOT 逻辑门示意" width="1312" height="961" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 3. 机械压力改变限域高度，驱动离子结晶/溶解并控制电流，实现力敏离子晶体管和机械 NOT 门。</figcaption>
+        </figure>
+
+        <p class="work-note">这项工作把“力改变孔道形状”的传统力敏图景推进为“力改变离子相态和载流子密度”：限域高度、离子水合、二维成核和电流门控由同一条自由能链条连接起来。</p>
+
+        <section class="work-citation" aria-labelledby="citation-title">
+            <h2 id="citation-title">论文信息</h2>
+            <p>Ke Zhou*, “Ion Clustering Regulated by Extreme Nanoconfinement Enables Mechanosensitive Nanochannels,” <em>J. Phys. Chem. Lett.</em> 17, 1798–1804 (2026). <a href="https://doi.org/10.1021/acs.jpclett.5c03717" target="_blank" rel="noopener noreferrer">https://doi.org/10.1021/acs.jpclett.5c03717</a></p>
+        </section>
+    </article>
+</main>
+
+<footer id="mu-footer">
+    <div class="mu-footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mu-footer-bottom-area">
+                        <p class="mu-copy-right">&copy; Copyright &nbsp;&nbsp;&nbsp;&nbsp; Wanjian Yin Group</p>
+                        <p class="mu-copy-right">
+                            <a target="_blank" rel="noopener noreferrer" href="http://www.beian.miit.gov.cn/">赣ICP备20002676号-1</a>
+                        </p>
+                        <p class="mu-copy-right">
+                            <a target="_blank" rel="noopener noreferrer" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36113002000138">
+                                <img src="{{ url_for('static', filename='images/beian.png') }}" alt="">赣公网安备 36113002000138号
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/popper.min.js') }}"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/bootstrap_4.0.0.beta.min.js') }}"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+</body>
+</html>

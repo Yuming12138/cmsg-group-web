@@ -1,0 +1,139 @@
+.my-list ol {
+    text-align: justify;
+    counter-reset: li;
+    list-style: none;
+    *list-style: decimal;
+    font: 16px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+.my-list ol ol {
+    margin: 0 0 0 0.5em;
+}
+
+.my-list ol p {
+    font-size: 17px;
+    text-indent: 2em;
+    /*padding: 5px 0;*/
+}
+.my-list ol li img{
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    max-height: 350px;
+}
+
+/* -------------------------------------- */
+
+.rectangle-list h5 {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em .8em;
+    *padding: .4em;
+    margin: .5em 0 .5em 1em;
+    background: #ddd;
+    color: #444;
+    font-size: 20px;
+    text-decoration: none;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+.rectangle-list h5:hover {
+    background: #eee;
+}
+
+.rectangle-list h5:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    left: -2.5em;
+    top: 50%;
+    margin-top: -1em;
+    background: #fa8072;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    text-align: center;
+    font-weight: bold;
+}
+
+.rectangle-list h5:after {
+    position: absolute;
+    content: '';
+    border: .5em solid transparent;
+    left: -1em;
+    top: 50%;
+    margin-top: -.5em;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+.rectangle-list h5:hover:after {
+    left: -.5em;
+    border-left-color: #fa8072;
+}
+
+#rectangle-list-li{
+     padding: 0.6em;
+}
+
+/* -------------------------------------- */
+
+.circle-list li {
+    padding: 3em 1em 2em 1em;
+    border-bottom: 1px dashed #ccc;
+}
+
+.circle-list li:last-child {
+    border-bottom: none;
+}
+
+.circle-list h2 {
+    position: relative;
+    margin: 0;
+}
+
+.circle-list h2:before {
+    content: counter(li);
+    counter-increment: li;
+    position: absolute;
+    z-index: -1;
+    left: -1.3em;
+    top: -.8em;
+    background: #f5f5f5;
+    height: 1.5em;
+    width: 1.5em;
+    border: .1em solid rgba(0, 0, 0, .05);
+    text-align: center;
+    font: italic bold 1em/1.5em Georgia, Serif;
+    color: #ccc;
+    -moz-border-radius: 1.5em;
+    -webkit-border-radius: 1.5em;
+    border-radius: 1.5em;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -ms-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+}
+
+.circle-list li:hover h2:before {
+    background-color: #0091ea;
+    border-color: rgba(0, 0, 0, .08);
+    border-width: .2em;
+    color: #444;
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+}

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+
+    <!-- <style >
+    html {
+      filter:grayscale(100%);
+      -webkit-filter:grayscale(100%);
+      -moz-filter:grayscale(100%);
+      -ms-filter:grayscale(100%);
+      -o-filter:grayscale(100%);
+     filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+      -webkit-filter:grayscale(1);
+    }
+    </style> -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Computational Materials Science Group | Soochow University</title>
+    <meta name="keywords" content="Wan-Jian Yin,Soochow University,computational materials science,energy materials,defect physics,first-principles calculations,machine learning,DFT"/>
+    <meta name="description" content="Wan-Jian Yin's Computational Materials Science Group at Soochow University focuses on energy materials, defect physics, first-principles calculations and machine learning."/>
+    <meta itemprop="name" content="Computational Materials Science Group | Soochow University"/>
+    <meta itemprop="description" content="Wan-Jian Yin's Computational Materials Science Group at Soochow University focuses on energy materials, defect physics, first-principles calculations and machine learning."/>
+    <link rel="canonical" href="https://www.comates.group/?language=en"/>
+    <meta property="og:title" content="Computational Materials Science Group | Soochow University"/>
+    <meta property="og:description" content="Energy materials, defect physics, first-principles calculations and machine learning."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.comates.group/?language=en"/>
+    <meta property="og:image" content="https://www.comates.group/static/images/web_logo.png"/>
+    <meta property="og:image:secure_url" content="https://www.comates.group/static/images/web_logo.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:width" content="284"/>
+    <meta property="og:image:height" content="284"/>
+    <meta property="og:image:alt" content="Computational Materials Science Group logo"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:site_name" content="Computational Materials Science Group"/>
+    <meta itemprop="image" content="https://www.comates.group/static/images/web_logo.png"/>
+    <link rel="image_src" href="https://www.comates.group/static/images/web_logo.png"/>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/icon" href="{{ url_for('static', filename='images/web_logo.svg') }}"/>
+    <!-- Font Awesome -->
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap_4.0.0.beta.min.css') }}"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Slick slider -->
+    <link href="{{ url_for('static', filename='css/slick.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/slick-theme.css') }}" rel="stylesheet">
+    <!-- Gallery Lightbox -->
+    <link href="{{ url_for('static', filename='css/magnific-popup.css') }}" rel="stylesheet">
+    <!-- Skills Circle CSS  -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/circle.css') }}">
+
+
+    <!-- Main Style -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <!-- Fonts -->
+
+    <!-- Google Fonts Raleway -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,500i,600,700" rel="stylesheet">
+    <!-- Google Fonts Open sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800" rel="stylesheet">
+
+    <style type="text/css">
+        .slider {
+            width: 50%;
+            margin: 100px auto;
+        }
+
+        .slick-slide {
+            margin: 0px 20px;
+        }
+
+        .slick-slide img {
+            width: 100%;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            color: #000000;
+        }
+
+
+        .slick-slide {
+            transition: all ease-in-out .3s;
+            opacity: .2;
+        }
+
+        .slick-active {
+            opacity: .5;
+        }
+
+        .slick-current {
+            opacity: 1;
+        }
+    </style>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/baidu_tongji.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/baidu_sousuo.js') }}"></script>
+    <meta name="baidu-site-verification" content="cO97hdfUV9"/>  <!-- 百度搜索 -->
+    <meta name="360-site-verification" content="251cb7eb01fcc2b8aaefdc1e32a34973"/>  <!-- 360搜索 -->
+</head>
+<body>
+{#<div style="margin: 0 auto;width: 70%;">#}
+<!--START SCROLL TOP BUTTON -->
+<a class="scrollToTop" href="#">
+    <i class="fa fa-angle-up"></i>
+</a>
+<!-- END SCROLL TOP BUTTON -->
+
+<!-- Start Header -->
+{#<header id="mu-hero" style="margin: 0 auto;">#}
+{#    <div class="container">#}
+{#        <nav class="navbar navbar-expand-lg navbar-light mu-navbar">#}
+{#            <!-- Text based logo -->#}
+{#            <a class="navbar-brand mu-logo" href="{{ url_for('home') }}">#}
+{#                <span>#}
+{#                    <span style="color: #ff8c00; font-size: 26px;">CO</span>mputational <span style="color: #ff8c00;font-size: 26px;">MATE</span>rials#}
+{#                    <span style="color: #ff8c00;font-size: 26px;">S</span>cience#}
+{#                </span>#}
+{#            </a>#}
+{#            <!-- image based logo -->#}
+{#            <!-- <a class="navbar-brand mu-logo" href="index.html"><img src="assets/images/logo.png" alt="logo"></a> -->#}
+{#            <button class="navbar-toggler" type="button" data-toggle="collapse"#}
+{#                    data-target="#navbarSupportedContent"#}
+{#                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">#}
+{#                <span class="fa fa-bars"></span>#}
+{#            </button>#}
+{##}
+{#            <div class="collapse navbar-collapse" id="navbarSupportedContent">#}
+{#                <ul class="navbar-nav mr-auto mu-navbar-nav">#}
+{#                    <li class="nav-item active"><a href="{{ url_for('home') }}">Home</a></li>#}
+{#                    <li class="nav-item"><a href="{{ url_for('wanjian_yin') }}">PI</a></li>#}
+{#                    <li class="nav-item"><a href="{{ url_for('research') }}">Research</a></li>#}
+{#                    <li class="nav-item"><a href="{{ url_for('publications') }}">Publications</a></li>#}
+{#                    <li class="nav-item"><a href="{{ url_for('members') }}">Members</a></li>#}
+{#                    <li class="nav-item"><a href="{{ url_for('group_photo') }}">Group photo</a></li>#}
+{#                    <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>#}
+{#                </ul>#}
+{#            </div>#}
+{#        </nav>#}
+{#    </div>#}
+{#</header>#}
+{% include "client/header.html" %}
+<!-- End Header -->
+
+<div style="margin: 0 auto;max-width: 1200px">
+
+    <!-- Start slider area -->
+    <div id="mu-slider">
+        <div class="mu-slide">
+
+            <!-- Start single slide  -->
+            <div class="mu-single-slide">
+                <img src="{{ url_for('static', filename='images/home_0_14.jpg') }}" alt="国家自然科学基金">
+                <div class="mu-single-slide-content">
+                    <div class="mu-single-slide-content-left">
+                        <h1>Congratulations to Dr. Zhendong Guo is granted the National Natural Science Foundation of China Youth Fund Project.</h1>
+                        <h1>Congratulations to Dr. Wang Jing Wang is granted the National Natural Science Foundation of China Youth Fund Project and Theoretical Physics Special Fund Project.</h1>
+                    </div>
+{#                    <div class="mu-single-slide-content-right">#}
+{#                        <a rel="nofollow external" rel="nofollow external" rel="nofollow external" class="mu-primary-btn" target="_blank" href="https://doi.org/10.1038/s41467-022-29241-4">Read more <span#}
+{#                                class="fa fa-long-arrow-right"></span></a>#}
+{#                    </div>#}
+                </div>
+            </div>
+            <!-- End single slide  -->
+
+            <!-- Start single slide  -->
+            <div class="mu-single-slide">
+                <img src="{{ url_for('static', filename='images/home_0_11.jpg') }}" alt="中国高被引学者">
+{#                <div class="mu-single-slide-content">#}
+{#                    <div class="mu-single-slide-content-left">#}
+{#                        <h1>祝贺程观剑在 Nature Communications 上发表论文，结合机器学习和优化算法加速晶体结构预测，实现计算成本比传统方法低三个数量级。</h1>#}
+{#                        <p>G. Cheng, X.-G. Gong, W.-J. Yin, Nat Commun. 13, 1492 (2022).</p>#}
+{#                    </div>#}
+{#                    <div class="mu-single-slide-content-right">#}
+{#                        <a rel="nofollow external" rel="nofollow external" rel="nofollow external" class="mu-primary-btn" target="_blank" href="https://doi.org/10.1038/s41467-022-29241-4">Read more <span#}
+{#                                class="fa fa-long-arrow-right"></span></a>#}
+{#                    </div>#}
+{#                </div>#}
+            </div>
+            <!-- End single slide  -->
+
+            <!-- Start single slide  -->
+            <div class="mu-single-slide">
+                <img src="{{ url_for('static', filename='images/home_0_13.jpg') }}" alt="G.-Y. Chen, Z.-D. Guo, X.-G. Gong, W.-J. Yin, Chem (2022).">
+                <div class="mu-single-slide-content">
+                    <div class="mu-single-slide-content-left">
+                        <h1>Congratulations to Gaoyuan Chen on his paper published in Chem. In this work, the γ-to-δ phase lowest-energy transition pathways of the CsPbI3 perovskite was solved using the SSW method, and provided quantitative rational engineering principles, such as doping and strain, for stabilizing CsPbI3.</h1>
+                        <p>G.-Y. Chen, Z.-D. Guo, X.-G. Gong, W.-J. Yin, Chem (2022).</p>
+                    </div>
+                    <div class="mu-single-slide-content-right">
+                        <a rel="nofollow external" rel="nofollow external" rel="nofollow external" class="mu-primary-btn" target="_blank" href="https://doi.org/10.1016/j.chempr.2022.07.026">Read more <span
+                                class="fa fa-long-arrow-right"></span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- End single slide  -->
+
+            <!-- Start single slide  -->
+            <div class="mu-single-slide">
+                <img src="{{ url_for('static', filename='images/home_0_12.jpg') }}" alt="2022届研究生毕业">
+                <div class="mu-single-slide-content">
+                    <div class="mu-single-slide-content-left">
+                        <h1>Congratulations to the 2022 graduate students.</h1>
+                        <p>Suzhou · 2022/06/22</p>
+                    </div>
+{#                    <div class="mu-single-slide-content-right">#}
+{#                        <a rel="nofollow external" rel="nofollow external" rel="nofollow external" class="mu-primary-btn" target="_blank" href="https://doi.org/10.1038/s41467-022-29241-4">Read more <span#}
+{#                                class="fa fa-long-arrow-right"></span></a>#}
+{#                    </div>#}
+                </div>
+            </div>
+            <!-- End single slide  -->
+
+            <!-- Start single slide  -->
+            <div class="mu-single-slide">
+                <img src="{{ url_for('static', filename='images/home_0_10.jpg') }}" alt="G. Cheng, X.-G. Gong, W.-J. Yin, Nat Commun. 13, 1492 (2022).">
+                <div class="mu-single-slide-content">
+                    <div class="mu-single-slide-content-left">
+                        <h1>Congratulations to Guanjian Cheng on his paper published in Nat Commun.. In this work, combining machine learning and optimization algorithms to accelerate crystal structure prediction, achieving computational costs three orders of magnitude lower than traditional methods.</h1>
+                        <p>G. Cheng, X.-G. Gong, W.-J. Yin, Nat Commun. 13, 1492 (2022).</p>
+                    </div>
+                    <div class="mu-single-slide-content-right">
+                        <a rel="nofollow external" rel="nofollow external" rel="nofollow external" class="mu-primary-btn" target="_blank" href="https://doi.org/10.1038/s41467-022-29241-4">Read more <span
+                                class="fa fa-long-arrow-right"></span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- End single slide  -->
+
+            <!-- Start single slide  -->
+            <div class="mu-single-slide">
+                <img src="{{ url_for('static', filename='images/home_0_9.jpg') }}" alt="Z. Guo, J. Wang, and W.-J. Yin, Energy Environ. Sci. (2021).">
+                <div class="mu-single-slide-content">
+                    <div class="mu-single-slide-content-left">
+                        <h1>Congratulations to Zhendong Guo on his paper published in Energy Environ. Sci.. This work combines physical modeling and bulk modulus calculations to reveal the physical origin of the soft lattice in chalcocite and to demonstrate that the soft lattice of chalcocite will greatly improve its carrier lifetime by adjusting the softness of the inorganic lattice by changing the strength of the Pb-I antibonding coupling.</h1>
+                        <p>Z. Guo, J. Wang, and W.-J. Yin, Energy Environ. Sci. (2021).</p>
+                    </div>
+                    <div class="mu-single-slide-content-right">
+                        <a rel="nofollow external" rel="nofollow external" rel="nofollow external" class="mu-primary-btn" target="_blank" href="https://doi.org/10.1039/D1EE02131A">Read more <span
+                                class="fa fa-long-arrow-right"></span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- End single slide  -->
+
+{#            <!-- Start single slide  -->#}
+{#            <div class="mu-single-slide">#}
+{#                <img src="{{ url_for('static', filename='images/home_0_8.jpg') }}" alt="春游 · 环古城步道">#}
+{#                <div class="mu-single-slide-content">#}
+{#                    <div class="mu-single-slide-content-left">#}
+{#                        <h1>春游 · 环古城步道</h1>#}
+{#                        <p>苏州 · 2021/03/24</p>#}
+{#                    </div>#}
+{#                    <div class="mu-single-slide-content-right">#}
+{#                        <a rel="nofollow external" rel="nofollow external" rel="nofollow external" class="mu-primary-btn" target="_blank" href="https://doi.org/10.1038/s41467-020-17263-9">Read more <span#}
+{#                                class="fa fa-long-arrow-right"></span></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- End single slide  -->#}
+{##}
+{#            <!-- Start single slide  -->#}
+{#            <div class="mu-single-slide">#}
+{#                <img src="{{ url_for('static', filename='images/home_0_7.jpg') }}" alt="2020年COMATES年终总结报告会">#}
+{#                <div class="mu-single-slide-content">#}
+{#                    <div class="mu-single-slide-content-left">#}
+{#                        <h1>2020年COMATES年终总结报告会</h1>#}
+{#                        <p>苏州 · 2021/01/22</p>#}
+{#                    </div>#}
+{#                    <div class="mu-single-slide-content-right">#}
+{#                        <a rel="nofollow external" rel="nofollow external" rel="nofollow external" class="mu-primary-btn" target="_blank" href="https://doi.org/10.1038/s41467-020-17263-9">Read more <span#}
+{#                                class="fa fa-long-arrow-right"></span></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- End single slide  -->#}
+
+            <!-- Start single slide  -->
+            <div class="mu-single-slide">
+                <img src="{{ url_for('static', filename='images/home_0_6.jpg') }}" alt="B. Weng#, Z.Song#, R. Zhu, Q. Yan, Q. Sun, C. Grice, Y. Yan* and W-J. Yin*, Nature Communications 11, 3513 (2020)">
+                <div class="mu-single-slide-content">
+                    <div class="mu-single-slide-content-left">
+                        <h1>Congratulations to Baicheng Weng & Zhilong Song on the paper published in Nature Communications. In this work, symbolic regression (machine learning) is used to challenge traditional catalytic volcano maps (empirical knowledge), discover catalytic descriptors that are linearly correlated with catalytic activity, and guide the experimental synthesis of novel chalcogenide oxide catalysts. </h1>
+                        <p>B. Weng#, Z.Song#, R. Zhu, Q. Yan, Q. Sun, C. Grice, Y. Yan* and W-J. Yin*, Nature Communications 11, 3513 (2020)</p>
+                    </div>
+                    <div class="mu-single-slide-content-right">
+                        <a rel="nofollow external" rel="nofollow external" rel="nofollow external" class="mu-primary-btn" target="_blank" href="https://doi.org/10.1038/s41467-020-17263-9">Read more <span
+                                class="fa fa-long-arrow-right"></span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- End single slide  -->
+
+            <!-- Start single slide  -->
+            <div class="mu-single-slide">
+                <img src="{{ url_for('static', filename='images/home_0_3.jpg') }}" alt="Jing Wang, Wei Li and Wan-Jian Yin*, Advanced Materials 32, 1906115 (2020)">
+                <div class="mu-single-slide-content">
+                    <div class="mu-single-slide-content-left">
+                        <h1>Congratulations to Jing Wang on his paper published in Advanced Materials, the issue of how br doping of CH3NH3PbI3 can improve the carrier lifetime is explained in this paper.</h1>
+                        <p>Jing Wang, Wei Li and Wan-Jian Yin*, Advanced Materials 32, 1906115 (2020)</p>
+                    </div>
+                    <div class="mu-single-slide-content-right">
+                        <a rel="nofollow external" rel="nofollow external" rel="nofollow external" class="mu-primary-btn" target="_blank" href="https://doi.org/10.1002/adma.201906115">Read more <span
+                                class="fa fa-long-arrow-right"></span></a>
+                    </div>
+                </div>
+            </div>
+            <!-- End single slide  -->
+
+{#            <!-- Start single slide  -->#}
+{#            <div class="mu-single-slide">#}
+{#                <img src="{{ url_for('static', filename='images/home_0_2.jpg') }}" alt="Jing Wang, H. Chen, S.-H. Wei and W.-J. Yin*, Advanced Materials 31, 1806593 (2019)">#}
+{#                <div class="mu-single-slide-content">#}
+{#                    <div class="mu-single-slide-content-left">#}
+{#                        <h1>Congratulations to Jing Wang on his paper published in Advanced Materials, solar materials are reconceptualized and designed through the coordination numbers in this work.</h1>#}
+{#                        <p>Jing Wang, H. Chen, S.-H. Wei and W.-J. Yin*, Advanced Materials 31, 1806593 (2019)</p>#}
+{#                    </div>#}
+{#                    <div class="mu-single-slide-content-right">#}
+{#                        <a rel="nofollow external" rel="nofollow external" rel="nofollow external"class="mu-primary-btn" target="_blank" href="https://doi.org/10.1002/adma.201806593">Read more <span#}
+{#                                class="fa fa-long-arrow-right"></span></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- End single slide  -->#}
+
+{#            <!-- Start single slide  -->#}
+{#            <div class="mu-single-slide">#}
+{#                <img src="{{ url_for('static', filename='images/home_0_1.jpg') }}"#}
+{#                     alt="Zhenzhu Li, Qichen Xu, Qingde Sun. Zhufeng Hou and W.-J. Yin*, Adv. Fun. Mater. 29, 1807280 (2019)">#}
+{#                <div class="mu-single-slide-content">#}
+{#                    <div class="mu-single-slide-content-left">#}
+{#                        <h1>Congratulations to Zhenzhu Li on his paper published in Adv. Fun. Mater., accelerating perovskite stability prediction by machine learning in this work.</h1>#}
+{#                        <p>Zhenzhu Li, Qichen Xu, Qingde Sun. Zhufeng Hou and W.-J. Yin*, Adv. Fun. Mater. 29, 1807280 (2019)</p>#}
+{#                    </div>#}
+{#                    <div class="mu-single-slide-content-right">#}
+{#                        <a rel="nofollow external" rel="nofollow external"class="mu-primary-btn" target="_blank" href="https://doi.org/10.1002/adfm.201807280">Read more <span#}
+{#                                class="fa fa-long-arrow-right"></span></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- End single slide  -->#}
+
+{#            <!-- Start single slide  -->#}
+{#            <div class="mu-single-slide">#}
+{#                <img src="{{ url_for('static', filename='images/home_0_0.jpg') }}" alt="Qingde Sun and W.-J. Yin*, J. Am. Chem. Soc. 139 , 14905-14908 (2017)">#}
+{#                <div class="mu-single-slide-content">#}
+{#                    <div class="mu-single-slide-content-left">#}
+{#                        <h1>Congratulations to Qingde Sun on his paper published in JACS, a phase diagram for perovskite stability and new descriptors are presented in the paper.</h1>#}
+{#                        <p>Qingde Sun and W.-J. Yin*, J. Am. Chem. Soc. 139 , 14905-14908 (2017)</p>#}
+{#                    </div>#}
+{#                    <div class="mu-single-slide-content-right">#}
+{#                        <a rel="nofollow external" rel="nofollow external"class="mu-primary-btn" target="_blank" href="https://doi.org/10.1021/jacs.7b09379">Read more <span#}
+{#                                class="fa fa-long-arrow-right"></span></a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <!-- End single slide  -->#}
+        </div>
+    </div>
+    <!-- End Slider area -->
+
+
+    <!-- Start main content -->
+    <main>
+        <!-- Start About -->
+        <section id="mu-about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mu-about-area">
+                            <!-- Title -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="mu-title">
+                                        <h2 style="color: #dd4b39;">Solving the Energy and Materials Challenge through Computation</h2>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Start Feature Content -->
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mu-about-left">
+                                        <img style="width: 100%;max-width: 450px;" class="" src="{{ url_for('static', filename='images/home_1_2.svg') }}" alt="img">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mu-about-right">
+                                        <h3 style="margin-bottom: 25px;">WHAT ARE WE DOING?</h3>
+                                        <ul>
+                                            <li>
+                                                <h3>1. Defect Physics</h3>
+                                                <p>We develop approaches for defect calculation based on first-principles calculations
+                                                    and apply it to fundamental understanding and defect control of semiconductors, oxides and solar cell
+                                                    absorbers.</p>
+                                            </li>
+                                            <li>
+                                                <h3>2. Materials Design</h3>
+                                                <p>We develop the scheme of high-throughput computing and machine learning and apply it
+                                                    to materials screening and design for renewable energy harvesting.</p>
+                                            </li>
+                                            <li>
+                                                <h3>3. Graphene Growth</h3>
+                                                <p>We collaborate with renowned experimental group on graphene growth, understand the
+                                                    growth mechanism and provide guidance.</p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Feature Content -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End About -->
+
+    </main>
+    <!-- End main content -->
+</div>
+
+<!-- Start footer -->
+<footer id="mu-footer">
+    <div class="mu-footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mu-footer-bottom-area">
+                        <p class="mu-copy-right">
+                            &copy; Copyright &nbsp;&nbsp;&nbsp;&nbsp; Wanjian Yin Group
+                        </p>
+                        <p class="mu-copy-right">
+                            <a target="_blank" href="http://www.beian.miit.gov.cn/">
+                                赣ICP备20002676号-1
+                            </a>
+                        </p>
+                        <p class="mu-copy-right">
+                            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36113002000138">
+                                <img src="{{ url_for('static', filename='images/beian.png') }}" alt=""/>
+                                赣公网安备 36113002000138号
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<!-- End footer -->
+
+
+<!-- JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/popper.min.js') }}"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/bootstrap_4.0.0.beta.min.js') }}"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+<!-- Slick slider -->
+{#<script type="text/javascript" src="{{ url_for('static', filename='js/slick.js') }}"></script>#}
+<script type="text/javascript" src="{{ url_for('static', filename='js/slick.min.js') }}"></script>
+<!-- Progress Bar -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/circle.js') }}"></script>
+<!-- Filterable Gallery js -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.filterizr.min.js') }}"></script>
+<!-- Gallery Lightbox -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+<!-- Counter js -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/counter.js') }}"></script>
+<!-- Ajax contact form  -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+
+<!-- Custom js -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/custom.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/diandian.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/fuqiang.js') }}"></script>
+
+<script type="text/javascript">
+    $(".lazy").slick({
+        arrows: true,
+        slidesToShow: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        pauseOnHover: false,
+    });
+</script>
+
+<script>
+
+    window.onload = function () {
+        var content = document.getElementsByClassName("mu-single-slide-content");
+        {#var content_width = $(".mu-single-slide-content").innerWidth();#}
+        var content_width = content[0].clientWidth;
+        console.log(content_width);
+        content_width = content_width > 960 ? 960 : content_width;
+        console.log(content_width);
+        var font_size = content_width / 960 * 17;
+        for (var i = 0; i < content.length; i++) {
+            content[i].getElementsByTagName("h1")[0].style.fontSize = font_size + "px";
+            content[i].getElementsByTagName("p")[0].style.fontSize = font_size + "px";
+            content[i].getElementsByTagName("a")[0].style.fontSize = (0.8 * font_size) + "px";
+        }
+    };
+
+</script>
+<!-- About us Skills Circle progress  -->
+<script>
+    // First circle
+    new Circlebar({
+        element: "#circle-1",
+        type: "progress",
+        maxValue: "90"
+    });
+
+    // Second circle
+    new Circlebar({
+        element: "#circle-2",
+        type: "progress",
+        maxValue: "84"
+    });
+
+    // Third circle
+    new Circlebar({
+        element: "#circle-3",
+        type: "progress",
+        maxValue: "60"
+    });
+
+    // Fourth circle
+    new Circlebar({
+        element: "#circle-4",
+        type: "progress",
+        maxValue: "74"
+    });
+
+</script>
+
+</body>
+</html>

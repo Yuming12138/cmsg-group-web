@@ -1,0 +1,49 @@
+/*body {*/
+/*    background: rgb(57, 179, 255)*/
+/*}*/
+
+label {
+    display: block;
+    min-width: 70px;
+    width: 70px;
+    height: 30px;
+}
+
+.mui-switch + .mui-switch-text {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #fff;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.mui-switch-text:before {
+    content: '中文';
+    width: 50%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0091ea;
+    transition: left 0.2s;
+    background-color: #fff;
+    font-size: 50%;
+}
+
+.mui-switch:checked + .mui-switch-text:before {
+    content: 'EN';
+    left: 50%;
+    font-size: 50%;
+}
+
+.mui-switch + .mui-switch-text span {
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    color: #fff;
+}

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>第一性水动力学性质的差异性和不变性</title>
+    <meta name="description" content="机器学习势高通量计算揭示第一性水扩散与粘度的差异性，以及 Stokes-Einstein 关系和结构熵标度下的不变性。">
+    <meta itemprop="name" content="第一性水动力学性质的差异性和不变性">
+    <meta itemprop="description" content="机器学习势高通量计算揭示第一性水扩散与粘度的差异性，以及 Stokes-Einstein 关系和结构熵标度下的不变性。">
+    <link rel="canonical" href="https://www.comates.group/members/zhouke/work_2.html">
+    <meta property="og:title" content="第一性水动力学性质的差异性和不变性">
+    <meta property="og:description" content="机器学习势高通量计算揭示第一性水扩散与粘度的差异性，以及 Stokes-Einstein 关系和结构熵标度下的不变性。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.comates.group/members/zhouke/work_2.html">
+    <meta property="og:image" content="https://www.comates.group/static/images/members/zhouke/work_2/finite-size-dynamics.png">
+    <meta property="og:image:secure_url" content="https://www.comates.group/static/images/members/zhouke/work_2/finite-size-dynamics.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1700">
+    <meta property="og:image:height" content="1252">
+    <meta property="og:image:alt" content="第一性水有限尺寸动力学关系">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="Computational Materials Science Group">
+    <meta itemprop="image" content="https://www.comates.group/static/images/members/zhouke/work_2/finite-size-dynamics.png">
+    <link rel="image_src" href="https://www.comates.group/static/images/members/zhouke/work_2/finite-size-dynamics.png">
+    <link rel="shortcut icon" type="image/icon" href="{{ url_for('static', filename='images/web_logo.svg') }}">
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap_4.0.0.beta.min.css') }}"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <script>
+        window.MathJax = {
+            tex: {inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']]},
+            options: {skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']}
+        };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .work-page {
+            clear: both;
+            padding: 42px 20px 68px;
+            background: #f4f7f8;
+        }
+
+        .work-article {
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 44px 58px 54px;
+            border: 1px solid #e3e9ec;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 12px 36px rgba(24, 50, 68, 0.08);
+            color: #263238;
+        }
+
+        .work-back {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 24px;
+            color: #006fae;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .work-back:hover,
+        .work-back:focus {
+            color: #004f7d;
+            text-decoration: underline;
+        }
+
+        .work-back .fa {
+            margin-right: 7px;
+        }
+
+        .work-kicker {
+            margin-bottom: 12px;
+            color: #007c56;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .work-title {
+            margin: 0;
+            color: #17242c;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.45;
+        }
+
+        .work-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 18px;
+            margin: 18px 0 30px;
+            color: #65747d;
+            font-size: 14px;
+        }
+
+        .work-lead,
+        .work-article p {
+            margin: 0 0 20px;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            font-size: 17px;
+            line-height: 1.9;
+            text-align: justify;
+        }
+
+        .work-lead {
+            padding: 18px 22px;
+            border-left: 4px solid #16a078;
+            background: #f1faf7;
+            color: #334955;
+        }
+
+        .work-figure {
+            margin: 28px 0 32px;
+        }
+
+        .work-figure a {
+            display: block;
+        }
+
+        .work-figure img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .work-figure--overview img {
+            max-width: 720px;
+        }
+
+        .work-figure--paper img {
+            max-width: 720px;
+            border: 1px solid #e0e5e8;
+            box-shadow: 0 8px 24px rgba(24, 50, 68, 0.08);
+        }
+
+        .work-figure figcaption {
+            margin-top: 12px;
+            color: #586971;
+            font-size: 14px;
+            line-height: 1.65;
+            text-align: left;
+        }
+
+        .work-section-title {
+            margin: 38px 0 16px;
+            padding-bottom: 9px;
+            border-bottom: 2px solid #e4f1ed;
+            color: #174b3d;
+            font-size: 23px;
+            font-weight: 700;
+        }
+
+        .math-display {
+            margin: 20px 0 24px;
+            padding: 15px 14px;
+            overflow-x: auto;
+            border-radius: 8px;
+            background: #f6faf9;
+            color: #174b3d;
+            text-align: center;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .math-display mjx-container {
+            margin: 0 !important;
+        }
+
+        .work-note {
+            margin: 22px 0 26px;
+            padding: 17px 20px;
+            border-left: 4px solid #71b59f;
+            background: #f5faf8;
+            color: #405660;
+            font-size: 15px;
+            line-height: 1.75;
+        }
+
+        .work-citation {
+            margin-top: 38px;
+            padding: 23px;
+            border-radius: 8px;
+            background: #f4f7f8;
+        }
+
+        .work-citation h2 {
+            margin: 0 0 12px;
+            color: #174b3d;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .work-citation p {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 16px;
+            line-height: 1.75;
+            overflow-wrap: anywhere;
+            text-align: left;
+        }
+
+        .work-citation a,
+        .reference-list a {
+            color: #007c56;
+            word-break: break-word;
+        }
+
+        .reference-list {
+            margin: 16px 0 0 22px;
+            padding: 0;
+            color: #4c5e66;
+            font-size: 14px;
+            line-height: 1.65;
+        }
+
+        .reference-list li {
+            margin-bottom: 8px;
+            padding-left: 4px;
+        }
+
+        @media (max-width: 767.98px) {
+            .work-page {
+                padding: 24px 12px 44px;
+            }
+
+            .work-article {
+                padding: 28px 22px 36px;
+                border-radius: 8px;
+            }
+
+            .work-title {
+                font-size: 28px;
+                line-height: 1.42;
+            }
+
+            .work-meta {
+                margin-bottom: 24px;
+            }
+
+            .work-lead,
+            .work-article p {
+                font-size: 16px;
+                line-height: 1.82;
+            }
+
+            .work-lead {
+                padding: 16px;
+            }
+
+            .work-figure {
+                margin: 24px 0 28px;
+            }
+
+            .work-section-title {
+                margin-top: 32px;
+                font-size: 21px;
+            }
+
+            .math-display {
+                margin: 18px -6px 22px;
+                padding: 14px 8px;
+                font-size: 0.93em;
+            }
+        }
+
+        @media (max-width: 399.98px) {
+            .work-page {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
+            .work-article {
+                padding: 24px 16px 32px;
+                border-right: 0;
+                border-left: 0;
+                border-radius: 0;
+            }
+
+            .work-title {
+                font-size: 25px;
+            }
+
+            .work-figure figcaption,
+            .reference-list {
+                font-size: 13px;
+            }
+        }
+    </style>
+</head>
+<body>
+<a class="scrollToTop" href="#" aria-label="返回页首">
+    <i class="fa fa-angle-up" aria-hidden="true"></i>
+</a>
+
+{% include "client/header.html" %}
+
+<main class="work-page">
+    <article class="work-article">
+        <a class="work-back" href="{{ url_for('members', mem_id='zhouke') }}">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>返回周柯个人主页
+        </a>
+
+        <div class="work-kicker">近期工作 · J. Chem. Theory Comput.</div>
+        <h1 class="work-title">第一性水动力学性质的差异性和不变性</h1>
+        <div class="work-meta">
+            <span>发布日期：2024 年 11 月</span>
+            <span>作者：田伟、王晨宇、周柯</span>
+        </div>
+
+        <p class="work-lead">不同第一性原理方法给出的液态水扩散系数和粘度差异显著，但这些看似不同的“第一性水”却共同服从 Stokes-Einstein 关系和二体剩余熵标度。研究借助机器学习势与高通量分子动力学，揭示了水动力学性质的<strong>差异性</strong>与<strong>不变性</strong>。</p>
+
+        <figure class="work-figure work-figure--overview">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_2/water-dynamics-overview.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_2/water-dynamics-overview.png') }}"
+                     alt="第一性水动力学差异性与不变性的图形摘要" width="1312" height="662" decoding="async">
+            </a>
+            <figcaption>研究图形摘要：单独的扩散系数 \(D\) 与粘度 \(\eta\) 因方法而异，但二者的组合与结构熵呈现稳定关系。</figcaption>
+        </figure>
+
+        <p>相关成果以“The Dynamic Diversity and Invariance of Ab Initio Water”为题发表于 <em>Journal of Chemical Theory and Computation</em>。第一作者为苏州大学能源学院硕士生田伟，周柯副教授为唯一通讯作者。</p>
+
+        <figure class="work-figure work-figure--paper">
+            <a href="https://doi.org/10.1021/acs.jctc.4c01191" target="_blank" rel="noopener noreferrer" aria-label="打开论文页面">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_2/article.png') }}"
+                     alt="JCTC 论文首页" width="2326" height="1494" loading="lazy" decoding="async">
+            </a>
+            <figcaption>论文首页。点击图片可前往论文页面。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">研究背景：从准确结构走向准确动力学</h2>
+
+        <p>准确描述水的结构与动力学，对海水淡化、离子分离、电催化和生化过程等问题至关重要。第一性原理分子动力学（AIMD）能够可靠描述水的局域结构，但扩散、粘度等输运性质需要纳秒尺度采样，直接计算往往成本高昂；体系尺寸不足还会带来显著的有限尺寸效应。</p>
+
+        <p>研究者利用 PBE+D3、RPBE+D3、optB88-vdW、SCAN、rSCAN、revPBE0+D3 等 DFT 数据，以及先进多体水模型 MB-pol，训练了 7 套神经网络演化势（NEP），再通过 GPUMD 将第一性原理精度扩展到更大的体系和更长的时间尺度。</p>
+
+        <h2 class="work-section-title">有限尺寸外推：获得可靠的扩散与粘度</h2>
+
+        <p>周期性模拟盒中的自扩散系数随体系线性尺寸 \(L\) 改变。研究计算一系列不同尺寸的水体系，并沿 \(1/L\) 外推到无限大体系。其常用修正关系可写为：</p>
+
+        <div class="math-display" role="math" aria-label="扩散系数的有限尺寸修正">
+            \[
+            D(L)=D_{\infty}-\frac{\xi k_{\mathrm B}T}{6\pi\eta L}
+            \]
+        </div>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_2/finite-size-dynamics.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_2/finite-size-dynamics.png') }}"
+                     alt="不同第一性原理方法下扩散系数的有限尺寸外推和粘度收敛" width="1700" height="1252" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 1. 不同方法训练的 MLP-MD 模型给出扩散系数随 \(1/L\) 的线性关系，并通过长时间相关函数获得粘度。点击图片可查看高清原图。</figcaption>
+        </figure>
+
+        <p>这类大体系、长时程计算难以直接由 AIMD 完成，而 NEP 与 GPU 加速显著降低了计算成本。研究使用 GPUMD 计算自扩散与粘度，并将结果与经验水模型和实验数据统一比较。</p>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_2/method-summary.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_2/method-summary.png') }}"
+                     alt="不同第一性原理方法、经验水模型和实验的体相水性质汇总" width="2348" height="1106" loading="lazy" decoding="async">
+            </a>
+            <figcaption>表 1. 不同第一性原理方法、经验水模型与实验得到的扩散系数、粘度、二者乘积及结构熵参数。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">差异性：不同方法预测出不同的“水”</h2>
+
+        <p>高通量结果显示，不同电子结构方法计算得到的 \(D\) 和 \(\eta\) 存在显著差异。GGA、meta-GGA 和部分混合泛函在环境条件下难以同时准确预测水动力学，而显式包含更高层次电子多体关联的方法，如 CCSDT 与 AFQMC，整体上更接近实验。</p>
+
+        <p>这种差异并非简单的数值误差，而是反映了不同方法给出的氢键网络和结构熵不同。也就是说，每种近似方法都生成了一种具有自身结构和输运特征的“第一性水”。</p>
+
+        <h2 class="work-section-title">不变性：Stokes-Einstein 关系仍然成立</h2>
+
+        <p>令人意外的是，尽管 \(D\) 与 \(\eta\) 的单独数值分散很大，所有第一性水仍共同服从经典 Stokes-Einstein 关系：</p>
+
+        <div class="math-display" role="math" aria-label="Stokes-Einstein 关系">
+            \[
+            D=\frac{k_{\mathrm B}T}{c\pi\eta d_{\mathrm h}},
+            \qquad
+            \frac{D\eta}{T}\approx\mathrm{constant}
+            \]
+        </div>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_2/stokes-einstein.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_2/stokes-einstein.png') }}"
+                     alt="扩散系数和粘度的差异性以及 Stokes-Einstein 不变性" width="1548" height="1148" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 2. 各方法的 \(D\) 和 \(\eta\) 分布差异明显，但 \(D\eta\) 随温度近似线性变化，\(D\eta/T\) 保持稳定。该不变性对第一性水成立，却不适用于全部经验水模型。</figcaption>
+        </figure>
+
+        <p>这意味着即使某种方法无法分别准确给出扩散与粘度，二者的乘积仍可能与实验高度一致。该相关性还可帮助判断，为获得准确动力学而人为升高 AIMD 模拟温度是否合理。</p>
+
+        <h2 class="work-section-title">结构起源：二体剩余熵连接微观结构与输运</h2>
+
+        <p>研究进一步发现，动力学差异可以由结构熵解释。二体剩余熵 \(s_2\) 可由径向分布函数 \(g(r)\) 表示：</p>
+
+        <div class="math-display" role="math" aria-label="二体剩余熵定义">
+            \[
+            s_2=-2\pi\rho k_{\mathrm B}\int_0^{\infty}
+            \left[g(r)\ln g(r)-g(r)+1\right]r^2\,\mathrm dr
+            \]
+        </div>
+
+        <p>不同方法的数据共同落在结构熵标度线上：结构越有序，扩散越慢、粘度越高。由此，方法之间的 diversity 被转化为一条统一的结构—动力学关系：</p>
+
+        <div class="math-display" role="math" aria-label="扩散和粘度的二体剩余熵标度关系">
+            \[
+            \ln D\propto\frac{s_2}{k_{\mathrm B}},
+            \qquad
+            \ln\eta\propto-\frac{s_2}{k_{\mathrm B}}
+            \]
+        </div>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_2/entropy-scaling.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_2/entropy-scaling.png') }}"
+                     alt="扩散系数和粘度随二体剩余熵的标度关系" width="1662" height="670" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 3. 不同第一性原理方法的扩散系数和粘度共同服从二体剩余熵标度，揭示动力学差异背后的结构起源。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">研究意义</h2>
+
+        <p>这项工作说明，评价水模型或密度泛函不能只比较单一动力学参数，还应考察扩散—粘度耦合以及结构熵标度。结果为设计更可靠的水泛函提供了动力学判据，也突出电子多体关联在水模拟中的重要性。</p>
+
+
+
+        <section class="work-citation" aria-labelledby="citation-title">
+            <h2 id="citation-title">论文信息与相关资料</h2>
+            <p>Wei Tian, Chenyu Wang, Ke Zhou*, “The Dynamic Diversity and Invariance of Ab Initio Water,” <em>Journal of Chemical Theory and Computation</em> 20, 10667–10675 (2024). <a href="https://doi.org/10.1021/acs.jctc.4c01191" target="_blank" rel="noopener noreferrer">https://doi.org/10.1021/acs.jctc.4c01191</a></p>
+            <ol class="reference-list">
+                <li><a href="https://doi.org/10.1021/acs.jctc.4c00650" target="_blank" rel="noopener noreferrer">Ab Initio Simulation of Liquid Water without Artificial High Temperature</a>, JCTC 20, 8202–8213 (2024).</li>
+                <li><a href="https://doi.org/10.24435/materialscloud:q1-mz" target="_blank" rel="noopener noreferrer">Materials Cloud Archive 2024.183</a>: 本文数据集。</li>
+                <li>Ke Zhou*, Chen Qian, Yilun Liu, <em>J. Phys. Chem. B</em> 126, 10471–10480 (2022).</li>
+                <li>Chen Qian, Ke Zhou*, <em>Inorg. Chem.</em> 62, 17756–17765 (2023).</li>
+            </ol>
+        </section>
+    </article>
+</main>
+
+<footer id="mu-footer">
+    <div class="mu-footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mu-footer-bottom-area">
+                        <p class="mu-copy-right">&copy; Copyright &nbsp;&nbsp;&nbsp;&nbsp; Wanjian Yin Group</p>
+                        <p class="mu-copy-right">
+                            <a target="_blank" rel="noopener noreferrer" href="http://www.beian.miit.gov.cn/">赣ICP备20002676号-1</a>
+                        </p>
+                        <p class="mu-copy-right">
+                            <a target="_blank" rel="noopener noreferrer" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36113002000138">
+                                <img src="{{ url_for('static', filename='images/beian.png') }}" alt="">赣公网安备 36113002000138号
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/popper.min.js') }}"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/bootstrap_4.0.0.beta.min.js') }}"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+</body>
+</html>

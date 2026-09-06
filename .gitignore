@@ -1,0 +1,30 @@
+# Python runtime and generated caches
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local configuration and runtime state
+.env
+.env.*
+!.env.example
+*.log
+instance/
+uploads/
+tmp/
+
+# Deployment snapshots kept outside source control
+backups/
+
+# Distributable archives are published through GitHub Releases or a CDN
+static/download/*.zip
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp

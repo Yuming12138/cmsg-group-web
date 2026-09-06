@@ -1,0 +1,64 @@
+<header id="mu-hero" style="margin: 0 auto; width: 100%;">
+    <link href="{{ url_for('static', filename='css/switch_btn.css') }}" rel="stylesheet" />
+    <script>
+    function switchs(dom){
+        $.ajax({
+            type: "POST",
+            url: "{{ url_for('set_language') }}",
+            cache: false,
+            dataType: 'json',
+            data: {'language': $('#language').is(':checked')},
+            success: function (result) {
+                window.parent.location.reload();
+            }
+        });
+    }
+    </script>
+
+    <div style="max-width: 100vw; width: 100vw; margin-left: -50vw; left: 50%; position: relative;">
+        <nav class="navbar navbar-expand-lg navbar-light mu-navbar" style="background: rgba(255, 255, 255, 0.8) !important; backdrop-filter: blur(15px); border-bottom: 1px solid rgba(2, 132, 199, 0.15); padding: 15px 5vw;">
+            
+            <a class="navbar-brand mu-logo" href="{{ url_for('home') }}" style="display: flex; align-items: center; text-decoration: none;">
+                <img src="{{ url_for('static', filename='images/web_logo.svg') }}" alt="COMATES" style="height: 48px; width: auto; margin-right: 18px; object-fit: contain;">
+                <div style="display: flex; flex-direction: column; line-height: 1.1; text-align: left;">
+                    <span style="color: #0F172A; font-weight: 800; font-size: 1.3rem; letter-spacing: 0.3px;">
+                        <span style="color: #F59E0B;">CO</span>mputational
+                    </span>
+                    <span style="color: #0F172A; font-weight: 800; font-size: 1.3rem; letter-spacing: 0.3px;">
+                        <span style="color: #F59E0B;">MATE</span>rials <span style="color: #F59E0B;">S</span>cience
+                    </span>
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="fa fa-bars"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mu-navbar-nav" style="display: flex; width: 100%; justify-content: flex-end; gap: 25px; align-items: center;">
+                    <li class="nav-item {% if page=='home' %}active{% endif %}"><a href="{{ url_for('home') }}">Home</a></li>
+                    <li class="nav-item {% if page=='pi' %}active{% endif %}"><a href="{{ url_for('wanjian_yin') }}">PI</a></li>
+                    <li class="nav-item {% if page=='research' %}active{% endif %}"><a href="{{ url_for('research') }}">Research</a></li>
+                    <li class="nav-item {% if page=='publications' %}active{% endif %}"><a href="{{ url_for('publications') }}">Publications</a></li>
+                    <li class="nav-item {% if page=='members' %}active{% endif %}"><a href="{{ url_for('members') }}">Members</a></li>
+                    <li class="nav-item {% if page=='group_photo' %}active{% endif %}"><a href="{{ url_for('group_photo') }}">Group photo</a></li>
+                    <li class="nav-item {% if page=='contact' %}active{% endif %}"><a href="{{ url_for('contact') }}">Contact</a></li>
+                    <li class="nav-item {% if page=='links' %}active{% endif %}"><a href="{{ url_for('links') }}">Links</a></li>
+                    
+                    <li class="nav-item" style="margin-left: 20px;">
+                        <form action='' enctype="multipart/form-data" method="post" style="margin: 0;">
+                            <label style="cursor: pointer; margin: 0;">
+                                <input class="mui-switch" onclick="switchs(this)" type="checkbox" id="language" name="language" {% if use_en==True %}checked{% endif %} hidden>
+                                <div class="mui-switch-text" style="display: flex; align-items: center; border: 1px solid #0284C7; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; color: #0284C7; font-weight: 700; background: rgba(2, 132, 199, 0.05);">
+                                    <span>中文</span>&nbsp;|&nbsp;<span>EN</span>
+                                </div>
+                            </label>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>

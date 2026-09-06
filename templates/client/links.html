@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>常用链接｜计算材料科学课题组</title>
+    <meta name="keywords" content="计算材料科学,科研软件,材料数据库,学术资源,常用链接"/>
+    <meta name="description" content="计算材料科学课题组整理的科研软件、数据库与常用学术资源入口。"/>
+    <meta itemprop="name" content="常用链接｜计算材料科学课题组"/>
+    <meta itemprop="description" content="计算材料科学课题组整理的科研软件、数据库与常用学术资源入口。"/>
+    <link rel="canonical" href="https://www.comates.group/links"/>
+    <meta property="og:title" content="常用链接｜计算材料科学课题组"/>
+    <meta property="og:description" content="科研软件、材料数据库与常用学术资源入口。"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://www.comates.group/links"/>
+    <meta property="og:image" content="https://www.comates.group/static/images/web_logo.png"/>
+    <meta property="og:image:secure_url" content="https://www.comates.group/static/images/web_logo.png"/>
+    <meta property="og:image:type" content="image/png"/>
+    <meta property="og:image:width" content="284"/>
+    <meta property="og:image:height" content="284"/>
+    <meta property="og:image:alt" content="计算材料科学课题组标志"/>
+    <meta property="og:locale" content="zh_CN"/>
+    <meta property="og:site_name" content="Computational Materials Science Group"/>
+    <meta itemprop="image" content="https://www.comates.group/static/images/web_logo.png"/>
+    <link rel="image_src" href="https://www.comates.group/static/images/web_logo.png"/>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/icon" href="{{ url_for('static', filename='images/web_logo.svg') }}"/>
+    <!-- Font Awesome -->
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap_4.0.0.beta.min.css') }}"
+          integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- Slick slider -->
+    <link href="{{ url_for('static', filename='css/slick.css') }}" rel="stylesheet">
+    <!-- Gallery Lightbox -->
+    <link href="{{ url_for('static', filename='css/magnific-popup.css') }}" rel="stylesheet">
+    <!-- Skills Circle CSS  -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/circle.css') }}">
+
+
+    <!-- Main Style -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/my_list.css') }}" rel="stylesheet">
+
+    <!-- Fonts -->
+
+    <!-- Google Fonts Raleway -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,500i,600,700" rel="stylesheet">
+    <!-- Google Fonts Open sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,700,800" rel="stylesheet">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/baidu_tongji.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/baidu_sousuo.js') }}"></script>
+    <script type="text/javascript"
+            src="https://d3eoax9i5htok0.cloudfront.net/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            CommonHTML: {
+                font: "Times New Roman"
+            }
+        };
+    </script>
+    <script id="MathJax-script" async
+            src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+</head>
+<body>
+<!--START SCROLL TOP BUTTON -->
+<a class="scrollToTop" href="#">
+    <i class="fa fa-angle-up"></i>
+</a>
+<!-- END SCROLL TOP BUTTON -->
+
+<!-- Start Header -->
+{% include "client/header.html" %}
+<!-- End Header -->
+
+<div style="margin: 20px auto;max-width: 1100px;">
+    <div style="margin-top: 1.5em;display: inline;float: left;width: 100%;">
+        <div class="my-list">
+            <ol class="rectangle-list">
+
+                <li id="rectangle-list-li">  <!-- Our Software -->
+                    <h5>Our Software</h5>
+                    <div class="links">
+                        <ul>
+                            <li>GN-OA - <a href={{ url_for('links') }}?software=gn_oa>Go to the detail page</a></li>
+                            <li>D$^3$REAM - <a href={{ url_for('links') }}?software=d3ream>Go to the detail page</a></li>
+{#                            <li>VASP - <a target="_blank" href="https://www.vasp.at/">Go to the detail page</a></li>#}
+                        </ul>
+                    </div>
+                </li>  <!-- Our Software -->
+
+                <li id="rectangle-list-li">  <!-- Third-Party Software -->
+                    <h5>Third-Party Software</h5>
+                    <div class="links">
+                        <ul>
+{#                            <li>GN-OA - <a href={{ url_for('links') }}?software=gn_boss>Go to the detail page</a></li>#}
+                            <li>VASP - <a target="_blank" href="https://www.vasp.at/">Go to the detail page</a></li>
+                            <li>Materials Studio - <a target="_blank" href="https://www.3ds.com/products-services/biovia/products/molecular-modeling-simulation/biovia-materials-studio/">Go to the detail page</a></li>
+                            <li>VESTA - <a target="_blank" href="http://www.jp-minerals.org/vesta/en/">Go to the detail page</a></li>
+                        </ul>
+                    </div>
+                </li>  <!-- Third-Party Software -->
+
+                <li id="rectangle-list-li">  <!-- Course -->
+                    <h5>Course</h5>
+                    <div class="links">
+                        <ul>
+                            <li>Atomistic Computer Modeling of Materials (SMA 5107) - <a target="_blank" href="https://ocw.mit.edu/courses/materials-science-and-engineering/3-320-atomistic-computer-modeling-of-materials-sma-5107-spring-2005/lecture-notes/">Go to the detail page</a></li>
+                            <li>量子力学（田光善|北京大学） - <a target="_blank" href="https://www.bilibili.com/video/BV1hx41167mE">Go to the detail page</a></li>
+                            <li>数学物理方法（吴崇试|北京大学） - <a target="_blank" href="https://www.icourses.cn/sCourse/course_3569.html">Go to the detail page</a></li>
+                        </ul>
+                    </div>
+                </li>  <!-- Course -->
+                <li id="rectangle-list-li">  <!-- Manual -->
+                    <h5>Manual</h5>
+                    <div class="links">
+                        <ul>
+                            <li>VASP Manual - <a target="_blank" href="https://www.vasp.at/wiki/index.php/The_VASP_Manual">Go to the detail page</a></li>
+                            <li>VESTA Manual - <a target="_blank" href="http://www.jp-minerals.org/vesta/en/doc.html">Go to the detail page</a></li>
+                        </ul>
+                    </div>
+                </li>  <!-- Manual -->
+                <li id="rectangle-list-li">  <!-- Database -->
+                    <h5>Database</h5>
+                    <div class="links">
+                        <ul>
+                            <li>ICSD - <a target="_blank" href="https://icsd.products.fiz-karlsruhe.de">Go to the detail page</a></li>
+                            <li>Materials Project - <a target="_blank" href="https://materialsproject.org/">Go to the detail page</a></li>
+                            <li>OQMD - <a target="_blank" href="http://oqmd.org/">Go to the detail page</a></li>
+                        </ul>
+                    </div>
+                </li>  <!-- Database -->
+            </ol>
+        </div>
+    </div>
+</div>
+
+<!-- Start footer -->
+<footer id="mu-footer">
+    <div class="mu-footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mu-footer-bottom-area">
+                        <p class="mu-copy-right">
+                            &copy; Copyright &nbsp;&nbsp;&nbsp;&nbsp; Wanjian Yin Group
+                        </p>
+                        <p class="mu-copy-right">
+                            <a target="_blank" href="http://www.beian.miit.gov.cn/">
+                                赣ICP备20002676号-1
+                            </a>
+                        </p>
+                        <p class="mu-copy-right">
+                            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=36113002000138">
+                                <img src="{{ url_for('static', filename='images/beian.png') }}" alt=""/>
+                                赣公网安备 36113002000138号
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+<!-- End footer -->
+
+
+<!-- JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/popper.min.js') }}"
+        integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+<script src="{{ url_for('static', filename='js/bootstrap_4.0.0.beta.min.js') }}"
+        integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+<!-- Slick slider -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/slick.min.js') }}"></script>
+<!-- Progress Bar -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/circle.js') }}"></script>
+<!-- Filterable Gallery js -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.filterizr.min.js') }}"></script>
+<!-- Gallery Lightbox -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+<!-- Counter js -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/counter.js') }}"></script>
+<!-- Ajax contact form  -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+
+<!-- Custom js -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/custom.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/diandian.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/fuqiang.js') }}"></script>
+
+<!-- About us Skills Circle progress  -->
+<script>
+    // First circle
+    new Circlebar({
+        element: "#circle-1",
+        type: "progress",
+        maxValue: "90"
+    });
+
+    // Second circle
+    new Circlebar({
+        element: "#circle-2",
+        type: "progress",
+        maxValue: "84"
+    });
+
+    // Third circle
+    new Circlebar({
+        element: "#circle-3",
+        type: "progress",
+        maxValue: "60"
+    });
+
+    // Fourth circle
+    new Circlebar({
+        element: "#circle-4",
+        type: "progress",
+        maxValue: "74"
+    });
+
+</script>
+
+</body>
+</html>

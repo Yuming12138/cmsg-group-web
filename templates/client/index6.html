@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <title>Computational Materials Science Group : Wan-Jian Yin Group</title>
+    <meta name="keywords" content="尹万健,wanjian yin,计算材料科学,课题组,Computational Materials,机器学习,DFT" />
+    <meta name="description" content="苏州大学能源学院尹万健教授课题组，Wanjian Yin Group"/>
+    
+    <meta name="baidu-site-verification" content="cO97hdfUV9"/>  
+    <script type="text/javascript" src="{{ url_for('static', filename='js/baidu_tongji.js') }}"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="shortcut icon" type="image/icon" href="{{ url_for('static', filename='images/web_logo.svg') }}"/>
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap_4.0.0.beta.min.css') }}">
+    <link href="{{ url_for('static', filename='css/slick.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/slick-theme.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/circle.css') }}">
+
+    <style type="text/css">
+        :root {
+            --bg-page: #F0F9FF; /* 极致清透的科技浅蓝 */
+            --accent-blue: #0284C7; 
+            --accent-glow: rgba(14, 165, 233, 0.3);
+            --card-glass: rgba(255, 255, 255, 0.7);
+        }
+
+        body {
+            background-color: var(--bg-page);
+            font-family: 'Inter', sans-serif;
+            color: #0F172A;
+            margin: 0; padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* 🤖 动态 AI 背景容器 */
+        #ai-bg-canvas {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; pointer-events: none;
+            opacity: 0.6;
+        }
+
+        /* 轮播图：科幻画框设计 */
+        #mu-slider {
+            width: 90%; max-width: 1300px; margin: 40px auto 60px;
+            background: var(--card-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(2, 132, 199, 0.1);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(2, 132, 199, 0.08);
+            overflow: hidden;
+        }
+
+        .slide-img-wrapper {
+            width: 100%; height: 500px; padding: 30px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .slide-img-wrapper img {
+            width: 100%; height: 100%; object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.05));
+        }
+
+        .mu-single-slide-content {
+            padding: 35px 50px; background: rgba(255, 255, 255, 0.85);
+            text-align: center; border-top: 1px solid rgba(2, 132, 199, 0.08);
+        }
+        .mu-single-slide-content h1 {
+            font-size: 1.3rem !important; font-weight: 600; margin-bottom: 12px;
+            color: #1E293B; line-height: 1.6;
+        }
+        .mu-single-slide-content p {
+            font-family: 'Roboto Mono', monospace; color: var(--accent-blue);
+            font-size: 0.95rem; margin-bottom: 20px; font-weight: 500;
+        }
+
+        .mu-primary-btn {
+            display: inline-flex; align-items: center; padding: 8px 30px;
+            background: var(--accent-blue); color: #fff !important; border-radius: 50px;
+            font-weight: 600; font-size: 0.9rem; text-decoration: none;
+            box-shadow: 0 5px 15px rgba(2, 132, 199, 0.3); transition: 0.3s;
+        }
+        .mu-primary-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(2, 132, 199, 0.5); }
+
+        /* 研究方向卡片 */
+        #mu-about { padding: 40px 0 80px; max-width: 1200px; margin: 0 auto; }
+        .mu-title h2 { text-align: center; font-size: 2.2rem; font-weight: 800; margin-bottom: 50px; color: #0F172A; }
+        
+        .research-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 0 15px; }
+        .research-card {
+            background: var(--card-glass); backdrop-filter: blur(10px);
+            padding: 40px 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.8);
+            border-top: 4px solid var(--accent-blue); transition: 0.4s;
+        }
+        .research-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(2, 132, 199, 0.1); background: #fff; }
+        .research-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 15px; }
+        .research-card p { font-size: 0.95rem; color: #475569; line-height: 1.7; }
+
+        /* 页脚 */
+        #mu-footer { padding: 50px 0; background: #0F172A; text-align: center; color: #94A3B8; }
+        .mu-copy-right { font-size: 0.85rem; margin-bottom: 10px; }
+        .mu-copy-right a { color: #CBD5E1; text-decoration: none; }
+    </style>
+</head>
+<body>
+
+<canvas id="ai-bg-canvas"></canvas>
+
+{% include "client/header.html" %}
+
+<div style="margin: 0 auto;">
+    <div id="mu-slider" class="lazy">
+        <div class="mu-single-slide">
+            <div class="slide-img-wrapper"><img src="{{ url_for('static', filename='images/home_0_13.jpg') }}"></div>
+            <div class="mu-single-slide-content">
+                <h1>祝贺陈高远在 Chem 上发表论文，基于 SSW 方法确定了 CsPbI3 钙钛矿 γ→δ 相转变路径</h1>
+                <p>G.-Y. Chen, Z.-D. Guo, X.-G. Gong, W.-J. Yin, Chem (2022)</p>
+                <a class="mu-primary-btn" target="_blank" href="https://doi.org/10.1016/j.chempr.2022.07.026">View Details</a>
+            </div>
+        </div>
+        <div class="mu-single-slide">
+            <div class="slide-img-wrapper"><img src="{{ url_for('static', filename='images/home_0_10.jpg') }}"></div>
+            <div class="mu-single-slide-content">
+                <h1>祝贺程观剑在 Nature Communications 上发表论文，结合机器学习和优化算法加速晶体结构预测</h1>
+                <p>G. Cheng, X.-G. Gong, W.-J. Yin, Nat Commun. 13, 1492 (2022)</p>
+                <a class="mu-primary-btn" target="_blank" href="https://doi.org/10.1038/s41467-022-29241-4">Read Paper</a>
+            </div>
+        </div>
+        </div>
+
+    <main id="mu-about">
+        <div class="mu-title"><h2>Solving Materials Challenge through AI</h2></div>
+        <div class="research-grid">
+            <div class="research-card">
+                <h3>Defect Physics</h3>
+                <p>Developing approaches for defect calculation based on first-principles for semiconductors and solar absorbers.</p>
+            </div>
+            <div class="research-card">
+                <h3>Materials Design</h3>
+                <p>High-throughput computing and machine learning for renewable energy harvesting materials.</p>
+            </div>
+            <div class="research-card">
+                <h3>AI Physics</h3>
+                <p>Focusing on the deep integration of AI (GNNs, symbolic regression) and multi-scale physical modeling.</p>
+            </div>
+        </div>
+    </main>
+</div>
+
+<footer id="mu-footer">
+    <div class="container">
+        <p class="mu-copy-right">&copy; Wanjian Yin Group. All Rights Reserved.</p>
+        <p class="mu-copy-right"><a target="_blank" href="http://www.beian.miit.gov.cn/">赣ICP备20002676号-1</a></p>
+    </div>
+</footer>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap_4.0.0.beta.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/slick.min.js') }}"></script>
+
+<script>
+    // 🎨 AI 背景动画：绘制漂浮的晶体节点和连线
+    const canvas = document.getElementById('ai-bg-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function init() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        particles = [];
+        for (let i = 0; i < 80; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.5,
+                vy: (Math.random() - 0.5) * 0.5,
+                size: Math.random() * 2 + 1
+            });
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = 'rgba(2, 132, 199, 0.4)';
+        ctx.strokeStyle = 'rgba(2, 132, 199, 0.1)';
+
+        particles.forEach((p, i) => {
+            p.x += p.vx; p.y += p.vy;
+            if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+            
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fill();
+
+            for (let j = i + 1; j < particles.length; j++) {
+                const p2 = particles[j];
+                const dx = p.x - p2.x;
+                const dy = p.y - p2.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 150) {
+                    ctx.beginPath();
+                    ctx.moveTo(p.x, p.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    ctx.stroke();
+                }
+            }
+        });
+        requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', init);
+    init(); animate();
+
+    $(".lazy").slick({
+        arrows: true, dots: false, slidesToShow: 1,
+        autoplay: true, autoplaySpeed: 5000, fade: true,
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)'
+    });
+</script>
+</body>
+</html>
