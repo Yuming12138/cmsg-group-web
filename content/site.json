@@ -1,0 +1,21 @@
+{
+  "name": "CMSG",
+  "full_name": "Computational Materials Science Group",
+  "description": "A content-first foundation for a computational materials research group.",
+  "locale": "en",
+  "nav": [
+    {"id": "home", "label": "Home", "href": "/"},
+    {"id": "research", "label": "Research", "href": "/research"},
+    {"id": "leader", "label": "Leader", "href": "/leader"},
+    {"id": "publications", "label": "Publications", "href": "/publications"},
+    {"id": "events", "label": "Events", "href": "/events"},
+    {"id": "news", "label": "News", "href": "/news"},
+    {"id": "code-platform", "label": "Code & Platform", "href": "/code-platform"},
+    {"id": "people", "label": "People", "href": "/people"}
+  ],
+  "footer": {
+    "note": "Visual foundation v1. All research content is placeholder copy.",
+    "location": "Location placeholder · City · Country",
+    "email": "contact@example.edu"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "meta": {"title": "Events · CMSG", "description": "Placeholder events index."},
+  "kicker": "Events",
+  "title": "Conversations, seminars, and shared moments.",
+  "intro": "A chronological home for seminars, conference participation, visits, workshops, and group activities.",
+  "layout": "timeline",
+  "items": [
+    {"date": "DD / MM / YYYY", "type": "Seminar", "title": "Event title placeholder", "summary": "Speaker, venue, and short context placeholder."},
+    {"date": "DD / MM / YYYY", "type": "Conference", "title": "Event title placeholder", "summary": "Participation, venue, and short context placeholder."},
+    {"date": "DD / MM / YYYY", "type": "Workshop", "title": "Event title placeholder", "summary": "Topic, venue, and short context placeholder."}
+  ]
+}

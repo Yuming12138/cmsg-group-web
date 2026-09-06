@@ -1,0 +1,73 @@
+{% extends 'site/base.html' %}
+
+{% block content %}
+<section class="section section--page-intro">
+  <div class="shell page-intro-grid reveal">
+    <p class="section-label">{{ page.kicker }}</p>
+    <div>
+      <h1>{{ page.title }}</h1>
+      <p class="page-intro__body">{{ page.intro }}</p>
+    </div>
+  </div>
+</section>
+
+{% if page.layout == 'profile' %}
+<section class="section section--profile">
+  <div class="shell profile-layout reveal">
+    <div class="portrait-placeholder" role="img" aria-label="Portrait placeholder for {{ page.profile.name }}"><span>{{ page.profile.initials }}</span></div>
+    <div class="profile-copy">
+      <p class="section-label">Profile placeholder</p>
+      <h2>{{ page.profile.name }}</h2>
+      <p class="profile-role">{{ page.profile.role }}</p>
+      <p>{{ page.profile.bio }}</p>
+      <ul class="detail-list">
+        {% for detail in page.profile.details %}<li>{{ detail }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{% elif page.layout == 'people' %}
+<section class="section section--people">
+  <div class="shell people-groups">
+    {% for group in page.groups %}
+    <div class="people-group reveal">
+      <div class="people-group__heading"><p class="section-label">{{ '%02d'|format(loop.index) }}</p><h2>{{ group.title }}</h2></div>
+      <div class="people-grid">
+        {% for member in group.members %}
+        <article class="person-card"><div class="person-card__avatar" aria-hidden="true">{{ member.initials }}</div><h3>{{ member.name }}</h3><p>{{ member.role }}</p></article>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+{% elif page.layout == 'list' %}
+<section class="section section--list">
+  <div class="shell content-list">
+    {% for item in page['items'] %}
+    <article class="content-row reveal">
+      <div class="content-row__meta"><time>{{ item.date }}</time><span>{{ item.type }}</span></div>
+      <div class="content-row__body"><h2>{{ item.title }}</h2><p>{% if item.authors %}{{ item.authors }} · {% endif %}{{ item.summary if item.summary is defined else item.venue }}</p></div>
+      <span class="content-row__arrow" aria-hidden="true">↗</span>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% elif page.layout == 'timeline' %}
+<section class="section section--timeline">
+  <div class="shell timeline-list">
+    {% for item in page['items'] %}
+    <article class="timeline-item reveal"><time>{{ item.date }}</time><div><p class="section-label">{{ item.type }}</p><h2>{{ item.title }}</h2><p>{{ item.summary }}</p></div></article>
+    {% endfor %}
+  </div>
+</section>
+{% else %}
+<section class="section section--cards">
+  <div class="shell cards-grid">
+    {% for item in page['items'] %}
+    <article class="feature-card reveal"><span class="feature-card__index">{{ item.index }}</span><p class="section-label">{{ item.meta }}</p><h2>{{ item.title }}</h2><p>{{ item.summary }}</p><span class="feature-card__arrow" aria-hidden="true">↗</span></article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+{% endblock %}

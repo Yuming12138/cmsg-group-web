@@ -1,0 +1,13 @@
+{
+  "meta": {"title": "Research · CMSG", "description": "Placeholder research directions."},
+  "kicker": "Research",
+  "title": "Questions first. Methods in service of understanding.",
+  "intro": "Placeholder content for the group's major research directions. Each entry can later expand into a dedicated page without changing this index.",
+  "layout": "cards",
+  "items": [
+    {"index": "01", "title": "Research direction placeholder", "meta": "Theme / Method", "summary": "A concise description of the scientific question and the approach used to study it."},
+    {"index": "02", "title": "Research direction placeholder", "meta": "Theme / Method", "summary": "A concise description of the scientific question and the approach used to study it."},
+    {"index": "03", "title": "Research direction placeholder", "meta": "Theme / Method", "summary": "A concise description of the scientific question and the approach used to study it."},
+    {"index": "04", "title": "Research direction placeholder", "meta": "Theme / Method", "summary": "A concise description of the scientific question and the approach used to study it."}
+  ]
+}

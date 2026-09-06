@@ -1,0 +1,12 @@
+{
+  "meta": {"title": "Code & Platform · CMSG", "description": "Placeholder tools and platforms."},
+  "kicker": "Code & Platform",
+  "title": "Research tools should be discoverable, legible, and maintainable.",
+  "intro": "Projects, documentation, repositories, releases, and external download locations can be managed from this page.",
+  "layout": "cards",
+  "items": [
+    {"index": "A", "title": "Software project placeholder", "meta": "Open source / Repository", "summary": "Purpose, maturity, documentation, citation, and release links will appear here."},
+    {"index": "B", "title": "Platform placeholder", "meta": "Web platform / Service", "summary": "Purpose, access notes, documentation, and external resource links will appear here."},
+    {"index": "C", "title": "Dataset placeholder", "meta": "Data / Archive", "summary": "Scope, version, license, citation, and CDN or release links will appear here."}
+  ]
+}

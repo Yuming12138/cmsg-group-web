@@ -1,0 +1,55 @@
+# CMSG Group Web — foundation brief
+
+## 1. Product identity
+
+- **Surface:** content-driven academic research group website
+- **Primary audience:** prospective collaborators, students, researchers, and visitors
+- **Voice:** precise, calm, bilingual-ready, evidence-led
+- **Stage:** visual foundation; current copy is intentionally placeholder content
+
+## 2. Design intent
+
+The site should feel like a carefully edited research journal: quiet in its chrome,
+confident in its typography, and generous with visual rhythm. The home page uses
+the user-provided image of Kandinsky's *Composition VIII* as an immersive hero
+backdrop. The rest of the interface returns to an ivory paper tone so research
+content remains legible.
+
+## 3. Experience principles
+
+1. **Content is data.** Navigation, section headings, cards, people, publications,
+   and events live in `content/*.json`; templates provide structure only.
+2. **One clear hierarchy.** A visitor should understand the group's scope, current
+   work, and next path within one scroll.
+3. **Editorial restraint.** Use a warm neutral base, charcoal ink, one copper accent,
+   hairline rules, and intentional asymmetry. Avoid decorative gradients, emoji, and
+   repeated icon-card patterns.
+4. **Progressive disclosure.** Keep the home page concise; section pages can grow
+   without requiring a new layout.
+5. **Accessible by default.** Visible focus, keyboard navigation, semantic landmarks,
+   readable contrast, and reduced-motion support are non-negotiable.
+
+## 4. Current visual candidate (v1)
+
+- **Aesthetic lane:** editorial Swiss grid with a museum-catalogue calm
+- **Theme:** ivory / charcoal / copper, with the hero image providing the color field
+- **Typography:** system humanist sans for interface copy, restrained serif for display
+- **Motion:** subtle 300ms reveal and hover transitions; no scroll-jacking
+- **Signature bet:** navigation and hero metadata are treated as printed margin marks
+  layered over the artwork
+- **Variance:** 6/10; enough asymmetry to feel authored, still easy to scan
+
+## 5. Content strategy
+
+All visible copy in this first pass is marked as a placeholder. Replace values in the
+JSON files before publishing factual claims, dates, names, or links. The loader keeps
+the schema intentionally small so future content work does not require a template
+rewrite.
+
+## 6. Learned constraints
+
+- The user wants multiple visual iterations before committing to final content.
+- The home page should use the provided Kandinsky *Composition VIII* image as a large
+  background treatment.
+- This foundation may use placeholders; do not infer or publish old content as fact.
+- The repository should remain easy to roll back to the baseline branch.

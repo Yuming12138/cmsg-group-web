@@ -1,0 +1,14 @@
+{
+  "meta": {"title": "Leader · CMSG", "description": "Placeholder group leader profile."},
+  "kicker": "Leader",
+  "title": "Leadership grounded in scientific curiosity.",
+  "intro": "This page is reserved for a concise biography, research vision, selected recognition, and contact information.",
+  "layout": "profile",
+  "profile": {
+    "name": "Group leader placeholder",
+    "role": "Principal investigator / title placeholder",
+    "bio": "A short, carefully edited biography will appear here after the visual direction is approved and the source material is reviewed.",
+    "details": ["Education placeholder", "Research focus placeholder", "Affiliation placeholder"],
+    "initials": "PI"
+  }
+}

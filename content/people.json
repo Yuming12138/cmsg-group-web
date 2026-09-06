@@ -1,0 +1,12 @@
+{
+  "meta": {"title": "People · CMSG", "description": "Placeholder people directory."},
+  "kicker": "People",
+  "title": "A group is a changing constellation of people and ideas.",
+  "intro": "Member data will later include names, roles, research interests, portraits, destinations, and individual profile pages.",
+  "layout": "people",
+  "groups": [
+    {"title": "Faculty", "members": [{"name": "Name placeholder", "role": "Role placeholder", "initials": "PI"}]},
+    {"title": "Researchers", "members": [{"name": "Name placeholder", "role": "Research interest placeholder", "initials": "R1"}, {"name": "Name placeholder", "role": "Research interest placeholder", "initials": "R2"}]},
+    {"title": "Students", "members": [{"name": "Name placeholder", "role": "Research interest placeholder", "initials": "S1"}, {"name": "Name placeholder", "role": "Research interest placeholder", "initials": "S2"}, {"name": "Name placeholder", "role": "Research interest placeholder", "initials": "S3"}]}
+  ]
+}

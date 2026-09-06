@@ -1,0 +1,66 @@
+{
+  "meta": {
+    "title": "CMSG — Computational Materials Science Group",
+    "description": "A placeholder, content-driven foundation for the CMSG research group website."
+  },
+  "hero": {
+    "eyebrow": "Computational Materials Science Group",
+    "title": "Matter, models, and the space between.",
+    "summary": "A quiet framework for research stories, people, publications, and open tools.",
+    "primary_cta": {"label": "Explore research", "href": "/research"},
+    "secondary_cta": {"label": "Meet the group", "href": "/people"},
+    "artwork": "Wassily Kandinsky · Composition VIII · 1923",
+    "edition": "Visual study 01 / placeholder content"
+  },
+  "intro": {
+    "label": "The group",
+    "title": "We study how computation can reveal and design the structures of matter.",
+    "body": "This is placeholder copy for the future group statement. It demonstrates the intended reading width, rhythm, and hierarchy without importing unreviewed legacy content."
+  },
+  "research": {
+    "label": "Selected directions",
+    "title": "Research is presented as a connected field, not a catalogue.",
+    "items": [
+      {
+        "index": "01",
+        "title": "Research direction placeholder",
+        "summary": "A short statement will explain the scientific question, method, and why the work matters.",
+        "meta": "Theme / Method",
+        "href": "/research"
+      },
+      {
+        "index": "02",
+        "title": "Research direction placeholder",
+        "summary": "Future content can connect models, datasets, experiments, and publications through one shared entry.",
+        "meta": "Theme / Method",
+        "href": "/research"
+      },
+      {
+        "index": "03",
+        "title": "Research direction placeholder",
+        "summary": "The content layer can grow without changing the visual grammar or navigation structure.",
+        "meta": "Theme / Method",
+        "href": "/research"
+      }
+    ]
+  },
+  "signals": [
+    {"value": "08", "label": "Content sections"},
+    {"value": "JSON", "label": "Single content source"},
+    {"value": "01", "label": "Visual candidate"}
+  ],
+  "updates": {
+    "label": "Latest signals",
+    "title": "A flexible stream for publications, news, and events.",
+    "items": [
+      {"type": "Publication", "date": "YYYY.MM", "title": "Publication title placeholder", "href": "/publications"},
+      {"type": "News", "date": "YYYY.MM", "title": "News headline placeholder", "href": "/news"},
+      {"type": "Event", "date": "YYYY.MM", "title": "Event title placeholder", "href": "/events"}
+    ]
+  },
+  "closing": {
+    "title": "The structure is ready for the work that will define it.",
+    "body": "When the visual direction is approved, factual content can be introduced one section at a time.",
+    "cta": {"label": "View the content map", "href": "/research"}
+  }
+}

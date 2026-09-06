@@ -1,0 +1,13 @@
+{
+  "meta": {"title": "Publications · CMSG", "description": "Placeholder publication index."},
+  "kicker": "Publications",
+  "title": "Selected work, organized for reading rather than counting.",
+  "intro": "The publication index will support years, topics, authors, external links, and featured papers from this content file.",
+  "layout": "list",
+  "items": [
+    {"date": "YYYY", "type": "Journal", "title": "Publication title placeholder", "authors": "Author list placeholder", "venue": "Journal and link placeholder"},
+    {"date": "YYYY", "type": "Journal", "title": "Publication title placeholder", "authors": "Author list placeholder", "venue": "Journal and link placeholder"},
+    {"date": "YYYY", "type": "Preprint", "title": "Publication title placeholder", "authors": "Author list placeholder", "venue": "Repository and link placeholder"},
+    {"date": "YYYY", "type": "Journal", "title": "Publication title placeholder", "authors": "Author list placeholder", "venue": "Journal and link placeholder"}
+  ]
+}

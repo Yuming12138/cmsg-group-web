@@ -1,0 +1,12 @@
+{
+  "meta": {"title": "News · CMSG", "description": "Placeholder news stream."},
+  "kicker": "News",
+  "title": "A concise record of what is changing.",
+  "intro": "Announcements can be added as short entries here and promoted to the home page without editing a template.",
+  "layout": "list",
+  "items": [
+    {"date": "YYYY.MM", "type": "Announcement", "title": "News headline placeholder", "summary": "One-sentence summary placeholder."},
+    {"date": "YYYY.MM", "type": "People", "title": "News headline placeholder", "summary": "One-sentence summary placeholder."},
+    {"date": "YYYY.MM", "type": "Research", "title": "News headline placeholder", "summary": "One-sentence summary placeholder."}
+  ]
+}
