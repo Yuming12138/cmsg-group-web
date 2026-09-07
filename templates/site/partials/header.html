@@ -16,7 +16,11 @@
         </li>
         {% endfor %}
       </ul>
-      <a class="language-switch" href="{{ language_url }}" aria-label="{{ ui.switch_to_zh if language == 'en' else ui.switch_to_en }}">{{ ui.switch_to_zh if language == 'en' else ui.switch_to_en }}</a>
+      <a class="language-switch" href="{{ language_url }}" aria-label="{{ ui.switch_to_zh if language == 'en' else ui.switch_to_en }}">
+        <span class="language-switch__option{% if language == 'zh' %} is-active{% endif %}">中</span>
+        <span class="language-switch__divider" aria-hidden="true">/</span>
+        <span class="language-switch__option{% if language == 'en' %} is-active{% endif %}">EN</span>
+      </a>
     </nav>
   </div>
 </header>

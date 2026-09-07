@@ -37,8 +37,11 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .site-nav__link::after { position: absolute; right: 0; bottom: 2px; left: 0; height: 1px; background: var(--copper-600); content: ""; transform: scaleX(0); transform-origin: right; transition: transform 180ms var(--ease-out); }
 .site-nav__link:hover, .site-nav__link.is-active { color: var(--white); }
 .site-nav__link.is-active::after, .site-nav__link:hover::after { transform: scaleX(1); transform-origin: left; }
-.language-switch { padding: 9px 0; color: rgba(255,255,255,.74); font: 600 11px/1 var(--mono); letter-spacing: .08em; }
+.language-switch { display: inline-flex; align-items: center; gap: 7px; padding: 9px 0; color: rgba(255,255,255,.74); font: 600 11px/1 var(--mono); letter-spacing: .08em; }
 .language-switch:hover { color: var(--white); }
+.language-switch__option { opacity: .48; transition: opacity 160ms ease-out, color 160ms ease-out; }
+.language-switch__option.is-active { opacity: 1; color: currentColor; text-decoration: underline; text-decoration-color: var(--copper-600); text-decoration-thickness: 1px; text-underline-offset: 4px; }
+.language-switch__divider { opacity: .34; }
 .menu-toggle { display: none; border: 0; background: transparent; color: inherit; cursor: pointer; }
 
 /* Content pages sit on paper rather than artwork. Keep the same structure, but
