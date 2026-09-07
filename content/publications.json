@@ -1,24 +1,1652 @@
 {
-  "meta": {"title": "Publications · CMSG", "description": "Selected publications from the Computational Materials Science Group."},
+  "meta": {
+    "title": "Publications · CMSG",
+    "description": "Complete publication record from the Computational Materials Science Group."
+  },
   "kicker": "Publications",
-  "title": "Selected work, organized for reading rather than counting.",
-  "intro": "A recent selection from CMSG and collaborators. Each entry keeps its authorship, venue, and DOI close at hand.",
+  "title": "Publication record, organized by year.",
+  "intro": "The complete publication record keeps each paper, venue, and DOI visible in one continuous timeline.",
   "layout": "publications",
   "items": [
-    {"number": 164, "date": "2025", "type": "ACS Nano", "title": "Machine-Learning Potential Molecular Dynamics Reveals the Critical Role of Flexibility in Solid-Liquid Nanofluidic Friction", "authors": "Junyu Lian, Shiping Jiao, Wan-Jian Yin, Ke Zhou", "venue": "DOI 10.1021/acsnano.5c08363", "href": "https://doi.org/10.1021/acsnano.5c08363"},
-    {"number": 163, "date": "2025", "type": "J. Phys. Chem. Lett.", "title": "De Novo Inverse Design Superhard C–N Compounds via Global Machine Learning Interatomic Potentials and Multiobjective Optimization Algorithm", "authors": "Guanjian Cheng, Wan-Jian Yin", "venue": "DOI 10.1021/acs.jpclett.5c00181", "href": "https://doi.org/10.1021/acs.jpclett.5c00181"},
-    {"number": 162, "date": "2025", "type": "Computational Materials Today", "title": "Elemental Augmentation of Machine Learning Interatomic Potentials", "authors": "Haibo Xue, Guanjian Cheng, Wan-Jian Yin", "venue": "DOI 10.1016/j.commt.2025.100026", "href": "https://doi.org/10.1016/j.commt.2025.100026"},
-    {"number": 161, "date": "2024", "type": "Nature Communications", "title": "Machine learning enables the discovery of 2D Invar and anti-Invar monolayers", "authors": "Shun Tian, Ke Zhou, Wanjian Yin, Yilun Liu", "venue": "DOI 10.1038/s41467-024-51379-6", "href": "https://doi.org/10.1038/s41467-024-51379-6"},
-    {"number": 160, "date": "2024", "type": "Advanced Review", "title": "Computational design of energy-related materials: From first-principles calculations to machine learning", "authors": "Haibo Xue, Guanjian Cheng, Wan-Jian Yin", "venue": "DOI 10.1002/wcms.1732", "href": "https://doi.org/10.1002/wcms.1732"},
-    {"number": 159, "date": "2024", "type": "J. Chem. Theory Comput.", "title": "The Dynamic Diversity and Invariance of Ab Initio Water", "authors": "Wei Tian, Chengyu Wang, Ke Zhou", "venue": "DOI 10.1021/acs.jctc.4c01191", "href": "https://doi.org/10.1021/acs.jctc.4c01191"},
-    {"number": 158, "date": "2024", "type": "J. Chem. Theory Comput.", "title": "Ab Initio Simulation of Liquid Water without Artificial High Temperature", "authors": "Chengyu Wang, Wei Tian, Ke Zhou", "venue": "DOI 10.1021/acs.jctc.4c00650", "href": "https://doi.org/10.1021/acs.jctc.4c00650"},
-    {"number": 157, "date": "2024", "type": "Advanced Science", "title": "Understanding Defects in Perovskite Solar Cells through Computation: Current Knowledge and Future Challenge", "authors": "Zhendong Guo et al.", "venue": "DOI 10.1002/advs.202305799", "href": "https://doi.org/10.1002/advs.202305799"},
-    {"number": 156, "date": "2024", "type": "Science Bulletin", "title": "An approach for full space inverse materials design by combining universal machine learning potential, universal property model, and optimization algorithm", "authors": "Guanjian Cheng, Xin-Gao Gong, Wan-Jian Yin", "venue": "DOI 10.1016/j.scib.2024.07.015", "href": "https://doi.org/10.1016/j.scib.2024.07.015"},
-    {"number": 155, "date": "2024", "type": "Science China Materials", "title": "Comparative study of crystal structure prediction approaches based on a graph network and an optimization algorithm", "authors": "Fan Yang, Guanjian Cheng, Wan-Jian Yin", "venue": "DOI 10.1007/s40843-024-2868-x", "href": "https://doi.org/10.1007/s40843-024-2868-x"},
-    {"number": 154, "date": "2024", "type": "Science China Physics", "title": "Harnessing data using symbolic regression methods for discovering novel paradigms in physics", "authors": "Jianyang Guo, Wan-Jian Yin", "venue": "DOI 10.1007/s11433-023-2346-2", "href": "https://doi.org/10.1007/s11433-023-2346-2"},
-    {"number": 153, "date": "2023", "type": "Nature Communications", "title": "Fast synthesis of large-area bilayer graphene film on Cu", "authors": "Jincan Zhang et al.", "venue": "DOI 10.1038/s41467-023-38877-9", "href": "https://doi.org/10.1038/s41467-023-38877-9"},
-    {"number": 152, "date": "2022", "type": "Chem", "title": "Kinetic pathway of γ-to-δ phase transition in CsPbI3", "authors": "Gao-Yuan Chen, Zhen-Dong Guo, Xin-Gao Gong, Wan-Jian Yin", "venue": "DOI 10.1016/j.chempr.2022.07.026", "href": "https://doi.org/10.1016/j.chempr.2022.07.026"},
-    {"number": 151, "date": "2022", "type": "J. Phys. Chem. Lett.", "title": "Revisiting the Iodine Vacancy Surface Defects to Rationalize Passivation Strategies in Perovskite Solar Cells", "authors": "Jing Wang, Wan-Jian Yin", "venue": "DOI 10.1021/acs.jpclett.2c01815", "href": "https://doi.org/10.1021/acs.jpclett.2c01815"},
-    {"number": 150, "date": "2022", "type": "Nature Communications", "title": "Crystal structure prediction by combining graph network and optimization algorithm", "authors": "Guanjian Cheng et al.", "venue": "DOI 10.1038/s41467-022-29241-4", "href": "https://doi.org/10.1038/s41467-022-29241-4"}
+    {
+      "number": 164,
+      "date": "2025",
+      "type": "ACS Nano",
+      "title": "Machine-Learning Potential Molecular Dynamics Reveals the Critical Role of Flexibility in Solid-Liquid Nanofluidic Friction",
+      "authors": "Junyu Lian, Shiping Jiao, Wan-Jian Yin, Ke Zhou",
+      "venue": "2025",
+      "doi": "10.1021/acsnano.5c08363",
+      "href": "https://pubs.acs.org/doi/10.1021/acsnano.5c08363"
+    },
+    {
+      "number": 163,
+      "date": "2025",
+      "type": "J Phys Chem Lett",
+      "title": "De Novo Inverse Design Superhard C–N Compounds via Global Machine Learning Interatomic Potentials and Multiobjective Optimization Algorithm",
+      "authors": "Guanjian Cheng, Wan-Jian Yin",
+      "venue": "2025;16(18): 4392-4400",
+      "doi": "10.1021/acs.jpclett.5c00181",
+      "href": "https://pubs.acs.org/doi/full/10.1021/acs.jpclett.5c00181"
+    },
+    {
+      "number": 162,
+      "date": "2025",
+      "type": "Comput Mater Today",
+      "title": "Elemental Augmentation of Machine Learning Interatomic Potentials",
+      "authors": "Haibo Xue, Guanjian Cheng, Wan-Jian Yin",
+      "venue": "2025;100026",
+      "doi": "10.1016/j.commt.2025.100026",
+      "href": "https://doi.org/10.1016/j.commt.2025.100026"
+    },
+    {
+      "number": 161,
+      "date": "2024",
+      "type": "Nat Commun",
+      "title": "Machine learning enables the discovery of 2D Invar and anti-Invar monolayers",
+      "authors": "Shun Tian, Ke Zhou, Wanjian Yin, Yilun Liu",
+      "venue": "2024;15(1): 6977",
+      "doi": "10.1038/s41467-024-51379-6",
+      "href": "https://doi.org/10.1038/s41467-024-51379-6"
+    },
+    {
+      "number": 160,
+      "date": "2024",
+      "type": "Adv Rev",
+      "title": "Computational design of energy‐related materials: From first‐principles calculations to machine learning",
+      "authors": "Haibo Xue, Guanjian Cheng, Wan-Jian Yin",
+      "venue": "2024;14(5): e1732",
+      "doi": "10.1002/wcms.1732",
+      "href": "https://doi.org/10.1002/wcms.1732"
+    },
+    {
+      "number": 159,
+      "date": "2024",
+      "type": "J Chem Theory Comput",
+      "title": "The Dynamic Diversity and Invariance of Ab Initio Water",
+      "authors": "Wei Tian, Chengyu Wang, Ke Zhou",
+      "venue": "2024;20(23): 10667-10675",
+      "doi": "10.1021/acs.jctc.4c01191",
+      "href": "https://doi.org/10.1021/acs.jctc.4c01191"
+    },
+    {
+      "number": 158,
+      "date": "2024",
+      "type": "J Chem Theory Comput",
+      "title": "Ab Initio Simulation of Liquid Water without Artificial High Temperature",
+      "authors": "Chengyu Wang, Wei Tian, Ke Zhou",
+      "venue": "2024;20(18): 8202-8213",
+      "doi": "10.1021/acs.jctc.4c00650",
+      "href": "https://doi.org/10.1021/acs.jctc.4c00650"
+    },
+    {
+      "number": 157,
+      "date": "2024",
+      "type": "Adv Sci",
+      "title": "Understanding Defects in Perovskite Solar Cells through Computation: Current Knowledge and Future Challenge",
+      "authors": "Zhendong Guo, Man Yuan, Gaoyuan Chen, Feng Liu, Ruifeng Lu, Wan-Jian Yin",
+      "venue": "2024;11(20): 2305799",
+      "doi": "10.1002/advs.202305799",
+      "href": "https://doi.org/10.1002/advs.202305799"
+    },
+    {
+      "number": 156,
+      "date": "2024",
+      "type": "Nano Res",
+      "title": "Substrate screening for superclean graphene growth using first-principles calculations",
+      "authors": "Zhihao Li, Xiucai Sun, Xiaoli Sun, Wan-Jian Yin, Zhongfan Liu",
+      "venue": "2024;17(4): 2216-2222",
+      "doi": "10.1007/s12274-023-6193-x",
+      "href": "https://doi.org/10.1007/s12274-023-6193-x"
+    },
+    {
+      "number": 155,
+      "date": "2024",
+      "type": "Mater Lett",
+      "title": "The influence of organic molecular rotation on carrier Dynamics: A case of MAPbI3",
+      "authors": "Xiwen Chen, Wan-Jian Yin",
+      "venue": "2024;371: 136925",
+      "doi": "10.1016/j.matlet.2024.136925",
+      "href": "https://doi.org/10.1016/j.matlet.2024.136925"
+    },
+    {
+      "number": 154,
+      "date": "2024",
+      "type": "Nat Commun",
+      "title": "Multispecies-coadsorption-induced rapid preparation of graphene glass fiber fabric and applications in flexible pressure sensor",
+      "authors": "Kun Wang, Xiucai Sun, Shuting Cheng, Yi Cheng, Kewen Huang, Ruojuan Liu, Hao Yuan, Wenjuan Li, Fushun Liang, Yuyao Yang, Fan Yang, Kangyi Zheng, Zhiwei Liang, Ce Tu, Mengxiong Liu, Mingyang Ma, Yunsong Ge, Muqiang Jian, Wanjian Yin, Yue Qi, Zhongfan Liu",
+      "venue": "2024;15(1): 5040",
+      "doi": "10.1038/s41467-024-48958-y",
+      "href": "https://doi.org/10.1038/s41467-024-48958-y"
+    },
+    {
+      "number": 153,
+      "date": "2024",
+      "type": "Nano Res",
+      "title": "Theoretical investigations on hydroxyl carbon precursor fueled growth of graphene on transition metal substrates",
+      "authors": "Chaojie Yu, Haiyang Liu, Xiaoli Sun, Jianjian Shi, Zhiyu Jing, Xiucai Sun, Yuqing Song, Wanjian Yin, Guangping Zhang, Luzhao Sun, Zhongfan Liu",
+      "venue": "2024;17(11): 10235-10241",
+      "doi": "10.1007/s12274-024-6882-0",
+      "href": "https://doi.org/10.1007/s12274-024-6882-0"
+    },
+    {
+      "number": 152,
+      "date": "2024",
+      "type": "Adv Mater",
+      "title": "Overcoming the Incompatibility Between Electrical Conductivity and Electromagnetic Transmissivity: A Graphene Glass Fiber Fabric Design Strategy",
+      "authors": "Kewen Huang, Fushun Liang, Jianbo Sun, Qinchi Zhang, Zhihao Li, Shuting Cheng, Wenjuan Li, Hao Yuan, Ruojuan Liu, Yunsong Ge, Yi Cheng, Kun Wang, Jun Jiang, Yuyao Yang, Mingyang Ma, Fan Yang, Ce Tu, Qin Xie, Wanjian Yin, Xiaobai Wang, Yue Qi, Zhongfan Liu",
+      "venue": "2024;34(49): 2409379",
+      "doi": "10.1002/adma.202313752",
+      "href": "https://doi.org/10.1002/adma.202313752"
+    },
+    {
+      "number": 151,
+      "date": "2024",
+      "type": "Sci Bull",
+      "title": "An approach for full space inverse materials design by combining universal machine learning potential, universal property model, and optimization algorithm",
+      "authors": "Guanjian Cheng, Xin-Gao Gong, Wan-Jian Yin",
+      "venue": "2024;69(19):3066-3074",
+      "doi": "10.1016/j.scib.2024.07.015",
+      "href": "https://doi.org/10.1016/j.scib.2024.07.015"
+    },
+    {
+      "number": 150,
+      "date": "2024",
+      "type": "Sci China Mater",
+      "title": "Comparative study of crystal structure prediction approaches based on a graph network and an optimization algorithm",
+      "authors": "Fan Yang, Guanjian Cheng, Wan-Jian Yin",
+      "venue": "2024;67(4): 1273-1281",
+      "doi": "10.1007/s40843-024-2868-x",
+      "href": "https://doi.org/10.1007/s40843-024-2868-x"
+    },
+    {
+      "number": 149,
+      "date": "2024",
+      "type": "Sci China Phys Mech Astron",
+      "title": "Harnessing data using symbolic regression methods for discovering novel paradigms in physics",
+      "authors": "Jianyang Guo, Wan-Jian Yin",
+      "venue": "2024;67(6): 267301",
+      "doi": "10.1007/s11433-023-2346-2",
+      "href": "https://doi.org/10.1007/s11433-023-2346-2"
+    },
+    {
+      "number": 148,
+      "date": "2024",
+      "type": "Nano Res",
+      "title": "Theoretical investigations on the growth of graphene by oxygen-assisted chemical vapor deposition",
+      "authors": "Xiaoli Sun, Chaojie Yu, Yujia Yang, Zhihao Li, Jianjian Shi, Wan-Jian Yin, Zhongfan Liu",
+      "venue": "2024",
+      "doi": "10.1007/s12274-024-6452-5",
+      "href": "https://doi.org/10.1007/s12274-024-6452-5"
+    },
+    {
+      "number": 147,
+      "date": "2024",
+      "type": "Joule",
+      "title": "Reconstructing subsurface lattice for stable perovskite photovoltaics",
+      "authors": "Zhi-Wen Gao, Yong Wang, Xiwen Chen, Zhengyan Jiang, Minchao Qin, Weihua Ning, Bihua Hu, Xinhui Lu, Wan-Jian Yin, Deren Yang, Baomin Xu, Wallace C.H. Choy",
+      "venue": "2024;8(1):255–66",
+      "doi": "10.1016/j.joule.2023.11.014",
+      "href": "https://doi.org/10.1016/j.joule.2023.11.014"
+    },
+    {
+      "number": 146,
+      "date": "2023",
+      "type": "Nat Commun",
+      "title": "Fast synthesis of large-area bilayer graphene film on Cu",
+      "authors": "Jincan Zhang, Xiaoting Liu, Mengqi Zhang, Rui Zhang, Huy Q. Ta, Jianbo Sun, Wendong Wang, Wenqing Zhu, Tiantian Fang, Kaicheng Jia, Xiucai Sun, Xintong Zhang, Yeshu Zhu, Jiaxin Shao, Yuchen Liu, Xin Gao, Qian Yang, Luzhao Sun, Qin Li, Fushun Liang, Heng Chen, Liming Zheng, Fuyi Wang, Wanjian Yin, Xiaoding Wei, Jianbo Yin, Thomas Gemming, Mark. H. Rummeli, Haihui Liu, Hailin Peng, Li Lin, Zhongfan Liu",
+      "venue": "2023;14(1):3199",
+      "doi": "10.1038/s41467-023-38877-9",
+      "href": "https://doi.org/10.1038/s41467-023-38877-9"
+    },
+    {
+      "number": 145,
+      "date": "2023",
+      "type": "ACS Cent Sci",
+      "title": "Manipulation of Shallow-Trap States in Halide Double Perovskite Enables Real-Time Radiation Dosimetry",
+      "authors": "Yumin Wang, Gaoyuan Chen, Zibin Zhu, Haoming Qin, Liangwei Yang, Duo Zhang, Yingguo Yang, Menglin Qiu, Ke Liu, Zhifang Chai, Wanjian Yin, Yaxing Wang, Shuao Wang",
+      "venue": "2023;9(9):1827–34",
+      "doi": "10.1021/acscentsci.3c00691",
+      "href": "https://doi.org/10.1021/acscentsci.3c00691"
+    },
+    {
+      "number": 144,
+      "date": "2023",
+      "type": "J Phys Chem C",
+      "title": "Controlled Growth of Bilayer Graphene on Space-Confined Cu Substrates",
+      "authors": "Shiwei Wang, Chunyang Zheng, Xiucai Sun, Yixuan Zhao, Shengping Zhang, Qingqing Liu, Jiawei Yang, Yeshu Zhu, Jiaxin Shao, Mingyue Wei, Wanjian Yin, Jianbo Yin, Li Lin, Kaicheng Jia, Zhongfan Liu",
+      "venue": "2023;127(28):13601–8",
+      "doi": "10.1021/acs.jpcc.3c01586",
+      "href": "https://doi.org/10.1021/acs.jpcc.3c01586"
+    },
+    {
+      "number": 143,
+      "date": "2023",
+      "type": "Nano Res",
+      "title": "Invisible vapor catalysis in graphene growth by chemical vapor deposition",
+      "authors": "Xiucai Sun, Xiaoting Liu, Zhongti Sun, Xintong Zhang, Yuzhu Wu, Yeshu Zhu, Yuqing Song, Kaicheng Jia, Jincan Zhang, Luzhao Sun, Wan-Jian Yin, Zhongfan Liu",
+      "venue": "2023",
+      "doi": "10.1007/s12274-023-6260-3",
+      "href": "https://doi.org/10.1007/s12274-023-6260-3"
+    },
+    {
+      "number": 142,
+      "date": "2023",
+      "type": "Nano Lett",
+      "title": "High Moisture-Barrier Performance of Double-Layer Graphene Enabled by Conformal and Clean Transfer",
+      "authors": "Qi Lu, Haotian Zhong, Xiucai Sun, Mingpeng Shang, Wenlin Liu, Chaofan Zhou, Zhaoning Hu, Zhuofeng Shi, Yaqi Zhu, Xiaoting Liu, Yixuan Zhao, Junhao Liao, Xintong Zhang, Zeyu Lian, Yuqing Song, Luzhao Sun, Kaicheng Jia, Jianbo Yin, Xiaodong Zhang, Qin Xie, Wan-jian Yin, Li Lin, Zhongfan Liu",
+      "venue": "2023;23(16):7716–24",
+      "doi": "10.1021/acs.nanolett.3c02453",
+      "href": "https://doi.org/10.1021/acs.nanolett.3c02453"
+    },
+    {
+      "number": 141,
+      "date": "2023",
+      "type": "Nano Res",
+      "title": "Substrate screening for superclean graphene growth using first-principles calculations",
+      "authors": "Zhihao Li, Xiucai Sun, Xiaoli Sun, Wan-Jian Yin, Zhongfan Liu",
+      "venue": "2023",
+      "doi": "10.1007/s12274-023-6193-x",
+      "href": "https://doi.org/10.1007/s12274-023-6193-x"
+    },
+    {
+      "number": 140,
+      "date": "2023",
+      "type": "Adv Funct Materials",
+      "title": "First Domino in the Structural Collapse of Perovskite CsPbI 3 and Its Stabilizing Strategies",
+      "authors": "Zhendong Guo, Jiayuan Fu, Gaoyuan Chen, Feng Liu, Chao Yu, Ruifeng Lu, Wan‐Jian Yin",
+      "venue": "2023:2308246",
+      "doi": "10.1002/adfm.202308246",
+      "href": "https://doi.org/10.1002/adfm.202308246"
+    },
+    {
+      "number": 139,
+      "date": "2023",
+      "type": "J Phys Chem Lett",
+      "title": "Interphase Boundaries and Their Impact on Carrier Dynamics in Lead Halide Perovskites",
+      "authors": "Xiwen Chen, Gaoyuan Chen, Wan-Jian Yin",
+      "venue": "2023;14(28):6459–63",
+      "doi": "10.1021/acs.jpclett.3c01496",
+      "href": "https://doi.org/10.1021/acs.jpclett.3c01496"
+    },
+    {
+      "number": 138,
+      "date": "2023",
+      "type": "Nano Research",
+      "title": "Fast scanning growth of high-quality graphene films on Cu foils fueled by dimeric&nbsp;carbon precursor",
+      "authors": "Heng Chen, Xiucai Sun, Xiaofeng Song, Buhang Chen, Ziteng Ma, Wanjian Yin, Luzhao Sun, Zhongfan Liu",
+      "venue": "2023",
+      "doi": "10.1007/s12274-023-5814-8",
+      "href": "https://www.sciopen.com/article/10.1007/s12274-023-5814-8"
+    },
+    {
+      "number": 137,
+      "date": "2023",
+      "type": "Metal-Halide Perovskite Semiconductors: From Physical Properties to Opto-electronic Devices and X-ray Sensors",
+      "title": "Defect Origin of the Light-Soaking Effects in Hybrid Perovskite Solar Cells",
+      "authors": "Jing Wang, Wan-Jian Yin",
+      "venue": "In: Nie Wanyi, Iniewski Krzysztof (Kris), editors. Metal-Halide Perovskite Semiconductors: From Physical Properties to Opto-electronic Devices and X-ray Sensors. Cham: Springer International Publishing; 2023. p. 239–63. ISBN: 978-3-031-26892-2",
+      "doi": "",
+      "href": "https://doi.org/10.1007/978-3-031-26892-2_12"
+    },
+    {
+      "number": 136,
+      "date": "2023",
+      "type": "Mater Horiz",
+      "title": "Distilling universal activity descriptors for perovskite catalysts from multiple data sources via multi-task symbolic regression",
+      "authors": "Zhilong Song, Xiao Wang, Fangting Liu, Qionghua Zhou, Wan-Jian Yin, Hao Wu, Weiqiao Deng, Jinlan Wang",
+      "venue": "2023;10(5):1651–60",
+      "doi": "10.1039/D3MH00157A",
+      "href": "https://doi.org/10.1039/D3MH00157A"
+    },
+    {
+      "number": 135,
+      "date": "2022",
+      "type": "Nano Res",
+      "title": "CO2-promoted transfer-free growth of conformal graphene",
+      "authors": "Ruojuan Liu, Zhe Peng, Xiaoli Sun, Zhaolong Chen, Zhi Li, Haina Ci, Bingzhi Liu, Yi Cheng, Bei Jiang, Junxiong Hu, Wanjian Yin, Jingyu Sun, Zhongfan Liu",
+      "venue": "2022",
+      "doi": "10.1007/s12274-022-5299-x",
+      "href": "https://doi.org/10.1007/s12274-022-5299-x"
+    },
+    {
+      "number": 134,
+      "date": "2022",
+      "type": "Advanced Materials",
+      "title": "Transfer-Free Quasi-Suspended Graphene Grown on a Si Wafer",
+      "authors": "Haina Ci, Jingtao Chen, Hao Ma, Xiaoli Sun, Xingyu Jiang, Kaicong Liu, Jingyuan Shan, Xueyu Lian, Bei Jiang, Ruojuan Liu, Bingzhi Liu, Guiqi Yang, Wanjian Yin, Wen Zhao, Lizhen Huang, Teng Gao, Jingyu Sun, Zhongfan Liu",
+      "venue": "2022;34(51):2206389",
+      "doi": "10.1002/adma.202206389",
+      "href": "https://doi.org/10.1002/adma.202206389"
+    },
+    {
+      "number": 133,
+      "date": "2022",
+      "type": "Chem",
+      "title": "Kinetic pathway of γ-to-δ phase transition in CsPbI3",
+      "authors": "Gao-Yuan Chen, Zhen-Dong Guo, Xin-Gao Gong, Wan-Jian Yin",
+      "venue": "2022",
+      "doi": "10.1016/j.chempr.2022.07.026",
+      "href": "https://doi.org/10.1016/j.chempr.2022.07.026"
+    },
+    {
+      "number": 132,
+      "date": "2022",
+      "type": "J Phys Chem Lett",
+      "title": "Revisiting the Iodine Vacancy Surface Defects to Rationalize Passivation Strategies in Perovskite Solar Cells",
+      "authors": "Jing Wang, Wan-Jian Yin",
+      "venue": "2022;13(29):6694–700",
+      "doi": "10.1021/acs.jpclett.2c01815",
+      "href": "https://doi.org/10.1021/acs.jpclett.2c01815"
+    },
+    {
+      "number": 131,
+      "date": "2022",
+      "type": "J Phys Chem Lett",
+      "title": "Unique Photoelectric Properties and Defect Tolerance of Lead-Free Perovskite Cs3Cu2I5 with Highly Efficient Blue Emission",
+      "authors": "Yuan Yin, Yu Wang, Qingde Sun, Ying Yang, Yifei Wang, Zhiyong Yang, Wan-Jian Yin",
+      "venue": "2022;13(18):4177–83",
+      "doi": "10.1021/acs.jpclett.2c00888",
+      "href": "https://doi.org/10.1021/acs.jpclett.2c00888"
+    },
+    {
+      "number": 130,
+      "date": "2022",
+      "type": "Nano Lett",
+      "title": "CsPbI3-Based Phase-Stable 2D Ruddlesden–Popper Perovskites for Efficient Solar Cells",
+      "authors": "Xu Zhiyuan, Li Ling, Dong Xiyue, Lu Di, Wang Rui, Yin Wan-Jian, Liu Yongsheng",
+      "venue": "2022",
+      "doi": "10.1021/acs.nanolett.2c00002",
+      "href": "https://doi.org/10.1021/acs.nanolett.2c00002"
+    },
+    {
+      "number": 129,
+      "date": "2022",
+      "type": "Nat Commun",
+      "title": "Crystal structure prediction by combining graph network and optimization algorithm",
+      "authors": "Cheng Guanjian, Gong Xin-Gao, Yin Wan-Jian",
+      "venue": "2022;13(1):1492",
+      "doi": "10.1038/s41467-022-29241-4",
+      "href": "https://doi.org/10.1038/s41467-022-29241-4"
+    },
+    {
+      "number": 128,
+      "date": "2022",
+      "type": "Journal of Energy Chemistry",
+      "title": "Effect of alloying on the carrier dynamics in high-performance perovskite solar cells",
+      "authors": "Wang Jing, Yin Wan-Jian",
+      "venue": "2022;68:267–74",
+      "doi": "10.1016/j.jechem.2021.11.016",
+      "href": "https://doi.org/10.1016/j.jechem.2021.11.016"
+    },
+    {
+      "number": 127,
+      "date": "2022",
+      "type": "Advanced Materials",
+      "title": "Interpretation of Rubidium-Based Perovskite Recipes toward Electronic Passivation and Ion-Diffusion Mitigation",
+      "authors": "Xu Chenzhe, Chen Xiwen, Ma Shuangfei, Shi Mingyue, Zhang Suicai, Xiong Zhaozhao, Fan Wenqiang, Si Haonan, Wu Hualin, Zhang Zheng, Liao Qingliang, Yin Wanjian, Kang Zhuo, Zhang Yue",
+      "venue": "2022;2109998",
+      "doi": "10.1002/adma.202109998",
+      "href": "https://doi.org/10.1002/adma.202109998"
+    },
+    {
+      "number": 126,
+      "date": "2022",
+      "type": "Advanced Energy and Sustainability Research",
+      "title": "Going Beyond the d-Band Center to Describe CO2 Activation on Single-Atom Alloys",
+      "authors": "Sun Zhongti, Song Zhilong, Yin Wan-Jian",
+      "venue": "2022;3(2):2100152",
+      "doi": "10.1002/aesr.202100152",
+      "href": "https://doi.org/10.1002/aesr.202100152"
+    },
+    {
+      "number": 125,
+      "date": "2022",
+      "type": "Advanced Functional Materials",
+      "title": "Extra Storage Capacity Enabled by Structural Defects in Pseudocapacitive NbN Monocrystals for High-Energy Hybrid Supercapacitors",
+      "authors": "Zhou Shaowen, Chiang Chao-Lung, Zhao Jianqing, Cheng Guanjian, Bashir Tariq, Yin Wanjian, Yao Junyi, Yang Shiqi, Li Wanying, Wang Jiaqi, Wang Xinyuan, Lin Yan-Gu, Gao Lijun",
+      "venue": "2022;2112592",
+      "doi": "10.1002/adfm.202112592",
+      "href": "https://doi.org/10.1002/adfm.202112592"
+    },
+    {
+      "number": 124,
+      "date": "2022",
+      "type": "Energy & Environmental Science",
+      "title": "Atomistic origin of lattice softness and its impact on structural and carrier dynamics in three dimensional perovskites",
+      "authors": "Guo Zhendong, Wang Jing, Yin Wan-Jian",
+      "venue": "2022;15(2):660–71",
+      "doi": "10.1039/D1EE02131A",
+      "href": "https://doi.org/10.1039/D1EE02131A"
+    },
+    {
+      "number": 123,
+      "date": "2022",
+      "type": "Chinese Phys B",
+      "title": "Defect calculations with quasiparticle correction: A revisited study of iodine defects in CH3NH3PbI3",
+      "authors": "Li Ling, Yin Wan-Jian",
+      "venue": "2022;31(1):017103",
+      "doi": "10.1088/1674-1056/ac3505",
+      "href": "https://doi.org/10.1088/1674-1056/ac3505"
+    },
+    {
+      "number": 122,
+      "date": "2021",
+      "type": "ACS Catal",
+      "title": "Flat and Stretched Delafossite α-AgGaO2: Manipulating Redox Chemistry under Visible Light",
+      "authors": "Sun Yue, Li Yajiao, Li Zhihao, Zhang Dongsheng, Qiao Wei, Li Yongwang, Niemantsverdriet Hans, Yin Wanjian, Su Ren",
+      "venue": "2021;11(24):15083–8",
+      "doi": "10.1021/acscatal.1c04686",
+      "href": "https://doi.org/10.1021/acscatal.1c04686"
+    },
+    {
+      "number": 121,
+      "date": "2021",
+      "type": "Appl Phys Lett",
+      "title": "Significant phonon anharmonicity drives phase transitions in CsPbI3",
+      "authors": "Gu Hong-Yang, Yin Wan-Jian, Gong Xin-Gao",
+      "venue": "2021;119(19):191101",
+      "doi": "10.1063/5.0072367",
+      "href": "https://doi.org/10.1063/5.0072367"
+    },
+    {
+      "number": 120,
+      "date": "2021",
+      "type": "J Phys Chem Lett",
+      "title": "Photoinduced Dynamic Defects Responsible for the Giant, Reversible, and Bidirectional Light-Soaking Effect in Perovskite Solar Cells",
+      "authors": "Wang Jing, Duan Xiangmei, Yin Wan-Jian",
+      "venue": "2021;12(38):9328–35",
+      "doi": "10.1021/acs.jpclett.1c02929",
+      "href": "https://doi.org/10.1021/acs.jpclett.1c02929"
+    },
+    {
+      "number": 119,
+      "date": "2021",
+      "type": "Advanced Functional Materials",
+      "title": "Amplifying Surface Energy Difference toward Anisotropic Growth of All-Inorganic Perovskite Single-Crystal Wires for Highly Sensitive Photodetector",
+      "authors": "Chen Yuan, Chen Gaoyuan, Zhou Zhou, Li Xiaoming, Ma Peipei, Li Lutao, Yin Wanjian, Zeng Haibo, Zou Guifu",
+      "venue": "2021;31(31):2101966",
+      "doi": "10.1002/adfm.202101966",
+      "href": "https://doi.org/10.1002/adfm.202101966"
+    },
+    {
+      "number": 118,
+      "date": "2021",
+      "type": "Nat Commun",
+      "title": "A chalcogenide-cluster-based semiconducting nanotube array with oriented photoconductive behavior",
+      "authors": "Tang Jiaqi, Wang Xiang, Zhang Jiaxu, Wang Jing, Yin Wanjian, Li Dong-Sheng, Wu Tao",
+      "venue": "2021;12(1):4275",
+      "doi": "10.1038/s41467-021-24510-0",
+      "href": "https://doi.org/10.1038/s41467-021-24510-0"
+    },
+    {
+      "number": 117,
+      "date": "2021",
+      "type": "Nano Lett",
+      "title": "Multiple-Noncovalent-Interaction-Stabilized Layered Dion–Jacobson Perovskite for Efficient Solar Cells",
+      "authors": "Lv Guangwei, Li Ling, Lu Di, Xu Zhiyuan, Dong Yixin, Li Qiaohui, Chang Zhitao, Yin Wan-Jian, Liu Yongsheng",
+      "venue": "2021;21(13):5788–97",
+      "doi": "10.1021/acs.nanolett.1c01505",
+      "href": "https://doi.org/10.1021/acs.nanolett.1c01505"
+    },
+    {
+      "number": 116,
+      "date": "2021",
+      "type": "Computational Materials Science",
+      "title": "Density functional theory-free descriptor for the practical discovery of perovskite catalysts",
+      "authors": "Yin Wan-Jian",
+      "venue": "2021;193:110342",
+      "doi": "10.1016/j.commatsci.2021.110342",
+      "href": "https://doi.org/10.1016/j.commatsci.2021.110342"
+    },
+    {
+      "number": 115,
+      "date": "2021",
+      "type": "Semicond Sci Technol",
+      "title": "Defect states and passivation mechanism at grain boundaries of zinc-blende semiconductors",
+      "authors": "Gu Hong-Yang, Yin Wan-Jian, Gong Xin-Gao",
+      "venue": "2021;36(4):045028",
+      "doi": "10.1088/1361-6641/abe24e",
+      "href": "https://doi.org/10.1088/1361-6641/abe24e"
+    },
+    {
+      "number": 114,
+      "date": "2021",
+      "type": "Chem Mater",
+      "title": "Atomistic Mechanism of Passivation of Halide Vacancies in Lead Halide Perovskites by Alkali Ions",
+      "authors": "Li Wei, Zhan Juan, Liu Xiaorui, Tang Jianfeng, Yin Wan-Jian, Prezhdo Oleg V",
+      "venue": "2021;33(4):1285–92",
+      "doi": "10.1021/acs.chemmater.0c04188",
+      "href": "https://doi.org/10.1021/acs.chemmater.0c04188"
+    },
+    {
+      "number": 113,
+      "date": "2021",
+      "type": "J Mater Chem A",
+      "title": "Strategic synthesis of sponge-like structured SiOx@C@CoO multifunctional composites for high-performance and stable lithium-ion batteries",
+      "authors": "Wang Pu, Sun Zhongti, Liu Hui, Gao Zhi-Wen, Hu Jianguo, Yin Wan-Jian, Ke Qingqing, Zhu Hugh Lu",
+      "venue": "2021;9(34):18440–53",
+      "doi": "10.1039/D1TA02880D",
+      "href": "https://doi.org/10.1039/D1TA02880D"
+    },
+    {
+      "number": 112,
+      "date": "2021",
+      "type": "Energy Environ Sci",
+      "title": "Atomic-scale insight into the enhanced surface stability of methylammonium lead iodide perovskite by controlled deposition of lead chloride",
+      "authors": "Jamshaid Afshan, Guo Zhendong, Hieulle Jeremy, Stecker Collin, Ohmann Robin, Ono Luis K., Qiu Longbin, Tong Guoqing, Yin Wanjian, Qi Yabing",
+      "venue": "2021;14(8):4541–54",
+      "doi": "10.1039/D1EE01084K",
+      "href": "https://doi.org/10.1039/D1EE01084K"
+    },
+    {
+      "number": 111,
+      "date": "2021",
+      "type": "Journal of Energy Chemistry",
+      "title": "Designing N-doped graphene/ReSe2/Ti3C2 MXene heterostructure frameworks as promising anodes for high-rate potassium-ion batteries",
+      "authors": "Xia Zhou, Chen Xiwen, Ci Haina, Fan Zhaodi, Yi Yuyang, Yin Wanjian, Wei Nan, Cai Jingsheng, Zhang Yanfeng, Sun Jingyu",
+      "venue": "2021;53:155–62",
+      "doi": "10.1016/j.jechem.2020.04.071",
+      "href": "https://doi.org/10.1016/j.jechem.2020.04.071"
+    },
+    {
+      "number": 110,
+      "date": "2021",
+      "type": "Chemical Science",
+      "title": "Defect mitigation using d -penicillamine for efficient methylammonium-free perovskite solar cells with high operational stability",
+      "authors": "Yang Jianchao, Tang Weijian, Yuan Ruihan, Chen Yu, Wang Jing, Wu Yihui, Yin Wan-Jian, Yuan Ningyi, Ding Jianning, Zhang Wen-Hua",
+      "venue": "2021",
+      "doi": "10.1039/D0SC06354A",
+      "href": "https://doi.org/10.1039/D0SC06354A"
+    },
+    {
+      "number": 109,
+      "date": "2021",
+      "type": "Advanced Materials",
+      "title": "High-Performance Blue Perovskite Light-Emitting Diodes Enabled by Efficient Energy Transfer between Coupled Quasi-2D Perovskite Layers",
+      "authors": "Ren Zhenwei, Yu Jiahao, Qin Zhaotong, Wang Jing, Sun Jiayun, Chan Christopher C. S., Ding Shihao, Wang Kai, Chen Rui, Wong Kam Sing, Lu Xinhui, Yin Wan-Jian, Choy Wallace C. H",
+      "venue": "2021;33(1):2005570",
+      "doi": "10.1002/adma.202005570",
+      "href": "https://doi.org/10.1002/adma.202005570"
+    },
+    {
+      "number": 108,
+      "date": "2021",
+      "type": "ACS Catal",
+      "title": "Visible-Light Photocatalytic CO2 Reduction Using Metal-Organic Framework Derived Ni(OH)2 Nanocages: A Synergy from Multiple Light Reflection, Static Charge Transfer, and Oxygen Vacancies",
+      "authors": "Su Yanhui, Song Zhilong, Zhu Wei, Mu Qiaoqiao, Yuan Xuzhou, Lian Yuebin, Cheng Hang, Deng Zhao, Chen Muzi, Yin Wanjian, Peng Yang",
+      "venue": "2021;11(1):345–54",
+      "doi": "10.1021/acscatal.0c04020",
+      "href": "https://doi.org/10.1021/acscatal.0c04020"
+    },
+    {
+      "number": 107,
+      "date": "2021",
+      "type": "Angewandte Chemie International Edition",
+      "title": "Overcoming the Anisotropic Growth Limitations of Free-Standing Single-Crystal Halide Perovskite Films",
+      "authors": "Chen Yuan, Zeng Haibo, Ma Peipei, Chen Gaoyuan, Jian Jie, Sun Xing, Li Xiaoming, Wang Haiyan, Yin Wanjian, Jia Quanxi, Zou Guifu",
+      "venue": "2021;60(5):2629–36",
+      "doi": "10.1002/anie.202011853",
+      "href": "https://doi.org/10.1002/anie.202011853"
+    },
+    {
+      "number": 106,
+      "date": "2021",
+      "type": "Journal of Energy Chemistry",
+      "title": "High-throughput computational screening of oxide double perovskites for optoelectronic and photocatalysis applications",
+      "authors": "Jiang Xiaowei, Yin Wan-Jian",
+      "venue": "2021;57:351–8",
+      "doi": "10.1016/j.jechem.2020.08.046",
+      "href": "https://doi.org/10.1016/j.jechem.2020.08.046"
+    },
+    {
+      "number": 105,
+      "date": "2020",
+      "type": "Journal of Alloys and Compounds",
+      "title": "Direct van der Waals epitaxy of stress-free GaN films on PECVD grown graphene",
+      "authors": "Zhou Hao, Xu Yu, Chen Xiwen, Liu Yi, Cao Bing, Yin Wan-Jian, Wang Chinhua, Xu Ke",
+      "venue": "2020;844:155870",
+      "doi": "10.1016/j.jallcom.2020.155870",
+      "href": "https://doi.org/10.1016/j.jallcom.2020.155870"
+    },
+    {
+      "number": 104,
+      "date": "2020",
+      "type": "National Science Review",
+      "title": "Efficient potential-tuning strategy through p-type doping for designing cathodes with ultrahigh energy density",
+      "authors": "Wang Zhiqiang, Wang Da, Zou Zheyi, Song Tao, Ni Dixing, Li Zhenzhu, Shao Xuecheng, Yin Wanjian, Wang Yanchao, Luo Wenwei, Wu Musheng, Avdeev Maxim, Xu Bo, Shi Siqi, Ouyang Chuying, Chen Liquan",
+      "venue": "2020;7(11):1768–75",
+      "doi": "10.1093/nsr/nwaa174",
+      "href": "https://doi.org/10.1093/nsr/nwaa174"
+    },
+    {
+      "number": 103,
+      "date": "2020",
+      "type": "Chinese Phys B",
+      "title": "Machine learning in materials design: Algorithm and application",
+      "authors": "Song Zhilong, Chen Xiwen, Meng Fanbin, Cheng Guanjian, Wang Chen, Sun Zhongti, Yin Wan-Jian",
+      "venue": "2020;29(11):116103",
+      "doi": "10.1088/1674-1056/abc0e3",
+      "href": "https://doi.org/10.1088/1674-1056/abc0e3"
+    },
+    {
+      "number": 102,
+      "date": "2020",
+      "type": "Angewandte Chemie International Edition",
+      "title": "Superclean Growth of Graphene Using a Cold-Wall Chemical Vapor Deposition Approach",
+      "authors": "Jia Kaicheng, Ci Haina, Zhang Jincan, Sun Zhongti, Ma Ziteng, Zhu Yeshu, Liu Shengnan, Liu Junling, Sun Luzhao, Liu Xiaoting, Sun Jingyu, Yin Wanjian, Peng Hailin, Lin Li, Liu Zhongfan",
+      "venue": "2020;59(39):17214–8",
+      "doi": "10.1002/anie.202005406",
+      "href": "https://doi.org/10.1002/anie.202005406"
+    },
+    {
+      "number": 101,
+      "date": "2020",
+      "type": "Acta Physico Chimica Sinica",
+      "title": "Recent Progress in Defect Tolerance and Defect Passivation in Halide Perovskite Solar Cells",
+      "authors": "Yin Yuan, Guo Zhendong, Chen Gaoyuan, Zhang Huifeng, Yin Wan-Jian",
+      "venue": "2020;0(0):2008048",
+      "doi": "10.3866/PKU.WHXB202008048",
+      "href": "https://doi.org/10.3866/PKU.WHXB202008048"
+    },
+    {
+      "number": 100,
+      "date": "2020",
+      "type": "wlxb",
+      "title": "Theoretical and computational study on defects of solar cell materials",
+      "authors": "Yin Yuan, Li Ling, Yin Wan-Jian",
+      "venue": "2020;69(17):177101",
+      "doi": "10.7498/aps.69.20200656",
+      "href": "https://doi.org/10.7498/aps.69.20200656"
+    },
+    {
+      "number": 99,
+      "date": "2020",
+      "type": "Journal of Applied Physics",
+      "title": "Optimization of depth-graded multilayer structure for x-ray optics using machine learning",
+      "authors": "Dieb Sae, Song Zhilong, Yin Wan-Jian, Ishii Masashi",
+      "venue": "2020;128(7):074901",
+      "doi": "10.1063/5.0012351",
+      "href": "https://doi.org/10.1063/5.0012351"
+    },
+    {
+      "number": 98,
+      "date": "2020",
+      "type": "ACS Energy Lett",
+      "title": "Simultaneous Low-Order Phase Suppression and Defect Passivation for Efficient and Stable Blue Light-Emitting Diodes",
+      "authors": "Ren Zhenwei, Li Ling, Yu Jiahao, Ma Ruiman, Xiao Xiangtian, Chen Rui, Wang Kai, Sun Xiao Wei, Yin Wan-Jian, Choy Wallace C. H",
+      "venue": "2020;5(8):2569–79",
+      "doi": "10.1021/acsenergylett.0c01015",
+      "href": "https://doi.org/10.1021/acsenergylett.0c01015"
+    },
+    {
+      "number": 97,
+      "date": "2020",
+      "type": "Nat Commun",
+      "title": "Simple descriptor derived from symbolic regression accelerating the discovery of new perovskite catalysts",
+      "authors": "Weng Baicheng, Song Zhilong, Zhu Rilong, Yan Qingyu, Sun Qingde, Grice Corey G., Yan Yanfa, Yin Wan-Jian",
+      "venue": "2020;11(1):1–8",
+      "doi": "10.1038/s41467-020-17263-9",
+      "href": "https://doi.org/10.1038/s41467-020-17263-9"
+    },
+    {
+      "number": 96,
+      "date": "2020",
+      "type": "Chem Mater",
+      "title": "Design of Multifunctional Quinternary Metal-Halide Perovskite Compounds Based on Cation–Anion Co-Ordering",
+      "authors": "Huang Yang, Zhang Tao, Wang Jing, Xu Shao-Gang, Zhang Peng, Chen Shiyou, Yin Wan-Jian, Zhang Xiuwen, Wei Su-Huai",
+      "venue": "2020",
+      "doi": "10.1021/acs.chemmater.0c00674",
+      "href": "https://doi.org/10.1021/acs.chemmater.0c00674"
+    },
+    {
+      "number": 95,
+      "date": "2020",
+      "type": "ACS Energy Lett",
+      "title": "Hexagonal Stacking Faults Act as Hole-Blocking Layers in Lead Halide Perovskites",
+      "authors": "Park Ji-Sang, Li Zhenzhu, Wilson Jacob N., Yin Wan-Jian, Walsh Aron",
+      "venue": "2020;5(7):2231–3",
+      "doi": "10.1021/acsenergylett.0c01124",
+      "href": "https://doi.org/10.1021/acsenergylett.0c01124"
+    },
+    {
+      "number": 94,
+      "date": "2020",
+      "type": "Journal of Alloys and Compounds",
+      "title": "Direct van der Waals epitaxy of stress-free GaN films on PECVD grown graphene",
+      "authors": "Zhou Hao, Xu Yu, Chen Xiwen, Liu Yi, Cao Bing, Yin Wan-Jian, Wang Chinhua, Xu Ke",
+      "venue": "2020;844:155870",
+      "doi": "10.1016/j.jallcom.2020.155870",
+      "href": "https://doi.org/10.1016/j.jallcom.2020.155870"
+    },
+    {
+      "number": 93,
+      "date": "2020",
+      "type": "Angewandte Chemie International Edition",
+      "title": "Superclean growth of graphene using cold-wall chemical vapor deposition approach",
+      "authors": "Liu Zhongfan, Jia Kaicheng, Ci Haina, Zhang Jincan, Sun Zhongti, Ma Ziteng, Zhu Yeshu, Liu Shengnan, Liu Junling, Sun Luzhao, Liu Xiaoting, Sun Jingyu, Yin Wanjian, Peng Hailin, Lin Li",
+      "venue": "n.d.;n/a(n/a)",
+      "doi": "10.1002/anie.202005406",
+      "href": "https://doi.org/10.1002/anie.202005406"
+    },
+    {
+      "number": 92,
+      "date": "2020",
+      "type": "Journal of Energy Chemistry",
+      "title": "Designing N-doped graphene/ReSe2/Ti3C2 MXene heterostructure frameworks as promising anodes for high-rate potassium-ion batteries",
+      "authors": "Xia Zhou, Chen Xiwen, Ci Haina, Fan Zhaodi, Yi Yuyang, Yin Wanjian, Wei Nan, Cai Jingsheng, Zhang Yanfeng, Sun Jingyu",
+      "venue": "2021;53:155–62",
+      "doi": "10.1016/j.jechem.2020.04.071",
+      "href": "https://doi.org/10.1016/j.jechem.2020.04.071"
+    },
+    {
+      "number": 91,
+      "date": "2020",
+      "type": "Journal of Applied Physics",
+      "title": "Double perovskite Ba2BiTaO6 as a promising p-type transparent conductive oxide: A first-principles defect study",
+      "authors": "Yin Yuan, Wu Yelong, Chen Guangde, Yin Wan-Jian",
+      "venue": "2020;DIS2020(1):175703",
+      "doi": "10.1063/1.5140699@jap.2020.DIS2020.issue-1",
+      "href": "https://aip.scitation.org/doi/full/10.1063/1.5140699%40jap.2020.DIS2020.issue-1"
+    },
+    {
+      "number": 90,
+      "date": "2020",
+      "type": "Advanced Materials",
+      "title": "High Phase Stability in CsPbI3 Enabled by Pb–I Octahedra Anchors for Efficient Inorganic Perovskite Photovoltaics",
+      "authors": "Wang Yong, Chen Gaoyuan, Ouyang Dan, He Xinjun, Li Can, Ma Ruiman, Yin Wan-Jian, Choy Wallace C. H",
+      "venue": "2020;32(24)",
+      "doi": "10.1002/adma.202000186",
+      "href": "https://doi.org/10.1002/adma.202000186"
+    },
+    {
+      "number": 89,
+      "date": "2020",
+      "type": "J Semicond",
+      "title": "Comprehensive first-principles studies on phase stability of copper-based halide perovskite derivatives A l Cu m X n (A = Rb and Cs$\\mathsemicolon$ X = Cl, Br, and I)",
+      "authors": "Sun Zhongti, Chen Xiwen, Yin Wanjian",
+      "venue": "2020;41(5):052201",
+      "doi": "10.1088/1674-4926/41/5/052201",
+      "href": "https://doi.org/10.1088/1674-4926/41/5/052201"
+    },
+    {
+      "number": 88,
+      "date": "2020",
+      "type": "Chinese Phys B",
+      "title": "Designing solar-cell absorber materials through computational high-throughput screening",
+      "authors": "Jiang Xiaowei, Yin Wan-Jian",
+      "venue": "2020;29(2):028803",
+      "doi": "10.1088/1674-1056/ab6655",
+      "href": "https://doi.org/10.1088/1674-1056/ab6655"
+    },
+    {
+      "number": 87,
+      "date": "2020",
+      "type": "SCIENCE CHINA Materials",
+      "title": "Bayesian Optimization Based on a Unified Figure of Merit for Accelerated Materials Screening: A Case Study of Halide Perovskites",
+      "authors": "Xiwen Chen, Chen Wang, Zhenzhu Li, Zhufeng Hou, Wan-Jian Yin",
+      "venue": "2020",
+      "doi": "10.1007/s40843-019-1255-4",
+      "href": "http://engine.scichina.com/publisher/scp/journal/SCMs/doi/10.1007/s40843-019-1255-4?slug=abstract"
+    },
+    {
+      "number": 86,
+      "date": "2020",
+      "type": "Nature Communications",
+      "title": "Coordination assembly of 2D ordered organic metal chalcogenides with widely tunable electronic band gaps",
+      "authors": "Li Yanzhou, Jiang Xiaoming, Fu Zhihua, Huang Qingqing, Wang Guan-E., Deng Wei-Hua, Wang Chen, Li Zhenzhu, Yin Wanjian, Chen Banglin, Xu Gang",
+      "venue": "2020;11(1):261–261",
+      "doi": "10.1038/s41467-019-14136-8",
+      "href": "https://doi.org/10.1038/s41467-019-14136-8"
+    },
+    {
+      "number": 85,
+      "date": "2020",
+      "type": "Advanced Materials",
+      "title": "Passivating Detrimental DX Centers in CH3NH3PbI3 for Reducing Nonradiative Recombination and Elongating Carrier Lifetime",
+      "authors": "Wang Jing, Li Wei, Yin Wan-Jian",
+      "venue": "2020:1906115",
+      "doi": "10.1002/adma.201906115",
+      "href": "https://doi.org/10.1002/adma.201906115"
+    },
+    {
+      "number": 84,
+      "date": "2019",
+      "type": "Nano Research",
+      "title": "Confining MOF-derived SnSe nanoplatelets in nitrogen-doped graphene cages via direct CVD for durable sodium ion storage",
+      "authors": "Lu Chen, Li Zhenzhu, Xia Zhou, Ci Haina, Cai Jingsheng, Song Yingze, Yu Lianghao, Yin Wanjian, Dou Shixue, Sun Jingyu, Liu Zhongfan",
+      "venue": "2019;12(12):3051–8",
+      "doi": "10.1007/s12274-019-2551-0",
+      "href": "https://doi.org/10.1007/s12274-019-2551-0"
+    },
+    {
+      "number": 83,
+      "date": "2019",
+      "type": "Chin Sci Bull",
+      "title": "Research progress and perspective of machine learning in material design",
+      "authors": "Sun Zhongti, Li Zhenzhu, Cheng Guanjian, Xu Qichen, Hou Zhufeng, Yin Wanjian",
+      "venue": "2019;64(32):3270–5",
+      "doi": "10.1360/TB-2019-0456",
+      "href": "http://engine.scichina.com/publisher/scp/journal/CSB/64/32/10.1360/TB-2019-0456?slug=fulltext"
+    },
+    {
+      "number": 82,
+      "date": "2019",
+      "type": "Acs Nano",
+      "title": "Achieving High-Quality Sn-Pb Perovskite Films on Complementary Metal-Oxide-Semiconductor-Compatible Metal/Silicon Substrates for Efficient Imaging Array",
+      "authors": "Zhu Hugh Lu, Lin Hong, Song Zhilong, Wang Zishuai, Ye Fei, Zhang Hong, Yin Wan-Jian, Yan Yanfa, Choy Wallace C. H",
+      "venue": "2019;13(10):11800–8",
+      "doi": "10.1021/acsnano.9b05774",
+      "href": "https://doi.org/10.1021/acsnano.9b05774"
+    },
+    {
+      "number": 81,
+      "date": "2019",
+      "type": "Nanoscale",
+      "title": "Single-phase alkylammonium cesium lead iodide quasi-2D perovskites for color-tunable and spectrum-stable red LEDs",
+      "authors": "Lin Hong, Mao Jian, Qin Minchao, Song Zhilong, Yin Wanjian, Lu Xinhui, Choy Wallace C. H",
+      "venue": "2019;11(36):16907–18",
+      "doi": "10.1039/c9nr02706h",
+      "href": "https://doi.org/10.1039/c9nr02706h"
+    },
+    {
+      "number": 80,
+      "date": "2019",
+      "type": "Nature Communications",
+      "title": "Octahedral gold-silver nanoframes with rich crystalline defects for efficient methanol oxidation manifesting a CO-promoting effect",
+      "authors": "Xiong Likun, Sun Zhongti, Zhang Xiang, Zhao Liang, Huang Peng, Chen Xiwen, Jin Huidong, Sun Hao, Lian Yuebin, Deng Zhao, Rummerli Mark H., Yin Wanjian, Zhang Duo, Wang Shuao, Peng Yang",
+      "venue": "2019;10:3782",
+      "doi": "10.1038/s41467-019-11766-w",
+      "href": "https://doi.org/10.1038/s41467-019-11766-w"
+    },
+    {
+      "number": 79,
+      "date": "2019",
+      "type": "Journal of Physical Chemistry Letters",
+      "title": "Disparity of the Nature of the Band Gap between Halide and Chalcogenide Single Perovskites for Solar Cell Absorbers",
+      "authors": "Peng Yujie, Sun Qingde, Chen Hangyan, Yin Wan-Jian",
+      "venue": "2019;10(16):4566–70",
+      "doi": "10.1021/acs.jpclett.9b01657",
+      "href": "https://doi.org/10.1021/acs.jpclett.9b01657"
+    },
+    {
+      "number": 78,
+      "date": "2019",
+      "type": "Acs Nano",
+      "title": "Plasmon-Free Surface-Enhanced Raman Spectroscopy Using Metallic 2D Materials",
+      "authors": "Song Xiuju, Wang Yan, Zhao Fang, Li Qucheng, Ta Huy Quang, Ruemmeli Mark H., Tully Christopher G., Li Zhenzhu, Yin Wan-Jian, Yang Letao, Lee Ki-Bum, Yang Jieun, Bozkurt Ibrahim, Liu Shengwen, Zhang Wenjing, Chhowalla Manish",
+      "venue": "2019;13(7):8312–9",
+      "doi": "10.1021/acsnano.9b03761",
+      "href": "https://doi.org/10.1021/acsnano.9b03761"
+    },
+    {
+      "number": 77,
+      "date": "2019",
+      "type": "Advanced Materials",
+      "title": "Materials Design of Solar Cell Absorbers Beyond Perovskites and Conventional Semiconductors via Combining Tetrahedral and Octahedral Coordination",
+      "authors": "Wang Jing, Chen Hangyan, Wei Su-Huai, Yin Wan-Jian",
+      "venue": "2019;31(17):1806593",
+      "doi": "10.1002/adma.201806593",
+      "href": "https://doi.org/10.1002/adma.201806593"
+    },
+    {
+      "number": 76,
+      "date": "2019",
+      "type": "Advanced Functional Materials",
+      "title": "Thermodynamic Stability Landscape of Halide Double Perovskites via High-Throughput Computing and Machine Learning",
+      "authors": "Li Zhenzhu, Xu Qichen, Sun Qingde, Hou Zhufeng, Yin Wan-Jian",
+      "venue": "2019;29(9):1807280",
+      "doi": "10.1002/adfm.201807280",
+      "href": "https://doi.org/10.1002/adfm.201807280"
+    },
+    {
+      "number": 75,
+      "date": "2019",
+      "type": "Energy & Environmental Science",
+      "title": "Oxide perovskites, double perovskites and derivatives for electrocatalysis, photocatalysis, and photovoltaics",
+      "authors": "Yin Wan-Jian, Weng Baicheng, Ge Jie, Sun Qingde, Li Zhenzhu, Yan Yanfa",
+      "venue": "2019;12(2):442–62",
+      "doi": "10.1039/c8ee01574k",
+      "href": "https://doi.org/10.1039/c8ee01574k"
+    },
+    {
+      "number": 74,
+      "date": "2019",
+      "type": "Chemistry of Materials",
+      "title": "Do Chalcogenide Double Perovskites Work as Solar Cell Absorbers: A First-Principles Study",
+      "authors": "Sun Qingde, Chen Hangyan, Yin Wan-Jian",
+      "venue": "2019;31(1):244–50",
+      "doi": "10.1021/acs.chemmater.8b04320",
+      "href": "https://doi.org/10.1021/acs.chemmater.8b04320"
+    },
+    {
+      "number": 73,
+      "date": "2018",
+      "type": "Journal of Physical Chemistry Letters",
+      "title": "Rationalizing Perovskite Data for Machine Learning and Materials Design",
+      "authors": "Xu Qichen, Li Zhenzhu, Liu Miao, Yin Wan-Jian",
+      "venue": "2018;9(24):6948–54",
+      "doi": "10.1021/acs.jpclett.8b03232",
+      "href": "https://doi.org/10.1021/acs.jpclett.8b03232"
+    },
+    {
+      "number": 72,
+      "date": "2018",
+      "type": "Journal of Physics D-Applied Physics",
+      "title": "High-throughput screening of chalcogenide single perovskites by first-principles calculations for photovoltaics",
+      "authors": "Huo Zhengbao, Wei Su-Huai, Yin Wan-Jian",
+      "venue": "2018;51(47):474003",
+      "doi": "10.1088/1361-6463/aae1ee",
+      "href": "https://doi.org/10.1088/1361-6463/aae1ee"
+    },
+    {
+      "number": 71,
+      "date": "2018",
+      "type": "Nano Research",
+      "title": "Nanostructured Bi2S3 encapsulated within three-dimensional N-doped graphene as active and flexible anodes for sodium-ion batteries",
+      "authors": "Lu Chen, Li Zhenzhu, Yu Lianghao, Zhang Li, Xia Zhou, Jiang Tao, Yin Wanjian, Dou Shixue, Liu Zhongfan, Sun Jingyu",
+      "venue": "2018;11(9):4614–26",
+      "doi": "10.1007/s12274-018-2042-8",
+      "href": "https://doi.org/10.1007/s12274-018-2042-8"
+    },
+    {
+      "number": 70,
+      "date": "2018",
+      "type": "Energy & Environmental Science",
+      "title": "Improving the stability and performance of perovskite solar cells via off-the-shelf post-device ligand treatment",
+      "authors": "Zhang Hong, Ren Xingang, Chen Xiwen, Mao Jian, Cheng Jiaqi, Zhao Yong, Liu Yuhang, Milic Jovana, Yin Wan-Jian, Gratzel Michael, Choy Wallace C. H",
+      "venue": "2018;11(8):2253–62",
+      "doi": "10.1039/c8ee00580j",
+      "href": "https://doi.org/10.1039/c8ee00580j"
+    },
+    {
+      "number": 69,
+      "date": "2018",
+      "type": "Journal of Physical Chemistry C",
+      "title": "Stability Trend of Tilted Perovskites",
+      "authors": "Shojaei Fazel, Yin Wan-Jian",
+      "venue": "2018;122(27):15214–9",
+      "doi": "10.1021/acs.jpcc.8b04875",
+      "href": "https://doi.org/10.1021/acs.jpcc.8b04875"
+    },
+    {
+      "number": 68,
+      "date": "2018",
+      "type": "J Semicond",
+      "title": "Recent progress in Pb-free stable inorganic double halide perovskites",
+      "authors": "Li Zhenzhu, Yin Wanjian",
+      "venue": "2018;39(7):071003",
+      "doi": "10.1088/1674-4926/39/7/071003",
+      "href": "https://doi.org/10.1088/1674-4926/39/7/071003"
+    },
+    {
+      "number": 67,
+      "date": "2018",
+      "type": "Nano Research",
+      "title": "Single Cr atom catalytic growth of graphene",
+      "authors": "Ta Huy Q., Zhao Liang, Yin Wanjian, Pohl Darius, Rellinghaus Bernd, Gemming Thomas, Trzebicka Barbara, Palisaitis Justinas, Jing Gao, Persson Per O. A., Liu Zhongfan, Bachmatiuk Alicja, Rummeli Mark H",
+      "venue": "2018;11(5):2405–11",
+      "doi": "10.1007/s12274-017-1861-3",
+      "href": "https://doi.org/10.1007/s12274-017-1861-3"
+    },
+    {
+      "number": 66,
+      "date": "2018",
+      "type": "Advanced Functional Materials",
+      "title": "Low-Bandgap Methylammonium-Rubidium Cation Sn-Rich Perovskites for Efficient Ultraviolet-Visible-Near Infrared Photodetectors",
+      "authors": "Zhu Hugh Lu, Liang Zhifu, Huo Zhengbao, Ng Wai Kit, Mao Jian, Wong Kam Sing, Yin Wan-Jian, Choy Wallace C. H",
+      "venue": "2018;28(16):1706068",
+      "doi": "10.1002/adfm.201706068",
+      "href": "https://doi.org/10.1002/adfm.201706068"
+    },
+    {
+      "number": 65,
+      "date": "2018",
+      "type": "Advanced Materials",
+      "title": "Bandgap Engineering of Stable Lead-Free Oxide Double Perovskites for Photovoltaics",
+      "authors": "Sun Qingde, Wang Jing, Yin Wan-Jian, Yan Yanfa",
+      "venue": "2018;30(15):1705901",
+      "doi": "10.1002/adma.201705901",
+      "href": "https://doi.org/10.1002/adma.201705901"
+    },
+    {
+      "number": 64,
+      "date": "2018",
+      "type": "Chemistry of Materials",
+      "title": "Solution-Processed Nb-Substituted BaBiO3 Double Perovskite Thin Films for Photoelectrochemical Water Reduction",
+      "authors": "Ge Jie, Yin Wan-Jian, Yan Yanfa",
+      "venue": "2018;30(3):1017–31",
+      "doi": "10.1021/acs.chemmater.7b04880",
+      "href": "https://doi.org/10.1021/acs.chemmater.7b04880"
+    },
+    {
+      "number": 63,
+      "date": "2018",
+      "type": "Journal of Physical Chemistry C",
+      "title": "Intrinsic Point Defects in Inorganic Cesium Lead Iodide Perovskite CsPbI3",
+      "authors": "Huang Yang, Yin Wan-Jian, He Yao",
+      "venue": "2018;122(2):1345–50",
+      "doi": "10.1021/acs.jpcc.7b10045",
+      "href": "https://doi.org/10.1021/acs.jpcc.7b10045"
+    },
+    {
+      "number": 62,
+      "date": "2017",
+      "type": "Chemistry of Materials",
+      "title": "Exploring Emerging Photovoltaic Materials Beyond Perovskite: The Case of Skutterudite",
+      "authors": "Yin Yuan, Huang Yang, Wu Yelong, Chen Guangde, Yin Wan-Jian, Wei Su-Huai, Gong Xingao",
+      "venue": "2017;29(21):9429–35",
+      "doi": "10.1021/acs.chemmater.7b03507",
+      "href": "https://doi.org/10.1021/acs.chemmater.7b03507"
+    },
+    {
+      "number": 61,
+      "date": "2017",
+      "type": "Nature Photon",
+      "title": "Cs2AgBiBr6 single-crystal X-ray detectors with a low detection limit",
+      "authors": "Pan Weicheng, Wu Haodi, Luo Jiajun, Deng Zhenzhou, Ge Cong, Chen Chao, Jiang Xiaowei, Yin Wan-Jian, Niu Guangda, Zhu Lujun, Yin Lixiao, Zhou Ying, Xie Qingguo, Ke Xiaoxing, Sui Manling, Tang Jiang",
+      "venue": "2017;11(11):726–32",
+      "doi": "10.1038/s41566-017-0012-4",
+      "href": "https://doi.org/10.1038/s41566-017-0012-4"
+    },
+    {
+      "number": 60,
+      "date": "2017",
+      "type": "Journal of the American Chemical Society",
+      "title": "Thermodynamic Stability Trend of Cubic Perovskites",
+      "authors": "Sun Qingde, Yin Wan-Jian",
+      "venue": "2017;139(42):14905–8",
+      "doi": "10.1021/jacs.7b09379",
+      "href": "https://doi.org/10.1021/jacs.7b09379"
+    },
+    {
+      "number": 59,
+      "date": "2017",
+      "type": "Nano Letters",
+      "title": "In Situ Electron Driven Carbon Nanopillar-Fullerene Transformation through Cr Atom Mediation",
+      "authors": "Zhao Liang, Ta Huy Q., Dianat Arezoo, Soni Akash, Fediai Artem, Yin Wajian, Gemming Thomas, Trzebicka Barbara, Cuniberti Gianaurelio, Liu Zhongfan, Bachmatiuk Alicja, Rummeli Mark H",
+      "venue": "2017;17(8):4725–32",
+      "doi": "10.1021/acs.nanolett.7b01406",
+      "href": "https://doi.org/10.1021/acs.nanolett.7b01406"
+    },
+    {
+      "number": 58,
+      "date": "2017",
+      "type": "Acta Physico-Chimica Sinica",
+      "title": "Halide Perovskite Materials for Solar Cells: a Theoretical Review",
+      "authors": "Yang Huang, Qing-De Sun, Wen Xu, Yao He, Wan-Jian Yin",
+      "venue": "2017;33(9):1730–51",
+      "doi": "10.3866/PKU.WHXB201705042",
+      "href": "https://doi.org/10.3866/PKU.WHXB201705042"
+    },
+    {
+      "number": 57,
+      "date": "2017",
+      "type": "Scientific Reports",
+      "title": "Self-compensation in arsenic doping of CdTe",
+      "authors": "Ablekim Tursun, Swain Santosh K., Yin Wan-Jian, Zaunbrecher Katherine, Burst James, Barnes Teresa M., Kuciauskas Darius, Wei Su-Huai, Lynn Kelvin G",
+      "venue": "2017;7:4563",
+      "doi": "10.1038/s41598-017-04719-0",
+      "href": "https://doi.org/10.1038/s41598-017-04719-0"
+    },
+    {
+      "number": 56,
+      "date": "2016",
+      "type": "Semiconductor Science and Technology",
+      "title": "Review on first-principles study of defect properties of CdTe as a solar cell absorber",
+      "authors": "Yang Ji-Hui, Yin Wan-Jian, Park Ji-Sang, Ma Jie, Wei Su-Huai",
+      "venue": "2016;31(8):083002",
+      "doi": "10.1088/0268-1242/31/8/083002",
+      "href": "https://doi.org/10.1088/0268-1242/31/8/083002"
+    },
+    {
+      "number": 55,
+      "date": "2016",
+      "type": "Physical Review B",
+      "title": "Orbital-frustration-induced ordering in semiconductor alloys",
+      "authors": "Liu Kai, Yin Wanjian, Chen Shiyou, Gong X. G., Wei S.-H., Xiang H. J",
+      "venue": "2016;93(20):205207",
+      "doi": "10.1103/PhysRevB.93.205207",
+      "href": "https://doi.org/10.1103/PhysRevB.93.205207"
+    },
+    {
+      "number": 54,
+      "date": "2016",
+      "type": "Nano Letters",
+      "title": "Two-Dimensional SiS Layers with Promising Electronic and Optoelectronic Properties: Theoretical Prediction",
+      "authors": "Yang Ji-Hui, Zhang Yueyu, Yin Wan-Jian, Gong X. G., Yakobson Boris I., Wei Su-Huai",
+      "venue": "2016;16(2):1110–7",
+      "doi": "10.1021/acs.nanolett.5b04341",
+      "href": "https://doi.org/10.1021/acs.nanolett.5b04341"
+    },
+    {
+      "number": 53,
+      "date": "2016",
+      "type": "Journal of Applied Physics",
+      "title": "First-principles study of roles of Cu and Cl in polycrystalline CdTe",
+      "authors": "Yang Ji-Hui, Yin Wan-Jian, Park Ji-Sang, Metzger Wyatt, Wei Su-Huai",
+      "venue": "2016;119(4):045104",
+      "doi": "10.1063/1.4940722",
+      "href": "https://doi.org/10.1063/1.4940722"
+    },
+    {
+      "number": 52,
+      "date": "2016",
+      "type": "Journal of Materials Chemistry A",
+      "title": "Fast self-diffusion of ions in CH3NH3PbI3: the interstiticaly mechanism versus vacancy-assisted mechanism",
+      "authors": "Yang Ji-Hui, Yin Wan-Jian, Park Ji-Sang, Wei Su-Huai",
+      "venue": "2016;4(34):13105–12",
+      "doi": "10.1039/c6ta03599j",
+      "href": "https://doi.org/10.1039/c6ta03599j"
+    },
+    {
+      "number": 51,
+      "date": "2015",
+      "type": "Scientific Reports",
+      "title": "Self-regulation of charged defect compensation and formation energy pinning in semiconductors",
+      "authors": "Yang Ji-Hui, Yin Wan-Jian, Park Ji-Sang, Wei Su-Huai",
+      "venue": "2015;5:16977",
+      "doi": "10.1038/srep16977",
+      "href": "https://doi.org/10.1038/srep16977"
+    },
+    {
+      "number": 50,
+      "date": "2015",
+      "type": "Applied Physics Letters",
+      "title": "Surface stability and the selection rules of substrate orientation for optimal growth of epitaxial II-VI semiconductors",
+      "authors": "Yin Wan-Jian, Yang Ji-Hui, Zaunbrecher Katherine, Gessert Tim, Barnes Teresa, Yan Yanfa, Wei Su-Huai",
+      "venue": "2015;107(14):141607",
+      "doi": "10.1063/1.4932374",
+      "href": "https://doi.org/10.1063/1.4932374"
+    },
+    {
+      "number": 49,
+      "date": "2015",
+      "type": "Journal of Applied Physics",
+      "title": "Enhanced p-type dopability of P and As in CdTe using non-equilibrium thermal processing",
+      "authors": "Yang Ji-Hui, Yin Wan-Jian, Park Ji-Sang, Burst James, Metzger Wyatt K., Gessert Tim, Barnes Teresa, Wei Su-Huai",
+      "venue": "2015;118(2):025102",
+      "doi": "10.1063/1.4926748",
+      "href": "https://doi.org/10.1063/1.4926748"
+    },
+    {
+      "number": 48,
+      "date": "2015",
+      "type": "Physical Review Applied",
+      "title": "Device Performance of the Mott Insulator LaVO3 as a Photovoltaic Material",
+      "authors": "Wang Lingfei, Li Yongfeng, Bera Ashok, Ma Chun, Jin Feng, Yuan Kaidi, Yin Wanjian, David Adrian, Chen Wei, Wu Wenbin, Prellier Wilfrid, Wei Suhuai, Wu Tom",
+      "venue": "2015;3(6):064015",
+      "doi": "10.1103/PhysRevApplied.3.064015",
+      "href": "https://doi.org/10.1103/PhysRevApplied.3.064015"
+    },
+    {
+      "number": 47,
+      "date": "2015",
+      "type": "Advanced Electronic Materials",
+      "title": "Origin of High Electronic Quality in Structurally Disordered CH3NH3PbI3 and the Passivation Effect of Cl and O at Grain Boundaries",
+      "authors": "Yin Wan-Jian, Chen Hangyan, Shi Tingting, Wei Su-Huai, Yan Yanfa",
+      "venue": "2015;1(6):1500044",
+      "doi": "10.1002/aelm.201500044",
+      "href": "https://doi.org/10.1002/aelm.201500044"
+    },
+    {
+      "number": 46,
+      "date": "2015",
+      "type": "Journal of Applied Physics",
+      "title": "Physics of grain boundaries in polycrystalline photovoltaic semiconductors",
+      "authors": "Yan Yanfa, Yin Wan-Jian, Wu Yelong, Shi Tingting, Paudel Naba R., Li Chen, Poplawsky Jonathan, Wang Zhiwei, Moseley John, Guthrey Harvey, Moutinho Helio, Pennycook Stephen J., Al-Jassim Mowafak M",
+      "venue": "2015;117(11):112807",
+      "doi": "10.1063/1.4913833",
+      "href": "https://doi.org/10.1063/1.4913833"
+    },
+    {
+      "number": 45,
+      "date": "2015",
+      "type": "Journal of Physical Chemistry C",
+      "title": "Superior Photovoltaic Properties of Lead Halide Perovskites: Insights from First-Principles Theory",
+      "authors": "Yin Wan-Jian, Shi Tingting, Yan Yanfa",
+      "venue": "2015;119(10):5253–64",
+      "doi": "10.1021/jp512077m",
+      "href": "https://doi.org/10.1021/jp512077m"
+    },
+    {
+      "number": 44,
+      "date": "2015",
+      "type": "Applied Physics Letters",
+      "title": "Unipolar self-doping behavior in perovskite CH3NH3PbBr3",
+      "authors": "Shi Tingting, Yin Wan-Jian, Hong Feng, Zhu Kai, Yan Yanfa",
+      "venue": "2015;106(10):103902",
+      "doi": "10.1063/1.4914544",
+      "href": "https://doi.org/10.1063/1.4914544"
+    },
+    {
+      "number": 43,
+      "date": "2015",
+      "type": "Computational Materials Science",
+      "title": "LDA plus U/GGA plus U calculations of structural and electronic properties of CdTe: Dependence on the effective U parameter",
+      "authors": "Wu Yelong, Chen Guangde, Zhu Youzhang, Yin Wan-Jian, Yan Yanfa, Al-Jassim Mowafak, Pennycook Stephen J",
+      "venue": "2015;98:18–23",
+      "doi": "10.1016/j.commatsci.2014.10.051",
+      "href": "https://doi.org/10.1016/j.commatsci.2014.10.051"
+    },
+    {
+      "number": 42,
+      "date": "2015",
+      "type": "Journal of Materials Chemistry A",
+      "title": "Halide perovskite materials for solar cells: a theoretical review",
+      "authors": "Yin Wan-Jian, Yang Ji-Hui, Kang Joongoo, Yan Yanfa, Wei Su-Huai",
+      "venue": "2015;3(17):8926–42",
+      "doi": "10.1039/c4ta05033a",
+      "href": "https://doi.org/10.1039/c4ta05033a"
+    },
+    {
+      "number": 41,
+      "date": "2015",
+      "type": "Journal of Materials Chemistry A",
+      "title": "Monitoring the stability of organometallic perovskite thin films",
+      "authors": "F. Ndione P., Yin W.-J., Zhu K., Wei S.-H., J. Berry J",
+      "venue": "2015;3(43):21940–5",
+      "doi": "10.1039/C5TA05693D",
+      "href": "https://doi.org/10.1039/C5TA05693D"
+    },
+    {
+      "number": 40,
+      "date": "2014",
+      "type": "Applied Physics Express",
+      "title": "Creating intermediate bands in ZnTe via co-alloying approach",
+      "authors": "Kim Junho, Yin Wan-Jian, Kang Joongoo, Yan Yanfa, Wei Su-Huai, Al-Jassim Mowafak M",
+      "venue": "2014;7(12):121201",
+      "doi": "10.7567/APEX.7.121201",
+      "href": "https://doi.org/10.7567/APEX.7.121201"
+    },
+    {
+      "number": 39,
+      "date": "2014",
+      "type": "Journal of Physical Chemistry Letters",
+      "title": "Anomalous Alloy Properties in Mixed Halide Perovskites",
+      "authors": "Yin Wan-Jian, Yan Yanfa, Wei Su-Huai",
+      "venue": "2014;5(21):3625–31",
+      "doi": "10.1021/jz501896w",
+      "href": "https://doi.org/10.1021/jz501896w"
+    },
+    {
+      "number": 38,
+      "date": "2014",
+      "type": "Journal of Physical Chemistry C",
+      "title": "Predictions for p-Type CH3NH3PbI3 Perovskites",
+      "authors": "Shi Tingting, Yin Wan-Jian, Yan Yanfa",
+      "venue": "2014;118(44):25350–4",
+      "doi": "10.1021/jp508328u",
+      "href": "https://doi.org/10.1021/jp508328u"
+    },
+    {
+      "number": 37,
+      "date": "2014",
+      "type": "Microsc Microanal",
+      "title": "Defect Physics in Photovoltaic Materials Revealed by Combined High-Resolution Microscopy and Density-Functional Theory Calculation",
+      "authors": "Yan Yanfa, Li Chen, Yu Yelong, Yin Wan-Jian, Wang Zhiwei, Paudel Naba R., Poplawsky Jonathan, Pennycook Timothy J, Metzger Wyatt K, Repins Ingrid, Al-Jassim Mowafak M, Pennycook Stephen J",
+      "venue": "2014;20(S3):514–5",
+      "doi": "10.1017/S1431927614004292",
+      "href": "https://doi.org/10.1017/S1431927614004292"
+    },
+    {
+      "number": 36,
+      "date": "2014",
+      "type": "Advanced Materials",
+      "title": "Unique Properties of Halide Perovskites as Possible Origins of the Superior Solar Cell Performance",
+      "authors": "Yin Wan-Jian, Shi Tingting, Yan Yanfa",
+      "venue": "2014;26(27):4653-+",
+      "doi": "10.1002/adma.201306281",
+      "href": "https://doi.org/10.1002/adma.201306281"
+    },
+    {
+      "number": 35,
+      "date": "2014",
+      "type": "Physical Review Letters",
+      "title": "Grain-Boundary-Enhanced Carrier Collection in CdTe Solar Cells",
+      "authors": "Li Chen, Wu Yelong, Poplawsky Jonathan, Pennycook Timothy J., Paudel Naba, Yin Wanjian, Haigh Sarah J., Oxley Mark P., Lupini Andrew R., Al-Jassim Mowafak, Pennycook Stephen J., Yan Yanfa",
+      "venue": "2014;112(15):156103",
+      "doi": "10.1103/PhysRevLett.112.156103",
+      "href": "https://doi.org/10.1103/PhysRevLett.112.156103"
+    },
+    {
+      "number": 34,
+      "date": "2014",
+      "type": "Applied Physics Letters",
+      "title": "Unusual defect physics in CH3NH3PbI3 perovskite solar cell absorber",
+      "authors": "Yin Wan-Jian, Shi Tingting, Yan Yanfa",
+      "venue": "2014;104(6):063903",
+      "doi": "10.1063/1.4864778",
+      "href": "https://doi.org/10.1063/1.4864778"
+    },
+    {
+      "number": 33,
+      "date": "2014",
+      "type": "Advanced Materials",
+      "title": "Determination of Polarization-Fields Across Polytype Interfaces in InAs Nanopillars",
+      "authors": "Li Luying, Gan Zhaofeng, McCartney Martha R., Liang Hanshuang, Yu Hongbin, Yin Wan-Jian, Yan Yanfa, Gao Yihua, Wang Jianbo, Smith David J",
+      "venue": "2014;26(7):1052–7",
+      "doi": "10.1002/adma.201304021",
+      "href": "https://doi.org/10.1002/adma.201304021"
+    },
+    {
+      "number": 32,
+      "date": "2014",
+      "type": "Journal of Applied Physics",
+      "title": "Stability, transparency, and conductivity of MgxZn1-xO and CdxZn1-xO: Designing optimum transparency conductive oxides",
+      "authors": "Yin Wan-Jian, Dai Lingling, Zhang Lin, Yang Rong, Li Liwei, Guo Ted, Yan Yanfa",
+      "venue": "2014;115(2):023707",
+      "doi": "10.1063/1.4861637",
+      "href": "https://doi.org/10.1063/1.4861637"
+    },
+    {
+      "number": 31,
+      "date": "2014",
+      "type": "Advanced Energy Materials",
+      "title": "Engineering Grain Boundaries in Cu2ZnSnSe4 for Better Cell Performance: A First-Principle Study",
+      "authors": "Yin Wan-Jian, Wu Yelong, Wei Su-Huai, Noufi Rommel, Al-Jassim Mowafak M., Yan Yanfa",
+      "venue": "2014;4(1):1300712",
+      "doi": "10.1002/aenm.201300712",
+      "href": "https://doi.org/10.1002/aenm.201300712"
+    },
+    {
+      "number": 30,
+      "date": "2013",
+      "type": "Ultramicroscopy",
+      "title": "From atomic structure to photovoltaic properties in CdTe solar cells",
+      "authors": "Li Chen, Poplawsky Jonathan, Wu Yelong, Lupini Andrew R., Mouti Anas, Leonard Donovan N., Paudel Naba, Jones Kim, Yin Wanjian, Al-Jassim Mowafak, Yan Yanfa, Pennycook Stephen J",
+      "venue": "2013;134:113–25",
+      "doi": "10.1016/j.ultramic.2013.06.010",
+      "href": "https://doi.org/10.1016/j.ultramic.2013.06.010"
+    },
+    {
+      "number": 29,
+      "date": "2013",
+      "type": "Applied Physics Letters",
+      "title": "Structural, electronic, and optical properties of Cu-3-V-VI4 compound semiconductors",
+      "authors": "Shi Tingting, Yin Wan-Jian, Al-Jassim Mowafak, Yan Yanfa",
+      "venue": "2013;103(15):152105",
+      "doi": "10.1063/1.4824770",
+      "href": "https://doi.org/10.1063/1.4824770"
+    },
+    {
+      "number": 28,
+      "date": "2013",
+      "type": "Physical Review Letters",
+      "title": "Carrier Separation at Dislocation Pairs in CdTe",
+      "authors": "Li Chen, Wu Yelong, Pennycook Timothy J., Lupini Andrew R., Leonard Donovan N., Yin Wanjian, Paudel Naba, Al-Jassim Mowafak, Yan Yanfa, Pennycook Stephen J",
+      "venue": "2013;111(9):096403",
+      "doi": "10.1103/PhysRevLett.111.096403",
+      "href": "https://doi.org/10.1103/PhysRevLett.111.096403"
+    },
+    {
+      "number": 27,
+      "date": "2013",
+      "type": "Journal of Applied Physics",
+      "title": "The structure and properties of (aluminum, oxygen) defect complexes in silicon",
+      "authors": "Shi Tingting, Yin Wan-Jian, Wu Yelong, Al-Jassim Mowafak, Yan Yanfa",
+      "venue": "2013;114(6):063520",
+      "doi": "10.1063/1.4818515",
+      "href": "https://doi.org/10.1063/1.4818515"
+    },
+    {
+      "number": 26,
+      "date": "2013",
+      "type": "Microscopy and Microanalysis",
+      "title": "Electrical Activity of Defects in CdTe Solar Cells via Aberration-corrected STEM",
+      "authors": "Li C., Wu Y., Lupini A. R., Mouti A., Poplawsky J., Yin W., Paudel N., Jassim M. A., Yan Y., Pennycook S. J",
+      "venue": "2013;19(S2):334–5",
+      "doi": "10.1017/S1431927613003668",
+      "href": "https://doi.org/10.1017/S1431927613003668"
+    },
+    {
+      "number": 25,
+      "date": "2013",
+      "type": "Applied Physics Letters",
+      "title": "Defect segregation at grain boundary and its impact on photovoltaic performance of CuInSe2",
+      "authors": "Yin Wan-Jian, Wu Yelong, Noufi Rommel, Al-Jassim Mowafak, Yan Yanfa",
+      "venue": "2013;102(19):193905",
+      "doi": "10.1063/1.4804606",
+      "href": "https://doi.org/10.1063/1.4804606"
+    },
+    {
+      "number": 24,
+      "date": "2013",
+      "type": "Journal of Applied Physics",
+      "title": "The electronic properties of point defects in earth-abundant photovoltaic material Zn3P2: A hybrid functional method study",
+      "authors": "Yin Wan-Jian, Yan Yanfa",
+      "venue": "2013;113(1):013708",
+      "doi": "10.1063/1.4772708",
+      "href": "https://doi.org/10.1063/1.4772708"
+    },
+    {
+      "number": 23,
+      "date": "2013",
+      "type": "Physical Chemistry Chemical Physics",
+      "title": "Control of one-dimensional magnetism in graphene via spontaneous hydrogenation of the grain boundary",
+      "authors": "Yin Wan-Jian, Wei Su-Huai, Yan Yanfa",
+      "venue": "2013;15(21):8271–5",
+      "doi": "10.1039/c3cp50781e",
+      "href": "https://doi.org/10.1039/c3cp50781e"
+    },
+    {
+      "number": 22,
+      "date": "2012",
+      "type": "Npg Asia Materials",
+      "title": "Realizing a SnO2-based ultraviolet light-emitting diode via breaking the dipole-forbidden rule",
+      "authors": "Li Yongfeng, Yin Wanjian, Deng Rui, Chen Rui, Chen Jing, Yan Qingyu, Yao Bin, Sun Handong, Wei Su-Huai, Wu Tom",
+      "venue": "2012;4:e30",
+      "doi": "10.1038/am.2012.56",
+      "href": "https://doi.org/10.1038/am.2012.56"
+    },
+    {
+      "number": 21,
+      "date": "2012",
+      "type": "Solid State Communications",
+      "title": "Possible effects of oxygen in Te-rich Sigma 3 (112) grain boundaries in CdTe",
+      "authors": "Feng Chunbao, Yin Wan-Jian, Nie Jinlan, Zu Xiaotao, Huda Muhammad N., Wei Su-Huai, Al-Jassim Mowafak M., Yon Yanfa",
+      "venue": "2012;152(18):1744–7",
+      "doi": "10.1016/j.ssc.2012.05.006",
+      "href": "https://doi.org/10.1016/j.ssc.2012.05.006"
+    },
+    {
+      "number": 20,
+      "date": "2012",
+      "type": "Physical Review Letters",
+      "title": "Electrostatic Potentials at Cu(In,Ga)Se-2 Grain Boundaries: Experiment and Simulations",
+      "authors": "Schmidt Sebastian S., Abou-Ras Daniel, Sadewasser Sascha, Yin Wanjian, Feng Chunbao, Yan Yanfa",
+      "venue": "2012;109(9):095506",
+      "doi": "10.1103/PhysRevLett.109.095506",
+      "href": "https://doi.org/10.1103/PhysRevLett.109.095506"
+    },
+    {
+      "number": 19,
+      "date": "2012",
+      "type": "Advanced Energy Materials",
+      "title": "A Novel Codoping Approach for Enhancing the Performance of LiFePO4 Cathodes",
+      "authors": "Ban Chunmei, Yin Wan-Jian, Tang Houwen, Wei Su-Huai, Yan Yanfa, Dillon Anne C",
+      "venue": "2012;2(8):1028–32",
+      "doi": "10.1002/aenm.201200085",
+      "href": "https://doi.org/10.1002/aenm.201200085"
+    },
+    {
+      "number": 18,
+      "date": "2012",
+      "type": "Physical Review B",
+      "title": "Comparative study of defect transition energy calculation methods: The case of oxygen vacancy in In2O3 and ZnO",
+      "authors": "Yin Wan-Jian, Ma Jie, Wei Su-Huai, Al-Jassim Mowafak M., Yan Yanfa",
+      "venue": "2012;86(4):045211",
+      "doi": "10.1103/PhysRevB.86.045211",
+      "href": "https://doi.org/10.1103/PhysRevB.86.045211"
+    },
+    {
+      "number": 17,
+      "date": "2012",
+      "type": "Physical Review B",
+      "title": "Origin of the diverse behavior of oxygen vacancies in ABO(3) perovskites: A symmetry based analysis",
+      "authors": "Yin Wan-Jian, Wei Su-Huai, Al-Jassim Mowafak M., Yan Yanfa",
+      "venue": "2012;85(20):201201",
+      "doi": "10.1103/PhysRevB.85.201201",
+      "href": "https://doi.org/10.1103/PhysRevB.85.201201"
+    },
+    {
+      "number": 16,
+      "date": "2012",
+      "type": "Journal of Applied Physics",
+      "title": "Strong asymmetrical doping properties of spinel CoAl2O4",
+      "authors": "Feng Chunbao, Yin Wan-Jian, Nie Jinlan, Zu Xiaotao, Huda Muhammad N., Wei Su-Huai, Al-Jassim Mowafak M., Turner John A., Yan Yanfa",
+      "venue": "2012;111(9):093723",
+      "doi": "10.1063/1.4716025",
+      "href": "https://doi.org/10.1063/1.4716025"
+    },
+    {
+      "number": 15,
+      "date": "2012",
+      "type": "Journal of Applied Physics",
+      "title": "Titanium and magnesium Co-alloyed hematite thin films for photoelectrochemical water splitting",
+      "authors": "Tang Houwen, Yin Wan-Jian, Matin M. A., Wang Heli, Deutsch Todd, Al-Jassim Mowafak M., Turner John A., Yan Yanfa",
+      "venue": "2012;111(7):073502",
+      "doi": "10.1063/1.3699016",
+      "href": "https://doi.org/10.1063/1.3699016"
+    },
+    {
+      "number": 14,
+      "date": "2012",
+      "type": "Advanced Materials",
+      "title": "Polarization-Induced Charge Distribution at Homogeneous Zincblende/Wurtzite Heterostructural Junctions in ZnSe Nanobelts",
+      "authors": "Li Luying, Jin Lei, Wang Jianbo, Smith David J., Yin Wan-Jian, Yan Yanfa, Sang Hongqian, Choy Wallace C. H., McCartney Martha R",
+      "venue": "2012;24(10):1328–32",
+      "doi": "10.1002/adma.201103920",
+      "href": "https://doi.org/10.1002/adma.201103920"
+    },
+    {
+      "number": 13,
+      "date": "2012",
+      "type": "Applied Physics Letters",
+      "title": "Electronic and optical properties of CoX2O4 (X=Al, Ga, In) alloys",
+      "authors": "Feng Chunbao, Yin Wan-Jian, Nie Jinlan, Zu Xiaotao, Huda Muhammad N., Wei Su-Huai, Al-Jassim Mowafak M., Turner John A., Yan Yanfa",
+      "venue": "2012;100(2):023901",
+      "doi": "10.1063/1.3676039",
+      "href": "https://doi.org/10.1063/1.3676039"
+    },
+    {
+      "number": 12,
+      "date": "2011",
+      "type": "Journal of Physical Chemistry Letters",
+      "title": "Origin of Bonding between the SWCNT and the Fe3O4(001) Surface and the Enhanced Electrical Conductivity",
+      "authors": "Yin Wan-Jian, Wei Su-Huai, Ban Chunmei, Wu Zhuangchun, Al-Jassim Mowafak M., Yan Yanfa",
+      "venue": "2011;2(22):2853–8",
+      "doi": "10.1021/jz201277s",
+      "href": "https://doi.org/10.1021/jz201277s"
+    },
+    {
+      "number": 11,
+      "date": "2011",
+      "type": "Applied Physics Letters",
+      "title": "Prediction of the chemical trends of oxygen vacancy levels in binary metal oxides",
+      "authors": "Yin Wan-Jian, Wei Su-Huai, Al-Jassim Mowafak M., Yan Yanfa",
+      "venue": "2011;99(14):142109",
+      "doi": "10.1063/1.3647756",
+      "href": "https://doi.org/10.1063/1.3647756"
+    },
+    {
+      "number": 10,
+      "date": "2011",
+      "type": "Physical Review B",
+      "title": "Doping properties of monoclinic BiVO4 studied by first-principles density-functional theory",
+      "authors": "Yin Wan-Jian, Wei Su-Huai, Al-Jassim Mowafak M., Turner John, Yan Yanfa",
+      "venue": "2011;83(15):155102",
+      "doi": "10.1103/PhysRevB.83.155102",
+      "href": "https://doi.org/10.1103/PhysRevB.83.155102"
+    },
+    {
+      "number": 9,
+      "date": "2011",
+      "type": "Physical Review Letters",
+      "title": "Double-Hole-Mediated Coupling of Dopants and Its Impact on Band Gap Engineering in TiO2",
+      "authors": "Yin Wan-Jian, Wei Su-Huai, Al-Jassim Mowafak M., Yan Yanfa",
+      "venue": "2011;106(6):066801",
+      "doi": "10.1103/PhysRevLett.106.066801",
+      "href": "https://doi.org/10.1103/PhysRevLett.106.066801"
+    },
+    {
+      "number": 8,
+      "date": "2010",
+      "type": "Physical Review B",
+      "title": "Band structure engineering of semiconductors for enhanced photoelectrochemical water splitting: The case of TiO2",
+      "authors": "Yin Wan-Jian, Tang Houwen, Wei Su-Huai, Al-Jassim Mowafak M., Turner John, Yan Yanfa",
+      "venue": "2010;82(4):045106",
+      "doi": "10.1103/PhysRevB.82.045106",
+      "href": "https://doi.org/10.1103/PhysRevB.82.045106"
+    },
+    {
+      "number": 7,
+      "date": "2010",
+      "type": "Applied Physics Letters",
+      "title": "Effective band gap narrowing of anatase TiO2 by strain along a soft crystal direction",
+      "authors": "Yin Wan-Jian, Chen Shiyou, Yang Ji-Hui, Gong Xin-Gao, Yan Yanfa, Wei Su-Huai",
+      "venue": "2010;96(22):221901",
+      "doi": "10.1063/1.3430005",
+      "href": "https://doi.org/10.1063/1.3430005"
+    },
+    {
+      "number": 6,
+      "date": "2009",
+      "type": "Applied Physics Letters",
+      "title": "Quaternary semiconductors with positive crystal field splitting: Potential high-efficiency spin-polarized electron sources",
+      "authors": "Chen Shiyou, Yin Wan-Jian, Yang Ji-Hui, Gong X. G., Walsh Aron, Wei Su-Huai",
+      "venue": "2009;95(5):052102",
+      "doi": "10.1063/1.3193662",
+      "href": "https://doi.org/10.1063/1.3193662"
+    },
+    {
+      "number": 5,
+      "date": "2009",
+      "type": "Physical Review B",
+      "title": "Electronic structure and phase stability of MgTe, ZnTe, CdTe, and their alloys in the B3, B4, and B8 structures",
+      "authors": "Yang Ji-Hui, Chen Shiyou, Yin Wan-Jian, Gong X. G., Walsh Aron, Wei Su-Huai",
+      "venue": "2009;79(24):245202",
+      "doi": "10.1103/PhysRevB.79.245202",
+      "href": "https://doi.org/10.1103/PhysRevB.79.245202"
+    },
+    {
+      "number": 4,
+      "date": "2009",
+      "type": "Applied Physics Letters",
+      "title": "Revised ab initio natural band offsets of all group IV, II-VI, and III-V semiconductors",
+      "authors": "Li Yong-Hua, Walsh Aron, Chen Shiyou, Yin Wan-Jian, Yang Ji-Hui, Li Jingbo, Da Silva Juarez L. F., Gong X. G., Wei Su-Huai",
+      "venue": "2009;94(21):212109",
+      "doi": "10.1063/1.3143626",
+      "href": "https://doi.org/10.1063/1.3143626"
+    },
+    {
+      "number": 3,
+      "date": "2009",
+      "type": "Physics Letters A",
+      "title": "Hybridized kinetic energy functional for orbital-free density functional method",
+      "authors": "Yin Wan-Jian, Gong Xin-Gao",
+      "venue": "2009;373(4):480–3",
+      "doi": "10.1016/j.physleta.2008.11.057",
+      "href": "https://doi.org/10.1016/j.physleta.2008.11.057"
+    },
+    {
+      "number": 2,
+      "date": "2008",
+      "type": "Physical Review B",
+      "title": "Origin of the unusually large band-gap bowing and the breakdown of the band-edge distribution rule in the SnxGe1-x alloys",
+      "authors": "Yin Wan-Jian, Gong Xin-Gao, Wei Su-Huai",
+      "venue": "2008;78(16):161203",
+      "doi": "10.1103/PhysRevB.78.161203",
+      "href": "https://doi.org/10.1103/PhysRevB.78.161203"
+    },
+    {
+      "number": 1,
+      "date": "2008",
+      "type": "Solid State Communications",
+      "title": "Magic number 32 and 90 of metal clusters: A shell jellium model study",
+      "authors": "Yin Wan-Jian, Gu Xiao, Gong Xin-Gao",
+      "venue": "2008;147(7–8):323–6",
+      "doi": "10.1016/j.ssc.2008.05.039",
+      "href": "https://doi.org/10.1016/j.ssc.2008.05.039"
+    }
   ]
 }
