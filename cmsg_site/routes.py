@@ -48,11 +48,18 @@ def home():
 
 def _section(slug: str):
     page = load_content(f"{slug}.json", _language())
+    publication_groups = []
+    if page.get("layout") == "publications":
+        for item in page.get("items", []):
+            if not publication_groups or publication_groups[-1]["year"] != item["date"]:
+                publication_groups.append({"year": item["date"], "items": []})
+            publication_groups[-1]["items"].append(item)
     return render_template(
         "site/section.html",
         active_page=slug,
         page=page,
         slug=slug,
+        publication_groups=publication_groups,
     )
 
 
