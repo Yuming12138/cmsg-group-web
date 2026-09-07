@@ -1,12 +1,18 @@
 {
-  "meta": {"title": "Events · CMSG", "description": "Placeholder events index."},
+  "meta": {"title": "Events · CMSG", "description": "Group activities and shared moments from CMSG."},
   "kicker": "Events",
   "title": "Conversations, seminars, and shared moments.",
-  "intro": "A chronological home for seminars, conference participation, visits, workshops, and group activities.",
+  "intro": "A chronological record of group meetings, outings, and shared moments around Suzhou and SIEMIS.",
   "layout": "timeline",
   "items": [
-    {"date": "DD / MM / YYYY", "type": "Seminar", "title": "Event title placeholder", "summary": "Speaker, venue, and short context placeholder."},
-    {"date": "DD / MM / YYYY", "type": "Conference", "title": "Event title placeholder", "summary": "Participation, venue, and short context placeholder."},
-    {"date": "DD / MM / YYYY", "type": "Workshop", "title": "Event title placeholder", "summary": "Topic, venue, and short context placeholder."}
+    {"date": "20 Apr 2025", "type": "Group outing", "title": "Spring outing · Xishan Island", "summary": "A spring day with the group at SIEMIS and Taihu Xishan Island."},
+    {"date": "06 Jan 2025", "type": "Annual meeting", "title": "2024 year-end summary meeting", "summary": "A look back at the group’s work and the year ahead at SIEMIS."},
+    {"date": "01 Apr 2023", "type": "Annual meeting", "title": "2022 year-end summary meeting", "summary": "The group gathered in Suzhou’s Taihu Xishan Island for its annual review."},
+    {"date": "22 Jun 2022", "type": "Group activity", "title": "2022 graduate group activity", "summary": "A shared day in Suzhou marking the next step for graduating researchers."},
+    {"date": "24 Mar 2021", "type": "Group outing", "title": "Spring outing · Suzhou ancient city walk", "summary": "An afternoon walk through the old city and its waterways."},
+    {"date": "22 Jan 2021", "type": "Annual meeting", "title": "2020 year-end summary meeting", "summary": "The group reviewed a year of work and collaboration."},
+    {"date": "26 Sep 2020", "type": "Group photo", "title": "Group photo · Suzhou", "summary": "A portrait of the group at the start of the autumn semester."},
+    {"date": "24 Dec 2019", "type": "Group photo", "title": "Group photo · Suzhou", "summary": "A year-end moment with the CMSG community."},
+    {"date": "28 Mar 2019", "type": "Group outing", "title": "Spring outing · Suzhou", "summary": "The group welcomed spring together in Suzhou."}
   ]
 }

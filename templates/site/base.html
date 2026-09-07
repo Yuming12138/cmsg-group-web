@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ page.meta.description if page is defined and page.meta is defined else site.description }}">
     <meta name="theme-color" content="#151619">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='site/images/icon.png') }}">
     <title>{{ page.meta.title if page is defined and page.meta is defined else site.full_name }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

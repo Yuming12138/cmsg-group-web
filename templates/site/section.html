@@ -14,15 +14,25 @@
 {% if page.layout == 'profile' %}
 <section class="section section--profile">
   <div class="shell profile-layout reveal">
-    <div class="portrait-placeholder" role="img" aria-label="Portrait placeholder for {{ page.profile.name }}"><span>{{ page.profile.initials }}</span></div>
+    <div class="portrait-placeholder{% if page.profile.image %} portrait-placeholder--image{% endif %}" role="img" aria-label="Portrait of {{ page.profile.name }}">
+      {% if page.profile.image %}<img src="{{ page.profile.image }}" alt="{{ page.profile.name }}">{% else %}<span>{{ page.profile.initials }}</span>{% endif %}
+    </div>
     <div class="profile-copy">
-      <p class="section-label">Profile placeholder</p>
+      <p class="section-label">Profile</p>
       <h2>{{ page.profile.name }}</h2>
       <p class="profile-role">{{ page.profile.role }}</p>
       <p>{{ page.profile.bio }}</p>
       <ul class="detail-list">
         {% for detail in page.profile.details %}<li>{{ detail }}</li>{% endfor %}
       </ul>
+      {% for section in page.profile.sections %}
+      <div class="profile-section">
+        <p class="section-label">{{ section.label }}</p>
+        <ul class="detail-list detail-list--section">
+          {% for item in section['items'] %}<li>{{ item }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
     </div>
   </div>
 </section>
@@ -34,7 +44,13 @@
       <div class="people-group__heading"><p class="section-label">{{ '%02d'|format(loop.index) }}</p><h2>{{ group.title }}</h2></div>
       <div class="people-grid">
         {% for member in group.members %}
-        <article class="person-card"><div class="person-card__avatar" aria-hidden="true">{{ member.initials }}</div><h3>{{ member.name }}</h3><p>{{ member.role }}</p></article>
+        <article class="person-card">
+          <div class="person-card__avatar{% if member.image %} person-card__avatar--image{% endif %}" aria-hidden="true">
+            {% if member.image %}<img src="{{ member.image }}" alt="">{% else %}{{ member.initials }}{% endif %}
+          </div>
+          <h3>{{ member.name }}</h3>
+          <p>{{ member.role }}</p>
+        </article>
         {% endfor %}
       </div>
     </div>
@@ -47,8 +63,13 @@
     {% for item in page['items'] %}
     <article class="content-row reveal">
       <div class="content-row__meta"><time>{{ item.date }}</time><span>{{ item.type }}</span></div>
-      <div class="content-row__body"><h2>{{ item.title }}</h2><p>{% if item.authors %}{{ item.authors }} · {% endif %}{{ item.summary if item.summary is defined else item.venue }}</p></div>
-      <span class="content-row__arrow" aria-hidden="true">↗</span>
+      <div class="content-row__body">
+        {% if item.href %}
+        <h2><a class="content-row__title-link" href="{{ item.href }}"{% if item.href.startswith('http') %} target="_blank" rel="noreferrer noopener"{% endif %}>{{ item.title }}</a></h2>
+        {% else %}<h2>{{ item.title }}</h2>{% endif %}
+        <p>{% if item.authors %}{{ item.authors }} · {% endif %}{{ item.summary if item.summary is defined else item.venue }}</p>
+      </div>
+      {% if item.href %}<a class="content-row__arrow" href="{{ item.href }}"{% if item.href.startswith('http') %} target="_blank" rel="noreferrer noopener"{% endif %} aria-label="Open {{ item.title }}">↗</a>{% else %}<span class="content-row__arrow" aria-hidden="true">↗</span>{% endif %}
     </article>
     {% endfor %}
   </div>

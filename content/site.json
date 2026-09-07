@@ -14,8 +14,8 @@
     {"id": "people", "label": "People", "href": "/people"}
   ],
   "footer": {
-    "note": "Visual foundation v1. All research content is placeholder copy.",
-    "location": "Location placeholder · City · Country",
-    "email": "contact@example.edu"
+    "note": "Computational Materials Science Group · Soochow University",
+    "location": "School of Energy · Suzhou, China",
+    "email": "wjyin@suda.edu.cn"
   }
 }

@@ -1,12 +1,17 @@
 {
-  "meta": {"title": "News · CMSG", "description": "Placeholder news stream."},
+  "meta": {"title": "News · CMSG", "description": "Selected announcements and research highlights from CMSG."},
   "kicker": "News",
   "title": "A concise record of what is changing.",
-  "intro": "Announcements can be added as short entries here and promoted to the home page without editing a template.",
+  "intro": "Selected milestones from the group’s publications and community, kept short enough to revisit.",
   "layout": "list",
   "items": [
-    {"date": "YYYY.MM", "type": "Announcement", "title": "News headline placeholder", "summary": "One-sentence summary placeholder."},
-    {"date": "YYYY.MM", "type": "People", "title": "News headline placeholder", "summary": "One-sentence summary placeholder."},
-    {"date": "YYYY.MM", "type": "Research", "title": "News headline placeholder", "summary": "One-sentence summary placeholder."}
+    {"date": "2025.09", "type": "Publication", "title": "New work on machine-learning interatomic potentials", "summary": "A study in ACS Nano connects potential-based molecular dynamics with flexibility in solid–liquid nanofluidic friction.", "href": "https://doi.org/10.1021/acsnano.5c08363"},
+    {"date": "2025.05", "type": "Publication", "title": "De novo inverse design of superhard C–N compounds", "summary": "A global machine-learning potential and multiobjective optimization workflow explores new superhard compounds.", "href": "https://doi.org/10.1021/acs.jpclett.5c00181"},
+    {"date": "2024.08", "type": "Publication", "title": "Discovery of 2D Invar and anti-Invar monolayers", "summary": "Machine learning broadens the search for two-dimensional materials with unusual thermal expansion behaviour.", "href": "https://doi.org/10.1038/s41467-024-51379-6"},
+    {"date": "2022.04", "type": "Publication", "title": "Crystal structure prediction with graph networks and optimization", "summary": "A combined strategy brings learned structural representations and global optimization into one prediction workflow.", "href": "https://doi.org/10.1038/s41467-022-29241-4"},
+    {"date": "2022.08", "type": "Publication", "title": "Kinetic pathway of the γ-to-δ phase transition in CsPbI₃", "summary": "First-principles analysis follows a structural pathway relevant to the stability of perovskite materials.", "href": "https://doi.org/10.1016/j.chempr.2022.07.026"},
+    {"date": "2021.08", "type": "Publication", "title": "Perovskite soft lattice and carrier lifetime study", "summary": "A computational study links lattice softness and carrier dynamics in hybrid perovskites.", "href": "https://doi.org/10.1039/D1EE02131A"},
+    {"date": "2020.06", "type": "Publication", "title": "Symbolic regression for catalytic descriptor discovery", "summary": "Data-driven symbolic regression is used to search for compact, interpretable physical descriptors.", "href": "https://doi.org/10.1007/s11433-023-2346-2"},
+    {"date": "2020.06", "type": "Publication", "title": "Br-alloying and carrier dynamics in perovskite solar cells", "summary": "The work examines how alloying changes the atomistic pathways that shape carrier behaviour.", "href": "https://doi.org/10.1002/adma.201906115"}
   ]
 }

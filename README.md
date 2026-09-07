@@ -17,8 +17,10 @@ Visible page content lives in `content/*.json`:
 - `research.json`, `leader.json`, `publications.json`, `events.json`, `news.json`
 - `code-platform.json`, `people.json`
 
-Replace the marked placeholder values after the visual direction is approved. The
-templates in `templates/site/` provide structure and the design system lives in
+The non-research sections currently contain a reviewed selection of group facts,
+people, publications, events, and news. `research.json`, `code-platform.json`, and
+the home-page research cards intentionally remain placeholders until their content
+direction is settled. The templates in `templates/site/` provide structure and the design system lives in
 `static/site/css/tokens.css` and `static/site/css/site.css`.
 
 ## Run locally
