@@ -4,11 +4,11 @@
 {% if page.layout == 'profile' %}
 <section class="section section--profile">
   <div class="shell profile-layout reveal">
-    <div class="portrait-placeholder{% if page.profile.image %} portrait-placeholder--image{% endif %}" role="img" aria-label="Portrait of {{ page.profile.name }}">
+    <div class="portrait-placeholder{% if page.profile.image %} portrait-placeholder--image{% endif %}" role="img" aria-label="{{ ui.portrait_of }} {{ page.profile.name }}">
       {% if page.profile.image %}<img src="{{ page.profile.image }}" alt="{{ page.profile.name }}">{% else %}<span>{{ page.profile.initials }}</span>{% endif %}
     </div>
     <div class="profile-copy">
-      <p class="section-label">Profile</p>
+      <p class="section-label">{{ ui.profile }}</p>
       <h2>{{ page.profile.name }}</h2>
       <p class="profile-role">{{ page.profile.role }}</p>
       <p>{{ page.profile.bio }}</p>
@@ -55,11 +55,11 @@
       <div class="content-row__meta"><time>{{ item.date }}</time><span>{{ item.type }}</span></div>
       <div class="content-row__body">
         {% if item.href %}
-        <h2><a class="content-row__title-link" href="{{ item.href }}"{% if item.href.startswith('http') %} target="_blank" rel="noreferrer noopener"{% endif %}>{{ item.title }}</a></h2>
+        <h2><a class="content-row__title-link" href="{{ href_for(item.href) }}"{% if item.href.startswith('http') %} target="_blank" rel="noreferrer noopener"{% endif %}>{{ item.title }}</a></h2>
         {% else %}<h2>{{ item.title }}</h2>{% endif %}
         <p>{% if item.authors %}{{ item.authors }} · {% endif %}{{ item.summary if item.summary is defined else item.venue }}</p>
       </div>
-      {% if item.href %}<a class="content-row__arrow" href="{{ item.href }}"{% if item.href.startswith('http') %} target="_blank" rel="noreferrer noopener"{% endif %} aria-label="Open {{ item.title }}">↗</a>{% else %}<span class="content-row__arrow" aria-hidden="true">↗</span>{% endif %}
+      {% if item.href %}<a class="content-row__arrow" href="{{ href_for(item.href) }}"{% if item.href.startswith('http') %} target="_blank" rel="noreferrer noopener"{% endif %} aria-label="{{ ui.open }} {{ item.title }}">↗</a>{% else %}<span class="content-row__arrow" aria-hidden="true">↗</span>{% endif %}
     </article>
     {% endfor %}
   </div>

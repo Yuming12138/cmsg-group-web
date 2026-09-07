@@ -1,0 +1,21 @@
+{
+  "name": "CMSG",
+  "full_name": "计算材料科学组",
+  "description": "苏州大学计算材料科学组：以物理模拟、数据与机器学习研究材料。",
+  "locale": "zh",
+  "nav": [
+    {"id": "home", "label": "首页", "href": "/"},
+    {"id": "research", "label": "研究", "href": "/research"},
+    {"id": "leader", "label": "负责人", "href": "/leader"},
+    {"id": "publications", "label": "论文", "href": "/publications"},
+    {"id": "events", "label": "活动", "href": "/events"},
+    {"id": "news", "label": "动态", "href": "/news"},
+    {"id": "code-platform", "label": "代码与平台", "href": "/code-platform"},
+    {"id": "people", "label": "成员", "href": "/people"}
+  ],
+  "footer": {
+    "note": "计算材料科学组 · 苏州大学",
+    "location": "能源学院 · 中国苏州",
+    "email": "wjyin@suda.edu.cn"
+  }
+}

@@ -1,22 +1,22 @@
 <header class="site-header" data-site-header>
   <div class="site-header__inner shell">
-    <a class="brand" href="{{ url_for('site.home') }}" aria-label="{{ site.full_name }} home">
+    <a class="brand" href="{{ url_for('site.home', language=language) if language != 'en' else url_for('site.home') }}" aria-label="{{ ui.home_aria }}">
       <span class="brand__mark" aria-hidden="true">C</span>
       <span class="brand__wordmark">{{ site.name }}</span>
     </a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-menu-toggle>
-      <span class="menu-toggle__label">Menu</span>
+      <span class="menu-toggle__label">{{ ui.menu }}</span>
       <span class="menu-toggle__icon" aria-hidden="true"><i></i><i></i></span>
     </button>
-    <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation" data-site-nav>
+    <nav class="site-nav" id="primary-navigation" aria-label="{{ ui.primary_navigation }}" data-site-nav>
       <ul class="site-nav__list">
         {% for item in site.nav %}
         <li>
-          <a class="site-nav__link{% if item.id == active_page %} is-active{% endif %}" href="{{ item.href }}"{% if item.id == active_page %} aria-current="page"{% endif %}>{{ item.label }}</a>
+          <a class="site-nav__link{% if item.id == active_page %} is-active{% endif %}" href="{{ href_for(item.href) }}"{% if item.id == active_page %} aria-current="page"{% endif %}>{{ item.label }}</a>
         </li>
         {% endfor %}
       </ul>
-      <a class="language-switch" href="?language=zh" aria-label="Switch language">中 / EN</a>
+      <a class="language-switch" href="{{ language_url }}" aria-label="{{ ui.switch_to_zh if language == 'en' else ui.switch_to_en }}">{{ ui.switch_to_zh if language == 'en' else ui.switch_to_en }}</a>
     </nav>
   </div>
 </header>

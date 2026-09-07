@@ -1,8 +1,8 @@
 """Routes for the new content-driven site."""
 
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, url_for
 
-from .content import load_content, load_site
+from .content import SUPPORTED_LANGUAGES, load_content, load_site, load_ui
 
 
 site_bp = Blueprint("site", __name__)
@@ -10,7 +10,31 @@ site_bp = Blueprint("site", __name__)
 
 @site_bp.app_context_processor
 def inject_site_content():
-    return {"site": load_site()}
+    language = _language()
+    other_language = "zh" if language == "en" else "en"
+    endpoint = request.endpoint or "site.home"
+    view_args = dict(request.view_args or {})
+    return {
+        "site": load_site(language),
+        "ui": load_ui(language),
+        "language": language,
+        "language_url": url_for(endpoint, **view_args, language=other_language),
+        "href_for": lambda href: _localized_href(href, language),
+    }
+
+
+def _language() -> str:
+    value = request.args.get("language", "en").lower()
+    return value if value in SUPPORTED_LANGUAGES else "en"
+
+
+def _localized_href(href: str, language: str) -> str:
+    """Keep internal links in the selected locale without touching externals."""
+
+    if language == "en" or not href or not href.startswith("/"):
+        return href
+    separator = "&" if "?" in href else "?"
+    return f"{href}{separator}language={language}"
 
 
 @site_bp.get("/")
@@ -18,12 +42,12 @@ def home():
     return render_template(
         "site/home.html",
         active_page="home",
-        home=load_content("home.json"),
+        home=load_content("home.json", _language()),
     )
 
 
 def _section(slug: str):
-    page = load_content(f"{slug}.json")
+    page = load_content(f"{slug}.json", _language())
     return render_template(
         "site/section.html",
         active_page=slug,
