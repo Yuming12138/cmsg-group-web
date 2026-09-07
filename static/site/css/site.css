@@ -41,6 +41,15 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .language-switch:hover { color: var(--white); }
 .menu-toggle { display: none; border: 0; background: transparent; color: inherit; cursor: pointer; }
 
+/* Content pages sit on paper rather than artwork. Keep the same structure, but
+   switch the header to an ink-on-paper treatment so navigation remains readable. */
+.page:not(.page--home) .site-header { background: var(--paper-100); border-bottom: 1px solid var(--line); color: var(--ink-950); }
+.page:not(.page--home) .site-header .site-nav__link { color: var(--ink-700); }
+.page:not(.page--home) .site-header .site-nav__link:hover,
+.page:not(.page--home) .site-header .site-nav__link.is-active { color: var(--ink-950); }
+.page:not(.page--home) .site-header .language-switch { color: var(--ink-700); }
+.page:not(.page--home) .site-header .language-switch:hover { color: var(--ink-950); }
+
 .hero { position: relative; min-height: min(900px, 100svh); overflow: hidden; isolation: isolate; background: #1b2841 url("../images/kandinsky-composition-viii.jpg") center / cover no-repeat; color: var(--white); }
 .hero__wash, .hero__grain { position: absolute; inset: 0; pointer-events: none; }
 .hero__wash { z-index: -1; background: linear-gradient(135deg, rgba(14, 22, 44, .75) 0%, rgba(17, 25, 45, .22) 54%, rgba(11, 16, 28, .68) 100%), var(--hero-overlay); }
@@ -179,6 +188,7 @@ h1, h2, h3, p { margin-top: 0; }
   .site-nav__list { display: grid; gap: 4px; }
   .site-nav__link { display: block; padding: 12px 0; }
   .language-switch { display: inline-block; margin-top: 12px; }
+  .page:not(.page--home) .site-nav { border-color: var(--line-strong); background: var(--paper-50); }
   .hero__inner { padding-top: 100px; }
   .hero__content { width: 100%; margin-top: 90px; }
   .hero h1 { font-size: clamp(3.8rem, 12vw, 6.4rem); }
