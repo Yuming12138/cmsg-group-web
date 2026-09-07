@@ -68,7 +68,21 @@
 <section class="section section--timeline">
   <div class="shell timeline-list">
     {% for item in page['items'] %}
-    <article class="timeline-item reveal"><time>{{ item.date }}</time><div><p class="section-label">{{ item.type }}</p><h2>{{ item.title }}</h2><p>{{ item.summary }}</p></div></article>
+    <article class="timeline-item reveal">
+      <div class="timeline-item__meta">
+        <p class="section-label">{{ item.type }}</p>
+        <h2>{{ item.title }}</h2>
+        <time>{{ item.date }}</time>
+        <p class="timeline-item__summary">{{ item.summary }}</p>
+      </div>
+      {% if item.images %}
+      <div class="timeline-item__gallery">
+        {% for image in item.images %}
+        <figure><img src="{{ image }}" alt="{{ item.title }}" loading="lazy"></figure>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </article>
     {% endfor %}
   </div>
 </section>
