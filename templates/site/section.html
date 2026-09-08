@@ -57,14 +57,12 @@
       <div class="publication-year-items">
         {% for item in year_group['items'] %}
         <article class="publication-item reveal">
-          <div class="publication-item__number" aria-label="#{{ item.number }}">{{ item.number }}</div>
+          <div class="publication-item__number" aria-label="#{{ item.number }}">{{ item.number }}.</div>
           <div class="publication-item__body">
-            <p class="publication-item__journal">{{ item.type }}</p>
-            <h2>{% if item.href %}<a class="content-row__title-link" href="{{ href_for(item.href) }}" target="_blank" rel="noreferrer noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h2>
-            <p class="publication-item__authors">{{ item.authors }}</p>
-            <p class="publication-item__doi">{{ item.venue }}</p>
+            <p class="publication-item__citation">
+              {{ item.authors }}. “{{ item.title }}.” {% if item.venue and item.venue.startswith('In:') %}{% if item.href %}<a href="{{ href_for(item.href) }}" target="_blank" rel="noreferrer noopener">{{ item.venue }}</a>{% else %}{{ item.venue }}{% endif %}.{% else %}<em>{{ item.type }}</em>{% if item.venue %} {{ item.venue }}.{% endif %}{% if item.doi %} Doi: {% if item.href %}<a href="{{ href_for(item.href) }}" target="_blank" rel="noreferrer noopener">{{ item.doi }}</a>{% else %}{{ item.doi }}{% endif %}.{% endif %}{% endif %}
+            </p>
           </div>
-          {% if item.href %}<a class="publication-item__arrow" href="{{ href_for(item.href) }}" target="_blank" rel="noreferrer noopener" aria-label="{{ ui.open }} {{ item.title }}">↗</a>{% endif %}
         </article>
         {% endfor %}
       </div>

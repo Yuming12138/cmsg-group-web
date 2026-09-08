@@ -53,3 +53,6 @@ rewrite.
   background treatment.
 - This foundation may use placeholders; do not infer or publish old content as fact.
 - The repository should remain easy to roll back to the baseline branch.
+- The publications archive should stay compact and close to the legacy continuous-citation
+  timeline: smaller regular text, restrained title weight, and a left-aligned year rail.
+  Its accent should follow the current site palette rather than copying the legacy blue.
