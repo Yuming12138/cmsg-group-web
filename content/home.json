@@ -9,7 +9,7 @@
     "welcome_group": "Computational Materials Science Group",
     "welcome_suffix": " @ Soochow University!",
     "summary": "We use AI to support end-to-end materials design and predict synthesizability.",
-    "cta": {"label": "Discover", "href": "/research"},
+    "cta": {"label": "DELVE", "href": "/research"},
     "artwork": "Wassily Kandinsky · Composition VIII · 1923",
     "edition": "Visual study 01 / CMSG, Suzhou"
   },
