@@ -4,6 +4,16 @@
 <section class="hero" data-hero aria-labelledby="hero-title">
   <div class="hero__art" aria-hidden="true">
     <svg class="hero__geometry" viewBox="0 0 1800 1260" preserveAspectRatio="xMidYMid slice" focusable="false">
+      <defs>
+        <radialGradient id="hero-eye-disk" cx="45%" cy="40%" r="70%">
+          <stop offset="0" stop-color="#f1edf0"></stop>
+          <stop offset=".76" stop-color="#e7e1e7"></stop>
+          <stop offset="1" stop-color="#d7cfd9"></stop>
+        </radialGradient>
+        <clipPath id="hero-eye-iris-clip">
+          <circle cx="1209" cy="590" r="50"></circle>
+        </clipPath>
+      </defs>
       <g class="geometry-layer geometry-layer--back" data-depth="2">
         <circle class="geometry-focus" data-focus cx="245" cy="260" r="184"></circle>
         <circle class="geometry-focus" data-focus cx="1400" cy="216" r="39"></circle>
@@ -19,6 +29,18 @@
         <path d="M520 1160 L 1082 602 L 1584 144"></path>
         <path d="M1040 1260 L 1124 466 L 1282 92"></path>
         <path d="M1072 935 L 1540 1150"></path>
+      </g>
+      <g class="hero-eye" data-eye data-eye-center-x="1209" data-eye-center-y="590" aria-hidden="true">
+        <circle class="hero-eye__cover" cx="1209" cy="590" r="50"></circle>
+        <g class="hero-eye__rays" data-eye-rays clip-path="url(#hero-eye-iris-clip)">
+          <path d="M1207 586 L1152 568 L1156 558 L1211 579 Z"></path>
+          <path d="M1213 585 L1249 544 L1258 552 L1218 592 Z"></path>
+          <path d="M1214 595 L1247 631 L1239 640 L1207 602 Z"></path>
+        </g>
+        <g data-eye-pupil>
+          <circle class="hero-eye__pupil" cx="1209" cy="590" r="10"></circle>
+          <circle class="hero-eye__glint" cx="1206" cy="587" r="2.2"></circle>
+        </g>
       </g>
     </svg>
   </div>
