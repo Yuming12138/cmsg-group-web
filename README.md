@@ -18,9 +18,13 @@ Visible page content lives in `content/*.json`:
 - `code-platform.json`, `people.json`
 
 The non-research sections currently contain a reviewed selection of group facts,
-people, publications, events, and news. `research.json`, `code-platform.json`, and
-the home-page research cards intentionally remain placeholders until their content
-direction is settled. The templates in `templates/site/` provide structure and the design system lives in
+people, publications, events, and news. The Research page now uses the prepared
+long-form direction page at `templates/site/research.html`; its source layout is
+namespaced in `static/site/css/research.css`, while images and linked papers live
+under `static/site/research/`. Future copy changes can be made in that template
+without touching the global shell. `code-platform.json` and the home-page research
+cards remain placeholders until their content direction is settled. The templates
+in `templates/site/` provide structure and the design system lives in
 `static/site/css/tokens.css` and `static/site/css/site.css`.
 
 ## Run locally

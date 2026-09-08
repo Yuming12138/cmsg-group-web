@@ -12,6 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='site/css/tokens.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='site/css/site.css') }}">
+    {% if active_page == 'research' %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='site/css/research.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap">
+    {% endif %}
   </head>
   <body class="page page--{{ active_page|default('home') }}">
     <a class="skip-link" href="#main-content">{{ ui.skip_to_content }}</a>
@@ -21,5 +26,6 @@
     </main>
     {% include 'site/partials/footer.html' %}
     <script src="{{ url_for('static', filename='site/js/site.js') }}" defer></script>
+    {% if active_page == 'research' %}<script src="{{ url_for('static', filename='site/js/research.js') }}" defer></script>{% endif %}
   </body>
 </html>

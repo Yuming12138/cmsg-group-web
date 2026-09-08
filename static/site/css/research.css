@@ -1,0 +1,297 @@
+.research-detail {
+  --paper: var(--paper-50);
+  --ink: var(--ink-950);
+  --muted: var(--ink-500);
+  --accent: var(--copper-600);
+  --accent-dark: var(--copper-700);
+  --accent-wash: var(--copper-100);
+  --r-line: var(--line);
+  --shell: 1184px;
+  --gutter: 48px;
+}
+
+/* Keep the source page usable even before its small locale controller runs. */
+html[lang^="en"] .research-detail [data-lang="zh"],
+html[lang^="zh"] .research-detail [data-lang="en"] {
+  display: none !important;
+}
+
+.research-detail, .research-detail * {
+  box-sizing: border-box;
+}.research-detail [hidden] {
+  display: none !important;
+}.research-detail {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Lato", "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}.research-detail a {
+  color: var(--accent-dark);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}.research-detail a:hover, .research-detail a:focus-visible {
+  color: var(--accent);
+}.research-detail button,
+.research-detail input {
+  font: inherit;
+}.research-detail button {
+  color: inherit;
+}.research-detail .content-shell {
+  width: min(calc(100% - (2 * var(--gutter))), var(--shell));
+  margin: 0 auto;
+  padding-right: 14px;
+  padding-left: 14px;
+}.research-detail .intro {
+  padding-top: 24px;
+}.research-detail .intro-inner {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}.research-detail .eyebrow, .research-detail .work-kicker {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}.research-detail h1, .research-detail h2, .research-detail h3, .research-detail p {
+  margin-top: 0;
+}.research-detail h1 {
+  max-width: 850px;
+  margin-bottom: 16px;
+  color: var(--accent);
+  font-size: clamp(2.65rem, 4.5vw, 4rem);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.12;
+}.research-detail .intro-lede {
+  max-width: 850px;
+  margin-bottom: 12px;
+  font-size: 21px;
+  line-height: 1.45;
+}.research-detail .intro-copy {
+  max-width: 920px;
+  margin-bottom: 16px;
+  color: var(--ink-700);
+  font-size: 16px;
+  line-height: 1.7;
+}.research-detail .intro-meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 18px;
+  color: var(--muted);
+  font-size: 13px;
+}.research-detail .intro-meta a {
+  color: var(--accent);
+  font-size: 17px;
+}.research-detail .research-cluster {
+  scroll-margin-top: 68px;
+  padding-top: 52px;
+}.research-detail .cluster-title {
+  margin-bottom: 4px;
+  color: var(--accent);
+  font-size: 31px;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}.research-detail .cluster-intro {
+  max-width: 780px;
+  margin-bottom: 0;
+  color: var(--ink-700);
+  font-size: 16px;
+  line-height: 1.65;
+}.research-detail .work {
+  display: grid;
+  grid-template-columns: 42.5% 57.5%;
+  align-items: start;
+  margin-top: 42px;
+  margin-right: -14px;
+  margin-left: -14px;
+}.research-detail .work + .work {
+  margin-top: 46px;
+}.research-detail .work-media, .research-detail .work-copy {
+  min-width: 0;
+  padding: 14px;
+}.research-detail .work-media {
+  padding-right: 25px;
+}.research-detail .work-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}.research-detail .work-copy {
+  padding-top: 14px;
+  padding-right: 14px;
+  padding-left: 13px;
+}.research-detail .work-kicker {
+  margin-bottom: 10px;
+  color: var(--accent-dark);
+  font-size: 10px;
+  letter-spacing: 0.13em;
+}.research-detail .work-title {
+  margin-bottom: 18px;
+  color: var(--accent);
+  font-size: clamp(2rem, 3.55vw, 2.84rem);
+  font-weight: 300;
+  letter-spacing: 0.005em;
+  line-height: 1.18;
+}.research-detail .work-copy > p:not(.work-kicker):not(.result-line):not(.work-title-en):not(.language-label) {
+  max-width: 690px;
+  margin-bottom: 12px;
+  color: var(--ink-900);
+  font-size: 15px;
+  line-height: 1.68;
+}.research-detail .work-title-en {
+  margin-bottom: 18px;
+}.research-detail .language-label {
+  max-width: 690px;
+  margin: 16px 0 6px;
+  color: var(--accent-dark);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}.research-detail .result-line {
+  margin: 18px 0 18px;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent);
+  color: var(--accent-dark);
+  font-size: 14px;
+  line-height: 1.55;
+}.research-detail .result-line span {
+  font-weight: 700;
+}.research-detail .citation {
+  margin-top: 22px;
+  padding-top: 12px;
+  border-top: 1px solid var(--r-line);
+}.research-detail .citation-title {
+  margin-bottom: 4px;
+  color: var(--ink-900);
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.45;
+}.research-detail .citation-meta {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}.research-detail .work-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 18px;
+  font-size: 13px;
+}.research-detail .related-papers {
+  max-width: 690px;
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid var(--r-line);
+}.research-detail .related-heading {
+  margin: 0 0 8px;
+  color: var(--accent-dark);
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}.research-detail .related-papers ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: related-paper;
+}.research-detail .related-papers li {
+  position: relative;
+  padding-left: 30px;
+  color: var(--ink-900);
+  font-size: 15px;
+  line-height: 1.6;
+  counter-increment: related-paper;
+}.research-detail .related-papers li + li {
+  margin-top: 14px;
+}.research-detail .related-papers li::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--accent-dark);
+  content: "[" counter(related-paper) "]";
+}.research-detail .related-title, .research-detail .related-meta, .research-detail .related-links {
+  display: block;
+}.research-detail .related-title {
+  color: var(--ink-900);
+  font-style: italic;
+}.research-detail .related-meta {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 14px;
+}.research-detail .related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px 18px;
+  margin-top: 3px;
+  font-size: 13px;
+}.research-detail :focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {.research-detail {
+    --gutter: 19px;
+  }.research-detail {
+    font-size: 16px;
+  }.research-detail .content-shell {
+    width: calc(100% - (2 * var(--gutter)));
+    padding-right: 8px;
+    padding-left: 8px;
+  }.research-detail .intro {
+    padding-top: 24px;
+  }.research-detail h1 {
+    margin-bottom: 14px;
+    font-size: 37px;
+    line-height: 1.14;
+  }.research-detail .intro-lede {
+    font-size: 19px;
+    line-height: 1.48;
+  }.research-detail .intro-copy, .research-detail .cluster-intro {
+    font-size: 15px;
+  }.research-detail .research-cluster {
+    padding-top: 44px;
+  }.research-detail .cluster-title {
+    font-size: 28px;
+  }.research-detail .work, .research-detail .work + .work {
+    display: block;
+    margin-top: 34px;
+    margin-right: 0;
+    margin-left: 0;
+  }.research-detail .work-media, .research-detail .work-copy {
+    padding: 8px 0;
+  }.research-detail .work-media {
+    margin-right: -8px;
+    margin-left: -8px;
+  }.research-detail .work-copy {
+    padding-top: 18px;
+  }.research-detail .work-title {
+    margin-bottom: 16px;
+    font-size: 32px;
+    line-height: 1.2;
+  }.research-detail .work-copy > p:not(.work-kicker):not(.result-line):not(.work-title-en):not(.language-label) {
+    font-size: 15px;
+    line-height: 1.7;
+  }.research-detail .work-title-en {
+    margin-bottom: 16px;
+    font-size: 32px;
+    line-height: 1.2;
+  }.research-detail .result-line {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }.research-detail .citation {
+    margin-top: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {.research-detail *, .research-detail *::before, .research-detail *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

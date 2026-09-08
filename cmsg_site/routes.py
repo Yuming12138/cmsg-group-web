@@ -54,8 +54,9 @@ def _section(slug: str):
             if not publication_groups or publication_groups[-1]["year"] != item["date"]:
                 publication_groups.append({"year": item["date"], "items": []})
             publication_groups[-1]["items"].append(item)
+    template = "site/research.html" if slug == "research" else "site/section.html"
     return render_template(
-        "site/section.html",
+        template,
         active_page=slug,
         page=page,
         slug=slug,
