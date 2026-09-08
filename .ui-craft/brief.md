@@ -58,3 +58,8 @@ rewrite.
   Its accent should follow the current site palette rather than copying the legacy blue.
 - The events timeline is image-led: show the activity type, title, and date, but keep
   explanatory summaries in the content data for future use rather than displaying them.
+- The home hero uses a compact centered composition: a bold group name above a short
+  welcome line, one concise AI/materials-design statement, and a single copper Discover
+  action. Keep the text block visually smaller than the artwork on desktop and mobile.
+- Homepage English copy uses Arial; Chinese copy uses Microsoft YaHei/微软雅黑. Do not
+  restore the oversized serif display treatment for the hero.

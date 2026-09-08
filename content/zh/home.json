@@ -1,11 +1,15 @@
 {
-  "meta": {"title": "CMSG — 计算材料科学组", "description": "苏州大学计算材料科学组，以物理、数据与设计探索复杂材料。"},
+  "meta": {
+    "title": "CMSG — 计算材料科学组",
+    "description": "苏州大学计算材料科学组，以物理、数据与设计探索复杂材料。"
+  },
   "hero": {
-    "eyebrow": "计算材料科学组",
-    "title": "为复杂物质，设计更清晰的路径。",
-    "summary": "立足苏州大学，连接物理、数据与材料设计的计算材料研究组。",
-    "primary_cta": {"label": "认识研究组"},
-    "secondary_cta": {"label": "阅读精选论文"},
+    "group_name": "计算材料科学组",
+    "welcome_prefix": "欢迎来到",
+    "welcome_group": "计算材料科学组",
+    "welcome_suffix": " @ 苏州大学！",
+    "summary": "我们使用 AI 辅助全链条材料设计与可合成性预测。",
+    "cta": {"label": "探索", "href": "/research"},
     "artwork": "瓦西里·康定斯基 · 构图8号 · 1923",
     "edition": "视觉研究 01 / CMSG，苏州"
   },
@@ -23,15 +27,23 @@
       {"title": "研究方向占位符", "summary": "内容层可以持续增长，而无需改变视觉语法或导航结构。", "meta": "主题 / 方法"}
     ]
   },
-  "signals": [{"label": "苏州大学"}, {"label": "材料创新"}, {"label": "计算实践"}],
+  "signals": [
+    {"label": "苏州大学"},
+    {"label": "材料创新"},
+    {"label": "计算实践"}
+  ],
   "updates": {
     "label": "最新动态",
     "title": "为论文、新闻与活动保留一条灵活的信息流。",
     "items": [
-      {"type": "论文", "title": "机器学习势分子动力学揭示纳流体摩擦中的柔性作用"},
-      {"type": "动态", "title": "机器学习助力发现二维 Invar 与 anti-Invar 单层材料"},
-      {"type": "活动", "title": "春日活动 · 西山岛"}
+      {"type": "论文", "title": "机器学习势分子动力学揭示纳流体摩擦中的柔性作用", "date": "2025.09"},
+      {"type": "动态", "title": "机器学习助力发现二维 Invar 与 anti-Invar 单层材料", "date": "2024.08"},
+      {"type": "活动", "title": "春日活动 · 西山岛", "date": "2025.04"}
     ]
   },
-  "closing": {"title": "研究组网站，应当让工作更容易被进入。", "body": "从成员开始，沿着论文阅读，并在研究档案增长后再次回来。", "cta": {"label": "浏览论文"}}
+  "closing": {
+    "title": "研究组网站，应当让工作更容易被进入。",
+    "body": "从成员开始，沿着论文阅读，并在研究档案增长后再次回来。",
+    "cta": {"label": "浏览论文", "href": "/publications"}
+  }
 }

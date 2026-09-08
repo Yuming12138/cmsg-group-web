@@ -4,11 +4,12 @@
     "description": "The Computational Materials Science Group at Soochow University studies materials with physics-based simulation, data, and machine learning."
   },
   "hero": {
-    "eyebrow": "Computational Materials Science Group",
-    "title": "Designing clearer routes through complex matter.",
-    "summary": "A computational materials group based at Soochow University, working across physics, data, and design.",
-    "primary_cta": {"label": "Meet the group", "href": "/people"},
-    "secondary_cta": {"label": "Read selected work", "href": "/publications"},
+    "group_name": "Computational Materials Science Group",
+    "welcome_prefix": "Welcome to",
+    "welcome_group": "Computational Materials Science Group",
+    "welcome_suffix": " @ Soochow University!",
+    "summary": "We use AI to support end-to-end materials design and predict synthesizability.",
+    "cta": {"label": "Discover", "href": "/research"},
     "artwork": "Wassily Kandinsky · Composition VIII · 1923",
     "edition": "Visual study 01 / CMSG, Suzhou"
   },

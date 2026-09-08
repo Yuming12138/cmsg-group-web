@@ -10,12 +10,15 @@
       <span>{{ ui.research_group }} · {{ ui.open_framework }}</span>
     </div>
     <div class="hero__content">
-      <p class="eyebrow eyebrow--light">{{ home.hero.eyebrow }}</p>
-      <h1 id="hero-title">{{ home.hero.title }}</h1>
+      <p class="hero__group-name"><strong>{{ home.hero.group_name }}</strong></p>
+      <h1 id="hero-title">
+        <span>{{ home.hero.welcome_prefix }}</span>
+        <strong>{{ home.hero.welcome_group }}</strong>
+        <span>{{ home.hero.welcome_suffix }}</span>
+      </h1>
       <p class="hero__summary">{{ home.hero.summary }}</p>
       <div class="hero__actions">
-        <a class="button button--light" href="{{ href_for(home.hero.primary_cta.href) }}">{{ home.hero.primary_cta.label }} <span aria-hidden="true">↗</span></a>
-        <a class="text-link text-link--light" href="{{ href_for(home.hero.secondary_cta.href) }}">{{ home.hero.secondary_cta.label }} <span aria-hidden="true">↗</span></a>
+        <a class="button button--accent" href="{{ href_for(home.hero.cta.href) }}">{{ home.hero.cta.label }} <span aria-hidden="true">↗</span></a>
       </div>
     </div>
     <div class="hero__footer">
