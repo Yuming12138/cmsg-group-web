@@ -39,10 +39,14 @@ def _localized_href(href: str, language: str) -> str:
 
 @site_bp.get("/")
 def home():
+    language = _language()
     return render_template(
         "site/home.html",
         active_page="home",
-        home=load_content("home.json", _language()),
+        home=load_content("home.json", language),
+        research_preview=load_content("research.json", language),
+        leader_preview=load_content("leader.json", language),
+        publications_preview=load_content("publications.json", language),
     )
 
 
