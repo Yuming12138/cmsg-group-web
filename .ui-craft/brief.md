@@ -56,3 +56,5 @@ rewrite.
 - The publications archive should stay compact and close to the legacy continuous-citation
   timeline: smaller regular text, restrained title weight, and a left-aligned year rail.
   Its accent should follow the current site palette rather than copying the legacy blue.
+- The events timeline is image-led: show the activity type, title, and date, but keep
+  explanatory summaries in the content data for future use rather than displaying them.
