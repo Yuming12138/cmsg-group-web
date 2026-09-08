@@ -63,3 +63,6 @@ rewrite.
   action. Keep the text block visually smaller than the artwork on desktop and mobile.
 - Homepage English copy uses Arial; Chinese copy uses Microsoft YaHei/微软雅黑. Do not
   restore the oversized serif display treatment for the hero.
+- Hero motion should remain composition-led: a slow background breath plus low-amplitude
+  SVG geometry response on fine pointers, with touch devices and reduced-motion users on
+  a quieter path. Avoid particle fields or high-frequency effects.

@@ -1,7 +1,27 @@
 {% extends 'site/base.html' %}
 
 {% block content %}
-<section class="hero" aria-labelledby="hero-title">
+<section class="hero" data-hero aria-labelledby="hero-title">
+  <div class="hero__art" aria-hidden="true">
+    <svg class="hero__geometry" viewBox="0 0 1800 1260" preserveAspectRatio="xMidYMid slice" focusable="false">
+      <g class="geometry-layer geometry-layer--back" data-depth="2">
+        <circle class="geometry-focus" data-focus cx="245" cy="260" r="184"></circle>
+        <circle class="geometry-focus" data-focus cx="1400" cy="216" r="39"></circle>
+        <circle class="geometry-focus" data-focus cx="181" cy="1116" r="72"></circle>
+        <circle class="geometry-focus" data-focus cx="1380" cy="950" r="61"></circle>
+      </g>
+      <g class="geometry-layer geometry-layer--middle" data-depth="4">
+        <path d="M86 619 C 205 518, 254 728, 380 615 S 561 558, 684 625"></path>
+        <path d="M470 842 L 1130 670 L 1674 784"></path>
+        <path d="M744 385 C 788 260, 887 170, 1007 96"></path>
+      </g>
+      <g class="geometry-layer geometry-layer--front" data-depth="6">
+        <path d="M520 1160 L 1082 602 L 1584 144"></path>
+        <path d="M1040 1260 L 1124 466 L 1282 92"></path>
+        <path d="M1072 935 L 1540 1150"></path>
+      </g>
+    </svg>
+  </div>
   <div class="hero__wash" aria-hidden="true"></div>
   <div class="hero__grain" aria-hidden="true"></div>
   <div class="shell hero__inner">
