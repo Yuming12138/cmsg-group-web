@@ -35,8 +35,8 @@ content remains legible.
 - **Theme:** ivory / charcoal / copper, with the hero image providing the color field
 - **Typography:** system humanist sans for interface copy, restrained serif for display
 - **Motion:** subtle 300ms reveal and hover transitions; no scroll-jacking
-- **Signature bet:** navigation and hero metadata are treated as printed margin marks
-  layered over the artwork
+- **Signature bet:** the global navigation stays quiet while a compact, centered hero
+  composition sits directly over the artwork
 - **Variance:** 6/10; enough asymmetry to feel authored, still easy to scan
 
 ## 5. Content strategy
