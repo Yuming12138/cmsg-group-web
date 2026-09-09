@@ -6,8 +6,8 @@
   --accent-dark: var(--copper-700);
   --accent-wash: var(--copper-100);
   --r-line: var(--line);
-  --shell: 1184px;
-  --gutter: 48px;
+  --shell: var(--content-max);
+  --gutter: var(--content-gutter);
 }
 
 /* Keep the source page usable even before its small locale controller runs. */
@@ -235,8 +235,13 @@ html[lang^="zh"] .research-detail [data-lang="en"] {
   outline-offset: 3px;
 }
 
+@media (max-width: 980px) {.research-detail {
+    --shell: var(--content-max-tablet);
+    --gutter: var(--content-gutter-tablet);
+  }}
+
 @media (max-width: 767px) {.research-detail {
-    --gutter: 19px;
+    --gutter: var(--content-gutter-tablet);
   }.research-detail {
     font-size: 16px;
   }.research-detail .content-shell {
@@ -288,6 +293,10 @@ html[lang^="zh"] .research-detail [data-lang="en"] {
     margin-top: 20px;
   }
 }
+
+@media (max-width: 620px) {.research-detail {
+    --gutter: var(--content-gutter-mobile);
+  }}
 
 @media (prefers-reduced-motion: reduce) {.research-detail *, .research-detail *::before, .research-detail *::after {
     transition-duration: 0.01ms !important;

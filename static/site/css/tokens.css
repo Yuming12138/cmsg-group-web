@@ -1,4 +1,9 @@
 :root {
+  --content-max: 1240px;
+  --content-gutter: 32px;
+  --content-max-tablet: 760px;
+  --content-gutter-tablet: 20px;
+  --content-gutter-mobile: 16px;
   --ink-950: #151619;
   --ink-900: #1e2024;
   --ink-700: #42454b;

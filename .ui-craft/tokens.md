@@ -33,3 +33,11 @@ new visual version is approved.
 - Controls: `6px` radius
 - Display panels: `18px` radius
 - Borders stay 1px; depth comes from whitespace and low-opacity shadows
+
+## Content frame
+
+- Desktop content max: `1240px`; page gutter: `32px`
+- Tablet content max: `760px`; page gutter: `20px`
+- Mobile page gutter: `16px`
+- Every page shares this outer frame. Timeline rails, galleries, and long-form
+  reading columns may use their own internal proportions without changing the frame.
