@@ -32,9 +32,23 @@ def create_app() -> Flask:
         return {"site_year": "2026"}
 
     @app.after_request
-    def cache_generated_event_images(response):
-        if request.path.startswith("/static/images/group/web/") and response.status_code == 200:
+    def cache_static_images(response):
+        if response.status_code != 200:
+            return response
+
+        path = request.path
+        if path.startswith(
+            ("/static/images/group/web/", "/static/site/images/members/web/")
+        ):
+            # Generated filenames include a content hash, so they are safe to
+            # keep for a year and never need a revalidation request.
             response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+        elif path.startswith("/static/site/images/members/"):
+            # Keep the archival fallback warm without making future edits
+            # impossible to pick up during the next day.
+            response.headers["Cache-Control"] = (
+                "public, max-age=86400, stale-while-revalidate=3600"
+            )
         return response
 
     return app

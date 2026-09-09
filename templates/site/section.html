@@ -30,13 +30,22 @@
 <section class="section section--people">
   <div class="shell people-groups">
     {% for group in page.groups %}
+    {% set group_loop = loop %}
     <div class="people-group reveal">
       <div class="people-group__heading"><p class="section-label">{{ '%02d'|format(loop.index) }}</p><h2>{{ group.title }}</h2></div>
       <div class="people-grid">
         {% for member in group.members %}
+        {% set responsive = people_images.get(member.image) if member.image else none %}
         <article class="person-card">
           <div class="person-card__avatar{% if member.image %} person-card__avatar--image{% endif %}" aria-hidden="true">
-            {% if member.image %}<img src="{{ member.image }}" alt="">{% else %}{{ member.initials }}{% endif %}
+            {% if responsive %}
+            <picture>
+              <source type="image/webp" srcset="{{ responsive.srcset }}" sizes="(max-width: 620px) calc(100vw - 32px), (max-width: 980px) calc((100vw - 72px) / 3), 310px">
+              <img src="{{ responsive.fallback }}" alt="" width="{{ responsive.width }}" height="{{ responsive.height }}" decoding="async"{% if group_loop.first %} loading="eager" fetchpriority="high"{% else %} loading="lazy" fetchpriority="low"{% endif %}>
+            </picture>
+            {% elif member.image %}
+            <img src="{{ member.image }}" alt="" decoding="async"{% if group_loop.first %} loading="eager" fetchpriority="high"{% else %} loading="lazy" fetchpriority="low"{% endif %}>
+            {% else %}{{ member.initials }}{% endif %}
           </div>
           <h3>{{ member.name }}</h3>
           <p>{{ member.role }}</p>

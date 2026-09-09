@@ -54,8 +54,11 @@ def _section(slug: str):
     language = _language()
     page = load_content(f"{slug}.json", language)
     event_images = {}
+    people_images = {}
     if slug == "events":
         event_images = load_content("event-images.json", language).get("images", {})
+    elif slug == "people":
+        people_images = load_content("people-images.json", language).get("images", {})
     publication_groups = []
     if page.get("layout") == "publications":
         for item in page.get("items", []):
@@ -70,6 +73,7 @@ def _section(slug: str):
         slug=slug,
         publication_groups=publication_groups,
         event_images=event_images,
+        people_images=people_images,
     )
 
 

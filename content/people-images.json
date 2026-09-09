@@ -1,0 +1,100 @@
+{
+  "images": {
+    "/static/site/images/yinwanjian.jpg": {
+      "fallback": "/static/site/images/members/web/yinwanjian-66eeae04fb-814.jpg",
+      "srcset": "/static/site/images/members/web/yinwanjian-66eeae04fb-320.webp 320w, /static/site/images/members/web/yinwanjian-66eeae04fb-640.webp 640w, /static/site/images/members/web/yinwanjian-66eeae04fb-814.webp 814w",
+      "width": 814,
+      "height": 1018
+    },
+    "/static/site/images/members/zhouke.png": {
+      "fallback": "/static/site/images/members/web/zhouke-9f38840a6f-363.jpg",
+      "srcset": "/static/site/images/members/web/zhouke-9f38840a6f-320.webp 320w, /static/site/images/members/web/zhouke-9f38840a6f-363.webp 363w",
+      "width": 363,
+      "height": 454
+    },
+    "/static/site/images/members/xuehaibo.jpg": {
+      "fallback": "/static/site/images/members/web/xuehaibo-f35e1f8798-960.jpg",
+      "srcset": "/static/site/images/members/web/xuehaibo-f35e1f8798-320.webp 320w, /static/site/images/members/web/xuehaibo-f35e1f8798-640.webp 640w, /static/site/images/members/web/xuehaibo-f35e1f8798-960.webp 960w",
+      "width": 960,
+      "height": 1200
+    },
+    "/static/site/images/members/chengguanjian.jpg": {
+      "fallback": "/static/site/images/members/web/chengguanjian-929b43e996-482.jpg",
+      "srcset": "/static/site/images/members/web/chengguanjian-929b43e996-320.webp 320w, /static/site/images/members/web/chengguanjian-929b43e996-482.webp 482w",
+      "width": 482,
+      "height": 602
+    },
+    "/static/site/images/members/zhangmaoyan3.jpg": {
+      "fallback": "/static/site/images/members/web/zhangmaoyan3-f7b1e64cd3-589.jpg",
+      "srcset": "/static/site/images/members/web/zhangmaoyan3-f7b1e64cd3-320.webp 320w, /static/site/images/members/web/zhangmaoyan3-f7b1e64cd3-589.webp 589w",
+      "width": 589,
+      "height": 736
+    },
+    "/static/site/images/members/jiangweijian.jpg": {
+      "fallback": "/static/site/images/members/web/jiangweijian-1ac7762586-768.jpg",
+      "srcset": "/static/site/images/members/web/jiangweijian-1ac7762586-320.webp 320w, /static/site/images/members/web/jiangweijian-1ac7762586-640.webp 640w, /static/site/images/members/web/jiangweijian-1ac7762586-768.webp 768w",
+      "width": 768,
+      "height": 960
+    },
+    "/static/site/images/members/wangchenyu.jpg": {
+      "fallback": "/static/site/images/members/web/wangchenyu-ab3af3be69-666.jpg",
+      "srcset": "/static/site/images/members/web/wangchenyu-ab3af3be69-320.webp 320w, /static/site/images/members/web/wangchenyu-ab3af3be69-640.webp 640w, /static/site/images/members/web/wangchenyu-ab3af3be69-666.webp 666w",
+      "width": 666,
+      "height": 832
+    },
+    "/static/site/images/members/tianwei.jpg": {
+      "fallback": "/static/site/images/members/web/tianwei-109f4e87d4-960.jpg",
+      "srcset": "/static/site/images/members/web/tianwei-109f4e87d4-320.webp 320w, /static/site/images/members/web/tianwei-109f4e87d4-640.webp 640w, /static/site/images/members/web/tianwei-109f4e87d4-960.webp 960w",
+      "width": 960,
+      "height": 1200
+    },
+    "/static/site/images/members/fengkaiwei.jpg": {
+      "fallback": "/static/site/images/members/web/fengkaiwei-6d6185e500-487.jpg",
+      "srcset": "/static/site/images/members/web/fengkaiwei-6d6185e500-320.webp 320w, /static/site/images/members/web/fengkaiwei-6d6185e500-487.webp 487w",
+      "width": 487,
+      "height": 609
+    },
+    "/static/site/images/members/chenguangming.jpg": {
+      "fallback": "/static/site/images/members/web/chenguangming-ce7254a4ab-960.jpg",
+      "srcset": "/static/site/images/members/web/chenguangming-ce7254a4ab-320.webp 320w, /static/site/images/members/web/chenguangming-ce7254a4ab-640.webp 640w, /static/site/images/members/web/chenguangming-ce7254a4ab-960.webp 960w",
+      "width": 960,
+      "height": 1200
+    },
+    "/static/site/images/members/luoruoming3.jpg": {
+      "fallback": "/static/site/images/members/web/luoruoming3-cf4fd99299-960.jpg",
+      "srcset": "/static/site/images/members/web/luoruoming3-cf4fd99299-320.webp 320w, /static/site/images/members/web/luoruoming3-cf4fd99299-640.webp 640w, /static/site/images/members/web/luoruoming3-cf4fd99299-960.webp 960w",
+      "width": 960,
+      "height": 1200
+    },
+    "/static/site/images/members/zhangchongyang.jpg": {
+      "fallback": "/static/site/images/members/web/zhangchongyang-cb58400114-756.jpg",
+      "srcset": "/static/site/images/members/web/zhangchongyang-cb58400114-320.webp 320w, /static/site/images/members/web/zhangchongyang-cb58400114-640.webp 640w, /static/site/images/members/web/zhangchongyang-cb58400114-756.webp 756w",
+      "width": 756,
+      "height": 945
+    },
+    "/static/site/images/members/shayenan.jpg": {
+      "fallback": "/static/site/images/members/web/shayenan-a2ce79a08d-649.jpg",
+      "srcset": "/static/site/images/members/web/shayenan-a2ce79a08d-320.webp 320w, /static/site/images/members/web/shayenan-a2ce79a08d-640.webp 640w, /static/site/images/members/web/shayenan-a2ce79a08d-649.webp 649w",
+      "width": 649,
+      "height": 811
+    },
+    "/static/site/images/members/chengjie.jpg": {
+      "fallback": "/static/site/images/members/web/chengjie-7eef85d81d-683.jpg",
+      "srcset": "/static/site/images/members/web/chengjie-7eef85d81d-320.webp 320w, /static/site/images/members/web/chengjie-7eef85d81d-640.webp 640w, /static/site/images/members/web/chengjie-7eef85d81d-683.webp 683w",
+      "width": 683,
+      "height": 854
+    },
+    "/static/site/images/members/tianshun.jpg": {
+      "fallback": "/static/site/images/members/web/tianshun-6e2ce4b84b-257.jpg",
+      "srcset": "/static/site/images/members/web/tianshun-6e2ce4b84b-257.webp 257w",
+      "width": 257,
+      "height": 321
+    },
+    "/static/site/images/members/yanwei.jpg": {
+      "fallback": "/static/site/images/members/web/yanwei-2391427a86-959.jpg",
+      "srcset": "/static/site/images/members/web/yanwei-2391427a86-320.webp 320w, /static/site/images/members/web/yanwei-2391427a86-640.webp 640w, /static/site/images/members/web/yanwei-2391427a86-959.webp 959w",
+      "width": 959,
+      "height": 1199
+    }
+  }
+}

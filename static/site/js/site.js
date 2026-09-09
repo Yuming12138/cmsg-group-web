@@ -163,5 +163,13 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -35px' });
 
-  revealItems.forEach(function (item) { observer.observe(item); });
+  revealItems.forEach(function (item) {
+    // Keep above-the-fold content visible while the observer is being
+    // initialised. Only offscreen sections opt into the reveal animation;
+    // a delayed script can never turn the page into a blank white panel.
+    const bounds = item.getBoundingClientRect();
+    const inInitialViewport = bounds.top < window.innerHeight && bounds.bottom > 0;
+    if (!inInitialViewport) item.classList.add('reveal--pending');
+    observer.observe(item);
+  });
 }());

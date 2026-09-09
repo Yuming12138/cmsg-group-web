@@ -291,12 +291,14 @@ h1, h2, h3, p { margin-top: 0; }
 .person-card { padding: 22px 0 24px; border-top: 1px solid var(--line-strong); }
 .person-card__avatar { display: grid; width: 100%; aspect-ratio: 4 / 5; margin-bottom: 18px; place-items: center; border-radius: var(--radius-card); background: var(--paper-200); color: var(--blue-700); font: 400 clamp(2.2rem, 4vw, 4rem)/1 var(--display); }
 .person-card__avatar--image { overflow: hidden; background: var(--paper-200); }
+.person-card__avatar--image picture { display: block; width: 100%; height: 100%; }
 .person-card__avatar--image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .person-card h3 { margin-bottom: 5px; font-size: .93rem; line-height: 1.2; letter-spacing: -.01em; }
 .person-card p { margin-bottom: 0; color: var(--ink-500); font-size: .76rem; line-height: 1.4; }
 
-.reveal { opacity: 0; transform: translateY(14px); transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out); }
-.reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal { opacity: 1; transform: translateY(0); transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out); }
+.reveal.reveal--pending { opacity: 0; transform: translateY(14px); }
+.reveal.reveal--pending.is-visible { opacity: 1; transform: translateY(0); }
 
 @media (max-width: 980px) {
   .shell {

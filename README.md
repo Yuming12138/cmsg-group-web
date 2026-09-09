@@ -51,3 +51,10 @@ Regenerate these derived files after adding or replacing an activity photo:
 python3 -m pip install -r requirements-dev.txt
 python3 scripts/generate_event_images.py
 ```
+
+Member portraits use the same content-hashed responsive-image pattern. Regenerate
+their WebP/JPEG variants after replacing a portrait:
+
+```bash
+python3 scripts/generate_people_images.py
+```
