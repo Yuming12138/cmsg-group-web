@@ -39,3 +39,15 @@ Then open <http://127.0.0.1:5000/>. The old site can still be inspected by runni
 The provided Kandinsky *Composition VIII* image is stored at
 `static/site/images/kandinsky-composition-viii.jpg` and is used only as the home-page
 hero artwork in this visual candidate.
+
+## Event images
+
+Full-resolution activity photos stay in `static/images/group/`. The event page serves
+hashed responsive WebP variants plus an optimized JPEG fallback from
+`static/images/group/web/`; their mapping lives in `content/event-images.json`.
+Regenerate these derived files after adding or replacing an activity photo:
+
+```bash
+python3 -m pip install -r requirements-dev.txt
+python3 scripts/generate_event_images.py
+```

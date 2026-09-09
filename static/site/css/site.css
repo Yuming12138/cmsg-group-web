@@ -261,6 +261,7 @@ h1, h2, h3, p { margin-top: 0; }
 .timeline-item__gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; min-width: 0; max-width: 680px; }
 .timeline-item__gallery figure { overflow: hidden; margin: 0; border-radius: var(--radius-card); background: var(--paper-200); }
 .timeline-item__gallery figure:only-child { grid-column: 1 / -1; }
+.timeline-item__gallery picture { display: block; width: 100%; height: 100%; }
 .timeline-item__gallery img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; transition: transform 400ms var(--ease-out); }
 .timeline-item__gallery figure:hover img { transform: scale(1.015); }
 

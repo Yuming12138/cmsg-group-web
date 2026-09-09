@@ -3,7 +3,7 @@
 import os
 from pathlib import Path
 
-from flask import Flask
+from flask import Flask, request
 
 from .routes import site_bp
 
@@ -30,5 +30,11 @@ def create_app() -> Flask:
     @app.context_processor
     def inject_site_defaults():
         return {"site_year": "2026"}
+
+    @app.after_request
+    def cache_generated_event_images(response):
+        if request.path.startswith("/static/images/group/web/") and response.status_code == 200:
+            response.headers["Cache-Control"] = "public, max-age=31536000, immutable"
+        return response
 
     return app

@@ -51,7 +51,11 @@ def home():
 
 
 def _section(slug: str):
-    page = load_content(f"{slug}.json", _language())
+    language = _language()
+    page = load_content(f"{slug}.json", language)
+    event_images = {}
+    if slug == "events":
+        event_images = load_content("event-images.json", language).get("images", {})
     publication_groups = []
     if page.get("layout") == "publications":
         for item in page.get("items", []):
@@ -65,6 +69,7 @@ def _section(slug: str):
         page=page,
         slug=slug,
         publication_groups=publication_groups,
+        event_images=event_images,
     )
 
 

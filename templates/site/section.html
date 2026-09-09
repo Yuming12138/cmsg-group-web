@@ -91,6 +91,7 @@
 <section class="section section--timeline">
   <div class="shell timeline-list">
     {% for item in page['items'] %}
+    {% set event_index = loop.index0 %}
     <article class="timeline-item reveal">
       <div class="timeline-item__meta">
         <p class="section-label">{{ item.type }}</p>
@@ -100,7 +101,18 @@
       {% if item.images %}
       <div class="timeline-item__gallery">
         {% for image in item.images %}
-        <figure><img src="{{ image }}" alt="{{ item.title }}" loading="lazy"></figure>
+        {% set responsive = event_images.get(image) %}
+        {% set image_sizes = '(max-width: 620px) calc((100vw - 64px) / 2), (max-width: 980px) calc((100vw - 48px) / 2), 334px' if item.images|length > 1 else '(max-width: 620px) calc(100vw - 56px), (max-width: 980px) calc(100vw - 64px), 680px' %}
+        <figure>
+          {% if responsive %}
+          <picture>
+            <source type="image/webp" srcset="{{ responsive.srcset }}" sizes="{{ image_sizes }}">
+            <img src="{{ responsive.fallback }}" alt="{{ item.title }}" width="{{ responsive.width }}" height="{{ responsive.height }}" loading="{{ 'eager' if event_index == 0 and loop.first else 'lazy' }}" decoding="async"{% if event_index == 0 and loop.first %} fetchpriority="high"{% endif %}>
+          </picture>
+          {% else %}
+          <img src="{{ image }}" alt="{{ item.title }}" loading="lazy" decoding="async">
+          {% endif %}
+        </figure>
         {% endfor %}
       </div>
       {% endif %}
