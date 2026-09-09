@@ -76,3 +76,6 @@ rewrite.
 - The home Research preview should lead with the three real direction summaries at full
   width. Omit the generic kicker, title, and intro block; keep only a compact functional
   link to the full Research page below the list.
+- The home Research preview should sit in a centered bounded column on desktop so the
+  direction summaries do not leave an unbalanced empty field on the right; mobile may
+  return to near-full width.
