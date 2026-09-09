@@ -69,7 +69,6 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .geometry-focus.is-near { opacity: .34; stroke: #f0b18d; }
 .hero-eye { pointer-events: none; }
 .hero-eye__cover { fill: url(#hero-eye-disk); }
-.hero-eye__rays { fill: #c94232; }
 .hero-eye__pupil { fill: #241720; }
 .hero-eye__glint { fill: rgba(255,255,255,.42); }
 .hero__wash, .hero__grain { position: absolute; inset: 0; pointer-events: none; }

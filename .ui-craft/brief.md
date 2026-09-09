@@ -66,6 +66,9 @@ rewrite.
 - Hero motion should remain composition-led: a slow background breath plus low-amplitude
   SVG geometry response on fine pointers, with touch devices and reduced-motion users on
   a quieter path. Avoid particle fields or high-frequency effects.
+- The circular Composition VIII motif may use its black dot as a cursor-tracking pupil,
+  but do not redraw or rotate the three red line forms; approximating them departs too
+  visibly from the original artwork.
 - The home page must follow the full-viewport artwork with concise previews drawn from
   Research, Leader, and Publications content. Links are secondary actions; do not replace
   those previews with three navigation-only cards or restore the generic intro/signals/
