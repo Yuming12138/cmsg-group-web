@@ -1,6 +1,6 @@
-# CMSG Group Web — design tokens v1
+# CMSG Group Web — design tokens v2
 
-These tokens are the source of truth for the first visual candidate. Keep component
+These tokens are the source of truth for the current visual candidate. Keep component
 styles semantic; change the values here and in `static/site/css/tokens.css` when a
 new visual version is approved.
 
@@ -8,14 +8,17 @@ new visual version is approved.
 
 | Token | Value | Use |
 | --- | --- | --- |
-| `ink-950` | `#151619` | Primary text and dark surfaces |
-| `ink-700` | `#42454b` | Secondary text |
-| `paper-50` | `#fbfaf7` | Page background |
-| `paper-100` | `#f3f0e9` | Raised section background |
-| `line` | `rgba(21, 22, 25, .15)` | Hairline borders |
-| `copper-600` | `#a45d3b` | Single accent, active states, calls to action |
-| `copper-100` | `#eadbd1` | Accent tint |
-| `hero-overlay` | `rgba(11, 16, 28, .52)` | Artwork legibility layer |
+| `ink-950` | `#101923` | Primary text and dark surfaces |
+| `ink-700` | `#40515f` | Secondary text |
+| `ink-500` | `#647583` | Metadata and tertiary text |
+| `paper-50` | `#ffffff` | Primary page canvas |
+| `paper-100` | `#f6f9fc` | Subtle cool surface and hover tint |
+| `paper-200` | `#e8eef5` | Image placeholders and quiet fills |
+| `line` | `rgba(16, 25, 35, .14)` | Hairline borders |
+| `blue-600` | `#245f91` | Single accent, active states, calls to action |
+| `blue-700` | `#17466f` | Accent hover, links, and small text |
+| `blue-100` | `#e5eff8` | Accent tint |
+| `hero-overlay` | `rgba(8, 20, 37, .58)` | Artwork legibility layer |
 
 ## Type
 

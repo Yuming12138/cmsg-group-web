@@ -2,9 +2,9 @@
   --paper: var(--paper-50);
   --ink: var(--ink-950);
   --muted: var(--ink-500);
-  --accent: var(--copper-600);
-  --accent-dark: var(--copper-700);
-  --accent-wash: var(--copper-100);
+  --accent: var(--blue-600);
+  --accent-dark: var(--blue-700);
+  --accent-wash: var(--blue-100);
   --r-line: var(--line);
   --shell: var(--content-max);
   --gutter: var(--content-gutter);

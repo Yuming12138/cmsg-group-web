@@ -12,8 +12,8 @@
 The site should feel like a carefully edited research journal: quiet in its chrome,
 confident in its typography, and generous with visual rhythm. The home page uses
 the user-provided image of Kandinsky's *Composition VIII* as an immersive hero
-backdrop. The rest of the interface returns to an ivory paper tone so research
-content remains legible.
+backdrop. The rest of the interface returns to a pure-white canvas with restrained
+blue accents so research content remains legible.
 
 ## 3. Experience principles
 
@@ -21,7 +21,7 @@ content remains legible.
    and events live in `content/*.json`; templates provide structure only.
 2. **One clear hierarchy.** A visitor should understand the group's scope, current
    work, and next path within one scroll.
-3. **Editorial restraint.** Use a warm neutral base, charcoal ink, one copper accent,
+3. **Editorial restraint.** Use a white base, blue-black ink, one restrained blue accent,
    hairline rules, and intentional asymmetry. Avoid decorative gradients, emoji, and
    repeated icon-card patterns.
 4. **Progressive disclosure.** Keep the home page concise; section pages can grow
@@ -29,10 +29,10 @@ content remains legible.
 5. **Accessible by default.** Visible focus, keyboard navigation, semantic landmarks,
    readable contrast, and reduced-motion support are non-negotiable.
 
-## 4. Current visual candidate (v1)
+## 4. Current visual candidate (v2)
 
 - **Aesthetic lane:** editorial Swiss grid with a museum-catalogue calm
-- **Theme:** ivory / charcoal / copper, with the hero image providing the color field
+- **Theme:** white / blue-black / research blue, with the hero image providing the color field
 - **Typography:** system humanist sans for interface copy, restrained serif for display
 - **Motion:** subtle 300ms reveal and hover transitions; no scroll-jacking
 - **Signature bet:** the global navigation stays quiet while a compact, centered hero
@@ -59,7 +59,7 @@ rewrite.
 - The events timeline is image-led: show the activity type, title, and date, but keep
   explanatory summaries in the content data for future use rather than displaying them.
 - The home hero uses a compact centered composition: a bold group name above a short
-  welcome line, one concise AI/materials-design statement, and a single copper Discover
+  welcome line, one concise AI/materials-design statement, and a single blue Discover
   action. Keep the text block visually smaller than the artwork on desktop and mobile.
 - Homepage English copy uses Arial; Chinese copy uses Microsoft YaHei/微软雅黑. Do not
   restore the oversized serif display treatment for the hero.
@@ -81,3 +81,6 @@ rewrite.
   return to near-full width.
 - Leader portraits should preserve the source portrait framing (approximately 3:4) so
   the full person remains visible; do not use a landscape crop for the homepage preview.
+- The user prefers a pure-white background and restrained blue accents; avoid copper,
+  warm beige surfaces, and high-chroma tech gradients. Use blue mainly for links,
+  active states, timeline markers, and focused data elements.
