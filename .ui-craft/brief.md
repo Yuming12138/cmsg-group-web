@@ -79,3 +79,5 @@ rewrite.
 - The home Research preview should sit in a centered bounded column on desktop so the
   direction summaries do not leave an unbalanced empty field on the right; mobile may
   return to near-full width.
+- Leader portraits should preserve the source portrait framing (approximately 3:4) so
+  the full person remains visible; do not use a landscape crop for the homepage preview.
