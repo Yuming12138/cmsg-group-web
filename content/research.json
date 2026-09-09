@@ -3,11 +3,10 @@
   "layout": "research-detail",
   "kicker": "Research",
   "title": "Questions first. Methods in service of understanding.",
-  "intro": "Placeholder content for the group's major research directions. Each entry can later expand into a dedicated page without changing this index.",
+  "intro": "We use machine learning not only to predict material properties, but also to formulate physical descriptors, explore materials space, and design new candidates in reverse.",
   "items": [
-    {"index": "01", "title": "Research direction placeholder", "meta": "Theme / Method", "summary": "A concise description of the scientific question and the approach used to study it."},
-    {"index": "02", "title": "Research direction placeholder", "meta": "Theme / Method", "summary": "A concise description of the scientific question and the approach used to study it."},
-    {"index": "03", "title": "Research direction placeholder", "meta": "Theme / Method", "summary": "A concise description of the scientific question and the approach used to study it."},
-    {"index": "04", "title": "Research direction placeholder", "meta": "Theme / Method", "summary": "A concise description of the scientific question and the approach used to study it."}
+    {"index": "01", "title": "Materials inverse design", "meta": "FULL (A, C, S) SPACE · PROPERTY-DRIVEN SEARCH", "summary": "Starting from target properties, we search for suitable candidates across the vast space defined by elements, stoichiometry, and structure."},
+    {"index": "02", "title": "Physical discovery", "meta": "PHYSICAL MECHANISMS · STRUCTURE–PROPERTY", "summary": "We investigate the physical mechanisms behind macroscopic material properties, using superhard and negative-thermal-expansion materials to uncover interpretable and transferable structure-property relationships."},
+    {"index": "03", "title": "Water and nanoconfined transport", "meta": "MICROSCOPIC MECHANISMS · TRANSPORT CONTROL", "summary": "We study how confinement reshapes molecular interactions, dynamics, and transport at the molecular scale, seeking mechanisms to control nanofluidic friction, water diffusion, and water activation."}
   ]
 }

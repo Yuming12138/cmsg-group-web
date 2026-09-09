@@ -54,14 +54,8 @@
   </div>
 </section>
 
-<section class="home-preview home-preview--research" aria-labelledby="home-research-title">
-  <div class="shell home-preview__grid">
-    <div class="home-preview__heading reveal">
-      <p class="section-label">{{ research_preview.kicker }}</p>
-      <h2 id="home-research-title">{{ research_preview.title }}</h2>
-      <p>{{ research_preview.intro }}</p>
-      <a class="text-link" href="{{ href_for('/research') }}">{{ ui.view_research }} <span aria-hidden="true">↗</span></a>
-    </div>
+<section class="home-preview home-preview--research" aria-label="{{ research_preview.title }}">
+  <div class="shell home-research">
     <div class="home-research-list">
       {% for item in research_preview['items'][:3] %}
       <article class="home-research-item reveal">
@@ -74,6 +68,7 @@
       </article>
       {% endfor %}
     </div>
+    <a class="text-link home-research__link" href="{{ href_for('/research') }}">{{ ui.view_research }} <span aria-hidden="true">↗</span></a>
   </div>
 </section>
 

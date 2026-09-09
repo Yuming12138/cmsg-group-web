@@ -73,3 +73,6 @@ rewrite.
   Research, Leader, and Publications content. Links are secondary actions; do not replace
   those previews with three navigation-only cards or restore the generic intro/signals/
   updates/closing sequence.
+- The home Research preview should lead with the three real direction summaries at full
+  width. Omit the generic kicker, title, and intro block; keep only a compact functional
+  link to the full Research page below the list.

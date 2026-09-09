@@ -20,27 +20,27 @@
   },
   "research": {
     "label": "Selected directions",
-    "title": "Research is presented as a connected field, not a catalogue.",
+    "title": "Questions first. Methods in service of understanding.",
     "items": [
       {
         "index": "01",
-        "title": "Research direction placeholder",
-        "summary": "A short statement will explain the scientific question, method, and why the work matters.",
-        "meta": "Theme / Method",
+        "title": "Materials inverse design",
+        "summary": "Starting from target properties, we search for suitable candidates across the vast space defined by elements, stoichiometry, and structure.",
+        "meta": "FULL (A, C, S) SPACE · PROPERTY-DRIVEN SEARCH",
         "href": "/research"
       },
       {
         "index": "02",
-        "title": "Research direction placeholder",
-        "summary": "Future content can connect models, datasets, experiments, and publications through one shared entry.",
-        "meta": "Theme / Method",
+        "title": "Physical discovery",
+        "summary": "We investigate the physical mechanisms behind macroscopic material properties, using superhard and negative-thermal-expansion materials to uncover interpretable and transferable structure-property relationships.",
+        "meta": "PHYSICAL MECHANISMS · STRUCTURE–PROPERTY",
         "href": "/research"
       },
       {
         "index": "03",
-        "title": "Research direction placeholder",
-        "summary": "The content layer can grow without changing the visual grammar or navigation structure.",
-        "meta": "Theme / Method",
+        "title": "Water and nanoconfined transport",
+        "summary": "We study how confinement reshapes molecular interactions, dynamics, and transport at the molecular scale, seeking mechanisms to control nanofluidic friction, water diffusion, and water activation.",
+        "meta": "MICROSCOPIC MECHANISMS · TRANSPORT CONTROL",
         "href": "/research"
       }
     ]
