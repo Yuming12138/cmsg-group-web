@@ -58,31 +58,13 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .page:not(.page--home) main { padding-top: 88px; }
 
 .hero { position: relative; height: 100svh; min-height: 100svh; overflow: hidden; isolation: isolate; background: #11263d; color: var(--white); }
-.hero__art { position: absolute; z-index: -2; inset: -3%; pointer-events: none; animation: hero-breathe 46s ease-in-out infinite alternate; will-change: transform; }
-/* D · 视差分层 + C · 声部脉动：真实像素分层。ground 已把笔画抠掉（inpaint），
-   mid / front 携带真正的笔画像素——静止时三层严丝合缝，移动时动的是画作自己的线。 */
-.hero__plane { position: absolute; inset: 0; background-position: center; background-size: cover; background-repeat: no-repeat; transform: translate3d(calc(var(--shift-x, 0) * var(--pd, 0) * 1px), calc(var(--shift-y, 0) * var(--pd, 0) * 1px), 0); will-change: transform; }
-.hero__plane--ground { background-image: var(--hero-ground); }
-.hero__plane--mid { background-image: var(--hero-mid); --pd: .55; animation: hero-voice-mid 12.6s ease-in-out -3.4s infinite alternate; }
-.hero__plane--front { background-image: var(--hero-front); --pd: 1; animation: hero-voice-front 8.8s ease-in-out -6.1s infinite alternate; }
-.hero.is-settling .hero__plane { transition: transform 560ms var(--ease-out); }
-/* the ink planes lift and settle, letting the ground show through as they breathe */
-@keyframes hero-voice-mid {
-  from { opacity: .82; }
-  to { opacity: 1; }
-}
-@keyframes hero-voice-front {
-  from { opacity: .68; }
-  to { opacity: 1; }
-}
+.hero__art { position: absolute; z-index: -2; inset: -3%; pointer-events: none; background: var(--hero-art) center / cover no-repeat; animation: hero-breathe 46s ease-in-out infinite alternate; will-change: transform; }
 /* A · 透镜看画：鼠标是放大镜，光圈内放大并提亮，与画作直接交互 */
 .hero__lens { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0; transition: opacity 260ms var(--ease-out); }
 .hero__lens.is-active { opacity: 1; }
 .hero__lens-clip { position: absolute; inset: 0; clip-path: circle(var(--lens-r) at var(--mx) var(--my)); }
 .hero__lens-clip::after { content: ""; position: absolute; inset: 0; background: rgba(10, 20, 34, .16); }
-/* the loupe magnifies the same plane stack, so what it shows is the composition
-   itself — planes, offsets and all — rather than a separate flattened copy */
-.hero__lens-zoom { position: absolute; inset: -3%; transform: scale(1.55); transform-origin: calc(var(--mx) + 2.83%) calc(var(--my) + 2.83%); filter: brightness(1.62) saturate(1.05) contrast(1.04); animation: hero-breathe-lens 46s ease-in-out infinite alternate; }
+.hero__lens-zoom { position: absolute; inset: -3%; background: var(--hero-art) center / cover no-repeat; transform: scale(1.55); transform-origin: calc(var(--mx) + 2.83%) calc(var(--my) + 2.83%); filter: brightness(1.62) saturate(1.05) contrast(1.04); animation: hero-breathe-lens 46s ease-in-out infinite alternate; }
 .hero__lens-ring {
   position: absolute; left: var(--mx); top: var(--my);
   width: calc(var(--lens-r) * 2); height: calc(var(--lens-r) * 2);
@@ -532,9 +514,8 @@ h1, h2, h3, p { margin-top: 0; }
   .hero h1, .hero__summary, .hero__actions { opacity: 1; transform: none; animation: none !important; }
   .hero.is-scrolled .hero__inner { opacity: 1; transform: none; }
   .hero__lens { display: none; }
-  /* the plane stack stays as a static part of the composition */
-  .hero__plane--mid, .hero__plane--front { animation: none !important; opacity: 1; }
-  .hero__plane { transform: none !important; }
+  .hero__art { animation: none !important; }
+  .hero__lens-zoom { animation: none !important; }
 }
 
 @media (hover: none), (pointer: coarse) {

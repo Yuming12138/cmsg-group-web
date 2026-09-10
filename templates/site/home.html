@@ -1,29 +1,19 @@
 {% extends 'site/base.html' %}
 
 {% block head_extra %}
-    <link rel="preload" as="image" href="{{ asset('site/hero/ground-39119ff897-1440.webp') }}">
+    <link rel="preload" as="image" href="{{ asset('site/hero/art-39119ff897-1440.webp') }}">
 {% endblock %}
 
 {% block content %}
 <section class="hero" data-hero aria-labelledby="hero-title">
-  {# The painting is stacked as real depth planes (see scripts/build_hero_layers.py):
-     a ground with its ink inpainted away, plus that ink on a mid and a front plane.
-     The planes line up exactly at rest, so the composition is unchanged, but when
-     they drift the painting's own strokes move instead of a copy ghosting over them. #}
-  <div class="hero__art" aria-hidden="true" data-hero-art>
-    <div class="hero__plane hero__plane--ground"></div>
-    <div class="hero__plane hero__plane--mid"></div>
-    <div class="hero__plane hero__plane--front"></div>
-  </div>
+  <div class="hero__art" aria-hidden="true" data-hero-art></div>
   <div class="hero__wash" aria-hidden="true"></div>
   <div class="hero__grain" aria-hidden="true"></div>
+  {# The only hero interaction is the loupe: it magnifies the artwork around the
+     cursor and hands the colour it finds to the accent. #}
   <div class="hero__lens" data-hero-lens aria-hidden="true">
     <div class="hero__lens-clip">
-      <div class="hero__lens-zoom">
-        <div class="hero__plane hero__plane--ground"></div>
-        <div class="hero__plane hero__plane--mid"></div>
-        <div class="hero__plane hero__plane--front"></div>
-      </div>
+      <div class="hero__lens-zoom"></div>
     </div>
     <div class="hero__lens-ring"></div>
   </div>

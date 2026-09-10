@@ -17,12 +17,9 @@
   --blue-700: #17466f;
   --blue-100: #e5eff8;
   --hero-overlay: rgba(8, 20, 37, .58);
-  /* the artwork is served as real depth planes, built by scripts/build_hero_layers.py:
-     a ground with the ink inpainted away, plus the ink itself on two planes, so the
-     painting's own strokes can move instead of a copy ghosting over them */
-  --hero-ground: url("../hero/ground-39119ff897-1440.webp");
-  --hero-mid: url("../hero/mid-39119ff897-1440.webp");
-  --hero-front: url("../hero/front-39119ff897-1440.webp");
+  /* the hero artwork, prepared by scripts/build_hero_layers.py; depth planes for
+     element-level motion can be generated from the same script when wanted */
+  --hero-art: url("../hero/art-39119ff897-1440.webp");
   --hero-accent: #245f91;
   --hero-accent-ink: #ffffff;
   --lens-r: 92px;

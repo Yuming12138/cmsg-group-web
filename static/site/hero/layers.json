@@ -2,7 +2,5 @@
   "width": 1440,
   "height": 1008,
   "digest": "39119ff897",
-  "ground": "/static/site/hero/ground-39119ff897-1440.webp",
-  "mid": "/static/site/hero/mid-39119ff897-1440.webp",
-  "front": "/static/site/hero/front-39119ff897-1440.webp"
+  "art": "/static/site/hero/art-39119ff897-1440.webp"
 }

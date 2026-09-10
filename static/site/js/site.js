@@ -136,16 +136,15 @@
         : [];
       for (let index = entries.length - 1; index >= 0; index -= 1) {
         const name = entries[index].name || '';
-        if (name.indexOf('kandinsky-composition-viii') !== -1 && /\.(webp|jpe?g)($|\?)/i.test(name)) {
+        const isArtwork = name.indexOf('site/hero/art-') !== -1 || name.indexOf('kandinsky-composition-viii') !== -1;
+        if (isArtwork && /\.(webp|jpe?g)($|\?)/i.test(name)) {
           return name;
         }
       }
       const tokensLink = document.querySelector('link[href*="tokens.css"]');
       if (!tokensLink) return null;
       const declared = window.getComputedStyle(document.documentElement);
-      // the ground plane is the full-canvas image: the ink planes are mostly
-      // transparent, so they cannot answer "what colour is under the cursor"
-      const raw = declared.getPropertyValue('--hero-ground');
+      const raw = declared.getPropertyValue('--hero-art');
       const match = /url\(\s*["']?([^"')]+)["']?\s*\)/i.exec(raw || '');
       if (!match) return null;
       try {
@@ -265,50 +264,6 @@
     hero.addEventListener('pointerleave', function () {
       if (lens) lens.classList.remove('is-active');
     });
-  } else if (hero) {
-    // touch-first devices keep the static composition
-    document.documentElement.dataset.heroAccent = 'coarse-pointer';
-  }
-
-  /* D · parallax layering: the ink planes drift against the ground on pointer move
-     and scroll, each by its own depth. The amplitudes are in CSS pixels; because the
-     ground is inpainted the strokes can travel properly instead of leaving a copy
-     behind, but they still stay modest so the drawing never tears apart. */
-  if (hero && !reduced && finePointer) {
-    let layerFrame = 0;
-    let normX = 0;
-    let normY = 0;
-    let scrollRatio = 0;
-
-    const renderLayers = function () {
-      layerFrame = 0;
-      hero.style.setProperty('--shift-x', (normX * 20).toFixed(2));
-      hero.style.setProperty('--shift-y', (normY * 13 - scrollRatio * 30).toFixed(2));
-    };
-
-    const requestLayers = function () {
-      if (!layerFrame) layerFrame = window.requestAnimationFrame(renderLayers);
-    };
-
-    hero.addEventListener('pointermove', function (event) {
-      const bounds = hero.getBoundingClientRect();
-      normX = ((event.clientX - bounds.left) / bounds.width) * 2 - 1;
-      normY = ((event.clientY - bounds.top) / bounds.height) * 2 - 1;
-      hero.classList.remove('is-settling');
-      requestLayers();
-    }, { passive: true });
-
-    hero.addEventListener('pointerleave', function () {
-      normX = 0;
-      normY = 0;
-      hero.classList.add('is-settling');
-      requestLayers();
-    });
-
-    window.addEventListener('scroll', function () {
-      scrollRatio = Math.min(1, window.scrollY / Math.max(1, hero.offsetHeight));
-      requestLayers();
-    }, { passive: true });
   }
 
   const revealItems = document.querySelectorAll('.reveal');
