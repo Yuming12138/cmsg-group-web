@@ -43,7 +43,10 @@
   const lens = document.querySelector('[data-hero-lens]');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-  if (hero && lens && !reduced && finePointer) {
+  // Colour sampling is a static recolour rather than motion, so it stays available
+  // to reduced-motion visitors (their transitions are disabled by CSS anyway) and
+  // does not depend on the lens being rendered.
+  if (hero && finePointer) {
     const ART_WIDTH = 1800;
     const ART_HEIGHT = 1260;
     const SAMPLE_RADIUS = 3;
@@ -122,22 +125,35 @@
       };
     };
 
-    /* Read the artwork once from whichever responsive variant the browser already
-       loaded for the background, so sampling costs no extra request. */
-    const preparePalette = function () {
-      let url = null;
+    /* Resolve the artwork URL used for sampling. Prefer the responsive variant the
+       browser already fetched for the background (zero extra requests); otherwise
+       fall back to the smallest variant declared in CSS, resolved against the
+       stylesheet so the relative url() inside tokens.css lands in the right place.
+       The background may not be requested yet on a cold load, so this retries. */
+    const paletteUrl = function () {
       const entries = window.performance && window.performance.getEntriesByType
         ? window.performance.getEntriesByType('resource')
         : [];
       for (let index = entries.length - 1; index >= 0; index -= 1) {
         const name = entries[index].name || '';
         if (name.indexOf('kandinsky-composition-viii') !== -1 && /\.(webp|jpe?g)($|\?)/i.test(name)) {
-          url = name;
-          break;
+          return name;
         }
       }
-      if (!url) return;
+      const tokensLink = document.querySelector('link[href*="tokens.css"]');
+      if (!tokensLink) return null;
+      const declared = window.getComputedStyle(document.documentElement);
+      const raw = declared.getPropertyValue('--hero-art-set') || declared.getPropertyValue('--hero-art');
+      const match = /url\(\s*["']?([^"')]+)["']?\s*\)/i.exec(raw || '');
+      if (!match) return null;
+      try {
+        return new URL(match[1], tokensLink.href).href;
+      } catch (error) {
+        return null;
+      }
+    };
 
+    const readPalette = function (url) {
       const image = new Image();
       image.decoding = 'async';
       image.onload = function () {
@@ -152,11 +168,28 @@
           palette = data.data;
           paletteWidth = canvas.width;
           paletteHeight = canvas.height;
+          document.documentElement.dataset.heroAccent = 'ready';
         } catch (error) {
           palette = null;
+          document.documentElement.dataset.heroAccent = 'blocked';
         }
       };
+      image.onerror = function () {
+        document.documentElement.dataset.heroAccent = 'unavailable';
+      };
       image.src = url;
+    };
+
+    const preparePalette = function (attempt) {
+      const url = paletteUrl();
+      if (url) {
+        readPalette(url);
+        return;
+      }
+      document.documentElement.dataset.heroAccent = 'waiting';
+      if ((attempt || 0) < 4) {
+        window.setTimeout(function () { preparePalette((attempt || 0) + 1); }, 700);
+      }
     };
 
     preparePalette();
@@ -210,6 +243,8 @@
       hero.style.setProperty('--mx', x.toFixed(1) + 'px');
       hero.style.setProperty('--my', y.toFixed(1) + 'px');
 
+      if (lens) lens.classList.add('is-active');
+
       const sample = sampleArtwork(pointerX, pointerY);
       if (sample) {
         const pair = buttonColour(sample[0], sample[1], sample[2]);
@@ -221,13 +256,16 @@
     hero.addEventListener('pointermove', function (event) {
       pointerX = event.clientX;
       pointerY = event.clientY;
-      lens.classList.add('is-active');
+      if (lens) lens.classList.add('is-active');
       if (!lensFrame) lensFrame = window.requestAnimationFrame(paintLens);
     }, { passive: true });
 
     hero.addEventListener('pointerleave', function () {
-      lens.classList.remove('is-active');
+      if (lens) lens.classList.remove('is-active');
     });
+  } else if (hero) {
+    // touch-first devices keep the static composition
+    document.documentElement.dataset.heroAccent = 'coarse-pointer';
   }
 
   const revealItems = document.querySelectorAll('.reveal');

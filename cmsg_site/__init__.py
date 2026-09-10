@@ -4,7 +4,7 @@ import os
 from datetime import date
 from pathlib import Path
 
-from flask import Flask, request
+from flask import Flask, request, url_for
 
 from .routes import site_bp
 
@@ -27,6 +27,20 @@ def create_app() -> Flask:
     )
     app.jinja_env.auto_reload = True
     app.register_blueprint(site_bp)
+
+    @app.template_global()
+    def asset(filename: str) -> str:
+        """Static URL carrying an mtime cache-buster.
+
+        Without it a browser can keep serving an old stylesheet or script after a
+        deploy, which makes behaviour changes look like regressions.
+        """
+
+        url = url_for("static", filename=filename)
+        target = PROJECT_ROOT / "static" / filename
+        if target.is_file():
+            url = f"{url}?v={int(target.stat().st_mtime)}"
+        return url
 
     @app.context_processor
     def inject_site_defaults():

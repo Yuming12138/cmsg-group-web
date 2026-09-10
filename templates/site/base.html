@@ -11,10 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"></noscript>
-    <link rel="stylesheet" href="{{ url_for('static', filename='site/css/tokens.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='site/css/site.css') }}">
+    <link rel="stylesheet" href="{{ asset('site/css/tokens.css') }}">
+    <link rel="stylesheet" href="{{ asset('site/css/site.css') }}">
     {% if active_page == 'research' %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='site/css/research.css') }}">
+    <link rel="stylesheet" href="{{ asset('site/css/research.css') }}">
     {% endif %}
     {% block head_extra %}{% endblock %}
   </head>
@@ -25,8 +25,8 @@
       {% block content %}{% endblock %}
     </main>
     {% include 'site/partials/footer.html' %}
-    <script src="{{ url_for('static', filename='site/js/site.js') }}" defer></script>
-    {% if active_page == 'research' %}<script src="{{ url_for('static', filename='site/js/research.js') }}" defer></script>{% endif %}
+    <script src="{{ asset('site/js/site.js') }}" defer></script>
+    {% if active_page == 'research' %}<script src="{{ asset('site/js/research.js') }}" defer></script>{% endif %}
     {% block scripts_extra %}{% endblock %}
   </body>
 </html>
