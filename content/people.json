@@ -7,7 +7,7 @@
   "groups": [
     {"title": "Faculty", "members": [
       {"name": "Wan-Jian Yin / 尹万健", "role": "Professor · PI", "initials": "WY", "image": "/static/site/images/yinwanjian.jpg"},
-      {"name": "Ke Zhou / 周柯", "role": "Associate Professor", "initials": "KZ", "image": "/static/site/images/members/zhouke.png"}
+      {"name": "Ke Zhou / 周柯", "role": "Associate Professor", "initials": "KZ", "image": "/static/site/images/members/zhouke.png", "href": "/people/zhouke"}
     ]},
     {"title": "Postdoctor", "members": [
       {"name": "Haibo Xue / 薛海波", "role": "Postdoctoral researcher · since 2023", "initials": "HX", "image": "/static/site/images/members/xuehaibo.jpg"}

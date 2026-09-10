@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "title": "Ke Zhou / 周柯 · CMSG",
+    "description": "周柯，苏州大学能源学院副教授：个人简介、研究方向、代表性论文与近期工作。"
+  },
+  "name": "周柯",
+  "name_en": "Ke Zhou",
+  "role": "苏州大学能源学院副教授",
+  "portrait": {
+    "fallback": "/static/site/images/members/web/zhouke-9f38840a6f-363.jpg",
+    "srcset": "/static/site/images/members/web/zhouke-9f38840a6f-320.webp 320w, /static/site/images/members/web/zhouke-9f38840a6f-363.webp 363w",
+    "width": 363,
+    "height": 454
+  },
+  "works": [
+    {
+      "id": 1,
+      "label": "01",
+      "short_title": "二维热膨胀与 Invar",
+      "meta": {
+        "title": "二维材料热膨胀的力学密码 · 周柯 · CMSG",
+        "description": "机器学习揭示二维材料热膨胀的力学描述符，并用于发现二维 Invar 与反 Invar 材料。"
+      }
+    },
+    {
+      "id": 2,
+      "label": "02",
+      "short_title": "第一性水动力学",
+      "meta": {
+        "title": "第一性水动力学性质的差异性和不变性 · 周柯 · CMSG",
+        "description": "机器学习势与高通量分子动力学揭示第一性水动力学性质的差异性和不变性。"
+      }
+    },
+    {
+      "id": 3,
+      "label": "03",
+      "short_title": "柔性限域界面摩擦",
+      "meta": {
+        "title": "柔性限域通道中的固液界面摩擦 · 周柯 · CMSG",
+        "description": "机器学习势分子动力学揭示柔性限域通道中固液界面摩擦的新机制。"
+      }
+    },
+    {
+      "id": 4,
+      "label": "04",
+      "short_title": "力敏离子纳米通道",
+      "meta": {
+        "title": "限域离子的结晶与溶解 · 周柯 · CMSG",
+        "description": "极端限域调节离子水合与团簇状态，构建高性能力敏纳米通道。"
+      }
+    }
+  ]
+}

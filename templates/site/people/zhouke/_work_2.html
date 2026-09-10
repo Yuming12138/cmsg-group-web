@@ -1,0 +1,140 @@
+<article class="work-article">
+        <a class="work-back" href="{{ href_for(url_for('site.zhouke_profile')) }}">
+            <span aria-hidden="true">←</span>返回周柯个人主页
+        </a>
+
+        <div class="work-kicker">近期工作 · J. Chem. Theory Comput.</div>
+        <h1 class="work-title">第一性水动力学性质的差异性和不变性</h1>
+        <div class="work-meta">
+            <span>发布日期：2024 年 11 月</span>
+            <span>作者：田伟、王晨宇、周柯</span>
+        </div>
+
+        <p class="work-lead">不同第一性原理方法给出的液态水扩散系数和粘度差异显著，但这些看似不同的“第一性水”却共同服从 Stokes-Einstein 关系和二体剩余熵标度。研究借助机器学习势与高通量分子动力学，揭示了水动力学性质的<strong>差异性</strong>与<strong>不变性</strong>。</p>
+
+        <figure class="work-figure work-figure--overview">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_2/water-dynamics-overview.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_2/water-dynamics-overview.png') }}"
+                     alt="第一性水动力学差异性与不变性的图形摘要" width="1312" height="662" decoding="async">
+            </a>
+            <figcaption>研究图形摘要：单独的扩散系数 \(D\) 与粘度 \(\eta\) 因方法而异，但二者的组合与结构熵呈现稳定关系。</figcaption>
+        </figure>
+
+        <p>相关成果以“The Dynamic Diversity and Invariance of Ab Initio Water”为题发表于 <em>Journal of Chemical Theory and Computation</em>。第一作者为苏州大学能源学院硕士生田伟，周柯副教授为唯一通讯作者。</p>
+
+        <figure class="work-figure work-figure--paper">
+            <a href="https://doi.org/10.1021/acs.jctc.4c01191" target="_blank" rel="noopener noreferrer" aria-label="打开论文页面">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_2/article.png') }}"
+                     alt="JCTC 论文首页" width="2326" height="1494" loading="lazy" decoding="async">
+            </a>
+            <figcaption>论文首页。点击图片可前往论文页面。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">研究背景：从准确结构走向准确动力学</h2>
+
+        <p>准确描述水的结构与动力学，对海水淡化、离子分离、电催化和生化过程等问题至关重要。第一性原理分子动力学（AIMD）能够可靠描述水的局域结构，但扩散、粘度等输运性质需要纳秒尺度采样，直接计算往往成本高昂；体系尺寸不足还会带来显著的有限尺寸效应。</p>
+
+        <p>研究者利用 PBE+D3、RPBE+D3、optB88-vdW、SCAN、rSCAN、revPBE0+D3 等 DFT 数据，以及先进多体水模型 MB-pol，训练了 7 套神经网络演化势（NEP），再通过 GPUMD 将第一性原理精度扩展到更大的体系和更长的时间尺度。</p>
+
+        <h2 class="work-section-title">有限尺寸外推：获得可靠的扩散与粘度</h2>
+
+        <p>周期性模拟盒中的自扩散系数随体系线性尺寸 \(L\) 改变。研究计算一系列不同尺寸的水体系，并沿 \(1/L\) 外推到无限大体系。其常用修正关系可写为：</p>
+
+        <div class="math-display" role="math" aria-label="扩散系数的有限尺寸修正">
+            \[
+            D(L)=D_{\infty}-\frac{\xi k_{\mathrm B}T}{6\pi\eta L}
+            \]
+        </div>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_2/finite-size-dynamics.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_2/finite-size-dynamics.png') }}"
+                     alt="不同第一性原理方法下扩散系数的有限尺寸外推和粘度收敛" width="1700" height="1252" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 1. 不同方法训练的 MLP-MD 模型给出扩散系数随 \(1/L\) 的线性关系，并通过长时间相关函数获得粘度。点击图片可查看高清原图。</figcaption>
+        </figure>
+
+        <p>这类大体系、长时程计算难以直接由 AIMD 完成，而 NEP 与 GPU 加速显著降低了计算成本。研究使用 GPUMD 计算自扩散与粘度，并将结果与经验水模型和实验数据统一比较。</p>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_2/method-summary.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_2/method-summary.png') }}"
+                     alt="不同第一性原理方法、经验水模型和实验的体相水性质汇总" width="2348" height="1106" loading="lazy" decoding="async">
+            </a>
+            <figcaption>表 1. 不同第一性原理方法、经验水模型与实验得到的扩散系数、粘度、二者乘积及结构熵参数。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">差异性：不同方法预测出不同的“水”</h2>
+
+        <p>高通量结果显示，不同电子结构方法计算得到的 \(D\) 和 \(\eta\) 存在显著差异。GGA、meta-GGA 和部分混合泛函在环境条件下难以同时准确预测水动力学，而显式包含更高层次电子多体关联的方法，如 CCSDT 与 AFQMC，整体上更接近实验。</p>
+
+        <p>这种差异并非简单的数值误差，而是反映了不同方法给出的氢键网络和结构熵不同。也就是说，每种近似方法都生成了一种具有自身结构和输运特征的“第一性水”。</p>
+
+        <h2 class="work-section-title">不变性：Stokes-Einstein 关系仍然成立</h2>
+
+        <p>令人意外的是，尽管 \(D\) 与 \(\eta\) 的单独数值分散很大，所有第一性水仍共同服从经典 Stokes-Einstein 关系：</p>
+
+        <div class="math-display" role="math" aria-label="Stokes-Einstein 关系">
+            \[
+            D=\frac{k_{\mathrm B}T}{c\pi\eta d_{\mathrm h}},
+            \qquad
+            \frac{D\eta}{T}\approx\mathrm{constant}
+            \]
+        </div>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_2/stokes-einstein.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_2/stokes-einstein.png') }}"
+                     alt="扩散系数和粘度的差异性以及 Stokes-Einstein 不变性" width="1548" height="1148" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 2. 各方法的 \(D\) 和 \(\eta\) 分布差异明显，但 \(D\eta\) 随温度近似线性变化，\(D\eta/T\) 保持稳定。该不变性对第一性水成立，却不适用于全部经验水模型。</figcaption>
+        </figure>
+
+        <p>这意味着即使某种方法无法分别准确给出扩散与粘度，二者的乘积仍可能与实验高度一致。该相关性还可帮助判断，为获得准确动力学而人为升高 AIMD 模拟温度是否合理。</p>
+
+        <h2 class="work-section-title">结构起源：二体剩余熵连接微观结构与输运</h2>
+
+        <p>研究进一步发现，动力学差异可以由结构熵解释。二体剩余熵 \(s_2\) 可由径向分布函数 \(g(r)\) 表示：</p>
+
+        <div class="math-display" role="math" aria-label="二体剩余熵定义">
+            \[
+            s_2=-2\pi\rho k_{\mathrm B}\int_0^{\infty}
+            \left[g(r)\ln g(r)-g(r)+1\right]r^2\,\mathrm dr
+            \]
+        </div>
+
+        <p>不同方法的数据共同落在结构熵标度线上：结构越有序，扩散越慢、粘度越高。由此，方法之间的 diversity 被转化为一条统一的结构—动力学关系：</p>
+
+        <div class="math-display" role="math" aria-label="扩散和粘度的二体剩余熵标度关系">
+            \[
+            \ln D\propto\frac{s_2}{k_{\mathrm B}},
+            \qquad
+            \ln\eta\propto-\frac{s_2}{k_{\mathrm B}}
+            \]
+        </div>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_2/entropy-scaling.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_2/entropy-scaling.png') }}"
+                     alt="扩散系数和粘度随二体剩余熵的标度关系" width="1662" height="670" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 3. 不同第一性原理方法的扩散系数和粘度共同服从二体剩余熵标度，揭示动力学差异背后的结构起源。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">研究意义</h2>
+
+        <p>这项工作说明，评价水模型或密度泛函不能只比较单一动力学参数，还应考察扩散—粘度耦合以及结构熵标度。结果为设计更可靠的水泛函提供了动力学判据，也突出电子多体关联在水模拟中的重要性。</p>
+
+
+
+        <section class="work-citation" aria-labelledby="citation-title">
+            <h2 id="citation-title">论文信息与相关资料</h2>
+            <p>Wei Tian, Chenyu Wang, Ke Zhou*, “The Dynamic Diversity and Invariance of Ab Initio Water,” <em>Journal of Chemical Theory and Computation</em> 20, 10667–10675 (2024). <a href="https://doi.org/10.1021/acs.jctc.4c01191" target="_blank" rel="noopener noreferrer">https://doi.org/10.1021/acs.jctc.4c01191</a></p>
+            <ol class="reference-list">
+                <li><a href="https://doi.org/10.1021/acs.jctc.4c00650" target="_blank" rel="noopener noreferrer">Ab Initio Simulation of Liquid Water without Artificial High Temperature</a>, JCTC 20, 8202–8213 (2024).</li>
+                <li><a href="https://doi.org/10.24435/materialscloud:q1-mz" target="_blank" rel="noopener noreferrer">Materials Cloud Archive 2024.183</a>: 本文数据集。</li>
+                <li>Ke Zhou*, Chen Qian, Yilun Liu, <em>J. Phys. Chem. B</em> 126, 10471–10480 (2022).</li>
+                <li>Chen Qian, Ke Zhou*, <em>Inorg. Chem.</em> 62, 17756–17765 (2023).</li>
+            </ol>
+        </section>
+    </article>

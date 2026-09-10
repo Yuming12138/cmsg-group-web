@@ -1,11 +1,12 @@
 """Routes for the new content-driven site."""
 
-from flask import Blueprint, render_template, request, url_for
+from flask import Blueprint, abort, redirect, render_template, request, url_for
 
 from .content import SUPPORTED_LANGUAGES, load_content, load_site, load_ui
 
 
 site_bp = Blueprint("site", __name__)
+ZHOUKE_WORK_IDS = frozenset({1, 2, 3, 4})
 
 
 @site_bp.app_context_processor
@@ -110,3 +111,53 @@ def code_platform():
 @site_bp.get("/people")
 def people():
     return _section("people")
+
+
+@site_bp.get("/people/zhouke")
+def zhouke_profile():
+    """Render Ke Zhou's legacy profile inside the current site shell."""
+
+    page = load_content("people-zhouke.json", _language())
+    return render_template(
+        "site/people/zhouke_profile.html",
+        active_page="people",
+        page=page,
+        profile=page,
+    )
+
+
+@site_bp.get("/people/zhouke/work/<int:work_id>")
+def zhouke_work(work_id: int):
+    """Render one of the four legacy research stories for Ke Zhou."""
+
+    if work_id not in ZHOUKE_WORK_IDS:
+        abort(404)
+    profile = load_content("people-zhouke.json", _language())
+    work = next(item for item in profile["works"] if item["id"] == work_id)
+    return render_template(
+        "site/people/zhouke_work.html",
+        active_page="people",
+        page={"meta": work["meta"]},
+        profile=profile,
+        work=work,
+        work_id=work_id,
+    )
+
+
+@site_bp.get("/members/zhouke")
+def zhouke_legacy_profile():
+    """Keep the old public profile URL working after the redesign."""
+
+    return redirect(_localized_href(url_for("site.zhouke_profile"), _language()), 301)
+
+
+@site_bp.get("/members/zhouke/work_<int:work_id>.html")
+def zhouke_legacy_work(work_id: int):
+    """Preserve inbound links to the former work-detail URLs."""
+
+    if work_id not in ZHOUKE_WORK_IDS:
+        abort(404)
+    return redirect(
+        _localized_href(url_for("site.zhouke_work", work_id=work_id), _language()),
+        301,
+    )

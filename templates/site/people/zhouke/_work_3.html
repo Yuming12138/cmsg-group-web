@@ -1,0 +1,169 @@
+<article class="work-article">
+        <a class="work-back" href="{{ href_for(url_for('site.zhouke_profile')) }}">
+            <span aria-hidden="true">←</span>返回周柯个人主页
+        </a>
+
+        <div class="work-kicker">近期工作 · ACS Nano</div>
+        <h1 class="work-title">机器学习势分子动力学模拟揭示柔性限域通道中的固液界面摩擦新机制</h1>
+        <div class="work-meta">
+            <span>发布日期：2025 年 9 月 5 日</span>
+            <span>研究团队：苏州大学周柯</span>
+        </div>
+
+        <p class="work-lead">该研究利用机器学习势分子动力学揭示，柔性二维通道的热涨落通过改变界面静态力波动与局部剪切梯度，使固液摩擦系数呈现随通道尺度、应变和弯曲刚度可调的有限尺寸标度。</p>
+
+        <figure class="work-figure work-figure--overview">
+            <img src="{{ url_for('static', filename='images/members/zhouke/work_3/overview.png') }}"
+                 alt="刚性通道与柔性通道中水分子输运的示意对比" width="691" height="302" decoding="async">
+            <figcaption>图形摘要：刚性边界忽略了二维通道壁的热起伏，而柔性边界会通过动态曲率改变水分子的动量耗散。</figcaption>
+        </figure>
+
+        <figure class="work-figure work-figure--paper">
+            <a href="https://doi.org/10.1021/acsnano.5c08363" target="_blank" rel="noopener noreferrer" aria-label="打开论文页面">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_3/article.png') }}"
+                     alt="ACS Nano 论文首页" width="2122" height="1746" loading="lazy" decoding="async">
+            </a>
+            <figcaption>论文首页。点击图片可前往论文页面。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">被忽略的自由度：二维通道壁并非刚性平面</h2>
+
+        <p>二维材料广泛用于海水淡化、能量收集、生物传感和离子分离。传统纳米流体模型通常把通道壁视为固定边界，但根据 Mermin–Wagner 定理，原子级薄膜在有限温度下必然产生面外热涨落。实验片层的微米或亚微米尺度远大于典型热相干长度，长波 ZA 弯曲模因而不可忽略。</p>
+
+        <p>膜统计力学给出热相干长度与均方根起伏幅值的尺度估计：</p>
+
+        <div class="math-display" role="math" aria-label="二维膜的热相干长度和起伏幅值">
+            \[
+            l_{\mathrm{th}}=\sqrt{\frac{64\pi^3D^2}{3k_{\mathrm B}TE_{2D}}},
+            \qquad
+            \bar h\sim L\sqrt{\frac{k_{\mathrm B}T}{16\pi^4D}}
+            \]
+        </div>
+
+        <p>其中 \(D\) 为弯曲刚度，\(E_{2D}\) 为二维杨氏模量，\(L\) 为通道横向尺寸。\(\bar h\propto L/\sqrt D\) 表明：通道越宽、壁越薄软，热起伏越强；其高度可与水分子直径 2.78 Å 相当，足以改变局部流动边界。</p>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_3/thermal-length.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_3/thermal-length.png') }}"
+                     alt="柔性纳米通道热涨落与不同二维材料热相干长度" width="2706" height="958" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 1. 有限温度下柔性纳米通道的热涨落示意，以及不同二维材料热相干长度随 \(D\) 和 \(E_{2D}\) 的变化。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">用 Green–Kubo 关系测量界面动量耗散</h2>
+
+        <p>研究训练石墨烯、六方氮化硼、二硫化钼和蛭石四类通道的 NEP 势，并借助 GPUMD 在第一性原理精度下开展大尺寸、长时间分子动力学模拟。平衡态下的固液摩擦系数由线性响应理论给出：</p>
+
+        <div class="math-display" role="math" aria-label="固液界面摩擦系数的 Green-Kubo 关系">
+            \[
+            \lambda=\frac{1}{Ak_{\mathrm B}T}
+            \int_0^{\infty}\left\langle F_{\alpha}(t)F_{\alpha}(0)\right\rangle\,\mathrm dt,
+            \qquad \alpha=x,y
+            \]
+        </div>
+
+        <p>这里 \(A=L_xL_y\) 为界面面积，\(F_{\alpha}\) 是通道壁受到的瞬时切向总力。该式把摩擦理解为界面力涨落的时间积分，即液体动量向固体耗散的统计度量。</p>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_3/channel-friction.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_3/channel-friction.png') }}"
+                     alt="四类二维材料纳米通道模型及摩擦系数的尺寸效应" width="2388" height="1782" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 2. 四类二维材料通道及其摩擦系数。柔性石墨烯和 h-BN 呈现显著尺寸效应，弯曲刚度较大的 MoS₂ 和蛭石则明显减弱。</figcaption>
+        </figure>
+
+        <p>当 \(L\approx5\) nm 时，石墨烯、h-BN、MoS₂ 和蛭石通道的 \(\lambda\) 跨越约两个数量级。更出人意料的是，柔性通道的 \(\lambda\) 随 \(L\) 增大而升高，并与 \(1/L\) 呈线性关系；刚性通道中这一规律消失。</p>
+
+        <h2 class="work-section-title">机械应变调控 ZA 模：把柔性变成控制旋钮</h2>
+
+        <p>面内应变可通过声子硬化或软化改变低频 ZA 模。研究对石墨烯施加 \(-0.7\%\) 至 \(1.4\%\) 的双轴预应变，发现拉伸应变抑制热起伏并降低摩擦，压缩应变则增强起伏并提高摩擦。</p>
+
+        <div class="math-display" role="math" aria-label="摩擦系数随通道尺寸的线性外推">
+            \[
+            \lambda(L)=\lambda_{\infty}+\frac{k}{L},
+            \qquad k&lt;0
+            \]
+        </div>
+
+        <p>负斜率意味着通道尺寸增大时 \(\lambda\) 逐渐趋近更高的无限尺寸极限；随拉伸应变增加，斜率绝对值减小，说明机械加载削弱了长波涨落对摩擦的贡献。</p>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_3/strain-friction.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_3/strain-friction.png') }}"
+                     alt="不同预应变下石墨烯通道摩擦系数与尺寸的关系" width="2496" height="982" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 3. 不同预应变下石墨烯通道的 \(\lambda-L\) 与 \(\lambda-1/L\) 关系。拉伸使界面摩擦降低，压缩则使其升高。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">摩擦为何改变：静态力涨落主导，而非相关时间</h2>
+
+        <p>为分离界面摩擦的静态与动态来源，Green–Kubo 关系可重写为：</p>
+
+        <div class="math-display" role="math" aria-label="摩擦系数分解为静态力涨落和力相关时间">
+            \[
+            \lambda=\frac{\langle F^2\rangle}{Ak_{\mathrm B}T}\,\tau_F,
+            \qquad
+            \tau_F=\int_0^{\infty}
+            \frac{\langle F(0)F(t)\rangle}{\langle F^2\rangle}\,\mathrm dt
+            \]
+        </div>
+
+        <p>模拟显示，石墨烯的力相关时间 \(\tau_F\) 在不同尺寸和应变下基本保持在 30–50 fs；真正随通道尺度和应变显著变化的是单位面积静态力方差 \(\langle F^2\rangle/A\)。这说明柔性壁的动态曲率主要通过改变局部水—壁作用力和剪切梯度，打开新的动量耗散路径。</p>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_3/fluctuation-mechanism.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_3/fluctuation-mechanism.png') }}"
+                     alt="壁面起伏、摩擦系数、力相关时间与静态力方差的关系" width="2734" height="1436" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 4. 壁面起伏幅值、摩擦系数、力相关时间和静态力方差之间的关系，验证摩擦变化主要来自静态界面力涨落。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">最终标度：弯曲刚度决定尺寸效应强弱</h2>
+
+        <p>论文将总摩擦分解为刚性晶格粗糙度贡献 \(\lambda_0\) 与热起伏贡献 \(\lambda_{\mathrm{rip}}\)。结合连续介质流体力学与膜统计力学，可将有限尺寸效应写成相对无限尺寸极限的摩擦亏损，并得到其斜率：</p>
+
+        <div class="math-display" role="math" aria-label="柔性通道摩擦的尺寸和弯曲刚度标度">
+            \[
+            \lambda=\lambda_0+\lambda_{\mathrm{rip}},
+            \qquad
+            \lambda_{\infty}-\lambda(L)\sim\frac{\eta}{L\sqrt D},
+            \qquad
+            k=\frac{\mathrm d\lambda}{\mathrm d(1/L)}\sim-\frac{\eta}{\sqrt D}
+            \]
+        </div>
+
+        <p>图 5 的归一化结果验证了 \(|k|\propto\eta/\sqrt D\)。弯曲刚度越小，面外涨落越强，尺寸效应越突出；石墨烯的无限尺寸热起伏贡献可达刚性摩擦的约 350%，h-BN 约为 50%，而 MoS₂ 和蛭石中几乎可以忽略。</p>
+
+        <figure class="work-figure">
+            <a href="{{ url_for('static', filename='images/members/zhouke/work_3/scaling-law.png') }}" target="_blank" rel="noopener noreferrer">
+                <img src="{{ url_for('static', filename='images/members/zhouke/work_3/scaling-law.png') }}"
+                     alt="摩擦尺寸效应斜率与粘度和弯曲刚度的标度关系" width="2000" height="1004" loading="lazy" decoding="async">
+            </a>
+            <figcaption>图 5. \(\lambda-1/L\) 负斜率的绝对值与 \(\eta/\sqrt D\)、\(1/\sqrt D\) 的标度关系，数据均以石墨烯通道归一化。</figcaption>
+        </figure>
+
+        <h2 class="work-section-title">从摩擦到滑移：对纳米流动设计的意义</h2>
+
+        <p>摩擦系数直接决定滑移长度 \(l_s\)，二者满足：</p>
+
+        <div class="math-display" role="math" aria-label="滑移长度与摩擦系数关系">
+            \[
+            l_s=\frac{\eta}{\lambda}
+            \]
+        </div>
+
+        <p>因此，若将通道简单冻结为刚性平面，可能高估滑移并低估真实能量耗散。通道尺寸、层数、弯曲刚度和预应变不再只是几何或材料参数，而成为调节纳米流量的力学自由度；未来还可通过外加应变或光—声子耦合选择性驱动壁面模态，实现主动流动控制。</p>
+
+        <div class="result-grid" aria-label="研究的三个力学结论">
+            <div class="result-card"><strong>\(1/L\)</strong><span>柔性通道摩擦<br>呈有限尺寸标度</span></div>
+            <div class="result-card"><strong>\(D^{-1/2}\)</strong><span>弯曲刚度控制<br>尺寸效应强弱</span></div>
+            <div class="result-card"><strong>\(l_s=\eta/\lambda\)</strong><span>摩擦变化直接<br>传递到滑移边界</span></div>
+        </div>
+
+        <p class="work-note">该经典分子动力学框架揭示的是由几何涨落引起的界面力学贡献；涉及固体电子激发与水介电谱耦合的量子摩擦不在本文模拟范围内。</p>
+
+        <section class="work-citation" aria-labelledby="citation-title">
+            <h2 id="citation-title">论文信息</h2>
+            <p>Junyu Lian, Shuping Jiao*, Wanjian Yin, Ke Zhou*, “Machine-Learning Potential Molecular Dynamics Reveals the Critical Role of Flexibility in Solid–Liquid Nanofluidic Friction,” <em>ACS Nano</em> 19, 32422–32431 (2025). <a href="https://doi.org/10.1021/acsnano.5c08363" target="_blank" rel="noopener noreferrer">https://doi.org/10.1021/acsnano.5c08363</a></p>
+        </section>
+    </article>

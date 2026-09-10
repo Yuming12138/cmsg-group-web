@@ -84,3 +84,7 @@ rewrite.
 - The user prefers a pure-white background and restrained blue accents; avoid copper,
   warm beige surfaces, and high-chroma tech gradients. Use blue mainly for links,
   active states, timeline markers, and focused data elements.
+- Ke Zhou's photo and name in the current People page must both open an adapted
+  individual profile. Preserve the complete legacy profile and its four linked work
+  stories, but render them inside the single current site header and blue-white visual
+  system; do not retain the legacy page's second header, footer, or scripts.

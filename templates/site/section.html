@@ -36,7 +36,9 @@
       <div class="people-grid">
         {% for member in group.members %}
         {% set responsive = people_images.get(member.image) if member.image else none %}
-        <article class="person-card">
+        {% set member_href = href_for(member.href) if member.href else none %}
+        <article class="person-card{% if member_href %} person-card--linked{% endif %}">
+          {% if member_href %}<a class="person-card__profile-link" href="{{ member_href }}">{% endif %}
           <div class="person-card__avatar{% if member.image %} person-card__avatar--image{% endif %}" aria-hidden="true">
             {% if responsive %}
             <picture>
@@ -48,6 +50,7 @@
             {% else %}{{ member.initials }}{% endif %}
           </div>
           <h3>{{ member.name }}</h3>
+          {% if member_href %}</a>{% endif %}
           <p>{{ member.role }}</p>
         </article>
         {% endfor %}

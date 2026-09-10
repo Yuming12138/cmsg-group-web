@@ -1,0 +1,37 @@
+{% extends 'site/base.html' %}
+
+{% block head_extra %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='site/css/zhouke.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="shell zhouke-shell zhouke-shell--work">
+  <nav class="zhouke-breadcrumb" aria-label="Breadcrumb">
+    <a href="{{ href_for(url_for('site.people')) }}">People</a>
+    <span aria-hidden="true">/</span>
+    <a href="{{ href_for(url_for('site.zhouke_profile')) }}">{{ profile.name_en }} / {{ profile.name }}</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">{{ work.label }}</span>
+  </nav>
+
+  <nav class="zhouke-work-nav" aria-label="周柯的近期工作">
+    <a href="{{ href_for(url_for('site.zhouke_profile')) }}">个人主页</a>
+    <span class="zhouke-work-nav__rule" aria-hidden="true"></span>
+    {% for item in profile.works %}
+    <a href="{{ href_for(url_for('site.zhouke_work', work_id=item.id)) }}"{% if item.id == work_id %} aria-current="page"{% endif %} title="{{ item.short_title }}">{{ item.label }}</a>
+    {% endfor %}
+  </nav>
+
+  {% include 'site/people/zhouke/_work_' ~ work_id ~ '.html' %}
+</div>
+{% endblock %}
+
+{% block scripts_extra %}
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+{% endblock %}

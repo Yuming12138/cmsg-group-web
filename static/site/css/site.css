@@ -292,9 +292,17 @@ h1, h2, h3, p { margin-top: 0; }
 .person-card__avatar { display: grid; width: 100%; aspect-ratio: 4 / 5; margin-bottom: 18px; place-items: center; border-radius: var(--radius-card); background: var(--paper-200); color: var(--blue-700); font: 400 clamp(2.2rem, 4vw, 4rem)/1 var(--display); }
 .person-card__avatar--image { overflow: hidden; background: var(--paper-200); }
 .person-card__avatar--image picture { display: block; width: 100%; height: 100%; }
-.person-card__avatar--image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.person-card__avatar--image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 180ms var(--ease-out), filter 180ms var(--ease-out); }
 .person-card h3 { margin-bottom: 5px; font-size: .93rem; line-height: 1.2; letter-spacing: -.01em; }
 .person-card p { margin-bottom: 0; color: var(--ink-500); font-size: .76rem; line-height: 1.4; }
+.person-card__profile-link { display: block; color: inherit; text-decoration: none; border-radius: var(--radius-card); }
+.person-card__profile-link:focus-visible { outline: 2px solid var(--blue-600); outline-offset: 5px; }
+.person-card__profile-link h3 { transition: color 150ms var(--ease-out); }
+
+@media (hover: hover) and (pointer: fine) {
+  .person-card__profile-link:hover h3 { color: var(--blue-700); }
+  .person-card__profile-link:hover .person-card__avatar--image img { transform: scale(1.015); filter: saturate(.94) contrast(1.02); }
+}
 
 .reveal { opacity: 1; transform: translateY(0); transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out); }
 .reveal.reveal--pending { opacity: 0; transform: translateY(14px); }

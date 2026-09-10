@@ -1,0 +1,548 @@
+.zhouke-shell {
+  padding-top: clamp(var(--space-7), 6vw, var(--space-9));
+  padding-bottom: clamp(var(--space-9), 10vw, var(--space-10));
+}
+
+.zhouke-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  margin-bottom: clamp(var(--space-6), 5vw, var(--space-8));
+  color: var(--ink-500);
+  font: 500 .76rem/1.4 var(--sans);
+  letter-spacing: .025em;
+}
+
+.zhouke-breadcrumb a,
+.zhouke-people-back,
+.zhouke-work-nav a {
+  color: var(--blue-700);
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+
+.zhouke-breadcrumb a:focus-visible,
+.zhouke-people-back:focus-visible,
+.zhouke-work-nav a:focus-visible,
+.zhouke-profile-content a:focus-visible,
+.work-article a:focus-visible {
+  outline: 2px solid var(--blue-600);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.zhouke-profile-layout {
+  display: grid;
+  grid-template-columns: minmax(190px, 240px) minmax(0, 780px);
+  gap: clamp(var(--space-7), 7vw, var(--space-10));
+  align-items: start;
+  justify-content: center;
+}
+
+.zhouke-profile-rail {
+  position: sticky;
+  top: 104px;
+}
+
+.zhouke-profile-portrait {
+  display: block;
+  width: min(100%, 230px);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--paper-200);
+  box-shadow: 0 18px 42px rgba(20, 45, 68, .08), 0 2px 8px rgba(20, 45, 68, .06);
+}
+
+.zhouke-profile-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.zhouke-profile-label {
+  margin: var(--space-5) 0 var(--space-2);
+  color: var(--blue-700);
+  font: 600 .72rem/1.4 var(--sans);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.zhouke-profile-rail h1 {
+  margin: 0;
+  color: var(--ink-950);
+  font: 500 clamp(2.1rem, 4vw, 3rem)/1.04 var(--sans);
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.zhouke-profile-rail h1 span {
+  display: block;
+  margin-top: var(--space-2);
+  color: var(--ink-500);
+  font-size: .44em;
+  font-weight: 500;
+  letter-spacing: .01em;
+}
+
+.zhouke-profile-role {
+  max-width: 18ch;
+  margin: var(--space-4) 0 0;
+  color: var(--ink-700);
+  font: 400 .9rem/1.6 var(--sans);
+}
+
+.zhouke-people-back {
+  display: inline-flex;
+  min-height: 44px;
+  gap: var(--space-2);
+  align-items: center;
+  margin-top: var(--space-5);
+  font: 600 .78rem/1 var(--sans);
+}
+
+.zhouke-profile-content,
+.work-article {
+  min-width: 0;
+  color: var(--ink-700);
+  font-family: "Microsoft YaHei", "微软雅黑", var(--sans);
+  font-size: 1.05rem;
+  line-height: 1.82;
+  text-wrap: pretty;
+}
+
+.zhouke-profile-content > p:first-child {
+  margin-top: 0;
+  color: var(--ink-950);
+  font-size: 1.12rem;
+}
+
+.zhouke-profile-content p,
+.work-article p {
+  margin: 0 0 var(--space-5);
+}
+
+.zhouke-profile-content h2 {
+  margin: clamp(var(--space-7), 6vw, var(--space-8)) 0 var(--space-4);
+  color: var(--ink-950);
+  font: 500 clamp(1.45rem, 3vw, 1.9rem)/1.25 "Microsoft YaHei", "微软雅黑", var(--sans);
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+
+.zhouke-profile-content ul,
+.zhouke-profile-content ol,
+.reference-list {
+  margin: 0 0 var(--space-6);
+  padding-left: 1.35em;
+}
+
+.zhouke-profile-content li,
+.reference-list li {
+  margin-bottom: var(--space-3);
+  padding-left: var(--space-2);
+}
+
+.zhouke-profile-content a,
+.work-article a {
+  color: var(--blue-700);
+  text-decoration-color: rgba(36, 95, 145, .4);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+.zhouke-highlight {
+  color: var(--blue-700);
+}
+
+.zhouke-profile-content > p > .zhouke-highlight:only-child {
+  display: block;
+  margin: var(--space-6) 0;
+  padding: var(--space-5) clamp(var(--space-5), 4vw, var(--space-6));
+  border-radius: var(--radius-card);
+  background: var(--paper-100);
+  color: var(--ink-700);
+}
+
+.recent-work {
+  margin: clamp(var(--space-8), 8vw, var(--space-9)) 0;
+  border-top: 1px solid var(--line-strong);
+}
+
+.recent-work h2 {
+  margin-top: var(--space-6);
+}
+
+.recent-work-list {
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.recent-work-item + .recent-work-item {
+  border-top: 1px solid var(--line);
+}
+
+.recent-work-item a {
+  position: relative;
+  display: block;
+  padding: var(--space-5) var(--space-7) var(--space-5) 0;
+  color: var(--ink-950);
+  font-weight: 500;
+  line-height: 1.6;
+  text-decoration: none;
+  transition: color 150ms var(--ease-out), padding-left 180ms var(--ease-out);
+}
+
+.recent-work-item a::after {
+  position: absolute;
+  top: 50%;
+  right: var(--space-2);
+  color: var(--blue-600);
+  content: "→";
+  transform: translateY(-50%);
+}
+
+.zhouke-work-nav {
+  display: flex;
+  min-height: 44px;
+  gap: var(--space-4);
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto clamp(var(--space-6), 5vw, var(--space-8));
+  color: var(--ink-500);
+  font: 600 .78rem/1 var(--sans);
+}
+
+.zhouke-work-nav__rule {
+  width: min(160px, 16vw);
+  height: 1px;
+  background: var(--line-strong);
+}
+
+.zhouke-work-nav a[aria-current="page"] {
+  color: var(--ink-950);
+  text-decoration: underline;
+  text-decoration-color: var(--blue-600);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+.work-article {
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 1.08rem;
+  line-height: 1.78;
+}
+
+.work-back {
+  display: inline-flex;
+  min-height: 44px;
+  gap: var(--space-2);
+  align-items: center;
+  margin-bottom: var(--space-5);
+  font: 600 .78rem/1 var(--sans);
+  text-decoration: none;
+}
+
+.work-kicker {
+  margin-bottom: var(--space-4);
+  color: var(--blue-700);
+  font: 600 .74rem/1.45 var(--sans);
+  letter-spacing: .08em;
+}
+
+.work-title {
+  max-width: 20ch;
+  margin: 0 0 var(--space-5);
+  color: var(--ink-950);
+  font: 500 clamp(2.3rem, 6vw, 4.35rem)/1.08 "Microsoft YaHei", "微软雅黑", var(--sans);
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+
+.work-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-6);
+  margin-bottom: clamp(var(--space-7), 6vw, var(--space-8));
+  padding-bottom: var(--space-5);
+  border-bottom: 1px solid var(--line-strong);
+  color: var(--ink-500);
+  font: 500 .8rem/1.5 var(--sans);
+  font-variant-numeric: tabular-nums;
+}
+
+.work-lead {
+  margin-bottom: clamp(var(--space-7), 6vw, var(--space-8)) !important;
+  padding: clamp(var(--space-5), 4vw, var(--space-6));
+  border-radius: var(--radius-card);
+  background: var(--paper-100);
+  color: var(--ink-900);
+  font-size: 1.13rem;
+  line-height: 1.72;
+}
+
+.work-section-title,
+.work-citation h2 {
+  margin: clamp(var(--space-8), 8vw, var(--space-9)) 0 var(--space-4);
+  color: var(--ink-950);
+  font: 500 clamp(1.5rem, 3.5vw, 2.15rem)/1.25 "Microsoft YaHei", "微软雅黑", var(--sans);
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+
+.work-figure {
+  margin: clamp(var(--space-7), 6vw, var(--space-8)) 0;
+}
+
+.work-figure--paper {
+  max-width: 760px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.work-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  background: var(--paper-100);
+}
+
+.work-figure a {
+  display: block;
+  border-radius: var(--radius-control);
+}
+
+.work-figure figcaption {
+  max-width: 76ch;
+  margin-top: var(--space-3);
+  color: var(--ink-500);
+  font: 400 .82rem/1.62 "Microsoft YaHei", "微软雅黑", var(--sans);
+}
+
+.math-display {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: var(--space-6) 0 var(--space-7);
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  background: var(--paper-100);
+  color: var(--ink-950);
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin: var(--space-6) 0 var(--space-8);
+}
+
+.result-card {
+  padding: var(--space-5);
+  border-radius: var(--radius-control);
+  background: var(--paper-100);
+}
+
+.result-card strong,
+.result-card span {
+  display: block;
+}
+
+.result-card strong {
+  margin-bottom: var(--space-2);
+  color: var(--blue-700);
+  font: 500 clamp(1.35rem, 3vw, 1.9rem)/1.15 var(--sans);
+  font-variant-numeric: tabular-nums;
+}
+
+.result-card span {
+  color: var(--ink-700);
+  font-size: .84rem;
+  line-height: 1.55;
+}
+
+.work-note {
+  margin: var(--space-7) 0 !important;
+  padding: var(--space-5) var(--space-6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-control);
+  color: var(--ink-700);
+  font-size: .96rem;
+}
+
+.work-citation {
+  margin-top: clamp(var(--space-8), 9vw, var(--space-10));
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--line-strong);
+}
+
+.work-citation h2 {
+  margin-top: var(--space-6);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .zhouke-breadcrumb a:hover,
+  .zhouke-people-back:hover,
+  .zhouke-work-nav a:hover,
+  .zhouke-profile-content a:hover,
+  .work-article a:hover {
+    color: var(--blue-600);
+  }
+
+  .recent-work-item a:hover {
+    padding-left: var(--space-2);
+    color: var(--blue-700);
+  }
+
+  .work-figure a:hover img {
+    border-color: var(--line-strong);
+  }
+}
+
+@media (max-width: 760px) {
+  .zhouke-profile-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .zhouke-profile-rail {
+    position: static;
+    display: grid;
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: 0 var(--space-5);
+    align-items: end;
+  }
+
+  .zhouke-profile-portrait {
+    grid-row: 1 / span 4;
+    width: 160px;
+  }
+
+  .zhouke-profile-label {
+    margin-top: 0;
+  }
+
+  .zhouke-profile-role {
+    max-width: 24ch;
+  }
+
+  .zhouke-people-back {
+    margin-top: var(--space-3);
+  }
+
+  .zhouke-profile-content,
+  .work-article {
+    font-size: 1rem;
+    line-height: 1.78;
+  }
+
+  .work-title {
+    font-size: clamp(2rem, 9vw, 3rem);
+    letter-spacing: -.035em;
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .zhouke-shell {
+    padding-top: var(--space-6);
+  }
+
+  .zhouke-breadcrumb {
+    margin-bottom: var(--space-7);
+  }
+
+  .zhouke-profile-rail {
+    grid-template-columns: 118px minmax(0, 1fr);
+    gap: 0 var(--space-4);
+    align-items: start;
+  }
+
+  .zhouke-profile-portrait {
+    width: 118px;
+  }
+
+  .zhouke-profile-rail h1 {
+    font-size: 1.9rem;
+  }
+
+  .zhouke-profile-role {
+    font-size: .82rem;
+  }
+
+  .zhouke-people-back {
+    grid-column: 2;
+  }
+
+  .zhouke-work-nav {
+    gap: var(--space-3);
+    margin-bottom: var(--space-7);
+  }
+
+  .zhouke-work-nav__rule {
+    flex: 1;
+    min-width: var(--space-5);
+  }
+
+  .work-meta {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  .work-lead,
+  .work-note {
+    padding: var(--space-5);
+  }
+
+  .work-figure {
+    margin: var(--space-7) 0;
+  }
+
+  .math-display {
+    margin-right: calc(var(--content-gutter-mobile) * -1);
+    margin-left: calc(var(--content-gutter-mobile) * -1);
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .recent-work-item a {
+    transition: none;
+  }
+}
+
+@media print {
+  .zhouke-breadcrumb,
+  .zhouke-people-back,
+  .zhouke-work-nav {
+    display: none;
+  }
+
+  .zhouke-profile-layout {
+    display: block;
+  }
+
+  .zhouke-profile-rail {
+    position: static;
+    margin-bottom: var(--space-7);
+  }
+
+  .work-figure,
+  .work-section-title,
+  .work-citation {
+    break-inside: avoid;
+  }
+}

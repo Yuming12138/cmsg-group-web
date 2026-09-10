@@ -1,0 +1,32 @@
+{% extends 'site/base.html' %}
+
+{% block head_extra %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='site/css/zhouke.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="shell zhouke-shell zhouke-shell--profile">
+  <nav class="zhouke-breadcrumb" aria-label="Breadcrumb">
+    <a href="{{ href_for(url_for('site.people')) }}">People</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">{{ profile.name_en }} / {{ profile.name }}</span>
+  </nav>
+
+  <div class="zhouke-profile-layout">
+    <aside class="zhouke-profile-rail" aria-labelledby="zhouke-profile-name">
+      <picture class="zhouke-profile-portrait">
+        <source type="image/webp" srcset="{{ profile.portrait.srcset }}" sizes="(max-width: 720px) 180px, 230px">
+        <img src="{{ profile.portrait.fallback }}" alt="{{ profile.name }}" width="{{ profile.portrait.width }}" height="{{ profile.portrait.height }}" decoding="async" fetchpriority="high">
+      </picture>
+      <p class="zhouke-profile-label">Faculty profile</p>
+      <h1 id="zhouke-profile-name">{{ profile.name }} <span>{{ profile.name_en }}</span></h1>
+      <p class="zhouke-profile-role">{{ profile.role }}</p>
+      <a class="zhouke-people-back" href="{{ href_for(url_for('site.people')) }}"><span aria-hidden="true">←</span> 返回 People</a>
+    </aside>
+
+    <article class="zhouke-profile-content">
+      {% include 'site/people/zhouke/_profile_content.html' %}
+    </article>
+  </div>
+</div>
+{% endblock %}

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"></noscript>
     {% endif %}
+    {% block head_extra %}{% endblock %}
   </head>
   <body class="page page--{{ active_page|default('home') }}">
     <a class="skip-link" href="#main-content">{{ ui.skip_to_content }}</a>
@@ -28,5 +29,6 @@
     {% include 'site/partials/footer.html' %}
     <script src="{{ url_for('static', filename='site/js/site.js') }}" defer></script>
     {% if active_page == 'research' %}<script src="{{ url_for('static', filename='site/js/research.js') }}" defer></script>{% endif %}
+    {% block scripts_extra %}{% endblock %}
   </body>
 </html>
