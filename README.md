@@ -59,28 +59,34 @@ their WebP/JPEG variants after replacing a portrait:
 python3 scripts/generate_people_images.py
 ```
 
-The home-page hero artwork follows the same pattern. Regenerate its responsive WebP
-variants (and update the CSS/preload hash references) after replacing the Kandinsky
-source image:
+## Hero artwork element manifest and depth layers
 
-```bash
-python3 scripts/generate_hero_images.py
-```
-
-## Hero artwork element manifest
-
-The hero painting is a raster image, so element-level motion (parallax layers, an
-"assembly" intro, per-element breathing) has no vector data to work with. The
-manifest recovers it:
+The hero painting is a raster image, so element-level motion (parallax planes, an
+"assembly" intro, per-element breathing) has no vector data to work with. Two scripts
+recover it:
 
 ```bash
 python3 scripts/extract_composition_elements.py   # -> static/site/hero/composition-viii.json
 python3 scripts/build_element_review.py           # -> ../hero-elements-review.html
 ```
 
-The extractor validates every candidate against the edge map, records ink/fill
-colour, a heuristic parallax depth, and both pixel and normalised geometry. The
-review page overlays the result on the painting with per-type toggles so the
-detection can be checked by eye before it drives any motion. Known gap: the small
-rotated rectangles of the "board" motif are not detected — they are below the size
-where the colour masks stay connected.
+The extractor validates every candidate against the edge map, records ink/fill colour,
+a heuristic parallax depth, and both pixel and normalised geometry. The review page
+overlays the result on the painting with per-type toggles so the detection can be
+checked by eye. Known gap: the small rotated rectangles of the "board" motif are not
+detected — they are below the size where the colour masks stay connected.
+
+The manifest then drives the real depth layers the hero renders:
+
+```bash
+python3 scripts/build_hero_layers.py              # -> static/site/hero/{ground,mid,front}-<digest>-1440.webp
+```
+
+The builder cuts the fine strokes out of the canvas, inpaints the holes into a clean
+ground, and writes those stroke pixels onto a mid and a front plane. An overlay copy of
+the strokes could only ghost when it moved; real separated pixels let the painting's own
+lines travel. Heavy structure (thick bars, the big rings) deliberately stays in the
+ground, because cutting it would smear the canvas where it crosses colour boundaries.
+The layers align exactly at rest, so with no motion the composition is unchanged. If the
+digest changes, update the `--hero-ground/mid/front` variables in
+`static/site/css/tokens.css`.

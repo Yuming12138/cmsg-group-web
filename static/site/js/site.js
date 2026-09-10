@@ -143,7 +143,9 @@
       const tokensLink = document.querySelector('link[href*="tokens.css"]');
       if (!tokensLink) return null;
       const declared = window.getComputedStyle(document.documentElement);
-      const raw = declared.getPropertyValue('--hero-art-set') || declared.getPropertyValue('--hero-art');
+      // the ground plane is the full-canvas image: the ink planes are mostly
+      // transparent, so they cannot answer "what colour is under the cursor"
+      const raw = declared.getPropertyValue('--hero-ground');
       const match = /url\(\s*["']?([^"')]+)["']?\s*\)/i.exec(raw || '');
       if (!match) return null;
       try {
@@ -268,11 +270,11 @@
     document.documentElement.dataset.heroAccent = 'coarse-pointer';
   }
 
-  /* D · parallax layering: the element layer drifts with the pointer and with the
-     scroll, each shape scaled by the depth the extractor assigned it, so the
-     painting's own geometry reads as separate planes. */
-  const elementLayer = document.querySelector('[data-hero-elements]');
-  if (hero && elementLayer && !reduced && finePointer) {
+  /* D · parallax layering: the ink planes drift against the ground on pointer move
+     and scroll, each by its own depth. The amplitudes are in CSS pixels; because the
+     ground is inpainted the strokes can travel properly instead of leaving a copy
+     behind, but they still stay modest so the drawing never tears apart. */
+  if (hero && !reduced && finePointer) {
     let layerFrame = 0;
     let normX = 0;
     let normY = 0;
@@ -280,8 +282,8 @@
 
     const renderLayers = function () {
       layerFrame = 0;
-      elementLayer.style.setProperty('--shift-x', (normX * 11).toFixed(2));
-      elementLayer.style.setProperty('--shift-y', (normY * 8 - scrollRatio * 16).toFixed(2));
+      hero.style.setProperty('--shift-x', (normX * 20).toFixed(2));
+      hero.style.setProperty('--shift-y', (normY * 13 - scrollRatio * 30).toFixed(2));
     };
 
     const requestLayers = function () {
@@ -292,14 +294,14 @@
       const bounds = hero.getBoundingClientRect();
       normX = ((event.clientX - bounds.left) / bounds.width) * 2 - 1;
       normY = ((event.clientY - bounds.top) / bounds.height) * 2 - 1;
-      elementLayer.classList.remove('is-settling');
+      hero.classList.remove('is-settling');
       requestLayers();
     }, { passive: true });
 
     hero.addEventListener('pointerleave', function () {
       normX = 0;
       normY = 0;
-      elementLayer.classList.add('is-settling');
+      hero.classList.add('is-settling');
       requestLayers();
     });
 

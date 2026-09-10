@@ -1,59 +1,29 @@
 {% extends 'site/base.html' %}
 
 {% block head_extra %}
-    <link rel="preload" as="image" type="image/webp" imagesizes="100vw"
-          imagesrcset="{{ url_for('static', filename='site/images/hero/kandinsky-composition-viii-35c68f7ea1-960.webp') }} 960w, {{ url_for('static', filename='site/images/hero/kandinsky-composition-viii-35c68f7ea1-1440.webp') }} 1440w, {{ url_for('static', filename='site/images/hero/kandinsky-composition-viii-35c68f7ea1-1800.webp') }} 1800w">
+    <link rel="preload" as="image" href="{{ asset('site/hero/ground-39119ff897-1440.webp') }}">
 {% endblock %}
 
 {% block content %}
 <section class="hero" data-hero aria-labelledby="hero-title">
+  {# The painting is stacked as real depth planes (see scripts/build_hero_layers.py):
+     a ground with its ink inpainted away, plus that ink on a mid and a front plane.
+     The planes line up exactly at rest, so the composition is unchanged, but when
+     they drift the painting's own strokes move instead of a copy ghosting over them. #}
   <div class="hero__art" aria-hidden="true" data-hero-art>
-    {% if hero_elements %}
-    {# Element layer: the painting's own geometry, replayed inside the artwork layer so
-       it inherits the exact same placement and breathing. Two voices run out of
-       phase — a faint ink pass that deepens the strokes and a light pass that lets
-       the front-most lines catch the light — so the canvas reads as a score rather
-       than a redraw. It renders below the wash and below the lens, so the magnifier
-       never shows a double image. #}
-    {%- macro geometry(element) -%}
-      {%- set width = element.thickness if element.type == 'line' else (6 if element.type == 'circle' else 4) -%}
-      {%- if element.type == 'disk' -%}
-      <circle class="hero-shape hero-shape--disk" cx="{{ element.cx }}" cy="{{ element.cy }}" r="{{ element.r }}"></circle>
-      {%- elif element.type == 'circle' -%}
-      <circle class="hero-shape" cx="{{ element.cx }}" cy="{{ element.cy }}" r="{{ element.r }}" fill="none" stroke-width="{{ width }}"></circle>
-      {%- elif element.type == 'line' -%}
-      <line class="hero-shape" x1="{{ element.x1 }}" y1="{{ element.y1 }}" x2="{{ element.x2 }}" y2="{{ element.y2 }}" stroke-width="{{ width }}" stroke-linecap="round"></line>
-      {%- else -%}
-      <polyline class="hero-shape" points="{% for point in element.points %}{{ point[0] }},{{ point[1] }} {% endfor %}" fill="none" stroke-width="{{ width }}" stroke-linecap="round" stroke-linejoin="round"></polyline>
-      {%- endif -%}
-    {%- endmacro -%}
-    <svg class="hero__elements" viewBox="0 0 1800 1260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" data-hero-elements>
-      <g class="hero__elements-ink">
-        {% for element in hero_elements %}
-        {% set depth = element.depth if element.depth is defined else 0.5 %}
-        {% set width = element.thickness if element.type == 'line' else (6 if element.type == 'circle' else 4) %}
-        <g class="hero__el" data-depth="{{ depth }}"
-           style="--d: {{ depth }}; --sw: {{ width }}; --voice: {{ 1 if depth >= 0.8 else (0.62 if depth >= 0.4 else 0.3) }}; --period: {{ '%.2f'|format(7.4 + (loop.index0 % 7) * 1.15) }}s; --delay: -{{ '%.2f'|format((loop.index0 % 11) * 0.85) }}s; --tone: {{ element.fill if element.type == 'disk' else element.stroke }}">
-          {{ geometry(element) }}
-        </g>
-        {% endfor %}
-      </g>
-      <g class="hero__elements-gleam">
-        {% for element in hero_elements if (element.depth if element.depth is defined else 0.5) >= 0.8 %}
-        <g class="hero__el" data-depth="{{ element.depth }}"
-           style="--d: {{ element.depth }}; --voice: 1; --period: {{ '%.2f'|format(9.9 + (loop.index0 % 6) * 1.4) }}s; --delay: -{{ '%.2f'|format((loop.index0 % 9) * 1.25) }}s; --tone: rgba(255, 248, 236, .92)">
-          {{ geometry(element) }}
-        </g>
-        {% endfor %}
-      </g>
-    </svg>
-    {% endif %}
+    <div class="hero__plane hero__plane--ground"></div>
+    <div class="hero__plane hero__plane--mid"></div>
+    <div class="hero__plane hero__plane--front"></div>
   </div>
   <div class="hero__wash" aria-hidden="true"></div>
   <div class="hero__grain" aria-hidden="true"></div>
   <div class="hero__lens" data-hero-lens aria-hidden="true">
     <div class="hero__lens-clip">
-      <div class="hero__lens-art" data-lens-art></div>
+      <div class="hero__lens-zoom">
+        <div class="hero__plane hero__plane--ground"></div>
+        <div class="hero__plane hero__plane--mid"></div>
+        <div class="hero__plane hero__plane--front"></div>
+      </div>
     </div>
     <div class="hero__lens-ring"></div>
   </div>

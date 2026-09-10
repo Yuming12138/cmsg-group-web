@@ -1,9 +1,5 @@
 """Routes for the new content-driven site."""
 
-import json
-from functools import lru_cache
-from pathlib import Path
-
 from flask import Blueprint, abort, redirect, render_template, request, url_for
 
 from .content import SUPPORTED_LANGUAGES, load_content, load_site, load_ui
@@ -11,26 +7,6 @@ from .content import SUPPORTED_LANGUAGES, load_content, load_site, load_ui
 
 site_bp = Blueprint("site", __name__)
 ZHOUKE_WORK_IDS = frozenset({1, 2, 3, 4})
-HERO_ELEMENTS_PATH = (
-    Path(__file__).resolve().parent.parent / "static" / "site" / "hero" / "composition-viii.json"
-)
-
-
-@lru_cache(maxsize=1)
-def load_hero_elements() -> list[dict]:
-    """Geometry of the hero painting, used by the home page's element layer.
-
-    The manifest is derived from the artwork (see
-    ``scripts/extract_composition_elements.py``); missing or broken data simply
-    means the hero renders without its element layer.
-    """
-
-    try:
-        document = json.loads(HERO_ELEMENTS_PATH.read_text(encoding="utf-8"))
-    except (OSError, ValueError):
-        return []
-    elements = document.get("elements")
-    return elements if isinstance(elements, list) else []
 
 
 @site_bp.app_context_processor
@@ -72,7 +48,6 @@ def home():
         research_preview=load_content("research.json", language),
         leader_preview=load_content("leader.json", language),
         publications_preview=load_content("publications.json", language),
-        hero_elements=load_hero_elements(),
     )
 
 
