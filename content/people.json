@@ -32,6 +32,40 @@
     ]},
     {"title": "Undergraduate", "members": [
       {"name": "Wei Yan / 严威", "role": "New Energy Materials and Devices", "initials": "WY", "image": "/static/site/images/members/yanwei.jpg"}
+    ]},
+    {"title": "Alumni", "layout": "alumni", "members": [
+      {"name": "Xiaoxia Yang / 杨晓霞", "role": "Visiting Student (2023) · Doctor (2025)", "destination": "From Ningbo University", "email": "yxa0804@163.com", "photo": "/static/images/members/yangxiaoxia.jpg"},
+      {"name": "Junyu Lian / 连均愉", "role": "Visiting Student (2023) · Master (2023)", "destination": "From Shanghai University", "email": "2235174330@qq.com", "photo": "/static/images/members/lianjunyu.jpg"},
+      {"name": "Jing Zhang / 张靖", "role": "Visiting Student (2023) · Master (2023)", "destination": "From Ningbo University", "email": "488512838@qq.com", "photo": "/static/images/members/zhangjing.jpg"},
+      {"name": "Yahui Xie / 谢雅慧", "role": "Visiting Student (2023) · Master (2021)", "destination": "From Xi’an Jiaotong University", "email": "ceft1107@163.com", "photo": "/static/images/members/xieyahui.jpg"},
+      {"name": "Fan Yang / 杨帆", "role": "Master (2021)", "destination": "Now in Tianfu Jiangxi Laboratory", "email": "18593938006@163.com", "photo": "/static/images/members/yangfan.jpg"},
+      {"name": "Jianyang Guo / 郭舰阳", "role": "Master (2021)", "email": "13894063021@sina.cn", "photo": "/static/images/members/guojianyang.jpg"},
+      {"name": "Xiwen Chen / 陈曦雯", "role": "Doctor (2020)", "destination": "Now in Trina Solar", "email": "xwchen@stu.suda.edu.cn", "photo": "/static/images/members/chenxiwen.jpg"},
+      {"name": "Huanya Li / 李环娅", "role": "Master (2020)", "email": "20204240007@stu.suda.edu.cn", "photo": "/static/images/members/lihuanya_2.jpg"},
+      {"name": "Zhihao Li / 李志豪", "role": "Master (2020)", "destination": "Now in BYD (Shenzhen)", "email": "20204240030@stu.suda.edu.cn", "photo": "/static/images/members/lizhihao.jpg"},
+      {"name": "Xiucai Sun / 孙秀彩", "role": "BGI faculty", "email": "sunxc-cnc@pku.edu.cn", "photo": "/static/images/members/sunxiucai.jpg"},
+      {"name": "Xiaoli Sun / 孙晓莉", "role": "BGI faculty", "email": "sunxiaolideyuye@163.com", "photo": "/static/images/members/sunxiaoli.jpg"},
+      {"name": "Yuan Yin / 尹媛", "destination": "Now in Baoji University of Arts and Sciences", "email": "yinyuan8008@126.com", "photo": "/static/images/members/yinyuan.jpg"},
+      {"name": "Zhendong Guo / 郭振东", "role": "Postdoctor (2019)", "destination": "Now in Nanjing University of Science and Technology", "email": "zdguo@suda.edu.cn", "photo": "/static/images/members/guozhendong.jpg"},
+      {"name": "Jing Wang / 王静", "role": "Postdoctor (2020) · Doctor (2017)", "destination": "Now in Ningbo University", "email": "wangjing0314@suda.edu.cn", "photo": "/static/images/members/wangjing.jpg"},
+      {"name": "Gaoyuan Chen / 陈高远", "role": "Doctor (2018)", "destination": "Now in Suzhou University of Science and Technology", "email": "gychen@stu.suda.edu.cn", "photo": "/static/images/members/chengaoyuan.jpg"},
+      {"name": "Fanbin Meng / 孟繁斌", "role": "Undergraduate (2018)", "destination": "Now in National University of Singapore", "email": "b1447413638@163.com", "photo": "/static/images/members/mengfanbin.jpg"},
+      {"name": "Ling Li / 李玲", "role": "Master (2019)", "destination": "Now in Atlas (Suzhou)", "email": "lli000@stu.suda.edu.cn", "photo": "/static/images/members/liling.jpg"},
+      {"name": "Fangting Liu / 刘芳庭", "role": "Undergraduate (2018)", "destination": "Now in Southeast University", "email": "ftliu@stu.suda.edu.cn", "photo": "/static/images/members/liufangting.jpg"},
+      {"name": "Yu Tian / 田宇", "role": "Undergraduate (2018)", "destination": "Now in Tsinghua University", "email": "1824402006@stu.suda.edu.cn", "photo": "/static/images/members/tianyu.jpg"},
+      {"name": "Haohang Huang / 黄浩航", "role": "Undergraduate (2018)", "destination": "Now in Fudan University", "email": "hhh5951@163.com", "photo": "/static/images/members/huanghaohang.jpg"},
+      {"name": "Zhou Zhou / 周洲", "role": "Research Associate (2020)", "destination": "Now in Soochow University", "email": "zhouzhou@suda.edu.cn", "photo": "/static/images/members/zhouzhou.jpg"},
+      {"name": "Zhilong Song / 宋志龙", "role": "Master (2018)", "destination": "Now in Southeast University", "email": "zlsong@stu.suda.edu.cn", "photo": "/static/images/members/songzhilong.jpg"},
+      {"name": "Zhongti Sun / 孙中体", "role": "Postdoctor (2018)", "destination": "Now in Jiangsu University", "email": "ztsun@suda.edu.cn", "photo": "/static/images/members/sunzhongti.jpg"},
+      {"name": "Xiaowei Jiang / 江小蔚", "role": "Doctor (2016)", "email": "164182002@qq.com", "photo": "/static/images/members/jiangxiaowei.png"},
+      {"name": "Zhenzhu Li / 李珍珠", "role": "Postdoctor (2017)", "destination": "Now in Imperial College London, UK", "email": "lzz@suda.edu.cn", "photo": "/static/images/members/lizhenzhu.png"},
+      {"name": "Huifeng Zhang / 张慧峰", "role": "Undergraduate (2016)", "destination": "Now in Xiamen University", "email": "hfzhang@stu.suda.edu.cn", "photo": "/static/images/members/zhanghuifeng.jpg"},
+      {"name": "Chen Wang / 王陈", "role": "Master (2018)", "email": "20184208025@stu.suda.edu.cn", "photo": "/static/images/members/wangchen.jpg"},
+      {"name": "Qichen Xu / 徐其琛", "role": "Research Associate", "destination": "Now in KTH Royal Institute of Technology", "email": "qichenx@kth.se", "photo": "/static/images/members/xuqichen.jpg"},
+      {"name": "Zhengbao Huo / 霍正宝", "role": "Master (2016)", "destination": "Now in Canadian Solar Inc.", "email": "18896557184@163.com", "photo": "/static/images/members/huozhengbao.jpg"},
+      {"name": "Qingde Sun / 孙庆德", "role": "Doctor (2015)", "destination": "Now in Beijing Computational Science Research Center", "email": "qingdesun1190@163.com", "photo": "/static/images/members/sunqingde.png"},
+      {"name": "Fazel Shojaei", "role": "Postdoctor", "destination": "Now in Persian Gulf University", "email": "Fazelshojaei1986@gmail.com", "photo": "/static/images/members/fazel_shojaei.png"},
+      {"name": "Yang Huang / 黄杨", "role": "Research Associate", "destination": "Now in Shenzhen University", "email": "huangyang10010@163.com", "photo": "/static/images/members/huangyang.jpg"}
     ]}
   ]
 }

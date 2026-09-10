@@ -88,3 +88,12 @@ rewrite.
   individual profile. Preserve the complete legacy profile and its four linked work
   stories, but render them inside the single current site header and blue-white visual
   system; do not retain the legacy page's second header, footer, or scripts.
+- Keep Alumni as a compact text-first registry like the legacy page. Archival photos
+  must not occupy the People layout or load on initial page view; expose them only in
+  an on-demand, keyboard-accessible detail dialog so the long archive stays dense. The
+  whole compact member row is the trigger, and the dialog contains the archival photo,
+  role, destination, and email; do not display a separate “View photo” label.
+- Alumni is intentionally adaptive rather than identical across sizes: desktop uses the
+  legacy-style two-column registry and shows role, destination, and email in each row;
+  mobile collapses to a compact single column showing only name and role. In both cases
+  the entire row opens the same photo-led detail dialog.

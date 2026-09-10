@@ -31,8 +31,22 @@
   <div class="shell people-groups">
     {% for group in page.groups %}
     {% set group_loop = loop %}
-    <div class="people-group reveal">
+    <div class="people-group reveal{% if group.layout == 'alumni' %} people-group--alumni{% endif %}">
       <div class="people-group__heading"><p class="section-label">{{ '%02d'|format(loop.index) }}</p><h2>{{ group.title }}</h2></div>
+      {% if group.layout == 'alumni' %}
+      <div class="alumni-grid">
+        {% for member in group.members %}
+        <article class="alumni-card">
+          <button class="alumni-card__trigger" type="button" aria-label="{{ ui.open_alumni_profile }}: {{ member.name }}" aria-haspopup="dialog" aria-controls="alumni-profile-dialog" data-alumni-profile-trigger data-photo-src="{{ member.photo }}" data-member-name="{{ member.name }}" data-member-role="{{ member.role|default('') }}" data-member-destination="{{ member.destination|default('') }}" data-member-email="{{ member.email|default('') }}">
+            <span class="alumni-card__name">{{ member.name }}</span>
+            {% if member.role %}<span class="alumni-card__role">{{ member.role }}</span>{% endif %}
+            {% if member.destination %}<span class="alumni-card__destination">{{ member.destination }}</span>{% endif %}
+            {% if member.email %}<span class="alumni-card__email">{{ member.email }}</span>{% endif %}
+          </button>
+        </article>
+        {% endfor %}
+      </div>
+      {% else %}
       <div class="people-grid">
         {% for member in group.members %}
         {% set responsive = people_images.get(member.image) if member.image else none %}
@@ -55,9 +69,33 @@
         </article>
         {% endfor %}
       </div>
+      {% endif %}
     </div>
     {% endfor %}
   </div>
+
+  <dialog class="alumni-profile-dialog" id="alumni-profile-dialog" aria-labelledby="alumni-profile-title" data-alumni-profile-dialog>
+    <div class="alumni-profile-dialog__surface">
+      <button class="alumni-profile-dialog__icon-close" type="button" aria-label="{{ ui.close_profile }}" data-alumni-profile-close>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+      <figure class="alumni-profile-dialog__figure">
+        <div class="alumni-profile-dialog__stage">
+          <img alt="" hidden data-alumni-profile-image>
+        </div>
+        <figcaption class="alumni-profile-dialog__caption">
+          <div class="alumni-profile-dialog__details">
+            <p class="section-label">{{ ui.alumni_profile }}</p>
+            <h3 id="alumni-profile-title" data-alumni-profile-name></h3>
+            <p class="alumni-profile-dialog__role" hidden data-alumni-profile-role></p>
+            <p class="alumni-profile-dialog__destination" hidden data-alumni-profile-destination></p>
+            <a class="alumni-profile-dialog__email" hidden data-alumni-profile-email></a>
+          </div>
+          <button class="alumni-profile-dialog__close" type="button" data-alumni-profile-close>{{ ui.close }}</button>
+        </figcaption>
+      </figure>
+    </div>
+  </dialog>
 </section>
 {% elif page.layout == 'publications' %}
 <section class="section section--publications">
@@ -141,4 +179,8 @@
   </div>
 </section>
 {% endif %}
+{% endblock %}
+
+{% block scripts_extra %}
+{% if page.layout == 'people' %}<script src="{{ url_for('static', filename='site/js/people.js') }}" defer></script>{% endif %}
 {% endblock %}

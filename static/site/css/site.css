@@ -299,9 +299,43 @@ h1, h2, h3, p { margin-top: 0; }
 .person-card__profile-link:focus-visible { outline: 2px solid var(--blue-600); outline-offset: 5px; }
 .person-card__profile-link h3 { transition: color 150ms var(--ease-out); }
 
+.people-group--alumni { align-items: start; }
+.alumni-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: clamp(32px, 5vw, 72px); border-top: 1px solid var(--line-strong); }
+.alumni-card { min-width: 0; border-bottom: 1px solid var(--line); }
+.alumni-card__trigger { display: grid; width: 100%; min-height: 132px; gap: 4px; align-content: start; padding: 20px 0 22px; border: 0; border-radius: var(--radius-control); background: transparent; color: var(--ink-950); font: inherit; text-align: left; cursor: pointer; }
+.alumni-card__name { min-width: 0; margin: 0 0 8px; font: 600 .94rem/1.35 var(--sans); letter-spacing: -.01em; }
+.alumni-card__role, .alumni-card__destination, .alumni-card__email { margin: 0; font-size: .76rem; line-height: 1.45; overflow-wrap: anywhere; }
+.alumni-card__role { color: var(--ink-700); }
+.alumni-card__destination { color: var(--ink-500); }
+.alumni-card__email { color: var(--blue-700); }
+.alumni-card__trigger:focus-visible, .alumni-profile-dialog button:focus-visible, .alumni-profile-dialog a:focus-visible { outline: 2px solid var(--blue-600); outline-offset: 3px; }
+
+.has-alumni-dialog { overflow: hidden; }
+.alumni-profile-dialog { width: min(720px, calc(100% - 32px)); max-width: none; max-height: calc(100dvh - 32px); padding: 0; border: 0; border-radius: 14px; background: var(--paper-50); color: var(--ink-950); box-shadow: 0 30px 80px rgba(8, 20, 37, .24), 0 8px 24px rgba(8, 20, 37, .14); overflow: hidden; }
+.alumni-profile-dialog::backdrop { background: rgba(8, 20, 37, .72); }
+.alumni-profile-dialog__surface { position: relative; }
+.alumni-profile-dialog__icon-close { position: absolute; z-index: 2; top: 12px; right: 12px; display: grid; width: 44px; height: 44px; padding: 0; place-items: center; border: 1px solid rgba(255,255,255,.6); border-radius: 50%; background: rgba(8,20,37,.72); color: #fff; cursor: pointer; }
+.alumni-profile-dialog__icon-close svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-width: 1.6; }
+.alumni-profile-dialog__figure { margin: 0; }
+.alumni-profile-dialog__stage { display: grid; min-height: min(52dvh, 460px); max-height: min(62dvh, 620px); place-items: center; background: var(--paper-200); overflow: auto; }
+.alumni-profile-dialog__stage img { display: block; max-width: 100%; max-height: min(62dvh, 620px); width: auto; height: auto; object-fit: contain; }
+.alumni-profile-dialog__stage img[hidden] { display: none; }
+.alumni-profile-dialog__caption { display: flex; gap: 24px; align-items: end; justify-content: space-between; padding: 18px 20px 20px; border-top: 1px solid var(--line); }
+.alumni-profile-dialog__details { min-width: 0; }
+.alumni-profile-dialog__caption .section-label { margin-bottom: 4px; }
+.alumni-profile-dialog__caption h3 { margin: 0 0 7px; font: 500 clamp(1.15rem, 2vw, 1.45rem)/1.25 var(--sans); letter-spacing: -.02em; }
+.alumni-profile-dialog__role, .alumni-profile-dialog__destination { margin: 0; color: var(--ink-700); font-size: .78rem; line-height: 1.5; }
+.alumni-profile-dialog__destination { color: var(--ink-500); }
+.alumni-profile-dialog__email { display: inline-block; margin-top: 6px; color: var(--blue-700); font-size: .76rem; line-height: 1.4; text-decoration-thickness: 1px; text-underline-offset: 2px; overflow-wrap: anywhere; }
+.alumni-profile-dialog__role[hidden], .alumni-profile-dialog__destination[hidden], .alumni-profile-dialog__email[hidden] { display: none; }
+.alumni-profile-dialog__close { min-height: 44px; padding: 0 18px; border: 1px solid var(--line-strong); border-radius: var(--radius-control); background: var(--paper-50); color: var(--ink-950); font: 600 .75rem/1 var(--sans); cursor: pointer; }
+
 @media (hover: hover) and (pointer: fine) {
   .person-card__profile-link:hover h3 { color: var(--blue-700); }
   .person-card__profile-link:hover .person-card__avatar--image img { transform: scale(1.015); filter: saturate(.94) contrast(1.02); }
+  .alumni-card__trigger:hover .alumni-card__name { color: var(--blue-700); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  .alumni-profile-dialog__icon-close:hover { background: rgba(8,20,37,.88); }
+  .alumni-profile-dialog__close:hover { border-color: var(--blue-600); color: var(--blue-700); }
 }
 
 .reveal { opacity: 1; transform: translateY(0); transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out); }
@@ -342,6 +376,7 @@ h1, h2, h3, p { margin-top: 0; }
   .closing__inner { margin-left: auto; }
   .profile-layout { grid-template-columns: minmax(220px, 1fr) 1.2fr; gap: 36px; }
   .people-group { grid-template-columns: 1fr; gap: 26px; }
+  .alumni-grid { column-gap: 34px; }
   .timeline-list::before { left: 180px; }
   .timeline-item { grid-template-columns: 180px minmax(0, 1fr); gap: 28px; }
   .timeline-item::before { left: 175px; }
@@ -383,6 +418,7 @@ h1, h2, h3, p { margin-top: 0; }
   .section-grid--intro .section-label { margin-bottom: 28px; }
   .section-copy h2, .section-heading h2, .closing h2 { font-size: clamp(2.55rem, 12vw, 4.2rem); }
   .research-grid, .cards-grid, .people-grid { grid-template-columns: 1fr; }
+  .alumni-grid { grid-template-columns: 1fr; }
   .research-card:last-child, .feature-card:last-child { grid-column: auto; }
   .research-card, .feature-card { min-height: 270px; }
   .research-card__index, .feature-card__index { margin-bottom: 65px; }
@@ -426,6 +462,14 @@ h1, h2, h3, p { margin-top: 0; }
   .profile-copy { padding-top: 0; }
   .people-group { gap: 18px; }
   .person-card__avatar { aspect-ratio: 1 / 1.08; margin-bottom: 14px; }
+  .alumni-card__trigger { min-height: 66px; gap: 3px; padding-block: 10px 12px; }
+  .alumni-card__name { margin-bottom: 0; font-size: .88rem; }
+  .alumni-card__role { color: var(--ink-500); font-size: .72rem; }
+  .alumni-card__destination, .alumni-card__email { display: none; }
+  .alumni-profile-dialog { width: calc(100% - 20px); max-height: calc(100dvh - 20px); border-radius: 10px; }
+  .alumni-profile-dialog__stage { min-height: 44dvh; max-height: 62dvh; }
+  .alumni-profile-dialog__stage img { max-height: 62dvh; }
+  .alumni-profile-dialog__caption { align-items: end; padding: 14px 16px 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -436,3 +480,5 @@ h1, h2, h3, p { margin-top: 0; }
   .hero__group-name, .hero h1, .hero__summary, .hero__actions { opacity: 1; transform: none; animation: none !important; }
   .hero.is-scrolled .hero__inner { opacity: 1; transform: none; }
 }
+
+@media print { .alumni-profile-dialog { display: none; } }
