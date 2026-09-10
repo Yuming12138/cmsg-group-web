@@ -70,6 +70,14 @@ rewrite.
 - Hero motion should remain composition-led: a slow background breath plus low-amplitude
   SVG geometry response on fine pointers, with touch devices and reduced-motion users on
   a quieter path. Avoid particle fields or high-frequency effects.
+- (Superseded 2026-09-10: the approximate SVG geometry layer and the cursor-tracking
+  pupil were removed. Hero interaction is now pixel-level and reads directly off the
+  artwork: a magnifying lens that follows the cursor — revealing the painting's true
+  colours through the dimming wash — plus accent colour sampling from a pre-sampled
+  18x12 palette grid. Sampled colours are darkened until white text passes WCAG AA, so
+  the CTA may change hue but never becomes unreadable. Touch and reduced-motion users
+  get the static composition. No element-level data is required for this, so nothing
+  has to be traced or redrawn from the raster artwork.)
 - The circular Composition VIII motif may use its black dot as a cursor-tracking pupil,
   but do not redraw or rotate the three red line forms; approximating them departs too
   visibly from the original artwork.

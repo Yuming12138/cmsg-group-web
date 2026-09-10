@@ -58,34 +58,63 @@ a, button { -webkit-tap-highlight-color: transparent; }
 .page:not(.page--home) main { padding-top: 88px; }
 
 .hero { position: relative; height: 100svh; min-height: 100svh; overflow: hidden; isolation: isolate; background: #11263d; color: var(--white); }
-.hero__art { position: absolute; z-index: -2; inset: -3%; pointer-events: none; animation: hero-breathe 46s ease-in-out infinite alternate; will-change: transform; }
-.hero__art::before { position: absolute; inset: 0; background: url("../images/hero/kandinsky-composition-viii-35c68f7ea1-1800.jpg") center / cover no-repeat; content: ""; }
+.hero__art { position: absolute; z-index: -2; inset: -3%; pointer-events: none; background: var(--hero-art) center / cover no-repeat; animation: hero-breathe 46s ease-in-out infinite alternate; will-change: transform; }
 @supports (background: image-set("x" 1x)) {
-  .hero__art::before { background-image: image-set(url("../images/hero/kandinsky-composition-viii-35c68f7ea1-960.webp") 1x, url("../images/hero/kandinsky-composition-viii-35c68f7ea1-1440.webp") 1.5x, url("../images/hero/kandinsky-composition-viii-35c68f7ea1-1800.webp") 2x); }
+  .hero__art { background-image: var(--hero-art-set); }
 }
-.hero__geometry { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.geometry-layer { fill: none; stroke: rgba(255,255,255,.16); stroke-width: 2; vector-effect: non-scaling-stroke; transform-box: fill-box; transform-origin: center; transition: transform 680ms var(--ease-out); }
-.geometry-layer--back { stroke: rgba(255,255,255,.1); }
-.geometry-layer--middle { stroke: rgba(174,207,235,.26); stroke-width: 1.5; }
-.geometry-layer--front { stroke: rgba(255,255,255,.2); stroke-width: 1.2; }
-.geometry-focus { opacity: .08; transition: opacity 260ms ease-out, stroke 260ms ease-out; }
-.geometry-focus.is-near { opacity: .34; stroke: #b7d5ee; }
-.hero-eye { pointer-events: none; }
-.hero-eye__cover { fill: url(#hero-eye-disk); }
-.hero-eye__pupil { fill: #0b1a2a; }
-.hero-eye__glint { fill: rgba(255,255,255,.42); }
+/* A · 透镜看画：鼠标是放大镜，光圈内放大并提亮，与画作直接交互 */
+.hero__lens { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0; transition: opacity 260ms var(--ease-out); }
+.hero__lens.is-active { opacity: 1; }
+.hero__lens-clip { position: absolute; inset: 0; clip-path: circle(var(--lens-r) at var(--mx) var(--my)); }
+.hero__lens-clip::after { content: ""; position: absolute; inset: 0; background: rgba(10, 20, 34, .16); }
+.hero__lens-art { position: absolute; inset: -3%; background: var(--hero-art) center / cover no-repeat; transform: scale(1.55); transform-origin: calc(var(--mx) + 2.83%) calc(var(--my) + 2.83%); filter: brightness(1.62) saturate(1.05) contrast(1.04); animation: hero-breathe-lens 46s ease-in-out infinite alternate; }
+@supports (background: image-set("x" 1x)) {
+  .hero__lens-art { background-image: var(--hero-art-set); }
+}
+.hero__lens-ring {
+  position: absolute; left: var(--mx); top: var(--my);
+  width: calc(var(--lens-r) * 2); height: calc(var(--lens-r) * 2);
+  transform: translate(-50%, -50%);
+  border: 1.5px solid rgba(255,255,255,.85);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(16,25,35,.45), 0 22px 60px rgba(0,0,0,.42), inset 0 0 46px rgba(255,255,255,.10);
+}
+.hero__lens-ring::after {
+  content: "";
+  position: absolute; left: 50%; top: 50%;
+  width: 13px; height: 13px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)) center / 1px 13px no-repeat,
+              linear-gradient(rgba(255,255,255,.92), rgba(255,255,255,.92)) center / 13px 1px no-repeat;
+  mix-blend-mode: difference;
+}
+.hero__lens-tag {
+  position: absolute; left: var(--mx); top: var(--my);
+  margin: 0;
+  transform: translate(-50%, calc(-1 * var(--lens-r) - 18px));
+  padding: 4px 10px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 3px;
+  background: rgba(10,18,30,.5);
+  color: rgba(255,255,255,.86);
+  font: 600 10px/1.4 var(--mono);
+  letter-spacing: .13em;
+  white-space: nowrap;
+  backdrop-filter: blur(4px);
+}
+.hero__lens-tag b { margin-right: 6px; padding: 1px 5px; border-radius: 2px; background: var(--hero-accent); color: var(--hero-accent-ink); }
 .hero__wash, .hero__grain { position: absolute; inset: 0; pointer-events: none; }
 .hero__wash { z-index: -1; background: linear-gradient(135deg, rgba(14, 22, 44, .75) 0%, rgba(17, 25, 45, .22) 54%, rgba(11, 16, 28, .68) 100%), var(--hero-overlay); animation: hero-wash-breathe 46s ease-in-out infinite alternate; }
 .hero__grain { z-index: -1; opacity: .13; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.32'/%3E%3C/svg%3E"); mix-blend-mode: soft-light; }
-.hero__inner { display: grid; height: 100%; min-height: 100svh; grid-template-rows: 1fr; padding-top: 118px; padding-bottom: 30px; transition: opacity 360ms var(--ease-out), transform 360ms var(--ease-out); }
+.hero__inner { position: relative; z-index: 1; display: grid; height: 100%; min-height: 100svh; grid-template-rows: 1fr; padding-top: 118px; padding-bottom: 30px; transition: opacity 360ms var(--ease-out), transform 360ms var(--ease-out); }
 .hero.is-scrolled .hero__inner { opacity: .9; transform: translateY(-10px); }
 .hero__content { display: flex; width: min(1120px, 100%); flex-direction: column; align-items: center; align-self: center; justify-self: center; margin: 0; padding: clamp(42px, 6vh, 76px) 0; text-align: center; }
 .eyebrow, .section-label { margin: 0 0 20px; color: var(--blue-600); font: 600 11px/1.2 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
 .eyebrow--light { color: #c6dced; }
 h1, h2, h3, p { margin-top: 0; }
-.hero h1 { max-width: min(1080px, 96%); margin-bottom: 24px; color: var(--white); font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 500; line-height: 1.12; letter-spacing: -.03em; text-wrap: balance; }
+.hero h1 { max-width: min(1080px, 96%); margin-bottom: 24px; color: var(--white); font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 500; line-height: 1.12; letter-spacing: -.03em; text-wrap: balance; text-shadow: 0 2px 28px rgba(8,16,28,.55); }
 .hero h1 strong { font-weight: 700; }
-.hero__summary { max-width: 720px; margin-bottom: 28px; color: rgba(255,255,255,.86); font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.45; text-wrap: balance; }
+.hero__summary { max-width: 720px; margin-bottom: 28px; color: rgba(255,255,255,.88); font-size: clamp(1rem, 1.4vw, 1.2rem); line-height: 1.45; text-wrap: balance; text-shadow: 0 1px 18px rgba(8,16,28,.6); }
 .hero__actions { display: flex; align-items: center; justify-content: center; gap: 26px; }
 .hero h1, .hero__summary, .hero__actions { opacity: 0; transform: translateY(12px); animation: hero-rise 640ms var(--ease-out) forwards; }
 .hero h1 { animation-delay: 160ms; }
@@ -98,6 +127,9 @@ h1, h2, h3, p { margin-top: 0; }
 .button--light:hover { background: #edf4fa; }
 .button--accent { background: var(--blue-600); color: var(--white); }
 .button--accent:hover { background: var(--blue-700); }
+/* E · 取色换装：hero 内的主 CTA / 链接跟随鼠标所在画作的颜色 */
+.hero .button--accent { background: var(--hero-accent); color: var(--hero-accent-ink); transition: background-color 320ms var(--ease-out), color 320ms var(--ease-out), filter 180ms var(--ease-out), transform 180ms var(--ease-out); }
+.hero .button--accent:hover { background: var(--hero-accent); filter: brightness(1.14); }
 .button--dark { background: var(--ink-950); color: var(--white); }
 .button--dark:hover { background: var(--blue-700); }
 .text-link { display: inline-flex; align-items: center; gap: 10px; color: var(--blue-700); font-size: 12px; font-weight: 700; }
@@ -109,6 +141,12 @@ h1, h2, h3, p { margin-top: 0; }
 @keyframes hero-breathe {
   from { transform: scale(1.02) translate3d(0, 0, 0); }
   to { transform: scale(1.07) translate3d(-.45%, .25%, 0); }
+}
+
+/* 放大镜内的画面与底层同步呼吸，避免两幅画错位 */
+@keyframes hero-breathe-lens {
+  from { transform: scale(1.58) translate3d(0, 0, 0); }
+  to { transform: scale(1.66) translate3d(-.45%, .25%, 0); }
 }
 
 @keyframes hero-wash-breathe {
@@ -495,6 +533,11 @@ h1, h2, h3, p { margin-top: 0; }
   .hero__art, .hero__wash { animation: none !important; }
   .hero h1, .hero__summary, .hero__actions { opacity: 1; transform: none; animation: none !important; }
   .hero.is-scrolled .hero__inner { opacity: 1; transform: none; }
+  .hero__lens { display: none; }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .hero__lens { display: none; }
 }
 
 @media print { .alumni-profile-dialog { display: none; } }

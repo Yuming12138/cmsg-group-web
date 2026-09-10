@@ -7,42 +7,16 @@
 
 {% block content %}
 <section class="hero" data-hero aria-labelledby="hero-title">
-  <div class="hero__art" aria-hidden="true">
-    <svg class="hero__geometry" viewBox="0 0 1800 1260" preserveAspectRatio="xMidYMid slice" focusable="false">
-      <defs>
-        <radialGradient id="hero-eye-disk" cx="45%" cy="40%" r="70%">
-          <stop offset="0" stop-color="#f1edf0"></stop>
-          <stop offset=".76" stop-color="#e7e1e7"></stop>
-          <stop offset="1" stop-color="#d7cfd9"></stop>
-        </radialGradient>
-      </defs>
-      <g class="geometry-layer geometry-layer--back" data-depth="2">
-        <circle class="geometry-focus" data-focus cx="245" cy="260" r="184"></circle>
-        <circle class="geometry-focus" data-focus cx="1400" cy="216" r="39"></circle>
-        <circle class="geometry-focus" data-focus cx="181" cy="1116" r="72"></circle>
-        <circle class="geometry-focus" data-focus cx="1380" cy="950" r="61"></circle>
-      </g>
-      <g class="geometry-layer geometry-layer--middle" data-depth="4">
-        <path d="M86 619 C 205 518, 254 728, 380 615 S 561 558, 684 625"></path>
-        <path d="M470 842 L 1130 670 L 1674 784"></path>
-        <path d="M744 385 C 788 260, 887 170, 1007 96"></path>
-      </g>
-      <g class="geometry-layer geometry-layer--front" data-depth="6">
-        <path d="M520 1160 L 1082 602 L 1584 144"></path>
-        <path d="M1040 1260 L 1124 466 L 1282 92"></path>
-        <path d="M1072 935 L 1540 1150"></path>
-      </g>
-      <g class="hero-eye" data-eye data-eye-center-x="1209" data-eye-center-y="590" aria-hidden="true">
-        <circle class="hero-eye__cover" cx="1209" cy="590" r="50"></circle>
-        <g data-eye-pupil>
-          <circle class="hero-eye__pupil" cx="1209" cy="590" r="10"></circle>
-          <circle class="hero-eye__glint" cx="1206" cy="587" r="2.2"></circle>
-        </g>
-      </g>
-    </svg>
-  </div>
+  <div class="hero__art" aria-hidden="true" data-hero-art></div>
   <div class="hero__wash" aria-hidden="true"></div>
   <div class="hero__grain" aria-hidden="true"></div>
+  <div class="hero__lens" data-hero-lens aria-hidden="true">
+    <div class="hero__lens-clip">
+      <div class="hero__lens-art" data-lens-art></div>
+    </div>
+    <div class="hero__lens-ring"></div>
+    <p class="hero__lens-tag" data-lens-tag><b>COMPOSITION VIII</b> <span data-lens-coords></span></p>
+  </div>
   <div class="shell hero__inner">
     <div class="hero__content">
       <h1 id="hero-title">
