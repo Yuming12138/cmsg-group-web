@@ -180,6 +180,9 @@ html[lang^="zh"] .research-detail [data-lang="en"] {
   color: var(--muted);
   font-size: 12px;
   line-height: 1.45;
+}.research-detail .citation-meta strong, .research-detail .related-meta strong {
+  color: var(--ink-900);
+  font-weight: 700;
 }.research-detail .work-links {
   display: flex;
   flex-wrap: wrap;
