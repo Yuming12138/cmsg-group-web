@@ -21,7 +21,7 @@
   --hero-art-set: image-set(url("../images/hero/kandinsky-composition-viii-35c68f7ea1-960.webp") 1x, url("../images/hero/kandinsky-composition-viii-35c68f7ea1-1440.webp") 1.5x, url("../images/hero/kandinsky-composition-viii-35c68f7ea1-1800.webp") 2x);
   --hero-accent: #245f91;
   --hero-accent-ink: #ffffff;
-  --lens-r: 132px;
+  --lens-r: 92px;
   --mx: -400px;
   --my: -400px;
   --white: #fff;

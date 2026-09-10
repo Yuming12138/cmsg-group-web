@@ -38,7 +38,6 @@
      painting. The palette is pre-sampled (18x12 grid) from the source artwork so
      no canvas read-back is needed — that would taint on cross-origin images. */
   const lens = document.querySelector('[data-hero-lens]');
-  const coords = document.querySelector('[data-lens-coords]');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   if (hero && lens && !reduced && finePointer) {
@@ -99,10 +98,6 @@
 
       hero.style.setProperty('--mx', x.toFixed(1) + 'px');
       hero.style.setProperty('--my', y.toFixed(1) + 'px');
-
-      if (coords) {
-        coords.textContent = Math.round(x / bounds.width * 1800) + ' , ' + Math.round(y / bounds.height * 1260);
-      }
 
       const col = Math.min(GRID_COLS - 1, Math.max(0, Math.floor(x / bounds.width * GRID_COLS)));
       const row = Math.min(GRID_ROWS - 1, Math.max(0, Math.floor(y / bounds.height * GRID_ROWS)));
