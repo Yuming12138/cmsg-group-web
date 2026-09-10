@@ -5,23 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="shell zhouke-shell zhouke-shell--work">
-  <nav class="zhouke-breadcrumb" aria-label="Breadcrumb">
-    <a href="{{ href_for(url_for('site.people')) }}">People</a>
-    <span aria-hidden="true">/</span>
-    <a href="{{ href_for(url_for('site.zhouke_profile')) }}">{{ profile.name_en }} / {{ profile.name }}</a>
-    <span aria-hidden="true">/</span>
-    <span aria-current="page">{{ work.label }}</span>
-  </nav>
-
-  <nav class="zhouke-work-nav" aria-label="周柯的近期工作">
-    <a href="{{ href_for(url_for('site.zhouke_profile')) }}">个人主页</a>
-    <span class="zhouke-work-nav__rule" aria-hidden="true"></span>
-    {% for item in profile.works %}
-    <a href="{{ href_for(url_for('site.zhouke_work', work_id=item.id)) }}"{% if item.id == work_id %} aria-current="page"{% endif %} title="{{ item.short_title }}">{{ item.label }}</a>
-    {% endfor %}
-  </nav>
-
+<div class="zhouke-work-page">
   {% include 'site/people/zhouke/_work_' ~ work_id ~ '.html' %}
 </div>
 {% endblock %}

@@ -103,3 +103,7 @@ rewrite.
   email; use four columns on desktop, step down through three and two columns, and keep
   two columns on ordinary phones. Ke Zhou's portrait and name remain profile links,
   while email remains its own mail link.
+- Ke Zhou's four work-detail pages should preserve the legacy article composition:
+  muted page canvas, centered white reading card, compact 36px desktop title, original
+  text rhythm, figures, callouts, and responsive behavior. Keep only the current global
+  site header above the article; do not add a breadcrumb or a second work-navigation bar.

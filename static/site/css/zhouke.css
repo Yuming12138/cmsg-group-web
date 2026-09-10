@@ -546,3 +546,324 @@
     break-inside: avoid;
   }
 }
+
+/* Legacy article composition, retained inside the current global site header. */
+.zhouke-work-page {
+  clear: both;
+  max-width: 100%;
+  overflow-x: hidden;
+  padding: 42px 20px 68px;
+  background: #f4f7f8;
+}
+
+.zhouke-work-page .work-article {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 44px 58px 54px;
+  border: 1px solid #e3e9ec;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 36px rgba(24, 50, 68, .08);
+  color: #263238;
+  font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.zhouke-work-page .work-back {
+  display: inline-flex;
+  min-height: auto;
+  align-items: center;
+  margin-bottom: 24px;
+  color: var(--blue-700);
+  font: 600 15px/1.4 "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+}
+
+.zhouke-work-page .work-kicker {
+  margin-bottom: 12px;
+  color: var(--blue-700);
+  font: 700 14px/1.45 "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.zhouke-work-page .work-title {
+  max-width: none;
+  margin: 0;
+  color: #17242c;
+  font: 700 36px/1.45 "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+  letter-spacing: 0;
+  text-wrap: wrap;
+}
+
+.zhouke-work-page .work-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 18px 0 30px;
+  padding: 0;
+  border: 0;
+  color: #65747d;
+  font: 400 14px/1.5 "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+}
+
+.zhouke-work-page .work-lead,
+.zhouke-work-page .work-article p {
+  margin: 0 0 20px;
+  font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+.zhouke-work-page .work-lead {
+  padding: 18px 22px;
+  border: 0;
+  border-left: 4px solid var(--blue-600);
+  border-radius: 0;
+  background: #f1f8fc;
+  color: #334955;
+}
+
+.zhouke-work-page .work-figure {
+  margin: 28px 0 32px;
+}
+
+.zhouke-work-page .work-figure a {
+  display: block;
+  border-radius: 0;
+}
+
+.zhouke-work-page .work-figure img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.zhouke-work-page .work-figure--overview img {
+  max-width: 720px;
+}
+
+.zhouke-work-page .work-figure--paper {
+  max-width: none;
+}
+
+.zhouke-work-page .work-figure--paper img {
+  max-width: 720px;
+  border: 1px solid #e0e5e8;
+  box-shadow: 0 8px 24px rgba(24, 50, 68, .08);
+}
+
+.zhouke-work-page .work-figure figcaption {
+  max-width: none;
+  margin-top: 12px;
+  color: #586971;
+  font: 400 14px/1.65 "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+  text-align: left;
+}
+
+.zhouke-work-page .work-section-title,
+.zhouke-work-page .work-citation h2 {
+  margin: 38px 0 16px;
+  padding-bottom: 9px;
+  border-bottom: 2px solid #e8f1f6;
+  color: #17394b;
+  font: 700 23px/1.45 "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+  letter-spacing: 0;
+  text-wrap: wrap;
+}
+
+.zhouke-work-page .math-display {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 20px 0 24px;
+  padding: 15px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #f7fafb;
+  color: #17394b;
+  text-align: center;
+  -webkit-overflow-scrolling: touch;
+}
+
+.zhouke-work-page .math-display mjx-container {
+  margin: 0 !important;
+}
+
+.zhouke-work-page .work-note {
+  margin: 22px 0 26px !important;
+  padding: 17px 20px;
+  border: 0;
+  border-left: 4px solid #6aa9c8;
+  border-radius: 0;
+  background: #f6fafc;
+  color: #405660;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.zhouke-work-page .result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 22px 0 26px;
+}
+
+.zhouke-work-page .result-card {
+  padding: 18px 14px;
+  border: 1px solid #dfe9ee;
+  border-radius: 8px;
+  background: #f8fbfc;
+  text-align: center;
+}
+
+.zhouke-work-page .result-card strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--blue-700);
+  font: 700 25px/1.2 Arial, sans-serif;
+}
+
+.zhouke-work-page .result-card span {
+  color: #52636c;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.zhouke-work-page .work-citation {
+  margin-top: 38px;
+  padding: 23px;
+  border: 0;
+  border-radius: 8px;
+  background: #f4f7f8;
+}
+
+.zhouke-work-page .work-citation h2 {
+  margin: 0 0 12px;
+  padding: 0;
+  border: 0;
+  font-size: 20px;
+}
+
+.zhouke-work-page .work-citation p {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.zhouke-work-page .reference-list {
+  margin: 16px 0 0 22px;
+  padding: 0;
+  color: #4c5e66;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.zhouke-work-page .reference-list li {
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .zhouke-work-page .work-back:hover,
+  .zhouke-work-page .work-back:focus,
+  .zhouke-work-page .work-article a:hover {
+    color: var(--blue-600);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .zhouke-work-page {
+    padding: 24px 12px 44px;
+  }
+
+  .zhouke-work-page .work-article {
+    padding: 28px 22px 36px;
+    border-radius: 8px;
+  }
+
+  .zhouke-work-page .work-title {
+    font-size: 28px;
+    line-height: 1.42;
+  }
+
+  .zhouke-work-page .work-meta {
+    margin-bottom: 24px;
+  }
+
+  .zhouke-work-page .work-lead,
+  .zhouke-work-page .work-article p {
+    font-size: 16px;
+    line-height: 1.82;
+  }
+
+  .zhouke-work-page .work-lead {
+    padding: 16px;
+  }
+
+  .zhouke-work-page .work-figure {
+    margin: 24px 0 28px;
+  }
+
+  .zhouke-work-page .work-section-title {
+    margin-top: 32px;
+    font-size: 21px;
+  }
+
+  .zhouke-work-page .math-display {
+    margin: 18px -6px 22px;
+    padding: 14px 8px;
+    border-radius: 8px;
+    font-size: .93em;
+  }
+}
+
+@media (max-width: 520px) {
+  .zhouke-work-page .result-grid {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .zhouke-work-page .result-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 13px;
+  }
+
+  .zhouke-work-page .result-card strong {
+    margin: 0;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 399.98px) {
+  .zhouke-work-page {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .zhouke-work-page .work-article {
+    padding: 24px 16px 32px;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+  }
+
+  .zhouke-work-page .work-title {
+    font-size: 25px;
+  }
+
+  .zhouke-work-page .work-figure figcaption {
+    font-size: 13px;
+  }
+}
