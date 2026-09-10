@@ -70,24 +70,28 @@ rewrite.
 - Hero motion should remain composition-led: a slow background breath plus low-amplitude
   SVG geometry response on fine pointers, with touch devices and reduced-motion users on
   a quieter path. Avoid particle fields or high-frequency effects.
-- (Superseded 2026-09-10: the approximate SVG geometry layer and the cursor-tracking
-  pupil were removed. Hero interaction is now pixel-level and reads directly off the
-  artwork: a magnifying lens that follows the cursor — revealing the painting's true
-  colours through the dimming wash — plus accent colour sampling from the artwork
-  pixels under the cursor. Sampled colours are reined into button lightness so white
-  text passes WCAG AA, so the CTA may change hue but never becomes unreadable. Touch
-  and reduced-motion users get the static composition. No element-level data is
-  required for that, so nothing has to be traced or redrawn from the raster artwork.)
-- Element-level motion (2026-09-10) runs off `static/site/hero/composition-viii.json`,
-  the manifest recovered from the painting by
-  `scripts/extract_composition_elements.py`. Two voices run out of phase over the
-  artwork: an ink pass (multiply, 0.08–0.34 × depth weight, stroke width ×1.1) that
-  lets the strokes deepen, and a light pass (`plus-lighter`, front elements only) that
-  lets lines catch the light. Parallax translates each shape by its extracted depth on
-  pointer move and scroll. Keep the amplitudes small: the layer replays the painting's
-  own strokes, so large movement reads as a double image rather than as depth. The
-  layer renders inside `.hero__art` (so it inherits the placement and breathing) but
-  below the wash and the lens.
+- (Superseded 2026-09-10, twice over.)
+  1. The approximate SVG geometry layer and the cursor-tracking pupil were removed. Hero
+     interaction became pixel-level and reads directly off the artwork: a magnifying lens
+     that follows the cursor — revealing the painting's true colours through the dimming
+     wash — plus accent colour sampling from the artwork pixels under the cursor. Sampled
+     colours are reined into button lightness so white text passes WCAG AA, so the CTA may
+     change hue but never becomes unreadable. Touch and reduced-motion users get the static
+     composition.
+  2. The element-layer motion above was tried (ink voice + light voice + depth parallax)
+     and then a genuine depth-plane split (ground inpainted clean, strokes carried on mid
+     and front planes). Both were rejected: tracing a copy ghosts, and splitting the whole
+     canvas reads as the drawing coming apart rather than as depth. Both are dead ends —
+     do not retry them.
+- (Current, 2026-09-10) Exactly two things move: the two solid discs on the left of
+  Composition VIII. The ground keeps the painting untouched and each orb is an opaque
+  copy of its disc fading out across the halo (solid to 1.06r, gone by 1.60r). At rest the
+  copy sits exactly on the painted disc; because the solid core reaches 6% past the disc,
+  scaling up never exposes what is underneath — which is why the motion is a **scale and
+  not a translation**. Cutting the discs out and inpainting the holes was measured and
+  rejected: a hole that size is beyond TELEA and NS, and the smear is plainly visible as a
+  ghost disc. Pointer lift ≤1.075 with a slow CSS breath underneath; reduced-motion freezes
+  both.
 - The circular Composition VIII motif may use its black dot as a cursor-tracking pupil,
   but do not redraw or rotate the three red line forms; approximating them departs too
   visibly from the original artwork.
