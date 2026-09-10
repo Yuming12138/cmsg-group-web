@@ -59,6 +59,30 @@ a, button { -webkit-tap-highlight-color: transparent; }
 
 .hero { position: relative; height: 100svh; min-height: 100svh; overflow: hidden; isolation: isolate; background: #11263d; color: var(--white); }
 .hero__art { position: absolute; z-index: -2; inset: -3%; pointer-events: none; background: var(--hero-art) center / cover no-repeat; animation: hero-breathe 46s ease-in-out infinite alternate; will-change: transform; }
+/* F · 圆呼吸：只有左侧那两个纯色圆动，其余全是静止的画。
+   每层是「不透明圆盘 + 渐隐光晕」，静止时严丝合缝地盖在原画上；因为它
+   的不透明部分越过圆盘边界 6%，放大时永远遮得住底下那个原圆，所以不可
+   能露出重影 —— 这也是动效选择缩放而不是位移的原因。
+   外层承接指针（--orb-scale），内层跑自发呼吸（scale 属性），两者相乘叠加。 */
+.hero__orbs { position: absolute; z-index: -1; inset: 0; pointer-events: none; }
+.hero__orb {
+  position: absolute; inset: 0;
+  transform: scale(var(--orb-scale, 1));
+  transition: transform 560ms var(--ease-out);
+  will-change: transform;
+}
+.hero__orb-disc {
+  position: absolute; inset: -3%;
+  background-image: var(--orb-image, none);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: hero-orb-breathe 14.6s ease-in-out var(--orb-delay, 0s) infinite alternate;
+}
+@keyframes hero-orb-breathe {
+  from { scale: 1; }
+  to   { scale: 1.032; }
+}
 /* A · 透镜看画：鼠标是放大镜，光圈内放大并提亮，与画作直接交互 */
 .hero__lens { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0; transition: opacity 260ms var(--ease-out); }
 .hero__lens.is-active { opacity: 1; }

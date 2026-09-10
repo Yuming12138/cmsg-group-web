@@ -1,5 +1,9 @@
 """Routes for the new content-driven site."""
 
+import json
+from functools import lru_cache
+from pathlib import Path
+
 from flask import Blueprint, abort, redirect, render_template, request, url_for
 
 from .content import SUPPORTED_LANGUAGES, load_content, load_site, load_ui
@@ -7,6 +11,21 @@ from .content import SUPPORTED_LANGUAGES, load_content, load_site, load_ui
 
 site_bp = Blueprint("site", __name__)
 ZHOUKE_WORK_IDS = frozenset({1, 2, 3, 4})
+LAYERS_PATH = Path(__file__).resolve().parent.parent / "static" / "site" / "hero" / "layers.json"
+
+
+@lru_cache(maxsize=1)
+def load_hero_layers() -> dict:
+    """Planes of the hero artwork, prepared by scripts/build_hero_layers.py.
+
+    Missing data simply means the hero renders without its orbiting circles.
+    """
+
+    try:
+        document = json.loads(LAYERS_PATH.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    return document if isinstance(document, dict) else {}
 
 
 @site_bp.app_context_processor
@@ -48,6 +67,7 @@ def home():
         research_preview=load_content("research.json", language),
         leader_preview=load_content("leader.json", language),
         publications_preview=load_content("publications.json", language),
+        hero_layers=load_hero_layers(),
     )
 
 

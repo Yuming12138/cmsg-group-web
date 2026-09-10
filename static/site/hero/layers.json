@@ -1,6 +1,35 @@
 {
   "width": 1440,
   "height": 1008,
-  "digest": "39119ff897",
-  "art": "/static/site/hero/art-39119ff897-1440.webp"
+  "digest": "c490de52fb",
+  "art": "/static/site/hero/art-c490de52fb-1440.webp",
+  "orbs": [
+    {
+      "image": "/static/site/hero/orb1-c490de52fb-1440.webp",
+      "cx": 223,
+      "cy": 247,
+      "r": 184,
+      "cx_norm": 0.1239,
+      "cy_norm": 0.196,
+      "r_norm": 0.1022,
+      "fill": "#140000",
+      "members": [
+        "circle-05"
+      ]
+    },
+    {
+      "image": "/static/site/hero/orb2-c490de52fb-1440.webp",
+      "cx": 181,
+      "cy": 894,
+      "r": 82,
+      "cx_norm": 0.1006,
+      "cy_norm": 0.7095,
+      "r_norm": 0.0456,
+      "fill": "#ebc64d",
+      "members": [
+        "disk-02",
+        "circle-11"
+      ]
+    }
+  ]
 }

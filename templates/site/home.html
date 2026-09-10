@@ -1,12 +1,34 @@
 {% extends 'site/base.html' %}
 
 {% block head_extra %}
-    <link rel="preload" as="image" href="{{ asset('site/hero/art-39119ff897-1440.webp') }}">
+    {% if hero_layers.get('art') %}
+    <link rel="preload" as="image" href="{{ hero_layers['art'] }}">
+    {% for orb in hero_layers.get('orbs', []) %}
+    <link rel="preload" as="image" href="{{ orb.image }}">
+    {% endfor %}
+    {% endif %}
 {% endblock %}
 
 {% block content %}
-<section class="hero" data-hero aria-labelledby="hero-title">
+{# The hero is the painting, plus the two solid circles from its left side lifted
+   onto their own layers. Each orb layer is an opaque copy of its disc that fades
+   out across the halo: at rest it sits exactly on the painted disc, and because
+   the opaque part reaches past the disc it can be scaled without ever exposing
+   what is underneath. So the only motion the hero needs is a breath. #}
+<section class="hero" data-hero aria-labelledby="hero-title"
+         {% if hero_layers.get('art') %}style="--hero-art: url('{{ hero_layers['art'] }}');"{% endif %}>
   <div class="hero__art" aria-hidden="true" data-hero-art></div>
+  {% if hero_layers.get('orbs') %}
+  <div class="hero__orbs" aria-hidden="true">
+    {% for orb in hero_layers['orbs'] %}
+    <div class="hero__orb" data-orb
+         data-cx="{{ orb.cx_norm }}" data-cy="{{ orb.cy_norm }}" data-r="{{ orb.r_norm }}">
+      <div class="hero__orb-disc"
+           style="--orb-image: url('{{ orb.image }}'); --orb-delay: -{{ '%.1f'|format(1.6 + loop.index0 * 4.3) }}s;"></div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
   <div class="hero__wash" aria-hidden="true"></div>
   <div class="hero__grain" aria-hidden="true"></div>
   {# The only hero interaction is the loupe: it magnifies the artwork around the

@@ -17,12 +17,14 @@
   --blue-700: #17466f;
   --blue-100: #e5eff8;
   --hero-overlay: rgba(8, 20, 37, .58);
-  /* the hero artwork, prepared by scripts/build_hero_layers.py; depth planes for
-     element-level motion can be generated from the same script when wanted */
-  --hero-art: url("../hero/art-39119ff897-1440.webp");
+  /* the hero artwork and its orb layers are content-hashed by
+     scripts/build_hero_layers.py; the home template injects the URLs from
+     layers.json, so a regenerate never needs a CSS edit. The raw source is the
+     fallback for the (broken) case where layers.json cannot be read. */
+  --hero-art: url("../images/kandinsky-composition-viii.jpg");
   --hero-accent: #245f91;
   --hero-accent-ink: #ffffff;
-  --lens-r: 92px;
+  --lens-r: 76px;
   --mx: -400px;
   --my: -400px;
   --white: #fff;

@@ -42,13 +42,87 @@
      what the lens centre shows; sampling there keeps the accent colour honest. */
   const lens = document.querySelector('[data-hero-lens]');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  // the canvas the manifest and the layer images share
+  const ART_WIDTH = 1440;
+  const ART_HEIGHT = 1008;
+
+  /* Map a point in source-artwork pixels onto the page, following the same
+     centre/cover placement the artwork's CSS background uses. The layers and the
+     colour sampler both need this, so it lives here once. */
+  const artworkBox = function () {
+    const art = document.querySelector('[data-hero-art]');
+    if (!art) return null;
+    const box = art.getBoundingClientRect();
+    if (!box.width || !box.height) return null;
+    const scale = Math.max(box.width / ART_WIDTH, box.height / ART_HEIGHT);
+    return {
+      box: box,
+      scale: scale,
+      left: box.left + (box.width - ART_WIDTH * scale) / 2,
+      top: box.top + (box.height - ART_HEIGHT * scale) / 2,
+    };
+  };
+
+  /* Orb breathing: only the two solid circles on the left react. Each orb layer
+     is an opaque copy of its disc, so scaling it can never expose the painted
+     disc underneath — which is exactly why the motion is a scale and not a
+     translation. The pointer brings the nearer orb up a little; the CSS
+     animation keeps a slow breath running underneath either way. */
+  const orbs = Array.prototype.map.call(
+    document.querySelectorAll('[data-orb]'),
+    function (element) {
+      return {
+        element: element,
+        cx: parseFloat(element.dataset.cx) || 0,
+        cy: parseFloat(element.dataset.cy) || 0,
+        r: parseFloat(element.dataset.r) || 0,
+      };
+    },
+  );
+  if (hero && orbs.length && finePointer && !reduced) {
+    const ORB_LIFT = 0.075;   // scale added at the orb's centre
+    const ORB_REACH = 2.2;    // how many radii away the pointer stops mattering
+    let orbFrame = 0;
+    let orbX = -1e6;
+    let orbY = -1e6;
+
+    const renderOrbs = function () {
+      orbFrame = 0;
+      const view = artworkBox();
+      if (!view) return;
+      orbs.forEach(function (orb) {
+        const centreX = view.left + orb.cx * ART_WIDTH * view.scale;
+        const centreY = view.top + orb.cy * ART_HEIGHT * view.scale;
+        const radius = Math.max(48, orb.r * ART_WIDTH * view.scale);
+        const dx = orbX - centreX;
+        const dy = orbY - centreY;
+        const pull = Math.max(0, 1 - Math.sqrt(dx * dx + dy * dy) / (radius * ORB_REACH));
+        const eased = pull * pull * (3 - 2 * pull);   // smoothstep
+        orb.element.style.setProperty('--orb-scale', (1 + eased * ORB_LIFT).toFixed(4));
+      });
+    };
+
+    const requestOrbs = function () {
+      if (!orbFrame) orbFrame = window.requestAnimationFrame(renderOrbs);
+    };
+
+    hero.addEventListener('pointermove', function (event) {
+      orbX = event.clientX;
+      orbY = event.clientY;
+      requestOrbs();
+    }, { passive: true });
+
+    hero.addEventListener('pointerleave', function () {
+      orbX = -1e6;
+      orbY = -1e6;
+      requestOrbs();
+    });
+  }
 
   // Colour sampling is a static recolour rather than motion, so it stays available
   // to reduced-motion visitors (their transitions are disabled by CSS anyway) and
   // does not depend on the lens being rendered.
   if (hero && finePointer) {
-    const ART_WIDTH = 1800;
-    const ART_HEIGHT = 1260;
     const SAMPLE_RADIUS = 3;
 
     let lensFrame = 0;
@@ -136,7 +210,9 @@
         : [];
       for (let index = entries.length - 1; index >= 0; index -= 1) {
         const name = entries[index].name || '';
-        const isArtwork = name.indexOf('site/hero/art-') !== -1 || name.indexOf('kandinsky-composition-viii') !== -1;
+        // the artwork layer; older URLs naming the kandinsky source are still
+        // valid if the browser has them cached
+        const isArtwork = /\/site\/hero\/(art-|ground-)|kandinsky-composition-viii/i.test(name);
         if (isArtwork && /\.(webp|jpe?g)($|\?)/i.test(name)) {
           return name;
         }
@@ -195,22 +271,14 @@
 
     preparePalette();
 
-    /* Map a pointer position onto a pixel of the source artwork, following the
-       same centre/cover placement the CSS background uses (the animated scale on
-       the background layer changes the element rect, so reading it live keeps the
-       mapping true through the breathing cycle). */
+    /* Map a pointer position onto a pixel of the source artwork. */
     const sampleArtwork = function (clientX, clientY) {
       if (!palette) return null;
-      const art = document.querySelector('[data-hero-art]');
-      if (!art) return null;
-      const box = art.getBoundingClientRect();
-      if (!box.width || !box.height) return null;
+      const view = artworkBox();
+      if (!view) return null;
 
-      const scale = Math.max(box.width / ART_WIDTH, box.height / ART_HEIGHT);
-      const drawnWidth = ART_WIDTH * scale;
-      const drawnHeight = ART_HEIGHT * scale;
-      const sourceX = (clientX - box.left - (box.width - drawnWidth) / 2) / scale;
-      const sourceY = (clientY - box.top - (box.height - drawnHeight) / 2) / scale;
+      const sourceX = (clientX - view.left) / view.scale;
+      const sourceY = (clientY - view.top) / view.scale;
 
       const centreX = Math.round((sourceX / ART_WIDTH) * paletteWidth);
       const centreY = Math.round((sourceY / ART_HEIGHT) * paletteHeight);

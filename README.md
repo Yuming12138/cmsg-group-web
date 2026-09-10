@@ -59,11 +59,10 @@ their WebP/JPEG variants after replacing a portrait:
 python3 scripts/generate_people_images.py
 ```
 
-## Hero artwork element manifest and depth layers
+## Hero artwork: the manifest, and the two breathing orbs
 
-The hero painting is a raster image, so element-level motion (parallax planes, an
-"assembly" intro, per-element breathing) has no vector data to work with. Two scripts
-recover it:
+The hero painting is a raster image, so any element-level behaviour has no vector data
+to work with. Two scripts recover it:
 
 ```bash
 python3 scripts/extract_composition_elements.py   # -> static/site/hero/composition-viii.json
@@ -76,17 +75,35 @@ overlays the result on the painting with per-type toggles so the detection can b
 checked by eye. Known gap: the small rotated rectangles of the "board" motif are not
 detected — they are below the size where the colour masks stay connected.
 
-The manifest then drives the real depth layers the hero renders:
+The manifest then drives the one element the hero does animate:
 
 ```bash
-python3 scripts/build_hero_layers.py              # -> static/site/hero/{ground,mid,front}-<digest>-1440.webp
+python3 scripts/build_hero_layers.py              # -> static/site/hero/art-<digest>-1440.webp
+python3 scripts/build_hero_layers.py 1440 --orbs  # + orb1/orb2-<digest>-1440.webp
 ```
 
-The builder cuts the fine strokes out of the canvas, inpaints the holes into a clean
-ground, and writes those stroke pixels onto a mid and a front plane. An overlay copy of
-the strokes could only ghost when it moved; real separated pixels let the painting's own
-lines travel. Heavy structure (thick bars, the big rings) deliberately stays in the
-ground, because cutting it would smear the canvas where it crosses colour boundaries.
-The layers align exactly at rest, so with no motion the composition is unchanged. If the
-digest changes, update the `--hero-ground/mid/front` variables in
-`static/site/css/tokens.css`.
+Two earlier approaches are worth recording, because they were both dead ends:
+
+- **Replaying the strokes as an overlay** (SVG geometry drawn on top of the painting)
+  can only ever ghost — the copy moves, the original stays put. No amount of tuning
+  fixes that.
+- **Cutting the discs out and inpainting the holes** leaves a radial smear: the hole is
+  far too large for either `INPAINT_TELEA` or `INPAINT_NS` to answer convincingly, and
+  the smear is plainly visible as a ghost disc the moment the layer moves.
+
+What ships instead is a **scale, not a translation**. The ground keeps the painting
+untouched; each orb is an opaque copy of its disc, fading out across the halo:
+
+```
+|<-- solid -->|<---- halo fade ---->|
+0          1.06r                 1.60r
+```
+
+At rest the copy sits exactly on the painted disc, so the composition is unchanged
+pixel for pixel. Because the solid core reaches 6% past the disc, scaling the orb up
+never slides its edge inward far enough to expose what is underneath — which is why the
+motion has to be a scale. The pointer lifts the nearer orb; a slow CSS breath runs
+underneath either way. `reducedMotion` freezes both.
+
+The URLs come from `layers.json` and are injected by the home template, so regenerating
+after replacing the source artwork needs no CSS or template edit.
