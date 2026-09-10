@@ -58,3 +58,11 @@ their WebP/JPEG variants after replacing a portrait:
 ```bash
 python3 scripts/generate_people_images.py
 ```
+
+The home-page hero artwork follows the same pattern. Regenerate its responsive WebP
+variants (and update the CSS/preload hash references) after replacing the Kandinsky
+source image:
+
+```bash
+python3 scripts/generate_hero_images.py
+```

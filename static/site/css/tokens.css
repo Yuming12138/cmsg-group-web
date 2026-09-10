@@ -19,7 +19,7 @@
   --hero-overlay: rgba(8, 20, 37, .58);
   --white: #fff;
   --display: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  --sans: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --sans: "Lato", "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   --space-1: 4px;
   --space-2: 8px;

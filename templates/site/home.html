@@ -1,5 +1,10 @@
 {% extends 'site/base.html' %}
 
+{% block head_extra %}
+    <link rel="preload" as="image" type="image/webp" imagesizes="100vw"
+          imagesrcset="{{ url_for('static', filename='site/images/hero/kandinsky-composition-viii-35c68f7ea1-960.webp') }} 960w, {{ url_for('static', filename='site/images/hero/kandinsky-composition-viii-35c68f7ea1-1440.webp') }} 1440w, {{ url_for('static', filename='site/images/hero/kandinsky-composition-viii-35c68f7ea1-1800.webp') }} 1800w">
+{% endblock %}
+
 {% block content %}
 <section class="hero" data-hero aria-labelledby="hero-title">
   <div class="hero__art" aria-hidden="true">
@@ -40,7 +45,6 @@
   <div class="hero__grain" aria-hidden="true"></div>
   <div class="shell hero__inner">
     <div class="hero__content">
-      <p class="hero__group-name"><strong>{{ home.hero.group_name }}</strong></p>
       <h1 id="hero-title">
         <span>{{ home.hero.welcome_prefix }}</span>
         <strong>{{ home.hero.welcome_group }}</strong>

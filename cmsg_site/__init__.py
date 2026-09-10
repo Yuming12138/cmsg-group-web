@@ -1,6 +1,7 @@
 """Application factory for the content-driven CMSG website."""
 
 import os
+from datetime import date
 from pathlib import Path
 
 from flask import Flask, request
@@ -29,7 +30,7 @@ def create_app() -> Flask:
 
     @app.context_processor
     def inject_site_defaults():
-        return {"site_year": "2026"}
+        return {"site_year": str(date.today().year)}
 
     @app.after_request
     def cache_static_images(response):

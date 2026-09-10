@@ -4,12 +4,11 @@
     "description": "苏州大学计算材料科学组，以物理、数据与设计探索复杂材料。"
   },
   "hero": {
-    "group_name": "计算材料科学组",
     "welcome_prefix": "欢迎来到",
     "welcome_group": "计算材料科学组",
     "welcome_suffix": " @ 苏州大学！",
-    "summary": "我们使用 AI 辅助全链条材料设计与可合成性预测。",
-    "cta": {"label": "DELVE", "href": "/research"},
+    "summary": "我们从基本定律出发，走向涌现的物质世界：理解结构、稳定性与功能如何产生，并以此设计与合成新的物质形态。",
+    "cta": {"label": "探索研究", "href": "/research"},
     "artwork": "瓦西里·康定斯基 · 构图8号 · 1923",
     "edition": "视觉研究 01 / CMSG，苏州"
   },
