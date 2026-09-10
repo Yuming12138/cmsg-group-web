@@ -268,6 +268,47 @@
     document.documentElement.dataset.heroAccent = 'coarse-pointer';
   }
 
+  /* D · parallax layering: the element layer drifts with the pointer and with the
+     scroll, each shape scaled by the depth the extractor assigned it, so the
+     painting's own geometry reads as separate planes. */
+  const elementLayer = document.querySelector('[data-hero-elements]');
+  if (hero && elementLayer && !reduced && finePointer) {
+    let layerFrame = 0;
+    let normX = 0;
+    let normY = 0;
+    let scrollRatio = 0;
+
+    const renderLayers = function () {
+      layerFrame = 0;
+      elementLayer.style.setProperty('--shift-x', (normX * 11).toFixed(2));
+      elementLayer.style.setProperty('--shift-y', (normY * 8 - scrollRatio * 16).toFixed(2));
+    };
+
+    const requestLayers = function () {
+      if (!layerFrame) layerFrame = window.requestAnimationFrame(renderLayers);
+    };
+
+    hero.addEventListener('pointermove', function (event) {
+      const bounds = hero.getBoundingClientRect();
+      normX = ((event.clientX - bounds.left) / bounds.width) * 2 - 1;
+      normY = ((event.clientY - bounds.top) / bounds.height) * 2 - 1;
+      elementLayer.classList.remove('is-settling');
+      requestLayers();
+    }, { passive: true });
+
+    hero.addEventListener('pointerleave', function () {
+      normX = 0;
+      normY = 0;
+      elementLayer.classList.add('is-settling');
+      requestLayers();
+    });
+
+    window.addEventListener('scroll', function () {
+      scrollRatio = Math.min(1, window.scrollY / Math.max(1, hero.offsetHeight));
+      requestLayers();
+    }, { passive: true });
+  }
+
   const revealItems = document.querySelectorAll('.reveal');
   if (reduced || !('IntersectionObserver' in window)) {
     revealItems.forEach(function (item) { item.classList.add('is-visible'); });

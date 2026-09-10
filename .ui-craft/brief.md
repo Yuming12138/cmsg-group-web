@@ -73,11 +73,21 @@ rewrite.
 - (Superseded 2026-09-10: the approximate SVG geometry layer and the cursor-tracking
   pupil were removed. Hero interaction is now pixel-level and reads directly off the
   artwork: a magnifying lens that follows the cursor — revealing the painting's true
-  colours through the dimming wash — plus accent colour sampling from a pre-sampled
-  18x12 palette grid. Sampled colours are darkened until white text passes WCAG AA, so
-  the CTA may change hue but never becomes unreadable. Touch and reduced-motion users
-  get the static composition. No element-level data is required for this, so nothing
-  has to be traced or redrawn from the raster artwork.)
+  colours through the dimming wash — plus accent colour sampling from the artwork
+  pixels under the cursor. Sampled colours are reined into button lightness so white
+  text passes WCAG AA, so the CTA may change hue but never becomes unreadable. Touch
+  and reduced-motion users get the static composition. No element-level data is
+  required for that, so nothing has to be traced or redrawn from the raster artwork.)
+- Element-level motion (2026-09-10) runs off `static/site/hero/composition-viii.json`,
+  the manifest recovered from the painting by
+  `scripts/extract_composition_elements.py`. Two voices run out of phase over the
+  artwork: an ink pass (multiply, 0.08–0.34 × depth weight, stroke width ×1.1) that
+  lets the strokes deepen, and a light pass (`plus-lighter`, front elements only) that
+  lets lines catch the light. Parallax translates each shape by its extracted depth on
+  pointer move and scroll. Keep the amplitudes small: the layer replays the painting's
+  own strokes, so large movement reads as a double image rather than as depth. The
+  layer renders inside `.hero__art` (so it inherits the placement and breathing) but
+  below the wash and the lens.
 - The circular Composition VIII motif may use its black dot as a cursor-tracking pupil,
   but do not redraw or rotate the three red line forms; approximating them departs too
   visibly from the original artwork.

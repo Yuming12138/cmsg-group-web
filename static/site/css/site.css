@@ -62,6 +62,29 @@ a, button { -webkit-tap-highlight-color: transparent; }
 @supports (background: image-set("x" 1x)) {
   .hero__art { background-image: var(--hero-art-set); }
 }
+/* C · 声部脉动 + D · 视差分层：把画作自身的几何元素重放在原作之上，各元素按
+   自己的深度做低频呼吸、按深度做差速位移。multiply 让墨线随呼吸加深，几何位置
+   的近似误差在深色叠深色里几乎看不出来。 */
+.hero__elements { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.hero__elements-ink { mix-blend-mode: multiply; }
+.hero__elements-gleam { mix-blend-mode: plus-lighter; }
+.hero__el { transform: translate3d(calc(var(--shift-x, 0) * var(--d, .5) * 1px), calc(var(--shift-y, 0) * var(--d, .5) * 1px), 0); will-change: transform; }
+.hero__elements.is-settling .hero__el { transition: transform 560ms var(--ease-out); }
+/* the ink voice: a faint deepening of the strokes, never a re-ink.
+   Outline shapes must stay hollow — a CSS fill would beat the SVG attribute. */
+.hero-shape { stroke: var(--tone); fill: none; }
+.hero-shape--disk { fill: var(--tone); stroke: none; }
+.hero__elements-ink .hero-shape { opacity: calc(.13 * var(--voice, .6)); animation: hero-voice-ink var(--period, 9s) ease-in-out var(--delay, 0s) infinite alternate; }
+/* the light voice: front-most lines catch the light, out of phase with the ink */
+.hero__elements-gleam .hero-shape { opacity: 0; fill: none; stroke: var(--tone); animation: hero-voice-gleam var(--period, 11s) ease-in-out var(--delay, 0s) infinite alternate; }
+@keyframes hero-voice-ink {
+  from { opacity: calc(.08 * var(--voice, .6)); stroke-width: var(--sw, 4); }
+  to { opacity: calc(.34 * var(--voice, .6)); stroke-width: calc(var(--sw, 4) * 1.1); }
+}
+@keyframes hero-voice-gleam {
+  from { opacity: 0; }
+  to { opacity: calc(.3 * var(--voice, 1)); }
+}
 /* A · 透镜看画：鼠标是放大镜，光圈内放大并提亮，与画作直接交互 */
 .hero__lens { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0; transition: opacity 260ms var(--ease-out); }
 .hero__lens.is-active { opacity: 1; }
@@ -520,6 +543,10 @@ h1, h2, h3, p { margin-top: 0; }
   .hero h1, .hero__summary, .hero__actions { opacity: 1; transform: none; animation: none !important; }
   .hero.is-scrolled .hero__inner { opacity: 1; transform: none; }
   .hero__lens { display: none; }
+  /* the element layer stays as a static part of the composition */
+  .hero__elements-ink .hero-shape { animation: none !important; opacity: calc(.1 * var(--voice, .6)); stroke-width: var(--sw, 4); }
+  .hero__elements-gleam .hero-shape { animation: none !important; opacity: 0; }
+  .hero__el { transform: none !important; }
 }
 
 @media (hover: none), (pointer: coarse) {
