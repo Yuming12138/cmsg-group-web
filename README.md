@@ -66,3 +66,21 @@ source image:
 ```bash
 python3 scripts/generate_hero_images.py
 ```
+
+## Hero artwork element manifest
+
+The hero painting is a raster image, so element-level motion (parallax layers, an
+"assembly" intro, per-element breathing) has no vector data to work with. The
+manifest recovers it:
+
+```bash
+python3 scripts/extract_composition_elements.py   # -> static/site/hero/composition-viii.json
+python3 scripts/build_element_review.py           # -> ../hero-elements-review.html
+```
+
+The extractor validates every candidate against the edge map, records ink/fill
+colour, a heuristic parallax depth, and both pixel and normalised geometry. The
+review page overlays the result on the painting with per-type toggles so the
+detection can be checked by eye before it drives any motion. Known gap: the small
+rotated rectangles of the "board" motif are not detected — they are below the size
+where the colour masks stay connected.
