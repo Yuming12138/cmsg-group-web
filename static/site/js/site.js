@@ -34,60 +34,171 @@
     updateHeroScroll();
   }
 
-  /* Hero artwork interaction: a magnifying lens plus colour sampling from the
-     painting. The palette is pre-sampled (18x12 grid) from the source artwork so
-     no canvas read-back is needed — that would taint on cross-origin images. */
+  /* Hero artwork interaction: a magnifying lens plus colour sampling that reads
+     the painting under the cursor. The artwork is same-origin, so it can be drawn
+     into an offscreen canvas once and read back pixel-exactly — no baked palette.
+
+     The lens magnifies about the cursor, so the pixel under the cursor is exactly
+     what the lens centre shows; sampling there keeps the accent colour honest. */
   const lens = document.querySelector('[data-hero-lens]');
   const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   if (hero && lens && !reduced && finePointer) {
-    const GRID_COLS = 18;
-    const GRID_ROWS = 12;
-    const GRID = ['#dcb6a2','#ac837b','#9a706a','#cea896','#ecdcc9','#eee4d5','#efe5da','#f0e8df','#efe8e1','#eae3dc','#e4dcd3','#ebe1cf','#ddd2c6','#ece2d6','#e9dfd2','#e7dcce','#e1d5c4','#d3c7b7','#90615d','#44283b','#4b2b44','#69494d','#debea9','#e7d9bd','#e8dcca','#eee6dd','#e9e2dd','#e0d9d3','#dfd7cc','#dbd0af','#d6cdc7','#e8dcce','#e4d9ce','#d2cac4','#c5bfbc','#d2c7c3','#643e42','#532b4e','#713b6c','#4b2e3b','#cfa692','#e6d9c1','#dfd3c0','#e7dfd7','#e6dbd5','#e7ded8','#e2dcd9','#dfd7d1','#decec6','#b9a08d','#b8aaa2','#beb5b6','#aba19e','#d3c8c3','#ab7973','#4c2d36','#462736','#803b37','#deb596','#c4bdb4','#bebdbf','#e2deda','#dfd7d3','#dbd2cd','#d8d1cc','#d6cbc6','#d8c2bc','#ac9493','#c6b3aa','#baa6a4','#b9a5a4','#d7cac4','#e8d2c7','#d2aa9f','#c69585','#d97150','#dbb895','#c5c4c3','#b6c1cc','#b6c3cf','#cecac9','#cac0bd','#d8cbc9','#c8b8b1','#c1b5a9','#aba2a3','#989ea8','#bfb6b4','#c2b5b3','#cdb5b4','#eadfd2','#ebdfd2','#d1c4b8','#d4c4ae','#cec6ba','#b3ada5','#b2b2b2','#afb4bc','#bab9bc','#dad2cf','#decdc0','#c1a692','#98908b','#aea4a1','#697b90','#c5bab7','#d7c9c6','#c8b3b3','#e9e0d9','#ebe3dc','#ded7d2','#e8e3df','#cec8bc','#918d8a','#888081','#b9b1b2','#ccc9ca','#c4b7aa','#bda58b','#c7ab8e','#a9907d','#c4b2a4','#cec0bb','#c0aea7','#d3c6c3','#ddd0cd','#e7dfda','#dad4ce','#cec8c6','#d4c9c1','#c1a993','#a8a19b','#b5a9a7','#ccbebc','#ccc0be','#d5cac1','#d8ccc3','#cbbbb5','#d0c1ba','#ddd3c7','#e6dcd8','#d7c9c5','#ddd0ce','#e1d3d1','#ddd6d3','#ccba81','#cac1a8','#d4cac7','#b19d91','#c3b9ae','#e6ddd4','#e8e1dc','#dfd7d4','#dcd5d2','#c4bcbb','#d2c8c6','#ded3d2','#cbbec7','#d8c9bb','#dbc6a5','#dfd2cf','#e2d4d1','#e6ddd7','#d6cdc4','#ddd6d2','#ebe4e0','#e9e5e2','#e9e5e1','#e0ded8','#d8d4cd','#e0dbd8','#e5e4e5','#d4d0d2','#dad4d1','#dfd7d9','#beadc4','#ccbaa9','#b09073','#cdbfba','#e1d4d0','#e8dfdb','#e8ded9','#eae2de','#ece8e6','#ece8e6','#e7e3e2','#aabec1','#aebebc','#e7e4e3','#e5e4e7','#dad7d8','#e3dddb','#e5dedc','#e0d8d6','#d3c9c8','#ac9f9f','#b69494','#d4c2bd','#e3dedc','#e4dfdc','#e6e2e0','#e6e3e4','#e6e3e5','#e7e5e8','#e4e3e1','#e6e3e0','#e9e7e8','#e7e4e6','#dfdcdd','#e3dfde','#e5dfde','#e5dcdb','#e4dad9','#e0d4d3','#d6c2c1','#d6c7c4'];
+    const ART_WIDTH = 1800;
+    const ART_HEIGHT = 1260;
+    const SAMPLE_RADIUS = 3;
 
     let lensFrame = 0;
     let pointerX = 0;
     let pointerY = 0;
+    let palette = null;
+    let paletteWidth = 0;
+    let paletteHeight = 0;
 
-    const channels = function (hex) {
-      return [
-        parseInt(hex.slice(1, 3), 16),
-        parseInt(hex.slice(3, 5), 16),
-        parseInt(hex.slice(5, 7), 16),
-      ];
-    };
-
-    const shift = function (parts, amount) {
-      const target = amount < 0 ? 0 : 255;
-      return parts.map(function (value) {
-        return Math.round(value + (target - value) * Math.abs(amount));
-      });
-    };
-
-    const relativeLuminance = function (parts) {
-      const linear = parts.map(function (value) {
+    const relativeLuminance = function (red, green, blue) {
+      const linear = [red, green, blue].map(function (value) {
         const channel = value / 255;
         return channel <= 0.03928 ? channel / 12.92 : Math.pow((channel + 0.055) / 1.055, 2.4);
       });
       return 0.2126 * linear[0] + 0.7152 * linear[1] + 0.0722 * linear[2];
     };
 
-    const contrast = function (a, b) {
-      const la = relativeLuminance(a);
-      const lb = relativeLuminance(b);
-      return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
+    const ratio = function (one, two) {
+      const first = relativeLuminance(one[0], one[1], one[2]);
+      const second = relativeLuminance(two[0], two[1], two[2]);
+      return (Math.max(first, second) + 0.05) / (Math.min(first, second) + 0.05);
     };
 
-    /* Keep the CTA believable as a button: hold the sampled hue but darken it
-       until white text reaches WCAG AA, so every colour of the painting can be
-       worn without ever looking washed out or unreadable. */
-    const legiblePair = function (parts) {
-      const white = [255, 255, 255];
-      let colour = parts.slice();
-      for (let step = 0; step < 14 && contrast(colour, white) < 4.5; step += 1) {
-        colour = shift(colour, -0.09);
+    const WHITE = [255, 255, 255];
+    const INK = [16, 25, 35];
+
+    /* Wear the colour under the cursor: hue and saturation come straight from the
+       sampled pixel, so the button always reads as "that colour"; only lightness
+       is reined into button depth (0.22–0.62) so a pale area of the painting can
+       never turn the CTA into a washed-out chip. Ink flips white/ink to keep
+       WCAG AA, and a hairline border keeps dark fills off the dark backdrop. */
+    const buttonColour = function (red, green, blue) {
+      const r = red / 255;
+      const g = green / 255;
+      const b = blue / 255;
+      const max = Math.max(r, g, b);
+      const min = Math.min(r, g, b);
+      const lightness = (max + min) / 2;
+      const delta = max - min;
+      let hue = 0;
+      let saturation = 0;
+      if (delta > 0) {
+        saturation = delta / (1 - Math.abs(2 * lightness - 1));
+        if (max === r) hue = 60 * (((g - b) / delta) % 6);
+        else if (max === g) hue = 60 * ((b - r) / delta + 2);
+        else hue = 60 * ((r - g) / delta + 4);
       }
-      return { accent: 'rgb(' + colour.join(',') + ')', ink: '#ffffff' };
+      if (hue < 0) hue += 360;
+
+      const toRgb = function (level) {
+        const chroma = (1 - Math.abs(2 * level - 1)) * saturation;
+        const second = chroma * (1 - Math.abs(((hue / 60) % 2) - 1));
+        const offset = level - chroma / 2;
+        let parts;
+        if (hue < 60) parts = [chroma, second, 0];
+        else if (hue < 120) parts = [second, chroma, 0];
+        else if (hue < 180) parts = [0, chroma, second];
+        else if (hue < 240) parts = [0, second, chroma];
+        else if (hue < 300) parts = [second, 0, chroma];
+        else parts = [chroma, 0, second];
+        return parts.map(function (part) { return Math.round((part + offset) * 255); });
+      };
+
+      let level = Math.min(0.62, Math.max(0.2, lightness));
+      let colour = toRgb(level);
+      let ink = ratio(colour, INK) >= ratio(colour, WHITE) ? INK : WHITE;
+      for (let step = 0; step < 20 && ratio(colour, ink) < 4.5; step += 1) {
+        level = ink === WHITE ? Math.max(0.12, level - 0.02) : Math.min(0.68, level + 0.02);
+        colour = toRgb(level);
+      }
+      return {
+        accent: 'rgb(' + colour.join(',') + ')',
+        ink: ink === WHITE ? '#ffffff' : '#101923',
+      };
+    };
+
+    /* Read the artwork once from whichever responsive variant the browser already
+       loaded for the background, so sampling costs no extra request. */
+    const preparePalette = function () {
+      let url = null;
+      const entries = window.performance && window.performance.getEntriesByType
+        ? window.performance.getEntriesByType('resource')
+        : [];
+      for (let index = entries.length - 1; index >= 0; index -= 1) {
+        const name = entries[index].name || '';
+        if (name.indexOf('kandinsky-composition-viii') !== -1 && /\.(webp|jpe?g)($|\?)/i.test(name)) {
+          url = name;
+          break;
+        }
+      }
+      if (!url) return;
+
+      const image = new Image();
+      image.decoding = 'async';
+      image.onload = function () {
+        const canvas = document.createElement('canvas');
+        canvas.width = 360;
+        canvas.height = Math.round(360 * (ART_HEIGHT / ART_WIDTH));
+        const context = canvas.getContext('2d', { willReadFrequently: true });
+        if (!context) return;
+        context.drawImage(image, 0, 0, canvas.width, canvas.height);
+        try {
+          const data = context.getImageData(0, 0, canvas.width, canvas.height);
+          palette = data.data;
+          paletteWidth = canvas.width;
+          paletteHeight = canvas.height;
+        } catch (error) {
+          palette = null;
+        }
+      };
+      image.src = url;
+    };
+
+    preparePalette();
+
+    /* Map a pointer position onto a pixel of the source artwork, following the
+       same centre/cover placement the CSS background uses (the animated scale on
+       the background layer changes the element rect, so reading it live keeps the
+       mapping true through the breathing cycle). */
+    const sampleArtwork = function (clientX, clientY) {
+      if (!palette) return null;
+      const art = document.querySelector('[data-hero-art]');
+      if (!art) return null;
+      const box = art.getBoundingClientRect();
+      if (!box.width || !box.height) return null;
+
+      const scale = Math.max(box.width / ART_WIDTH, box.height / ART_HEIGHT);
+      const drawnWidth = ART_WIDTH * scale;
+      const drawnHeight = ART_HEIGHT * scale;
+      const sourceX = (clientX - box.left - (box.width - drawnWidth) / 2) / scale;
+      const sourceY = (clientY - box.top - (box.height - drawnHeight) / 2) / scale;
+
+      const centreX = Math.round((sourceX / ART_WIDTH) * paletteWidth);
+      const centreY = Math.round((sourceY / ART_HEIGHT) * paletteHeight);
+      if (centreX < 0 || centreY < 0 || centreX >= paletteWidth || centreY >= paletteHeight) return null;
+
+      let red = 0;
+      let green = 0;
+      let blue = 0;
+      let count = 0;
+      for (let row = centreY - SAMPLE_RADIUS; row <= centreY + SAMPLE_RADIUS; row += 1) {
+        if (row < 0 || row >= paletteHeight) continue;
+        for (let col = centreX - SAMPLE_RADIUS; col <= centreX + SAMPLE_RADIUS; col += 1) {
+          if (col < 0 || col >= paletteWidth) continue;
+          const offset = (row * paletteWidth + col) * 4;
+          red += palette[offset];
+          green += palette[offset + 1];
+          blue += palette[offset + 2];
+          count += 1;
+        }
+      }
+      if (!count) return null;
+      return [Math.round(red / count), Math.round(green / count), Math.round(blue / count)];
     };
 
     const paintLens = function () {
@@ -99,11 +210,12 @@
       hero.style.setProperty('--mx', x.toFixed(1) + 'px');
       hero.style.setProperty('--my', y.toFixed(1) + 'px');
 
-      const col = Math.min(GRID_COLS - 1, Math.max(0, Math.floor(x / bounds.width * GRID_COLS)));
-      const row = Math.min(GRID_ROWS - 1, Math.max(0, Math.floor(y / bounds.height * GRID_ROWS)));
-      const pair = legiblePair(channels(GRID[row * GRID_COLS + col]));
-      hero.style.setProperty('--hero-accent', pair.accent);
-      hero.style.setProperty('--hero-accent-ink', pair.ink);
+      const sample = sampleArtwork(pointerX, pointerY);
+      if (sample) {
+        const pair = buttonColour(sample[0], sample[1], sample[2]);
+        hero.style.setProperty('--hero-accent', pair.accent);
+        hero.style.setProperty('--hero-accent-ink', pair.ink);
+      }
     };
 
     hero.addEventListener('pointermove', function (event) {

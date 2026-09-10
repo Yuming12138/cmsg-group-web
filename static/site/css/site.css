@@ -127,9 +127,10 @@ h1, h2, h3, p { margin-top: 0; }
 .button--light:hover { background: #edf4fa; }
 .button--accent { background: var(--blue-600); color: var(--white); }
 .button--accent:hover { background: var(--blue-700); }
-/* E · 取色换装：hero 内的主 CTA / 链接跟随鼠标所在画作的颜色 */
-.hero .button--accent { background: var(--hero-accent); color: var(--hero-accent-ink); transition: background-color 320ms var(--ease-out), color 320ms var(--ease-out), filter 180ms var(--ease-out), transform 180ms var(--ease-out); }
-.hero .button--accent:hover { background: var(--hero-accent); filter: brightness(1.14); }
+/* E · 取色换装：hero 内主 CTA 穿上鼠标所在画作的颜色，文字色随明暗自动切换；
+   加一道细边框，避免取样到深色时按钮融进暗背景 */
+.hero .button--accent { border-color: rgba(255,255,255,.28); background: var(--hero-accent); color: var(--hero-accent-ink); transition: background-color 320ms var(--ease-out), color 320ms var(--ease-out), border-color 320ms var(--ease-out), filter 180ms var(--ease-out), transform 180ms var(--ease-out); }
+.hero .button--accent:hover { background: var(--hero-accent); filter: brightness(1.12); }
 .button--dark { background: var(--ink-950); color: var(--white); }
 .button--dark:hover { background: var(--blue-700); }
 .text-link { display: inline-flex; align-items: center; gap: 10px; color: var(--blue-700); font-size: 12px; font-weight: 700; }
