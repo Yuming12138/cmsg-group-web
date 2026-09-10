@@ -6,32 +6,32 @@
   "layout": "people",
   "groups": [
     {"title": "Faculty", "members": [
-      {"name": "Wan-Jian Yin / 尹万健", "role": "Professor · PI", "initials": "WY", "image": "/static/site/images/yinwanjian.jpg"},
-      {"name": "Ke Zhou / 周柯", "role": "Associate Professor", "initials": "KZ", "image": "/static/site/images/members/zhouke.png", "href": "/people/zhouke"}
+      {"name": "Wan-Jian Yin / 尹万健", "role": "Professor · PI", "email": "wjyin@suda.edu.cn", "initials": "WY", "image": "/static/site/images/yinwanjian.jpg"},
+      {"name": "Ke Zhou / 周柯", "role": "Associate Professor", "email": "zhouke@suda.edu.cn", "initials": "KZ", "image": "/static/site/images/members/zhouke.png", "href": "/people/zhouke"}
     ]},
     {"title": "Postdoctor", "members": [
-      {"name": "Haibo Xue / 薛海波", "role": "Postdoctoral researcher · since 2023", "initials": "HX", "image": "/static/site/images/members/xuehaibo.jpg"}
+      {"name": "Haibo Xue / 薛海波", "role": "Postdoctoral researcher · since 2023", "email": "xuehaibopp@163.com", "initials": "HX", "image": "/static/site/images/members/xuehaibo.jpg"}
     ]},
     {"title": "PhD", "members": [
-      {"name": "Guanjian Cheng / 程观剑", "role": "PhD researcher · since 2021", "initials": "GC", "image": "/static/site/images/members/chengguanjian.jpg"},
-      {"name": "Maoyan Zhang / 张茂岩", "role": "PhD researcher · since 2023", "initials": "MZ", "image": "/static/site/images/members/zhangmaoyan3.jpg"},
-      {"name": "Weijian Jiang / 姜伟健", "role": "PhD researcher · since 2024", "initials": "WJ", "image": "/static/site/images/members/jiangweijian.jpg"}
+      {"name": "Guanjian Cheng / 程观剑", "role": "PhD researcher · since 2021", "email": "cheng7258002@live.com", "initials": "GC", "image": "/static/site/images/members/chengguanjian.jpg"},
+      {"name": "Maoyan Zhang / 张茂岩", "role": "PhD researcher · since 2023", "email": "maoyanzhang@foxmail.com", "initials": "MZ", "image": "/static/site/images/members/zhangmaoyan3.jpg"},
+      {"name": "Weijian Jiang / 姜伟健", "role": "PhD researcher · since 2024", "email": "weijianjiang@126.com", "initials": "WJ", "image": "/static/site/images/members/jiangweijian.jpg"}
     ]},
     {"title": "Master", "members": [
-      {"name": "Chenyu Wang / 王晨宇", "role": "Master researcher · since 2023", "initials": "CW", "image": "/static/site/images/members/wangchenyu.jpg"},
-      {"name": "Wei Tian / 田伟", "role": "Master researcher · since 2023", "initials": "WT", "image": "/static/site/images/members/tianwei.jpg"},
-      {"name": "Kaiwei Feng / 冯凯威", "role": "Master researcher · since 2024", "initials": "KF", "image": "/static/site/images/members/fengkaiwei.jpg"},
-      {"name": "Guangming Chen / 陈光明", "role": "Master researcher · since 2024", "initials": "GC", "image": "/static/site/images/members/chenguangming.jpg"},
-      {"name": "Ruoming Luo / 罗若铭", "role": "Master researcher · since 2024", "initials": "RL", "image": "/static/site/images/members/luoruoming3.jpg"},
-      {"name": "Chongyang Zhang / 张重阳", "role": "Master researcher · since 2025", "initials": "CZ", "image": "/static/site/images/members/zhangchongyang.jpg"},
-      {"name": "Yenan Sha / 沙烨男", "role": "Master researcher · since 2025", "initials": "YS", "image": "/static/site/images/members/shayenan.jpg"},
-      {"name": "Jie Chen / 陈杰", "role": "Master researcher · since 2025", "initials": "JC", "image": "/static/site/images/members/chengjie.jpg"}
+      {"name": "Chenyu Wang / 王晨宇", "role": "Master researcher · since 2023", "email": "1295205263@qq.com", "initials": "CW", "image": "/static/site/images/members/wangchenyu.jpg"},
+      {"name": "Wei Tian / 田伟", "role": "Master researcher · since 2023", "email": "tianwei020304@163.com", "initials": "WT", "image": "/static/site/images/members/tianwei.jpg"},
+      {"name": "Kaiwei Feng / 冯凯威", "role": "Master researcher · since 2024", "email": "fkw12698967164@163.com", "initials": "KF", "image": "/static/site/images/members/fengkaiwei.jpg"},
+      {"name": "Guangming Chen / 陈光明", "role": "Master researcher · since 2024", "email": "17634437488@163.com", "initials": "GC", "image": "/static/site/images/members/chenguangming.jpg"},
+      {"name": "Ruoming Luo / 罗若铭", "role": "Master researcher · since 2024", "email": "737795805@qq.com", "initials": "RL", "image": "/static/site/images/members/luoruoming3.jpg"},
+      {"name": "Chongyang Zhang / 张重阳", "role": "Master researcher · since 2025", "email": "20254240024@stu.suda.edu.cn", "initials": "CZ", "image": "/static/site/images/members/zhangchongyang.jpg"},
+      {"name": "Yenan Sha / 沙烨男", "role": "Master researcher · since 2025", "email": "yenansha@outlook.com", "initials": "YS", "image": "/static/site/images/members/shayenan.jpg"},
+      {"name": "Jie Chen / 陈杰", "role": "Master researcher · since 2025", "email": "20254240042@stu.suda.edu.cn", "initials": "JC", "image": "/static/site/images/members/chengjie.jpg"}
     ]},
     {"title": "Visiting Student", "members": [
-      {"name": "Shun Tian / 田顺", "role": "Visiting PhD student · Xi’an Jiaotong University", "initials": "ST", "image": "/static/site/images/members/tianshun.jpg"}
+      {"name": "Shun Tian / 田顺", "role": "Visiting PhD student · Xi’an Jiaotong University", "email": "tianshun@stu.xjtu.edu.cn", "initials": "ST", "image": "/static/site/images/members/tianshun.jpg"}
     ]},
     {"title": "Undergraduate", "members": [
-      {"name": "Wei Yan / 严威", "role": "New Energy Materials and Devices", "initials": "WY", "image": "/static/site/images/members/yanwei.jpg"}
+      {"name": "Wei Yan / 严威", "role": "New Energy Materials and Devices", "email": "1131951661@qq.com", "initials": "WY", "image": "/static/site/images/members/yanwei.jpg"}
     ]},
     {"title": "Alumni", "layout": "alumni", "members": [
       {"name": "Xiaoxia Yang / 杨晓霞", "role": "Visiting Student (2023) · Doctor (2025)", "destination": "From Ningbo University", "email": "yxa0804@163.com", "photo": "/static/images/members/yangxiaoxia.jpg"},

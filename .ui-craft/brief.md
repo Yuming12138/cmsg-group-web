@@ -93,7 +93,13 @@ rewrite.
   an on-demand, keyboard-accessible detail dialog so the long archive stays dense. The
   whole compact member row is the trigger, and the dialog contains the archival photo,
   role, destination, and email; do not display a separate “View photo” label.
-- Alumni is intentionally adaptive rather than identical across sizes: desktop uses the
-  legacy-style two-column registry and shows role, destination, and email in each row;
-  mobile collapses to a compact single column showing only name and role. In both cases
-  the entire row opens the same photo-led detail dialog.
+- Alumni is intentionally adaptive rather than identical across sizes. On desktop, the
+  section heading sits above a full-width, legacy-inspired four-column card registry so
+  the archive uses horizontal space efficiently; intermediate widths step down to three
+  and two columns. Mobile collapses to a compact single-column rule list showing only
+  name and role. Every card or row opens the same photo-led detail dialog.
+- Current-member sections must also prioritize directory density over portrait scale.
+  Use compact vertical cards with a small centered 4:5 portrait above name, role, and
+  email; use four columns on desktop, step down through three and two columns, and keep
+  two columns on ordinary phones. Ke Zhou's portrait and name remain profile links,
+  while email remains its own mail link.

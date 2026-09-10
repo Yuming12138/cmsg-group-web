@@ -52,20 +52,23 @@
         {% set responsive = people_images.get(member.image) if member.image else none %}
         {% set member_href = href_for(member.href) if member.href else none %}
         <article class="person-card{% if member_href %} person-card--linked{% endif %}">
-          {% if member_href %}<a class="person-card__profile-link" href="{{ member_href }}">{% endif %}
+          {% if member_href %}<a class="person-card__portrait-link" href="{{ member_href }}" aria-label="{{ member.name }}">{% endif %}
           <div class="person-card__avatar{% if member.image %} person-card__avatar--image{% endif %}" aria-hidden="true">
             {% if responsive %}
             <picture>
-              <source type="image/webp" srcset="{{ responsive.srcset }}" sizes="(max-width: 620px) calc(100vw - 32px), (max-width: 980px) calc((100vw - 72px) / 3), 310px">
+              <source type="image/webp" srcset="{{ responsive.srcset }}" sizes="(max-width: 620px) 86px, (max-width: 980px) 100px, 112px">
               <img src="{{ responsive.fallback }}" alt="" width="{{ responsive.width }}" height="{{ responsive.height }}" decoding="async"{% if group_loop.first %} loading="eager" fetchpriority="high"{% else %} loading="lazy" fetchpriority="low"{% endif %}>
             </picture>
             {% elif member.image %}
             <img src="{{ member.image }}" alt="" decoding="async"{% if group_loop.first %} loading="eager" fetchpriority="high"{% else %} loading="lazy" fetchpriority="low"{% endif %}>
             {% else %}{{ member.initials }}{% endif %}
           </div>
-          <h3>{{ member.name }}</h3>
           {% if member_href %}</a>{% endif %}
-          <p>{{ member.role }}</p>
+          <div class="person-card__body">
+            <h3>{% if member_href %}<a class="person-card__name-link" href="{{ member_href }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</h3>
+            <p>{{ member.role }}</p>
+            {% if member.email %}<a class="person-card__email" href="mailto:{{ member.email }}" aria-label="{{ ui.email }}: {{ member.email }}"><span>{{ ui.email }}</span>{{ member.email }}</a>{% endif %}
+          </div>
         </article>
         {% endfor %}
       </div>
