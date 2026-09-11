@@ -291,7 +291,7 @@ h1, h2, h3, p { margin-top: 0; }
 .people-groups { display: grid; gap: 64px; }
 .people-group { display: block; }
 .people-group__heading { margin-bottom: 20px; }
-.people-group__heading h2 { margin-bottom: 0; font: 400 clamp(1.85rem, 2.6vw, 2.8rem)/1 var(--display); letter-spacing: -.035em; }
+.people-group__heading h2 { margin-bottom: 0; font: 500 clamp(1.85rem, 2.6vw, 2.8rem)/1.1 var(--sans); letter-spacing: -.018em; }
 .people-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
 .person-card { display: grid; grid-template-rows: auto 1fr; min-width: 0; min-height: 254px; padding: 15px 14px 16px; border: 1px solid var(--line); border-radius: var(--radius-control); background: #fff; box-shadow: 0 10px 24px rgba(17, 45, 76, .05), 0 2px 5px rgba(17, 45, 76, .03); text-align: center; }
 .person-card__avatar { display: grid; width: 100%; aspect-ratio: 4 / 5; place-items: center; border-radius: 4px; background: var(--paper-200); color: var(--blue-700); font: 400 clamp(1.8rem, 3vw, 2.6rem)/1 var(--display); }
