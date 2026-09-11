@@ -140,7 +140,7 @@ html[lang^="zh"] .research-detail [data-lang="en"] {
   font-weight: 300;
   letter-spacing: 0.005em;
   line-height: 1.18;
-}.research-detail .work-copy > p:not(.work-kicker):not(.result-line):not(.work-title-en):not(.language-label) {
+}.research-detail .work-copy > p:not(.work-kicker):not(.work-title-en):not(.language-label) {
   max-width: 690px;
   margin-bottom: 12px;
   color: var(--ink-900);
@@ -156,15 +156,6 @@ html[lang^="zh"] .research-detail [data-lang="en"] {
   letter-spacing: 0.08em;
   line-height: 1.4;
   text-transform: uppercase;
-}.research-detail .result-line {
-  margin: 18px 0 18px;
-  padding-left: 12px;
-  border-left: 2px solid var(--accent);
-  color: var(--accent-dark);
-  font-size: 14px;
-  line-height: 1.55;
-}.research-detail .result-line span {
-  font-weight: 700;
 }.research-detail .citation {
   margin-top: 22px;
   padding-top: 12px;
@@ -282,16 +273,13 @@ html[lang^="zh"] .research-detail [data-lang="en"] {
     margin-bottom: 16px;
     font-size: 32px;
     line-height: 1.2;
-  }.research-detail .work-copy > p:not(.work-kicker):not(.result-line):not(.work-title-en):not(.language-label) {
+  }.research-detail .work-copy > p:not(.work-kicker):not(.work-title-en):not(.language-label) {
     font-size: 15px;
     line-height: 1.7;
   }.research-detail .work-title-en {
     margin-bottom: 16px;
     font-size: 32px;
     line-height: 1.2;
-  }.research-detail .result-line {
-    margin-top: 16px;
-    margin-bottom: 16px;
   }.research-detail .citation {
     margin-top: 20px;
   }
