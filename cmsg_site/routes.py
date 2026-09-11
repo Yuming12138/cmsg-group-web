@@ -64,9 +64,6 @@ def home():
         "site/home.html",
         active_page="home",
         home=load_content("home.json", language),
-        research_preview=load_content("research.json", language),
-        leader_preview=load_content("leader.json", language),
-        publications_preview=load_content("publications.json", language),
         hero_layers=load_hero_layers(),
     )
 
