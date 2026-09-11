@@ -30,7 +30,9 @@
   var RIPPLE_WIDTH = 62;     // px thickness of the travelling ring
   var RIPPLE_LIFE = 3.2;     // s
   var RIPPLE_AMP = 44;       // px the crest displaces the contours by
-  var CURSOR_SIGMA = 240;    // px
+  var CURSOR_SIGMA = 240;    // px — how far the dimple's pull reaches
+  var CURSOR_GLOW = 95;      // px — how tight the pool of light around it is,
+                             //       which is much tighter than the pull
   var CURSOR_AMP = 15;       // px the dimple pulls the contours in by
   var CURSOR_EASE = 5;       // 1/s, how fast the dimple chases the pointer
   var BREATHE = 0.006;       // fractional scale of the slow breath
@@ -322,10 +324,13 @@
       if (v > strength) strength = v;
     }
     if (cursorAmp > 0.5) {
+      // The lit pool is deliberately much tighter than the pull, so the cursor
+      // reads as a point of light travelling over the field rather than as a
+      // broad wash of it.
       var cx = x - cursorX;
       var cy = y - cursorY;
-      var c = Math.exp(-(cx * cx + cy * cy) / (2 * CURSOR_SIGMA * CURSOR_SIGMA));
-      c *= (cursorAmp / CURSOR_AMP) * 0.75;
+      var c = Math.exp(-(cx * cx + cy * cy) / (2 * CURSOR_GLOW * CURSOR_GLOW));
+      c *= (cursorAmp / CURSOR_AMP) * 0.7;
       if (c > strength) strength = c;
     }
     return strength;
