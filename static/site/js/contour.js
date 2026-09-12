@@ -7,8 +7,8 @@
  *
  * Two distortions, both displacements of the original vertices:
  *   hover — a gaussian dimple that draws the contours in towards the cursor
- *   click — a ring gaussian that travels outwards, so a wave visibly runs
- *           through the standing contours and leaves them as they were
+ *   click — a ring gaussian that travels outwards to the farthest corner of
+ *           the rectangular viewport, so the wave does not vanish mid-screen
  * Plus a breath so slow it is felt rather than seen. Nothing is redrawn from
  * noise; the lines move because the artwork's own vertices moved.
  */
@@ -28,7 +28,8 @@
   var SAMPLE_SPACING = 3;    // viewBox units between sampled vertices
   var RIPPLE_SPEED = 300;    // px/s the wave travels outwards
   var RIPPLE_WIDTH = 62;     // px thickness of the travelling ring
-  var RIPPLE_LIFE = 3.2;     // s
+  var RIPPLE_EDGE_TAIL = 0.82; // s of fade after the farthest viewport corner
+  var RIPPLE_ATTACK = 44;     // px before the crest reaches full strength
   var RIPPLE_AMP = 44;       // px the crest displaces the contours by
   var CURSOR_SIGMA = 240;    // px — how far the dimple's pull reaches
   var CURSOR_GLOW = 95;      // px — how tight the pool of light around it is,
@@ -70,6 +71,10 @@
 
   var lineRGB = '0, 167, 216';
   var background = '#001337';
+
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  }
 
   function readTheme() {
     var cs = window.getComputedStyle(canvas);
@@ -172,6 +177,9 @@
     canvas.height = Math.round(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     if (polylines.length) project();
+    for (var i = 0; i < ripples.length; i++) {
+      ripples[i].maxRadius = viewportRadius(ripples[i].x, ripples[i].y);
+    }
     return true;
   }
 
@@ -366,11 +374,17 @@
       var r = ripples[k];
       r.age += dt;
       r.radius += RIPPLE_SPEED * dt;
-      var life = r.age / RIPPLE_LIFE;
-      if (life >= 1) { ripples.splice(k, 1); continue; }
-      // reach full crest almost at once — the drop has to read as an impact —
-      // then fade on a squared curve so the wave dissolves as it widens
-      r.amp = RIPPLE_AMP * (1 - life) * (1 - life) * Math.min(1, life * 14);
+      var reach = r.maxRadius || viewportRadius(r.x, r.y);
+      var fadeStart = Math.max(RIPPLE_ATTACK, reach - RIPPLE_WIDTH * 0.72);
+      var fadeEnd = reach + RIPPLE_SPEED * RIPPLE_EDGE_TAIL;
+      var fade = 1 - clamp((r.radius - fadeStart) / (fadeEnd - fadeStart), 0, 1);
+      var attack = clamp(r.radius / RIPPLE_ATTACK, 0, 1);
+      if (r.radius >= fadeEnd) { ripples.splice(k, 1); continue; }
+      // Reach full strength quickly, stay present until the wave has crossed
+      // the farthest corner, then dissolve only after the whole rectangle has
+      // been traversed. This keeps a 16:9 viewport from swallowing the ripple
+      // while its left/right edges are still untouched.
+      r.amp = RIPPLE_AMP * attack * fade;
     }
   }
 
@@ -410,9 +424,26 @@
     return { x: event.clientX - box.left, y: event.clientY - box.top };
   }
 
+  /* A circular wave is clipped by the browser to the canvas rectangle. Its
+     lifetime therefore has to be based on the farthest corner, not on a
+     fixed number of seconds; otherwise it fades while the side edges are
+     still untouched on a 16:9 screen. */
+  function viewportRadius(x, y) {
+    var dx = Math.max(x, width - x);
+    var dy = Math.max(y, height - y);
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
   function spawnRipple(x, y) {
     if (ripples.length > 10) ripples.shift();
-    ripples.push({ x: x, y: y, radius: 0, amp: 0, age: 0 });
+    ripples.push({
+      x: x,
+      y: y,
+      radius: 0,
+      amp: 0,
+      age: 0,
+      maxRadius: viewportRadius(x, y),
+    });
   }
 
   function bindPointer() {
