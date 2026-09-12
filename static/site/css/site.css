@@ -498,18 +498,18 @@ h1, h2, h3, p { margin-top: 0; }
    white field, one blue accent, and a single interactive material object.
    The canvas layers are visual models; the rest of the site keeps its paper
    and blue token system unchanged. */
-.page--home .site-header {
+.page--quantum-prototype .site-header {
   color: var(--ink-950);
   background: rgba(255, 255, 255, .72);
   border-bottom: 1px solid rgba(16, 25, 35, .08);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
-.page--home .site-header .site-nav__link { color: var(--ink-700); }
-.page--home .site-header .site-nav__link:hover,
-.page--home .site-header .site-nav__link.is-active { color: var(--ink-950); }
-.page--home .site-header .language-switch { color: var(--ink-700); }
-.page--home .site-header .language-switch:hover { color: var(--ink-950); }
+.page--quantum-prototype .site-header .site-nav__link { color: var(--ink-700); }
+.page--quantum-prototype .site-header .site-nav__link:hover,
+.page--quantum-prototype .site-header .site-nav__link.is-active { color: var(--ink-950); }
+.page--quantum-prototype .site-header .language-switch { color: var(--ink-700); }
+.page--quantum-prototype .site-header .language-switch:hover { color: var(--ink-950); }
 
 .quantum-hero {
   position: relative;
@@ -707,7 +707,7 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 @media (max-width: 620px) {
-  .page--home .site-header { background: rgba(255,255,255,.9); }
+  .page--quantum-prototype .site-header { background: rgba(255,255,255,.9); }
   .quantum-hero__inner { width: calc(100% - var(--content-gutter-mobile) - var(--content-gutter-mobile)); padding-top: 94px; padding-bottom: 30px; }
   .quantum-hero__eyebrow { margin-bottom: 17px; font-size: 9px; }
   .quantum-hero__welcome { margin-bottom: 13px; font-size: .72rem; }
@@ -743,18 +743,18 @@ h1, h2, h3, p { margin-top: 0; }
    carries the visual weight; copy is a quiet layer over it, with no cards or
    scientific dashboard chrome. */
 .page--home { background: var(--paper-50); }
-.page--home .site-header {
+.page--quantum-prototype .site-header {
   color: var(--ink-950);
   background: rgba(255, 255, 255, .76);
   border-bottom: 1px solid rgba(16, 25, 35, .08);
   -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
 }
-.page--home .site-header .site-nav__link { color: var(--ink-700); }
-.page--home .site-header .site-nav__link:hover,
-.page--home .site-header .site-nav__link.is-active { color: var(--ink-950); }
-.page--home .site-header .language-switch { color: var(--ink-700); }
-.page--home .site-header .language-switch:hover { color: var(--ink-950); }
+.page--quantum-prototype .site-header .site-nav__link { color: var(--ink-700); }
+.page--quantum-prototype .site-header .site-nav__link:hover,
+.page--quantum-prototype .site-header .site-nav__link.is-active { color: var(--ink-950); }
+.page--quantum-prototype .site-header .language-switch { color: var(--ink-700); }
+.page--quantum-prototype .site-header .language-switch:hover { color: var(--ink-950); }
 
 .material-field {
   position: relative;
@@ -897,7 +897,7 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 @media (max-width: 620px) {
-  .page--home .site-header { background: rgba(255,255,255,.9); }
+  .page--quantum-prototype .site-header { background: rgba(255,255,255,.9); }
   .material-field__inner { width: calc(100% - var(--content-gutter-mobile) - var(--content-gutter-mobile)); padding-top: 96px; padding-bottom: 70px; }
   .material-field__copy { top: 46%; left: 50%; width: 100%; transform: translate(-50%, -50%); }
   .material-field__eyebrow { margin-bottom: 16px; font-size: 9px; }
