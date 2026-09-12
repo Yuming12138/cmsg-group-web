@@ -108,11 +108,11 @@
       <div class="resource-group__heading"><span class="resource-group__shape" aria-hidden="true"></span><span class="resource-group__number">{{ '%02d'|format(loop.index) }}</span>
         <h2>{{ group.title }}</h2>
       </div>
+      <span class="resource-group__axis" aria-hidden="true"></span>
       {% if group.categories %}
       <div class="resource-category-grid">
         {% for category in group.categories %}
         <div class="resource-category">
-          <h3>{{ category.title }}</h3>
           <div class="resource-list">
             {% for item in category["items"] %}
             <a class="resource-row" href="{{ item.href }}" target="_blank" rel="noreferrer noopener">
