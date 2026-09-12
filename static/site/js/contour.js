@@ -16,6 +16,7 @@
   'use strict';
 
   var SVG_URL = '/static/site/contour/field.svg';
+  var PATHS_URL = '/static/site/contour/field.paths.json';
   var canvas = document.querySelector('[data-contour]');
   if (!canvas || !canvas.getContext) return;
 
@@ -137,6 +138,27 @@
 
     document.body.removeChild(host);
     return out;
+  }
+
+  /* The SVG is sampled during the build and shipped as numeric geometry.
+     Loading these points avoids waiting for SVGPathElement measurement on the
+     first visit; the SVG path remains a graceful fallback for old deployments. */
+  function cachedPaths(data) {
+    if (!data || !data.paths || !data.paths.length) return [];
+    if (data.viewBox && data.viewBox.length === 4) {
+      viewBox.w = parseFloat(data.viewBox[2]) || viewBox.w;
+      viewBox.h = parseFloat(data.viewBox[3]) || viewBox.h;
+    }
+    return data.paths.map(function (item) {
+      return {
+        local: new Float32Array(item.points || []),
+        heavy: Boolean(item.heavy),
+        screen: null,
+        box: null,
+      };
+    }).filter(function (item) {
+      return item.local.length >= 4;
+    });
   }
 
   /* Project the sampled vertices from viewBox units into screen pixels, and
@@ -481,19 +503,30 @@
     }
     draw();
 
-    fetch(SVG_URL).then(function (response) {
-      if (!response.ok) throw new Error('HTTP ' + response.status);
-      return response.text();
-    }).then(function (text) {
-      var doc = new DOMParser().parseFromString(text, 'image/svg+xml');
-      polylines = samplePaths(doc);
+    fetch(PATHS_URL).then(function (response) {
+      if (!response.ok) throw new Error('cached geometry HTTP ' + response.status);
+      return response.json();
+    }).then(function (data) {
+      polylines = cachedPaths(data);
+      if (!polylines.length) throw new Error('cached geometry is empty');
       project();
       draw();
       if (!reduce) start();
-    }).catch(function (error) {
-      // without the artwork there is nothing worth animating; the painted
-      // background and the headline carry the screen on their own
-      if (window.console) console.warn('contour: ' + error.message);
+    }).catch(function (cacheError) {
+      fetch(SVG_URL).then(function (response) {
+        if (!response.ok) throw new Error('SVG HTTP ' + response.status);
+        return response.text();
+      }).then(function (text) {
+        var doc = new DOMParser().parseFromString(text, 'image/svg+xml');
+        polylines = samplePaths(doc);
+        project();
+        draw();
+        if (!reduce) start();
+      }).catch(function (error) {
+        // without the artwork there is nothing worth animating; the painted
+        // background and the headline carry the screen on their own
+        if (window.console) console.warn('contour: ' + cacheError.message + '; ' + error.message);
+      });
     });
 
     if (reduce) return;
