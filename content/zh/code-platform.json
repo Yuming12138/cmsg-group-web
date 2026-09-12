@@ -62,27 +62,13 @@
         },
         {
           "index": "04",
-          "title": "ASE",
-          "meta": "Python 工具包",
-          "summary": "在 Python 中构建、操作、计算和可视化原子结构。",
-          "href": "https://wiki.fysik.dtu.dk/ase/"
-        },
-        {
-          "index": "05",
-          "title": "pymatgen",
-          "meta": "材料分析",
-          "summary": "用于材料分析、结构处理与计算工作流的 Python 库。",
-          "href": "https://pymatgen.org/"
-        },
-        {
-          "index": "06",
           "title": "AFLOW",
           "meta": "材料数据库",
           "summary": "高通量计算材料数据与热力学性质平台。",
           "href": "https://aflow.org/"
         },
         {
-          "index": "07",
+          "index": "05",
           "title": "NOMAD",
           "meta": "材料数据档案",
           "summary": "用于共享、探索和复用材料科学数据的开放平台。",

@@ -62,27 +62,13 @@
         },
         {
           "index": "04",
-          "title": "ASE",
-          "meta": "Python toolkit",
-          "summary": "Build, manipulate, calculate, and visualize atomistic structures in Python.",
-          "href": "https://wiki.fysik.dtu.dk/ase/"
-        },
-        {
-          "index": "05",
-          "title": "pymatgen",
-          "meta": "Materials analysis",
-          "summary": "A Python library for materials analysis, structure manipulation, and workflows.",
-          "href": "https://pymatgen.org/"
-        },
-        {
-          "index": "06",
           "title": "AFLOW",
           "meta": "Materials database",
           "summary": "High-throughput computational materials data and thermodynamic properties.",
           "href": "https://aflow.org/"
         },
         {
-          "index": "07",
+          "index": "05",
           "title": "NOMAD",
           "meta": "Materials archive",
           "summary": "Open repository for sharing, exploring, and reusing materials-science data.",
