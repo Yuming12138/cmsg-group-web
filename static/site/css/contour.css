@@ -1,0 +1,111 @@
+/* Contour hero — the home page's first screen.
+ *
+ * Two colours only, taken from the topographic source map this was drawn from:
+ * a near-black deep blue for the ground and a single electric cyan for every
+ * line on it. Type is left to the rest of the site, and the field is annotated
+ * the way a figure in a paper would be — one quiet line of caption, nothing more.
+ */
+.hero--contour {
+  /* taken straight from the source artwork: navy #001337 ground, cyan #00a7d8 ink */
+  --contour-bg: #001337;
+  --contour-line-rgb: 0, 167, 216;
+  background: var(--contour-bg);
+}
+
+.hero--contour .hero__contour {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Hold the light back over the centre so the headline always clears contrast,
+   while the edges of the field stay fully visible. */
+.hero--contour .hero__wash {
+  z-index: -1;
+  background:
+    /* hold the light back behind the headline … */
+    radial-gradient(
+      ellipse 58% 42% at 50% 50%,
+      rgba(0, 19, 55, .87) 0%,
+      rgba(0, 19, 55, .68) 52%,
+      rgba(0, 19, 55, .16) 100%
+    ),
+    /* … and let the field fall away at the edges so the centre carries it */
+    radial-gradient(
+      ellipse 92% 88% at 50% 50%,
+      rgba(0, 19, 55, 0) 42%,
+      rgba(0, 19, 55, .5) 100%
+    );
+  animation: none;
+}
+
+.hero--contour .hero__grain { z-index: -1; opacity: .1; }
+
+.hero--contour .hero__content { gap: 0; }
+
+/* The headline keeps the site's own face, weight and rhythm. The only thing
+   this file does to it is deepen the shadow, because the field behind it is
+   busier than the painting it used to sit on. */
+.hero--contour h1 { text-shadow: 0 2px 28px rgba(6, 12, 22, .85); }
+
+.hero--contour .hero__summary { text-shadow: 0 1px 22px rgba(6, 12, 22, .9); }
+
+/* The figure caption. Deliberately faint: it should read as a note in the
+   margin of a paper, not as interface. */
+.hero__field-note {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(26px, 5vh, 54px);
+  z-index: 1;
+  margin: 0;
+  transform: translateX(-50%);
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: .625rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(0, 167, 216, .78);
+  white-space: nowrap;
+  pointer-events: none;
+  /* the caption sits over the busiest part of the field, so it carries its own
+     pool of shadow to stay legible */
+  text-shadow: 0 1px 16px rgba(0, 19, 55, .95), 0 0 7px rgba(0, 19, 55, .9);
+}
+
+.hero__field-note::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 10px;
+  vertical-align: 1px;
+  border-radius: 50%;
+  background: rgba(0, 167, 216, .95);
+  box-shadow: 0 0 10px rgba(0, 167, 216, .8);
+}
+
+.hero--contour .button--accent {
+  border-color: rgba(0, 167, 216, .45);
+  background: rgba(0, 167, 216, .12);
+  color: #eaf7ff;
+  backdrop-filter: blur(6px);
+}
+
+.hero--contour .button--accent:hover {
+  border-color: rgba(0, 167, 216, .8);
+  background: rgba(0, 167, 216, .22);
+  filter: none;
+}
+
+@media (max-width: 620px) {
+  .hero__field-note { font-size: .55rem; letter-spacing: .18em; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero--contour .hero__wash,
+  .hero--contour .hero__grain { animation: none; }
+}
