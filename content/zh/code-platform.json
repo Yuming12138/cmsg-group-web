@@ -47,6 +47,14 @@
         },
         {
           "index": "02",
+          "title": "ICSD",
+          "meta": "晶体结构数据库",
+          "summary": "无机晶体结构与文献数据资源。",
+          "href": "https://icsd.fiz-karlsruhe.de/",
+          "category": "数据库"
+        },
+        {
+          "index": "03",
           "title": "VESTA",
           "meta": "结构可视化",
           "summary": "交互式查看和分析晶体结构及体数据。",
@@ -54,7 +62,7 @@
           "category": "可视化与软件"
         },
         {
-          "index": "03",
+          "index": "04",
           "title": "OVITO",
           "meta": "原子级可视化",
           "summary": "查看、检查和分析分子动力学轨迹与粒子数据。",
@@ -62,7 +70,7 @@
           "category": "可视化与软件"
         },
         {
-          "index": "04",
+          "index": "05",
           "title": "AFLOW",
           "meta": "材料数据库",
           "summary": "高通量计算材料数据与热力学性质平台。",
@@ -70,7 +78,7 @@
           "category": "数据库"
         },
         {
-          "index": "05",
+          "index": "06",
           "title": "NOMAD",
           "meta": "材料数据档案",
           "summary": "用于共享、探索和复用材料科学数据的开放平台。",
@@ -91,7 +99,15 @@
               "category": "数据库"
             },
             {
-              "index": "04",
+              "index": "02",
+              "title": "ICSD",
+              "meta": "晶体结构数据库",
+              "summary": "无机晶体结构与文献数据资源。",
+              "href": "https://icsd.fiz-karlsruhe.de/",
+              "category": "数据库"
+            },
+            {
+              "index": "05",
               "title": "AFLOW",
               "meta": "材料数据库",
               "summary": "高通量计算材料数据与热力学性质平台。",
@@ -99,7 +115,7 @@
               "category": "数据库"
             },
             {
-              "index": "05",
+              "index": "06",
               "title": "NOMAD",
               "meta": "材料数据档案",
               "summary": "用于共享、探索和复用材料科学数据的开放平台。",
@@ -112,7 +128,7 @@
           "title": "可视化与软件",
           "items": [
             {
-              "index": "02",
+              "index": "03",
               "title": "VESTA",
               "meta": "结构可视化",
               "summary": "交互式查看和分析晶体结构及体数据。",
@@ -120,7 +136,7 @@
               "category": "可视化与软件"
             },
             {
-              "index": "03",
+              "index": "04",
               "title": "OVITO",
               "meta": "原子级可视化",
               "summary": "查看、检查和分析分子动力学轨迹与粒子数据。",

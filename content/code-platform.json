@@ -47,6 +47,14 @@
         },
         {
           "index": "02",
+          "title": "ICSD",
+          "meta": "Crystal-structure database",
+          "summary": "A curated database of inorganic crystal structures from the literature.",
+          "href": "https://icsd.fiz-karlsruhe.de/",
+          "category": "Databases"
+        },
+        {
+          "index": "03",
           "title": "VESTA",
           "meta": "Structure visualization",
           "summary": "Interactive visualization and analysis of crystal structures and volumetric data.",
@@ -54,7 +62,7 @@
           "category": "Visualization & Software"
         },
         {
-          "index": "03",
+          "index": "04",
           "title": "OVITO",
           "meta": "Atomistic visualization",
           "summary": "Visualize, inspect, and analyze molecular-dynamics trajectories and particle data.",
@@ -62,7 +70,7 @@
           "category": "Visualization & Software"
         },
         {
-          "index": "04",
+          "index": "05",
           "title": "AFLOW",
           "meta": "Materials database",
           "summary": "High-throughput computational materials data and thermodynamic properties.",
@@ -70,7 +78,7 @@
           "category": "Databases"
         },
         {
-          "index": "05",
+          "index": "06",
           "title": "NOMAD",
           "meta": "Materials archive",
           "summary": "Open repository for sharing, exploring, and reusing materials-science data.",
@@ -91,7 +99,15 @@
               "category": "Databases"
             },
             {
-              "index": "04",
+              "index": "02",
+              "title": "ICSD",
+              "meta": "Crystal-structure database",
+              "summary": "A curated database of inorganic crystal structures from the literature.",
+              "href": "https://icsd.fiz-karlsruhe.de/",
+              "category": "Databases"
+            },
+            {
+              "index": "05",
               "title": "AFLOW",
               "meta": "Materials database",
               "summary": "High-throughput computational materials data and thermodynamic properties.",
@@ -99,7 +115,7 @@
               "category": "Databases"
             },
             {
-              "index": "05",
+              "index": "06",
               "title": "NOMAD",
               "meta": "Materials archive",
               "summary": "Open repository for sharing, exploring, and reusing materials-science data.",
@@ -112,7 +128,7 @@
           "title": "Visualization & Software",
           "items": [
             {
-              "index": "02",
+              "index": "03",
               "title": "VESTA",
               "meta": "Structure visualization",
               "summary": "Interactive visualization and analysis of crystal structures and volumetric data.",
@@ -120,7 +136,7 @@
               "category": "Visualization & Software"
             },
             {
-              "index": "03",
+              "index": "04",
               "title": "OVITO",
               "meta": "Atomistic visualization",
               "summary": "Visualize, inspect, and analyze molecular-dynamics trajectories and particle data.",
