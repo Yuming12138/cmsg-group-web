@@ -104,8 +104,8 @@
 <section class="section section--resources">
   <div class="shell resource-groups">
     {% for group in page.groups %}
-    <section class="resource-group reveal">
-      <div class="resource-group__heading">
+    <section class="resource-group reveal" style="--resource-index: {{ loop.index }};">
+      <div class="resource-group__heading"><span class="resource-group__shape" aria-hidden="true"></span><span class="resource-group__number">{{ '%02d'|format(loop.index) }}</span>
         <h2>{{ group.title }}</h2>
       </div>
       {% if group.categories %}
