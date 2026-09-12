@@ -108,17 +108,34 @@
       <div class="resource-group__heading">
         <h2>{{ group.title }}</h2>
       </div>
+      {% if group.categories %}
+      <div class="resource-category-grid">
+        {% for category in group.categories %}
+        <div class="resource-category">
+          <h3>{{ category.title }}</h3>
+          <div class="resource-list">
+            {% for item in category["items"] %}
+            <a class="resource-row" href="{{ item.href }}" target="_blank" rel="noreferrer noopener">
+              <span class="resource-row__index">{{ item.index }}</span>
+              <span class="resource-row__body"><strong>{{ item.title }}</strong></span>
+              <span class="resource-row__arrow" aria-hidden="true">↗</span>
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
       <div class="resource-list">
         {% for item in group["items"] %}
         <a class="resource-row" href="{{ item.href }}" target="_blank" rel="noreferrer noopener">
           <span class="resource-row__index">{{ item.index }}</span>
-          <span class="resource-row__body">
-            <strong>{{ item.title }}</strong>
-          </span>
+          <span class="resource-row__body"><strong>{{ item.title }}</strong></span>
           <span class="resource-row__arrow" aria-hidden="true">↗</span>
         </a>
         {% endfor %}
       </div>
+      {% endif %}
     </section>
     {% endfor %}
   </div>

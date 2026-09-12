@@ -42,35 +42,92 @@
           "title": "Materials Project",
           "meta": "材料数据库",
           "summary": "提供无机材料的计算结构、能量与性质数据。",
-          "href": "https://materialsproject.org/"
+          "href": "https://materialsproject.org/",
+          "category": "数据库"
         },
         {
           "index": "02",
           "title": "VESTA",
           "meta": "结构可视化",
           "summary": "交互式查看和分析晶体结构及体数据。",
-          "href": "https://jp-minerals.org/vesta/en/"
+          "href": "https://jp-minerals.org/vesta/en/",
+          "category": "可视化与软件"
         },
         {
           "index": "03",
           "title": "OVITO",
           "meta": "原子级可视化",
           "summary": "查看、检查和分析分子动力学轨迹与粒子数据。",
-          "href": "https://www.ovito.org/download/"
+          "href": "https://www.ovito.org/download/",
+          "category": "可视化与软件"
         },
         {
           "index": "04",
           "title": "AFLOW",
           "meta": "材料数据库",
           "summary": "高通量计算材料数据与热力学性质平台。",
-          "href": "https://aflow.org/"
+          "href": "https://aflow.org/",
+          "category": "数据库"
         },
         {
           "index": "05",
           "title": "NOMAD",
           "meta": "材料数据档案",
           "summary": "用于共享、探索和复用材料科学数据的开放平台。",
-          "href": "https://nomad-laboratory.de/"
+          "href": "https://nomad-laboratory.de/",
+          "category": "数据库"
+        }
+      ],
+      "categories": [
+        {
+          "title": "数据库",
+          "items": [
+            {
+              "index": "01",
+              "title": "Materials Project",
+              "meta": "材料数据库",
+              "summary": "提供无机材料的计算结构、能量与性质数据。",
+              "href": "https://materialsproject.org/",
+              "category": "数据库"
+            },
+            {
+              "index": "04",
+              "title": "AFLOW",
+              "meta": "材料数据库",
+              "summary": "高通量计算材料数据与热力学性质平台。",
+              "href": "https://aflow.org/",
+              "category": "数据库"
+            },
+            {
+              "index": "05",
+              "title": "NOMAD",
+              "meta": "材料数据档案",
+              "summary": "用于共享、探索和复用材料科学数据的开放平台。",
+              "href": "https://nomad-laboratory.de/",
+              "category": "数据库"
+            }
+          ]
+        },
+        {
+          "title": "可视化与软件",
+          "items": [
+            {
+              "index": "02",
+              "title": "VESTA",
+              "meta": "结构可视化",
+              "summary": "交互式查看和分析晶体结构及体数据。",
+              "href": "https://jp-minerals.org/vesta/en/",
+              "category": "可视化与软件"
+            },
+            {
+              "index": "03",
+              "title": "OVITO",
+              "meta": "原子级可视化",
+              "summary": "查看、检查和分析分子动力学轨迹与粒子数据。",
+              "href": "https://www.ovito.org/download/",
+              "category": "可视化与软件"
+            }
+          ]
         }
       ]
     }

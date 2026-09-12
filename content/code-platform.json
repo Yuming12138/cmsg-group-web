@@ -42,35 +42,92 @@
           "title": "Materials Project",
           "meta": "Materials database",
           "summary": "Computed structures, energies, and properties for inorganic materials.",
-          "href": "https://materialsproject.org/"
+          "href": "https://materialsproject.org/",
+          "category": "Databases"
         },
         {
           "index": "02",
           "title": "VESTA",
           "meta": "Structure visualization",
           "summary": "Interactive visualization and analysis of crystal structures and volumetric data.",
-          "href": "https://jp-minerals.org/vesta/en/"
+          "href": "https://jp-minerals.org/vesta/en/",
+          "category": "Visualization & Software"
         },
         {
           "index": "03",
           "title": "OVITO",
           "meta": "Atomistic visualization",
           "summary": "Visualize, inspect, and analyze molecular-dynamics trajectories and particle data.",
-          "href": "https://www.ovito.org/download/"
+          "href": "https://www.ovito.org/download/",
+          "category": "Visualization & Software"
         },
         {
           "index": "04",
           "title": "AFLOW",
           "meta": "Materials database",
           "summary": "High-throughput computational materials data and thermodynamic properties.",
-          "href": "https://aflow.org/"
+          "href": "https://aflow.org/",
+          "category": "Databases"
         },
         {
           "index": "05",
           "title": "NOMAD",
           "meta": "Materials archive",
           "summary": "Open repository for sharing, exploring, and reusing materials-science data.",
-          "href": "https://nomad-laboratory.de/"
+          "href": "https://nomad-laboratory.de/",
+          "category": "Databases"
+        }
+      ],
+      "categories": [
+        {
+          "title": "Databases",
+          "items": [
+            {
+              "index": "01",
+              "title": "Materials Project",
+              "meta": "Materials database",
+              "summary": "Computed structures, energies, and properties for inorganic materials.",
+              "href": "https://materialsproject.org/",
+              "category": "Databases"
+            },
+            {
+              "index": "04",
+              "title": "AFLOW",
+              "meta": "Materials database",
+              "summary": "High-throughput computational materials data and thermodynamic properties.",
+              "href": "https://aflow.org/",
+              "category": "Databases"
+            },
+            {
+              "index": "05",
+              "title": "NOMAD",
+              "meta": "Materials archive",
+              "summary": "Open repository for sharing, exploring, and reusing materials-science data.",
+              "href": "https://nomad-laboratory.de/",
+              "category": "Databases"
+            }
+          ]
+        },
+        {
+          "title": "Visualization & Software",
+          "items": [
+            {
+              "index": "02",
+              "title": "VESTA",
+              "meta": "Structure visualization",
+              "summary": "Interactive visualization and analysis of crystal structures and volumetric data.",
+              "href": "https://jp-minerals.org/vesta/en/",
+              "category": "Visualization & Software"
+            },
+            {
+              "index": "03",
+              "title": "OVITO",
+              "meta": "Atomistic visualization",
+              "summary": "Visualize, inspect, and analyze molecular-dynamics trajectories and particle data.",
+              "href": "https://www.ovito.org/download/",
+              "category": "Visualization & Software"
+            }
+          ]
         }
       ]
     }
