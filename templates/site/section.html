@@ -116,7 +116,7 @@
           <div class="resource-list">
             {% for item in category["items"] %}
             <a class="resource-row" href="{{ item.href }}" target="_blank" rel="noreferrer noopener">
-              <span class="resource-row__index">{{ item.index }}</span>
+              <span class="resource-row__index">{{ '%02d'|format(loop.index) }}</span>
               <span class="resource-row__body"><strong>{{ item.title }}</strong></span>
               <span class="resource-row__arrow" aria-hidden="true">↗</span>
             </a>
