@@ -1,11 +1,94 @@
 {
-  "meta": {"title": "代码与平台 · CMSG", "description": "工具与平台占位内容。"},
+  "meta": {
+    "title": "代码与平台 · CMSG",
+    "description": "CMSG 课题组代码、研究软件与常用材料科学平台。"
+  },
   "kicker": "代码与平台",
-  "title": "研究工具应当易于发现、理解与维护。",
-  "intro": "项目、文档、代码仓库、发行版本与外部下载位置都可以从这里管理。",
-  "items": [
-    {"title": "软件项目占位符", "meta": "开源 / 代码仓库", "summary": "这里将展示用途、成熟度、文档、引用方式与发行版本链接。"},
-    {"title": "平台占位符", "meta": "网络平台 / 服务", "summary": "这里将展示用途、访问说明、文档与外部资源。"},
-    {"title": "数据集占位符", "meta": "数据 / 档案", "summary": "这里将展示范围、版本、许可、引用方式与 Release 或 CDN 链接。"}
+  "title": "用于发现、模拟与理解物质的工具。",
+  "intro": "这里汇总课题组自主开发的代码，以及日常研究中反复使用的数据库和软件平台。",
+  "layout": "resource-groups",
+  "groups": [
+    {
+      "label": "CMSG CODE",
+      "title": "课题组代码与研究平台",
+      "items": [
+        {
+          "index": "01",
+          "title": "D3REAM",
+          "meta": "开源项目 · GitHub",
+          "summary": "用于晶体结构预测与材料发现的开放平台。",
+          "href": "https://github.com/YimingXiongPhysics/D3REAM"
+        },
+        {
+          "index": "02",
+          "title": "CMSG repositories",
+          "meta": "代码 · GitHub",
+          "summary": "浏览课题组的代码、分析工具与可复现研究工作。",
+          "href": "https://github.com/Yuming12138?tab=repositories"
+        },
+        {
+          "index": "03",
+          "title": "CMSG data & analysis",
+          "meta": "数据工具 · 开发中",
+          "summary": "结构分析、声子、热膨胀与材料数据处理工具。",
+          "href": "https://github.com/Yuming12138?tab=repositories"
+        }
+      ]
+    },
+    {
+      "label": "ESSENTIAL TOOLS",
+      "title": "我们经常使用的平台",
+      "items": [
+        {
+          "index": "01",
+          "title": "Materials Project",
+          "meta": "材料数据库",
+          "summary": "提供无机材料的计算结构、能量与性质数据。",
+          "href": "https://materialsproject.org/"
+        },
+        {
+          "index": "02",
+          "title": "VESTA",
+          "meta": "结构可视化",
+          "summary": "交互式查看和分析晶体结构及体数据。",
+          "href": "https://jp-minerals.org/vesta/en/"
+        },
+        {
+          "index": "03",
+          "title": "OVITO",
+          "meta": "原子级可视化",
+          "summary": "查看、检查和分析分子动力学轨迹与粒子数据。",
+          "href": "https://www.ovito.org/download/"
+        },
+        {
+          "index": "04",
+          "title": "ASE",
+          "meta": "Python 工具包",
+          "summary": "在 Python 中构建、操作、计算和可视化原子结构。",
+          "href": "https://wiki.fysik.dtu.dk/ase/"
+        },
+        {
+          "index": "05",
+          "title": "pymatgen",
+          "meta": "材料分析",
+          "summary": "用于材料分析、结构处理与计算工作流的 Python 库。",
+          "href": "https://pymatgen.org/"
+        },
+        {
+          "index": "06",
+          "title": "AFLOW",
+          "meta": "材料数据库",
+          "summary": "高通量计算材料数据与热力学性质平台。",
+          "href": "https://aflow.org/"
+        },
+        {
+          "index": "07",
+          "title": "NOMAD",
+          "meta": "材料数据档案",
+          "summary": "用于共享、探索和复用材料科学数据的开放平台。",
+          "href": "https://nomad-laboratory.de/"
+        }
+      ]
+    }
   ]
 }

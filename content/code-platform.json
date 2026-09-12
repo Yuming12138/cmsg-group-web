@@ -1,12 +1,94 @@
 {
-  "meta": {"title": "Code & Platform · CMSG", "description": "Placeholder tools and platforms."},
+  "meta": {
+    "title": "Code & Platform · CMSG",
+    "description": "CMSG code, research software, and essential materials-science platforms."
+  },
   "kicker": "Code & Platform",
-  "title": "Research tools should be discoverable, legible, and maintainable.",
-  "intro": "Projects, documentation, repositories, releases, and external download locations can be managed from this page.",
-  "layout": "cards",
-  "items": [
-    {"index": "A", "title": "Software project placeholder", "meta": "Open source / Repository", "summary": "Purpose, maturity, documentation, citation, and release links will appear here."},
-    {"index": "B", "title": "Platform placeholder", "meta": "Web platform / Service", "summary": "Purpose, access notes, documentation, and external resource links will appear here."},
-    {"index": "C", "title": "Dataset placeholder", "meta": "Data / Archive", "summary": "Scope, version, license, citation, and CDN or release links will appear here."}
+  "title": "Tools for discovering, simulating, and understanding matter.",
+  "intro": "A focused index of software built by our group and platforms we use in everyday research.",
+  "layout": "resource-groups",
+  "groups": [
+    {
+      "label": "CMSG CODE",
+      "title": "Our code and research platforms",
+      "items": [
+        {
+          "index": "01",
+          "title": "D3REAM",
+          "meta": "Open source · GitHub",
+          "summary": "An open platform for crystal-structure prediction and materials discovery.",
+          "href": "https://github.com/YimingXiongPhysics/D3REAM"
+        },
+        {
+          "index": "02",
+          "title": "CMSG repositories",
+          "meta": "Code · GitHub",
+          "summary": "Browse the group’s code, analysis tools, and reproducible research workflows.",
+          "href": "https://github.com/Yuming12138?tab=repositories"
+        },
+        {
+          "index": "03",
+          "title": "CMSG data & analysis",
+          "meta": "Data tools · In development",
+          "summary": "Scripts and utilities for structure analysis, phonons, thermal expansion, and materials data.",
+          "href": "https://github.com/Yuming12138?tab=repositories"
+        }
+      ]
+    },
+    {
+      "label": "ESSENTIAL TOOLS",
+      "title": "Platforms we return to",
+      "items": [
+        {
+          "index": "01",
+          "title": "Materials Project",
+          "meta": "Materials database",
+          "summary": "Computed structures, energies, and properties for inorganic materials.",
+          "href": "https://materialsproject.org/"
+        },
+        {
+          "index": "02",
+          "title": "VESTA",
+          "meta": "Structure visualization",
+          "summary": "Interactive visualization and analysis of crystal structures and volumetric data.",
+          "href": "https://jp-minerals.org/vesta/en/"
+        },
+        {
+          "index": "03",
+          "title": "OVITO",
+          "meta": "Atomistic visualization",
+          "summary": "Visualize, inspect, and analyze molecular-dynamics trajectories and particle data.",
+          "href": "https://www.ovito.org/download/"
+        },
+        {
+          "index": "04",
+          "title": "ASE",
+          "meta": "Python toolkit",
+          "summary": "Build, manipulate, calculate, and visualize atomistic structures in Python.",
+          "href": "https://wiki.fysik.dtu.dk/ase/"
+        },
+        {
+          "index": "05",
+          "title": "pymatgen",
+          "meta": "Materials analysis",
+          "summary": "A Python library for materials analysis, structure manipulation, and workflows.",
+          "href": "https://pymatgen.org/"
+        },
+        {
+          "index": "06",
+          "title": "AFLOW",
+          "meta": "Materials database",
+          "summary": "High-throughput computational materials data and thermodynamic properties.",
+          "href": "https://aflow.org/"
+        },
+        {
+          "index": "07",
+          "title": "NOMAD",
+          "meta": "Materials archive",
+          "summary": "Open repository for sharing, exploring, and reusing materials-science data.",
+          "href": "https://nomad-laboratory.de/"
+        }
+      ]
+    }
   ]
 }
