@@ -9,8 +9,7 @@
   "layout": "resource-groups",
   "groups": [
     {
-      "label": "CMSG CODE",
-      "title": "课题组代码与研究平台",
+      "title": "CMSG Code",
       "items": [
         {
           "index": "01",
@@ -36,8 +35,7 @@
       ]
     },
     {
-      "label": "ESSENTIAL TOOLS",
-      "title": "我们经常使用的平台",
+      "title": "常用平台",
       "items": [
         {
           "index": "01",

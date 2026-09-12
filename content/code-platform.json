@@ -9,8 +9,7 @@
   "layout": "resource-groups",
   "groups": [
     {
-      "label": "CMSG CODE",
-      "title": "Our code and research platforms",
+      "title": "CMSG Code",
       "items": [
         {
           "index": "01",
@@ -36,7 +35,6 @@
       ]
     },
     {
-      "label": "ESSENTIAL TOOLS",
       "title": "Platforms we return to",
       "items": [
         {
