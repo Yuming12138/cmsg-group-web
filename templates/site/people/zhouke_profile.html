@@ -1,17 +1,11 @@
 {% extends 'site/base.html' %}
 
 {% block head_extra %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='site/css/zhouke.css') }}">
+    <link rel="stylesheet" href="{{ asset('site/css/zhouke.css') }}">
 {% endblock %}
 
 {% block content %}
 <div class="shell zhouke-shell zhouke-shell--profile">
-  <nav class="zhouke-breadcrumb" aria-label="Breadcrumb">
-    <a href="{{ href_for(url_for('site.people')) }}">People</a>
-    <span aria-hidden="true">/</span>
-    <span aria-current="page">{{ profile.name_en }} / {{ profile.name }}</span>
-  </nav>
-
   <div class="zhouke-profile-layout">
     <aside class="zhouke-profile-rail" aria-labelledby="zhouke-profile-name">
       <picture class="zhouke-profile-portrait">

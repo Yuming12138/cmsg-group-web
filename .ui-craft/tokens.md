@@ -22,8 +22,9 @@ new visual version is approved.
 
 ## Type
 
-- Display: `Iowan Old Style`, `Palatino Linotype`, `Book Antiqua`, `Georgia`, serif
-- UI/body: `Inter`, `Helvetica Neue`, `Arial`, sans-serif
+- Display: `Instrument Serif`, with an editorial system fallback
+- Interface: `Lato`, then system sans fallbacks
+- Reading/CJK: interface stack by default; `Microsoft YaHei` / `微软雅黑` for Chinese long-form pages
 - Mono/meta: `ui-monospace`, `SFMono-Regular`, `Menlo`, monospace
 - Base size: `16px`; body line-height: `1.55`
 - Display tracking: `-0.035em`; metadata tracking: `.12em`
@@ -36,6 +37,8 @@ new visual version is approved.
 - Controls: `6px` radius
 - Display panels: `18px` radius
 - Borders stay 1px; depth comes from whitespace and low-opacity shadows
+- Semantic shadows: `shadow-card` for directory surfaces, `shadow-soft` for editorial media, `shadow-overlay` for dialogs
+- Page start: `88px` desktop / `76px` mobile; regular section start: `32px`
 
 ## Content frame
 

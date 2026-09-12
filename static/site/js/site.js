@@ -4,18 +4,50 @@
   const nav = document.querySelector('[data-site-nav]');
 
   if (header && toggle && nav) {
+    const isSmallScreen = function () {
+      return window.matchMedia('(max-width: 980px)').matches;
+    };
+    const closeMenu = function (restoreFocus) {
+      nav.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      header.removeAttribute('data-nav-open');
+      document.body.classList.remove('has-nav-open');
+      if (restoreFocus) toggle.focus();
+    };
+    const openMenu = function () {
+      nav.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+      header.setAttribute('data-nav-open', '');
+      document.body.classList.add('has-nav-open');
+      const firstLink = nav.querySelector('a');
+      if (isSmallScreen() && firstLink) {
+        window.requestAnimationFrame(function () { firstLink.focus(); });
+      }
+    };
+
     toggle.addEventListener('click', function () {
-      const open = nav.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', String(open));
-      header.toggleAttribute('data-nav-open', open);
+      if (nav.classList.contains('is-open')) closeMenu(true);
+      else openMenu();
     });
 
     nav.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        nav.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        header.removeAttribute('data-nav-open');
-      });
+      link.addEventListener('click', function () { closeMenu(false); });
+    });
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+        closeMenu(true);
+      }
+    });
+
+    document.addEventListener('click', function (event) {
+      if (nav.classList.contains('is-open') && !header.contains(event.target)) {
+        closeMenu(false);
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      if (!isSmallScreen() && nav.classList.contains('is-open')) closeMenu(false);
     });
   }
 

@@ -47,7 +47,7 @@
         {% endfor %}
       </div>
       {% else %}
-      <div class="people-grid">
+      <div class="people-grid{% if group.members|length < 4 %} people-grid--count-{{ group.members|length }}{% endif %}">
         {% for member in group.members %}
         {% set responsive = people_images.get(member.image) if member.image else none %}
         {% set member_href = href_for(member.href) if member.href else none %}

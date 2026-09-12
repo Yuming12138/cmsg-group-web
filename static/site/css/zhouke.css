@@ -1,20 +1,8 @@
 .zhouke-shell {
-  padding-top: clamp(var(--space-7), 6vw, var(--space-9));
+  padding-top: var(--section-start);
   padding-bottom: clamp(var(--space-9), 10vw, var(--space-10));
 }
 
-.zhouke-breadcrumb {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  align-items: center;
-  margin-bottom: clamp(var(--space-6), 5vw, var(--space-8));
-  color: var(--ink-500);
-  font: 500 .76rem/1.4 var(--sans);
-  letter-spacing: .025em;
-}
-
-.zhouke-breadcrumb a,
 .zhouke-people-back,
 .zhouke-work-nav a {
   color: var(--blue-700);
@@ -22,7 +10,6 @@
   text-underline-offset: 3px;
 }
 
-.zhouke-breadcrumb a:focus-visible,
 .zhouke-people-back:focus-visible,
 .zhouke-work-nav a:focus-visible,
 .zhouke-profile-content a:focus-visible,
@@ -52,7 +39,7 @@
   overflow: hidden;
   border-radius: var(--radius-card);
   background: var(--paper-200);
-  box-shadow: 0 18px 42px rgba(20, 45, 68, .08), 0 2px 8px rgba(20, 45, 68, .06);
+  box-shadow: var(--shadow-card);
 }
 
 .zhouke-profile-portrait img {
@@ -74,7 +61,7 @@
 .zhouke-profile-rail h1 {
   margin: 0;
   color: var(--ink-950);
-  font: 500 clamp(2.1rem, 4vw, 3rem)/1.04 var(--sans);
+  font: 500 clamp(2.1rem, 4vw, 3rem)/1.04 var(--font-interface);
   letter-spacing: -.035em;
   text-wrap: balance;
 }
@@ -108,10 +95,14 @@
 .work-article {
   min-width: 0;
   color: var(--ink-700);
-  font-family: "Microsoft YaHei", "微软雅黑", var(--sans);
+  font-family: var(--font-reading);
   font-size: 1.05rem;
   line-height: 1.82;
   text-wrap: pretty;
+}
+
+html[lang^="zh"] .zhouke-profile-content {
+  font-family: var(--font-cjk);
 }
 
 .zhouke-profile-content > p:first-child {
@@ -128,7 +119,7 @@
 .zhouke-profile-content h2 {
   margin: clamp(var(--space-7), 6vw, var(--space-8)) 0 var(--space-4);
   color: var(--ink-950);
-  font: 500 clamp(1.45rem, 3vw, 1.9rem)/1.25 "Microsoft YaHei", "微软雅黑", var(--sans);
+  font: 500 clamp(1.45rem, 3vw, 1.9rem)/1.25 var(--font-interface);
   letter-spacing: -.02em;
   text-wrap: balance;
 }
@@ -258,7 +249,7 @@
   max-width: 20ch;
   margin: 0 0 var(--space-5);
   color: var(--ink-950);
-  font: 500 clamp(2.3rem, 6vw, 4.35rem)/1.08 "Microsoft YaHei", "微软雅黑", var(--sans);
+  font: 500 clamp(2.3rem, 6vw, 4.35rem)/1.08 var(--font-interface);
   letter-spacing: -.045em;
   text-wrap: balance;
 }
@@ -289,7 +280,7 @@
 .work-citation h2 {
   margin: clamp(var(--space-8), 8vw, var(--space-9)) 0 var(--space-4);
   color: var(--ink-950);
-  font: 500 clamp(1.5rem, 3.5vw, 2.15rem)/1.25 "Microsoft YaHei", "微软雅黑", var(--sans);
+  font: 500 clamp(1.5rem, 3.5vw, 2.15rem)/1.25 var(--font-interface);
   letter-spacing: -.025em;
   text-wrap: balance;
 }
@@ -322,7 +313,7 @@
   max-width: 76ch;
   margin-top: var(--space-3);
   color: var(--ink-500);
-  font: 400 .82rem/1.62 "Microsoft YaHei", "微软雅黑", var(--sans);
+  font: 400 .82rem/1.62 var(--font-cjk);
 }
 
 .math-display {
@@ -553,19 +544,19 @@
   max-width: 100%;
   overflow-x: hidden;
   padding: 42px 20px 68px;
-  background: #f4f7f8;
+  background: var(--paper-100);
 }
 
 .zhouke-work-page .work-article {
   max-width: 920px;
   margin: 0 auto;
   padding: 44px 58px 54px;
-  border: 1px solid #e3e9ec;
+  border: 1px solid var(--line);
   border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 12px 36px rgba(24, 50, 68, .08);
-  color: #263238;
-  font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+  background: var(--paper-50);
+  box-shadow: var(--shadow-soft);
+  color: var(--ink-700);
+  font-family: var(--font-cjk);
   font-size: 17px;
   line-height: 1.9;
 }
@@ -576,13 +567,13 @@
   align-items: center;
   margin-bottom: 24px;
   color: var(--blue-700);
-  font: 600 15px/1.4 "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+  font: 600 15px/1.4 var(--font-cjk);
 }
 
 .zhouke-work-page .work-kicker {
   margin-bottom: 12px;
   color: var(--blue-700);
-  font: 700 14px/1.45 "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+  font: 700 14px/1.45 var(--font-cjk);
   letter-spacing: .08em;
   text-transform: uppercase;
 }
@@ -590,8 +581,8 @@
 .zhouke-work-page .work-title {
   max-width: none;
   margin: 0;
-  color: #17242c;
-  font: 700 36px/1.45 "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+  color: var(--ink-950);
+  font: 700 36px/1.45 var(--font-cjk);
   letter-spacing: 0;
   text-wrap: wrap;
 }
@@ -603,14 +594,14 @@
   margin: 18px 0 30px;
   padding: 0;
   border: 0;
-  color: #65747d;
-  font: 400 14px/1.5 "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+  color: var(--ink-500);
+  font: 400 14px/1.5 var(--font-cjk);
 }
 
 .zhouke-work-page .work-lead,
 .zhouke-work-page .work-article p {
   margin: 0 0 20px;
-  font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+  font-family: var(--font-cjk);
   font-size: 17px;
   line-height: 1.9;
   text-align: justify;
@@ -621,8 +612,8 @@
   border: 0;
   border-left: 4px solid var(--blue-600);
   border-radius: 0;
-  background: #f1f8fc;
-  color: #334955;
+  background: var(--blue-100);
+  color: var(--ink-700);
 }
 
 .zhouke-work-page .work-figure {
@@ -655,15 +646,15 @@
 
 .zhouke-work-page .work-figure--paper img {
   max-width: 720px;
-  border: 1px solid #e0e5e8;
-  box-shadow: 0 8px 24px rgba(24, 50, 68, .08);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-card);
 }
 
 .zhouke-work-page .work-figure figcaption {
   max-width: none;
   margin-top: 12px;
-  color: #586971;
-  font: 400 14px/1.65 "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+  color: var(--ink-500);
+  font: 400 14px/1.65 var(--font-cjk);
   text-align: left;
 }
 
@@ -671,9 +662,9 @@
 .zhouke-work-page .work-citation h2 {
   margin: 38px 0 16px;
   padding-bottom: 9px;
-  border-bottom: 2px solid #e8f1f6;
-  color: #17394b;
-  font: 700 23px/1.45 "Microsoft YaHei", "微软雅黑", "PingFang SC", Arial, sans-serif;
+  border-bottom: 2px solid var(--blue-100);
+  color: var(--blue-700);
+  font: 700 23px/1.45 var(--font-cjk);
   letter-spacing: 0;
   text-wrap: wrap;
 }
@@ -685,8 +676,8 @@
   padding: 15px 14px;
   border: 0;
   border-radius: 8px;
-  background: #f7fafb;
-  color: #17394b;
+  background: var(--paper-100);
+  color: var(--blue-700);
   text-align: center;
   -webkit-overflow-scrolling: touch;
 }
@@ -699,10 +690,10 @@
   margin: 22px 0 26px !important;
   padding: 17px 20px;
   border: 0;
-  border-left: 4px solid #6aa9c8;
+  border-left: 4px solid var(--blue-600);
   border-radius: 0;
-  background: #f6fafc;
-  color: #405660;
+  background: var(--paper-100);
+  color: var(--ink-700);
   font-size: 15px;
   line-height: 1.75;
 }
@@ -716,9 +707,9 @@
 
 .zhouke-work-page .result-card {
   padding: 18px 14px;
-  border: 1px solid #dfe9ee;
+  border: 1px solid var(--line);
   border-radius: 8px;
-  background: #f8fbfc;
+  background: var(--paper-100);
   text-align: center;
 }
 
@@ -726,11 +717,11 @@
   display: block;
   margin-bottom: 5px;
   color: var(--blue-700);
-  font: 700 25px/1.2 Arial, sans-serif;
+  font: 700 25px/1.2 var(--font-interface);
 }
 
 .zhouke-work-page .result-card span {
-  color: #52636c;
+  color: var(--ink-700);
   font-size: 14px;
   line-height: 1.5;
 }
@@ -740,7 +731,7 @@
   padding: 23px;
   border: 0;
   border-radius: 8px;
-  background: #f4f7f8;
+  background: var(--paper-100);
 }
 
 .zhouke-work-page .work-citation h2 {
@@ -762,7 +753,7 @@
 .zhouke-work-page .reference-list {
   margin: 16px 0 0 22px;
   padding: 0;
-  color: #4c5e66;
+  color: var(--ink-700);
   font-size: 14px;
   line-height: 1.65;
 }
