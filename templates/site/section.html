@@ -106,7 +106,6 @@
     {% for group in page.groups %}
     <section class="resource-group reveal">
       <div class="resource-group__heading">
-        <p class="section-label">{{ group.label }}</p>
         <h2>{{ group.title }}</h2>
       </div>
       <div class="resource-list">
@@ -115,8 +114,6 @@
           <span class="resource-row__index">{{ item.index }}</span>
           <span class="resource-row__body">
             <strong>{{ item.title }}</strong>
-            <span class="resource-row__meta">{{ item.meta }}</span>
-            <span class="resource-row__summary">{{ item.summary }}</span>
           </span>
           <span class="resource-row__arrow" aria-hidden="true">↗</span>
         </a>
