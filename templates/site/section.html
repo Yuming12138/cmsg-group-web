@@ -164,20 +164,38 @@
   </div>
 </section>
 {% elif page.layout == 'list' %}
-<section class="section section--list">
-  <div class="shell content-list">
-    {% for item in page['items'] %}
-    <article class="content-row reveal">
-      <div class="content-row__meta"><time>{{ item.date }}</time><span>{{ item.type }}</span></div>
-      <div class="content-row__body">
+<section class="section section--news" aria-labelledby="news-page-title">
+  <div class="shell news-index">
+    <header class="news-index__header reveal">
+      <h1 id="news-page-title">{{ page.kicker }}</h1>
+      <span class="news-index__header-mark" aria-hidden="true"></span>
+    </header>
+    <div class="news-list">
+      {% for item in page['items'] %}
+      <article class="news-entry reveal{% if loop.first %} news-entry--featured{% endif %}" style="--news-order: {{ loop.index }};">
         {% if item.href %}
-        <h2><a class="content-row__title-link" href="{{ href_for(item.href) }}"{% if item.href.startswith('http') %} target="_blank" rel="noreferrer noopener"{% endif %}>{{ item.title }}</a></h2>
-        {% else %}<h2>{{ item.title }}</h2>{% endif %}
-        <p>{% if item.authors %}{{ item.authors }} · {% endif %}{{ item.summary if item.summary is defined else item.venue }}</p>
-      </div>
-      {% if item.href %}<a class="content-row__arrow" href="{{ href_for(item.href) }}"{% if item.href.startswith('http') %} target="_blank" rel="noreferrer noopener"{% endif %} aria-label="{{ ui.open }} {{ item.title }}">↗</a>{% else %}<span class="content-row__arrow" aria-hidden="true">↗</span>{% endif %}
-    </article>
-    {% endfor %}
+        <a class="news-entry__link" href="{{ href_for(item.href) }}"{% if item.href.startswith('http') %} target="_blank" rel="noreferrer noopener"{% endif %}>
+        {% else %}
+        <div class="news-entry__link">
+        {% endif %}
+          <div class="news-entry__date">
+            <span class="news-entry__number" aria-hidden="true">{{ '%02d'|format(loop.index) }}</span>
+            <time datetime="{{ item.date|replace('.', '-') }}">{{ item.date }}</time>
+          </div>
+          <span class="news-entry__rail" aria-hidden="true"></span>
+          <div class="news-entry__body">
+            <h2>{{ item.title }}</h2>
+            <p>{% if item.authors %}{{ item.authors }} · {% endif %}{{ item.summary if item.summary is defined else item.venue }}</p>
+            {% if item.href %}<span class="news-entry__arrow" aria-hidden="true">↗</span>{% endif %}
+          </div>
+        {% if item.href %}
+        </a>
+        {% else %}
+        </div>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
   </div>
 </section>
 {% elif page.layout == 'timeline' %}
