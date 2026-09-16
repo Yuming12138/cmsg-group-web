@@ -156,8 +156,8 @@ html[lang^="zh"] .zhouke-profile-content {
   margin: var(--space-5) 0;
   padding-left: 18px;
   border-left: 2px solid var(--blue-600);
-  color: var(--blue-700);
-  font-weight: 500;
+  color: #0868b2;
+  font-weight: 600;
 }
 
 .recent-work {
