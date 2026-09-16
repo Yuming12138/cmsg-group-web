@@ -12,22 +12,22 @@
     {"title": "Postdoctor", "members": [
     ]},
     {"title": "PhD", "members": [
-      {"name": "Guilian An / 安贵莲", "role": "PhD researcher", "email": "xiaoan202303@163.com", "image": "/static/site/images/members/anguilian.jpg"},
-      {"name": "Boyang Liang / 梁博洋", "role": "PhD researcher", "email": "leon0120@126.com", "image": "/static/site/images/members/liangboyang.png"},
       {"name": "Maoyan Zhang / 张茂岩", "role": "PhD researcher · since 2023", "email": "maoyanzhang@foxmail.com", "initials": "MZ", "image": "/static/site/images/members/zhangmaoyan3.jpg"},
-      {"name": "Weijian Jiang / 姜伟健", "role": "PhD researcher · since 2024", "email": "weijianjiang@126.com", "initials": "WJ", "image": "/static/site/images/members/jiangweijian.jpg"}
+      {"name": "Weijian Jiang / 姜伟健", "role": "PhD researcher · since 2024", "email": "weijianjiang@126.com", "initials": "WJ", "image": "/static/site/images/members/jiangweijian.jpg"},
+      {"name": "Guilian An / 安贵莲", "role": "PhD researcher", "email": "xiaoan202303@163.com", "image": "/static/site/images/members/anguilian.jpg"},
+      {"name": "Boyang Liang / 梁博洋", "role": "PhD researcher", "email": "leon0120@126.com", "image": "/static/site/images/members/liangboyang.png"}
     ]},
     {"title": "Master", "members": [
-      {"name": "Fulin Hu / 胡福临", "role": "Master researcher", "email": "854293618@qq.com", "image": "/static/site/images/members/hufulin.jpg"},
-      {"name": "Ye Jiang / 蒋烨", "role": "Master researcher", "email": "jiangye0206@163.com", "image": "/static/site/images/members/jiangye.jpg"},
-      {"name": "Bingbo Tong / 仝兵博", "role": "Master researcher", "email": "bbtong@stu.suda.edu.cn", "image": "/static/site/images/members/tongbingbo.jpg"},
-      {"name": "Jiale Yu / 余佳乐", "role": "Master researcher", "email": "15857243705@163.com", "image": "/static/site/images/members/yujiale.jpg"},
       {"name": "Kaiwei Feng / 冯凯威", "role": "Master researcher · since 2024", "email": "fkw12698967164@163.com", "initials": "KF", "image": "/static/site/images/members/fengkaiwei.jpg"},
       {"name": "Guangming Chen / 陈光明", "role": "Master researcher · since 2024", "email": "17634437488@163.com", "initials": "GC", "image": "/static/site/images/members/chenguangming.jpg"},
       {"name": "Ruoming Luo / 罗若铭", "role": "Master researcher · since 2024", "email": "737795805@qq.com", "initials": "RL", "image": "/static/site/images/members/luoruoming3.jpg"},
       {"name": "Chongyang Zhang / 张重阳", "role": "Master researcher · since 2025", "email": "20254240024@stu.suda.edu.cn", "initials": "CZ", "image": "/static/site/images/members/zhangchongyang.jpg"},
       {"name": "Yenan Sha / 沙烨男", "role": "Master researcher · since 2025", "email": "yenansha@outlook.com", "initials": "YS", "image": "/static/site/images/members/shayenan.jpg"},
-      {"name": "Jie Chen / 陈杰", "role": "Master researcher · since 2025", "email": "20254240042@stu.suda.edu.cn", "initials": "JC", "image": "/static/site/images/members/chengjie.jpg"}
+      {"name": "Jie Chen / 陈杰", "role": "Master researcher · since 2025", "email": "20254240042@stu.suda.edu.cn", "initials": "JC", "image": "/static/site/images/members/chengjie.jpg"},
+      {"name": "Fulin Hu / 胡福临", "role": "Master researcher", "email": "854293618@qq.com", "image": "/static/site/images/members/hufulin.jpg"},
+      {"name": "Ye Jiang / 蒋烨", "role": "Master researcher", "email": "jiangye0206@163.com", "image": "/static/site/images/members/jiangye.jpg"},
+      {"name": "Bingbo Tong / 仝兵博", "role": "Master researcher", "email": "bbtong@stu.suda.edu.cn", "image": "/static/site/images/members/tongbingbo.jpg"},
+      {"name": "Jiale Yu / 余佳乐", "role": "Master researcher", "email": "15857243705@163.com", "image": "/static/site/images/members/yujiale.jpg"}
     ]},
     {"title": "Visiting Student", "members": [
       {"name": "Qi Wang / 王琪", "role": "Visiting student", "email": "shfdnwxb@163.com", "image": "/static/site/images/members/wangqi.jpg"}
