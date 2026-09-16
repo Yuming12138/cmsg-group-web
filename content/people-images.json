@@ -12,17 +12,17 @@
       "width": 363,
       "height": 454
     },
-    "/static/site/images/members/xuehaibo.jpg": {
-      "fallback": "/static/site/images/members/web/xuehaibo-f35e1f8798-960.jpg",
-      "srcset": "/static/site/images/members/web/xuehaibo-f35e1f8798-320.webp 320w, /static/site/images/members/web/xuehaibo-f35e1f8798-640.webp 640w, /static/site/images/members/web/xuehaibo-f35e1f8798-960.webp 960w",
+    "/static/site/images/members/anguilian.jpg": {
+      "fallback": "/static/site/images/members/web/anguilian-269968a4f9-960.jpg",
+      "srcset": "/static/site/images/members/web/anguilian-269968a4f9-320.webp 320w, /static/site/images/members/web/anguilian-269968a4f9-640.webp 640w, /static/site/images/members/web/anguilian-269968a4f9-960.webp 960w",
       "width": 960,
       "height": 1200
     },
-    "/static/site/images/members/chengguanjian.jpg": {
-      "fallback": "/static/site/images/members/web/chengguanjian-929b43e996-482.jpg",
-      "srcset": "/static/site/images/members/web/chengguanjian-929b43e996-320.webp 320w, /static/site/images/members/web/chengguanjian-929b43e996-482.webp 482w",
-      "width": 482,
-      "height": 602
+    "/static/site/images/members/liangboyang.png": {
+      "fallback": "/static/site/images/members/web/liangboyang-4faa3f6490-960.jpg",
+      "srcset": "/static/site/images/members/web/liangboyang-4faa3f6490-320.webp 320w, /static/site/images/members/web/liangboyang-4faa3f6490-640.webp 640w, /static/site/images/members/web/liangboyang-4faa3f6490-960.webp 960w",
+      "width": 960,
+      "height": 1200
     },
     "/static/site/images/members/zhangmaoyan3.jpg": {
       "fallback": "/static/site/images/members/web/zhangmaoyan3-f7b1e64cd3-589.jpg",
@@ -36,15 +36,27 @@
       "width": 768,
       "height": 960
     },
-    "/static/site/images/members/wangchenyu.jpg": {
-      "fallback": "/static/site/images/members/web/wangchenyu-ab3af3be69-666.jpg",
-      "srcset": "/static/site/images/members/web/wangchenyu-ab3af3be69-320.webp 320w, /static/site/images/members/web/wangchenyu-ab3af3be69-640.webp 640w, /static/site/images/members/web/wangchenyu-ab3af3be69-666.webp 666w",
-      "width": 666,
-      "height": 832
+    "/static/site/images/members/hufulin.jpg": {
+      "fallback": "/static/site/images/members/web/hufulin-c524c788b2-960.jpg",
+      "srcset": "/static/site/images/members/web/hufulin-c524c788b2-320.webp 320w, /static/site/images/members/web/hufulin-c524c788b2-640.webp 640w, /static/site/images/members/web/hufulin-c524c788b2-960.webp 960w",
+      "width": 960,
+      "height": 1200
     },
-    "/static/site/images/members/tianwei.jpg": {
-      "fallback": "/static/site/images/members/web/tianwei-109f4e87d4-960.jpg",
-      "srcset": "/static/site/images/members/web/tianwei-109f4e87d4-320.webp 320w, /static/site/images/members/web/tianwei-109f4e87d4-640.webp 640w, /static/site/images/members/web/tianwei-109f4e87d4-960.webp 960w",
+    "/static/site/images/members/jiangye.jpg": {
+      "fallback": "/static/site/images/members/web/jiangye-8611c8205d-959.jpg",
+      "srcset": "/static/site/images/members/web/jiangye-8611c8205d-320.webp 320w, /static/site/images/members/web/jiangye-8611c8205d-640.webp 640w, /static/site/images/members/web/jiangye-8611c8205d-959.webp 959w",
+      "width": 959,
+      "height": 1199
+    },
+    "/static/site/images/members/tongbingbo.jpg": {
+      "fallback": "/static/site/images/members/web/tongbingbo-1b7dafcd26-960.jpg",
+      "srcset": "/static/site/images/members/web/tongbingbo-1b7dafcd26-320.webp 320w, /static/site/images/members/web/tongbingbo-1b7dafcd26-640.webp 640w, /static/site/images/members/web/tongbingbo-1b7dafcd26-960.webp 960w",
+      "width": 960,
+      "height": 1200
+    },
+    "/static/site/images/members/yujiale.jpg": {
+      "fallback": "/static/site/images/members/web/yujiale-5bca64d618-960.jpg",
+      "srcset": "/static/site/images/members/web/yujiale-5bca64d618-320.webp 320w, /static/site/images/members/web/yujiale-5bca64d618-640.webp 640w, /static/site/images/members/web/yujiale-5bca64d618-960.webp 960w",
       "width": 960,
       "height": 1200
     },
@@ -84,11 +96,11 @@
       "width": 683,
       "height": 854
     },
-    "/static/site/images/members/tianshun.jpg": {
-      "fallback": "/static/site/images/members/web/tianshun-6e2ce4b84b-257.jpg",
-      "srcset": "/static/site/images/members/web/tianshun-6e2ce4b84b-257.webp 257w",
-      "width": 257,
-      "height": 321
+    "/static/site/images/members/wangqi.jpg": {
+      "fallback": "/static/site/images/members/web/wangqi-500bd8d0ff-960.jpg",
+      "srcset": "/static/site/images/members/web/wangqi-500bd8d0ff-320.webp 320w, /static/site/images/members/web/wangqi-500bd8d0ff-640.webp 640w, /static/site/images/members/web/wangqi-500bd8d0ff-960.webp 960w",
+      "width": 960,
+      "height": 1200
     },
     "/static/site/images/members/yanwei.jpg": {
       "fallback": "/static/site/images/members/web/yanwei-2391427a86-959.jpg",
