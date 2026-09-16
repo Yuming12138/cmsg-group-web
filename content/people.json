@@ -30,7 +30,7 @@
       {"name": "Jiale Yu / 余佳乐", "role": "Master researcher", "email": "15857243705@163.com", "image": "/static/site/images/members/yujiale.jpg"}
     ]},
     {"title": "Visiting Student", "members": [
-      {"name": "Qi Wang / 王琪", "role": "Visiting student", "email": "shfdnwxb@163.com", "image": "/static/site/images/members/wangqi.jpg"}
+      {"name": "Qi Wang / 王琪", "role": "Visiting student", "email": "shfdnwxb@163.com", "image": "/static/site/images/members/wangqi-full.png", "image_fit": "contain"}
     ]},
     {"title": "Undergraduate", "members": [
       {"name": "Wei Yan / 严威", "role": "New Energy Materials and Devices", "email": "1131951661@qq.com", "initials": "WY", "image": "/static/site/images/members/yanwei.jpg"}

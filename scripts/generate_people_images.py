@@ -52,6 +52,12 @@ def main() -> None:
         )
     )
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    contain_images = {
+        member.get("image")
+        for group in people.get("groups", [])
+        for member in group.get("members", [])
+        if member.get("image_fit") == "contain"
+    }
 
     manifest: dict[str, dict[str, object]] = {}
     original_bytes = 0
@@ -65,6 +71,9 @@ def main() -> None:
         source_bytes = source.read_bytes()
         original_bytes += len(source_bytes)
         digest = hashlib.sha256(source_bytes).hexdigest()[:10]
+        preserve_frame = image_url in contain_images
+        if preserve_frame:
+            digest += "-contain"
 
         with Image.open(source) as opened:
             image = to_rgb(ImageOps.exif_transpose(opened))
@@ -76,11 +85,12 @@ def main() -> None:
             srcset = []
             for width in widths:
                 height = round(width / PORTRAIT_RATIO)
-                portrait = ImageOps.fit(
+                portrait = (ImageOps.pad if preserve_frame else ImageOps.fit)(
                     image,
                     (width, height),
                     method=Image.Resampling.LANCZOS,
                     centering=(0.5, 0.0),
+                    **({"color": "white"} if preserve_frame else {}),
                 )
                 variant_path = OUTPUT_DIR / f"{source.stem}-{digest}-{width}.webp"
                 portrait.save(variant_path, "WEBP", quality=80, method=6)
@@ -89,11 +99,12 @@ def main() -> None:
 
             fallback_width = widths[-1]
             fallback_height = round(fallback_width / PORTRAIT_RATIO)
-            fallback = ImageOps.fit(
+            fallback = (ImageOps.pad if preserve_frame else ImageOps.fit)(
                 image,
                 (fallback_width, fallback_height),
                 method=Image.Resampling.LANCZOS,
                 centering=(0.5, 0.0),
+                **({"color": "white"} if preserve_frame else {}),
             )
             fallback_path = OUTPUT_DIR / (
                 f"{source.stem}-{digest}-{fallback_width}.jpg"
