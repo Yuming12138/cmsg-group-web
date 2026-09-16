@@ -156,11 +156,15 @@ html[lang^="zh"] .zhouke-profile-content {
   margin: var(--space-5) 0;
   padding-left: 18px;
   border-left: 2px solid var(--blue-600);
-  color: var(--ink-700);
+  color: var(--blue-700);
+  font-weight: 500;
 }
 
 .recent-work {
   margin: clamp(42px, 5vw, 58px) 0;
+  padding: clamp(18px, 3vw, 28px);
+  background: var(--paper-100);
+  border-radius: var(--radius-card);
 }
 
 .recent-work h2 {
@@ -179,7 +183,7 @@ html[lang^="zh"] .zhouke-profile-content {
   position: relative;
   display: block;
   padding: var(--space-5) var(--space-7) var(--space-5) 0;
-  color: var(--ink-950);
+  color: var(--blue-700);
   font-weight: 500;
   line-height: 1.6;
   text-decoration: none;

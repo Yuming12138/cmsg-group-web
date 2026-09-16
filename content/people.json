@@ -6,7 +6,7 @@
   "layout": "people",
   "groups": [
     {"title": "Faculty", "members": [
-      {"name": "Wan-Jian Yin / 尹万健", "role": "Professor · PI", "email": "wjyin@suda.edu.cn", "initials": "WY", "image": "/static/site/images/yinwanjian.jpg"},
+      {"name": "Wan-Jian Yin / 尹万健", "role": "Professor · PI", "email": "wjyin@suda.edu.cn", "initials": "WY", "image": "/static/site/images/yinwanjian.jpg", "href": "/leader"},
       {"name": "Ke Zhou / 周柯", "role": "Associate Professor", "email": "zhouke@suda.edu.cn", "initials": "KZ", "image": "/static/site/images/members/zhouke.png", "href": "/people/zhouke"}
     ]},
     {"title": "Postdoctor", "members": [
