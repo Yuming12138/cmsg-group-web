@@ -2,39 +2,36 @@
 
 {% block content %}
 {% if page.layout == 'profile' %}
-<section class="section section--profile section--leader" aria-labelledby="leader-title">
-  <div class="shell leader-page">
-    <header class="leader-hero reveal">
-      <figure class="leader-portrait">
+<section class="section academic-profile academic-profile--leader" aria-labelledby="leader-title">
+  <div class="shell academic-profile__shell">
+    <header class="academic-profile__hero reveal">
+      <figure class="academic-profile__portrait academic-profile__portrait--leader">
         {% if page.profile.image %}
         <img src="{{ page.profile.image }}" alt="{{ ui.portrait_of }} {{ page.profile.name }}" width="814" height="1085" loading="eager" fetchpriority="high" decoding="async">
         {% else %}
         <span aria-hidden="true">{{ page.profile.initials|default('') }}</span>
         {% endif %}
       </figure>
-      <div class="leader-identity">
-        <p class="section-label">{{ page.kicker }}</p>
+      <div class="academic-profile__identity">
         <h1 id="leader-title">{{ page.profile.name }}</h1>
-        <p class="leader-role">{{ page.profile.role }}</p>
-        <p class="leader-affiliation">{{ page.profile.affiliation }}</p>
-        {% if page.profile.email %}<a class="leader-email" href="mailto:{{ page.profile.email }}">{{ page.profile.email }}</a>{% endif %}
+        <p class="academic-profile__role">{{ page.profile.role }}</p>
+        <p class="academic-profile__affiliation">{{ page.profile.affiliation }}</p>
+        {% if page.profile.email %}<a class="academic-profile__email" href="mailto:{{ page.profile.email }}">{{ page.profile.email }}</a>{% endif %}
         {% if page.profile.stats %}
-        <dl class="leader-stats">
+        <dl class="academic-profile__stats">
           {% for stat in page.profile.stats %}
-          <div class="leader-stat"><dt>{{ stat.value }}</dt><dd>{{ stat.label }}</dd></div>
+          <div><dt>{{ stat.value }}</dt><dd>{{ stat.label }}</dd></div>
           {% endfor %}
         </dl>
         {% endif %}
       </div>
     </header>
 
-    <div class="leader-divider" aria-hidden="true"></div>
-
-    <div class="leader-sections">
+    <div class="academic-profile__content">
       {% for section in page.profile.sections %}
-      <section class="leader-section leader-section--{{ section.id }} leader-section--{{ section.kind }}" id="leader-{{ section.id }}" aria-labelledby="leader-{{ section.id }}-title">
-        <header class="leader-section__heading">
-          <span class="leader-section__number" aria-hidden="true">{{ '%02d'|format(loop.index) }}</span>
+      <section class="academic-profile__section leader-section--{{ section.id }} leader-section--{{ section.kind }}" id="leader-{{ section.id }}" aria-labelledby="leader-{{ section.id }}-title">
+        <header class="academic-profile__section-heading">
+          <span class="academic-profile__marker" aria-hidden="true"></span>
           <h2 id="leader-{{ section.id }}-title">{{ section.title }}</h2>
         </header>
 

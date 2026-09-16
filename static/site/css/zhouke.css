@@ -91,7 +91,15 @@
   font: 600 .78rem/1 var(--sans);
 }
 
-.zhouke-profile-content,
+.zhouke-profile-content {
+  min-width: 0;
+  color: var(--ink-700);
+  font-family: var(--font-reading);
+  font-size: .9rem;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
 .work-article {
   min-width: 0;
   color: var(--ink-700);
@@ -107,8 +115,9 @@ html[lang^="zh"] .zhouke-profile-content {
 
 .zhouke-profile-content > p:first-child {
   margin-top: 0;
-  color: var(--ink-950);
-  font-size: 1.12rem;
+  color: var(--ink-700);
+  font-size: .94rem;
+  line-height: 1.78;
 }
 
 .zhouke-profile-content p,
@@ -116,25 +125,17 @@ html[lang^="zh"] .zhouke-profile-content {
   margin: 0 0 var(--space-5);
 }
 
-.zhouke-profile-content h2 {
-  margin: clamp(var(--space-7), 6vw, var(--space-8)) 0 var(--space-4);
-  color: var(--ink-950);
-  font: 500 clamp(1.45rem, 3vw, 1.9rem)/1.25 var(--font-interface);
-  letter-spacing: -.02em;
-  text-wrap: balance;
-}
-
 .zhouke-profile-content ul,
 .zhouke-profile-content ol,
 .reference-list {
-  margin: 0 0 var(--space-6);
+  margin: 0 0 var(--space-5);
   padding-left: 1.35em;
 }
 
 .zhouke-profile-content li,
 .reference-list li {
-  margin-bottom: var(--space-3);
-  padding-left: var(--space-2);
+  margin-bottom: 7px;
+  padding-left: 5px;
 }
 
 .zhouke-profile-content a,
@@ -152,20 +153,18 @@ html[lang^="zh"] .zhouke-profile-content {
 
 .zhouke-profile-content > p > .zhouke-highlight:only-child {
   display: block;
-  margin: var(--space-6) 0;
-  padding: var(--space-5) clamp(var(--space-5), 4vw, var(--space-6));
-  border-radius: var(--radius-card);
-  background: var(--paper-100);
+  margin: var(--space-5) 0;
+  padding-left: 18px;
+  border-left: 2px solid var(--blue-600);
   color: var(--ink-700);
 }
 
 .recent-work {
-  margin: clamp(var(--space-8), 8vw, var(--space-9)) 0;
-  border-top: 1px solid var(--line-strong);
+  margin: clamp(42px, 5vw, 58px) 0;
 }
 
 .recent-work h2 {
-  margin-top: var(--space-6);
+  margin-top: 0;
 }
 
 .recent-work-list {
@@ -429,7 +428,11 @@ html[lang^="zh"] .zhouke-profile-content {
     margin-top: var(--space-3);
   }
 
-  .zhouke-profile-content,
+  .zhouke-profile-content {
+    font-size: .88rem;
+    line-height: 1.74;
+  }
+
   .work-article {
     font-size: 1rem;
     line-height: 1.78;
