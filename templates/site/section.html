@@ -2,26 +2,71 @@
 
 {% block content %}
 {% if page.layout == 'profile' %}
-<section class="section section--profile">
-  <div class="shell profile-layout reveal">
-    <div class="portrait-placeholder{% if page.profile.image %} portrait-placeholder--image{% endif %}" role="img" aria-label="{{ ui.portrait_of }} {{ page.profile.name }}">
-      {% if page.profile.image %}<img src="{{ page.profile.image }}" alt="{{ page.profile.name }}">{% else %}<span>{{ page.profile.initials }}</span>{% endif %}
-    </div>
-    <div class="profile-copy">
-      <p class="section-label">{{ ui.profile }}</p>
-      <h2>{{ page.profile.name }}</h2>
-      <p class="profile-role">{{ page.profile.role }}</p>
-      <p>{{ page.profile.bio }}</p>
-      <ul class="detail-list">
-        {% for detail in page.profile.details %}<li>{{ detail }}</li>{% endfor %}
-      </ul>
-      {% for section in page.profile.sections %}
-      <div class="profile-section">
-        <p class="section-label">{{ section.label }}</p>
-        <ul class="detail-list detail-list--section">
-          {% for item in section['items'] %}<li>{{ item }}</li>{% endfor %}
-        </ul>
+<section class="section section--profile section--leader" aria-labelledby="leader-title">
+  <div class="shell leader-page">
+    <header class="leader-hero reveal">
+      <figure class="leader-portrait">
+        {% if page.profile.image %}
+        <img src="{{ page.profile.image }}" alt="{{ ui.portrait_of }} {{ page.profile.name }}" width="814" height="1085" loading="eager" fetchpriority="high" decoding="async">
+        {% else %}
+        <span aria-hidden="true">{{ page.profile.initials|default('') }}</span>
+        {% endif %}
+      </figure>
+      <div class="leader-identity">
+        <p class="section-label">{{ page.kicker }}</p>
+        <h1 id="leader-title">{{ page.profile.name }}</h1>
+        <p class="leader-role">{{ page.profile.role }}</p>
+        <p class="leader-affiliation">{{ page.profile.affiliation }}</p>
+        {% if page.profile.email %}<a class="leader-email" href="mailto:{{ page.profile.email }}">{{ page.profile.email }}</a>{% endif %}
+        {% if page.profile.stats %}
+        <dl class="leader-stats">
+          {% for stat in page.profile.stats %}
+          <div class="leader-stat"><dt>{{ stat.value }}</dt><dd>{{ stat.label }}</dd></div>
+          {% endfor %}
+        </dl>
+        {% endif %}
       </div>
+    </header>
+
+    <div class="leader-divider" aria-hidden="true"></div>
+
+    <div class="leader-sections">
+      {% for section in page.profile.sections %}
+      <section class="leader-section leader-section--{{ section.id }} leader-section--{{ section.kind }}" id="leader-{{ section.id }}" aria-labelledby="leader-{{ section.id }}-title">
+        <header class="leader-section__heading">
+          <span class="leader-section__number" aria-hidden="true">{{ '%02d'|format(loop.index) }}</span>
+          <h2 id="leader-{{ section.id }}-title">{{ section.title }}</h2>
+        </header>
+
+        {% if section.kind == 'timeline' %}
+        <div class="leader-timeline">
+          {% for item in section['items'] %}
+          <div class="leader-timeline__item">
+            <time>{{ item.date }}</time>
+            <div class="leader-timeline__body">
+              <h3>{{ item.title }}</h3>
+              {% if item.org %}<p class="leader-timeline__org">{{ item.org }}</p>{% endif %}
+              {% if item.note %}<p class="leader-timeline__note">{{ item.note }}</p>{% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% elif section.kind == 'numbered' %}
+        <ol class="leader-numbered">
+          {% for item in section['items'] %}
+          <li><span class="leader-item-number" aria-hidden="true">{{ '%02d'|format(loop.index) }}</span><p>{{ item }}</p></li>
+          {% endfor %}
+        </ol>
+        {% elif section.kind == 'citations' %}
+        <ol class="leader-citations">
+          {% for item in section['items'] %}
+          <li><span class="leader-item-number" aria-hidden="true">{{ '%02d'|format(loop.index) }}</span><p>{{ item }}</p></li>
+          {% endfor %}
+        </ol>
+        {% elif section.kind == 'statement' %}
+        <p class="leader-statement">{{ section.text }}</p>
+        {% endif %}
+      </section>
       {% endfor %}
     </div>
   </div>

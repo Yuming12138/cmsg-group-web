@@ -1,20 +1,87 @@
 {
-  "meta": {"title": "Leader · CMSG", "description": "Profile of Wan-Jian Yin, professor at Soochow University and leader of CMSG."},
-  "kicker": "Leader",
-  "title": "A group shaped by careful questions.",
-  "intro": "Wan-Jian Yin is a professor in the School of Energy at Soochow University and an adjunct professor at the Beijing Graphene Institute.",
+  "meta": {
+    "title": "Wan-Jian Yin · CMSG",
+    "description": "Wan-Jian Yin, Professor at Soochow University: talent programs, education, professional experience, research interests, and scholarly activities."
+  },
   "layout": "profile",
+  "kicker": "Group leader",
   "profile": {
-    "name": "Wan-Jian Yin / 尹万健",
-    "role": "Professor · School of Energy, Soochow University",
+    "name": "Wan-Jian Yin",
+    "role": "Professor",
+    "affiliation": "College of Energy, Soochow University",
+    "email": "wjyin@suda.edu.cn",
     "image": "/static/site/images/yinwanjian.jpg",
-    "bio": "He leads a computational materials practice connecting defect physics, materials design, and graphene growth. CMSG is based at the Soochow Institute of Energy and Materials Innovations (SIEMIS).",
-    "details": ["Soochow Institute of Energy and Materials Innovations (SIEMIS)", "Adjunct Professor · Beijing Graphene Institute", "wjyin@suda.edu.cn"],
-    "initials": "WY",
+    "stats": [
+      {"value": "160+", "label": "Publications"},
+      {"value": "19,000+", "label": "Citations"}
+    ],
     "sections": [
-      {"label": "Education", "items": ["2009 · Ph.D. in Theoretical Physics, Fudan University", "2004 · B.S. in Physics, Fudan University"]},
-      {"label": "Appointments", "items": ["2015–present · Professor, Soochow University", "2019–present · Adjunct Professor, Beijing Graphene Institute", "2014–2015 · Research Associate, National Renewable Energy Laboratory", "2011–2013 · Research Assistant Professor, University of Toledo", "2009–2011 · Postdoctoral Researcher, National Renewable Energy Laboratory"]},
-      {"label": "Focus", "items": ["Defect physics", "Materials design", "Graphene growth"]}
+      {
+        "id": "honors",
+        "title": "Talent Programs and Honors",
+        "kind": "timeline",
+        "items": [
+          {"date": "2024", "title": "Selected as a Distinguished Professor under the Changjiang Scholars Program of the Ministry of Education"},
+          {"date": "2015", "title": "Selected for the National High-Level Overseas Young Talents Program"}
+        ]
+      },
+      {
+        "id": "education",
+        "title": "Education",
+        "kind": "timeline",
+        "items": [
+          {"date": "June 2009", "title": "Ph.D. in Physics, Department of Physics, Fudan University", "note": "Supervisor: Academician Xin-Gao Gong"},
+          {"date": "July 2004", "title": "B.S. in Physics, Department of Physics, Fudan University"}
+        ]
+      },
+      {
+        "id": "experience",
+        "title": "Professional Experience",
+        "kind": "timeline",
+        "items": [
+          {"date": "October 2015–Present", "title": "Professor", "org": "College of Energy, Soochow University"},
+          {"date": "January 2014–October 2015", "title": "Research Associate", "org": "National Renewable Energy Laboratory, USA"},
+          {"date": "December 2011–October 2015", "title": "Research Assistant Professor", "org": "University of Toledo, USA"},
+          {"date": "September 2009–December 2011", "title": "Postdoctoral Researcher", "org": "National Renewable Energy Laboratory, USA", "note": "Research mentors: Su-Huai Wei and Yanfa Yan"}
+        ]
+      },
+      {
+        "id": "interests",
+        "title": "Research Interests",
+        "kind": "numbered",
+        "items": [
+          "Crystal structure prediction and full-space inverse materials design",
+          "Materials formation and synthesis: understanding and predicting how materials form in nature and how target phases can be synthesized through physics-based computation and artificial intelligence",
+          "Design of inorganic functional materials",
+          "Microscopic mechanisms of transport in nanoconfined materials and methods for their control and optimization"
+        ]
+      },
+      {
+        "id": "activities",
+        "title": "Research and Teaching Activities",
+        "kind": "numbered",
+        "items": [
+          "Serves as a reviewer for leading international journals in physics, chemistry, and materials science, including Nature Materials, Physical Review Letters, Physical Review B, Journal of the American Chemical Society, The Journal of Physical Chemistry, Nature Communications, Advanced Materials, and Energy & Environmental Science.",
+          "From 2012 to 2013, taught modules on the electronic structure of solids and first-principles calculations in undergraduate and graduate courses—including Condensed Matter Physics and Physics of Solar Energy Materials—at the Department of Physics and Astronomy, University of Toledo.",
+          "At Soochow University, teaches the undergraduate courses Energy Physics and Semiconductor Physics."
+        ]
+      },
+      {
+        "id": "books",
+        "title": "Books and Book Chapters",
+        "kind": "citations",
+        "items": [
+          "W.-J. Yin, H.-J. Gu, and X.-G. Gong (2019). “Computational Modeling and the Design of Perovskite Solar Cells.” In W. Andreoni and S. Yip (eds.), Handbook of Materials Modeling. Springer, Cham.",
+          "Yanfa Yan, Wan-Jian Yin, Tingting Shi, Weiwei Meng, and Chunbao Feng (2016). “Defect Physics of CH₃NH₃PbX₃ (X = I, Br, Cl) Perovskites.” In Nam-Gyu Park, Michael Grätzel, and Tsutomu Miyasaka (eds.), Organic-Inorganic Halide Perovskite Photovoltaics: From Fundamentals to Device Architectures. Springer International Publishing, Switzerland.",
+          "Wan-Jian Yin, Tingting Shi, and Yanfa Yan (2016). “Structural, Electronic, and Optical Properties of Lead Halide Perovskites.” Chapter 6 in Enrico Da Como, Filippo De Angelis, Henry Snaith, and Alison Walker (eds.), Unconventional Thin Film Photovoltaics. Royal Society of Chemistry Publishing."
+        ]
+      },
+      {
+        "id": "publications",
+        "title": "Publications",
+        "kind": "statement",
+        "text": "Professor Yin has authored or co-authored more than 160 publications, which have received over 19,000 citations."
+      }
     ]
   }
 }

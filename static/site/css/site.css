@@ -912,3 +912,244 @@ h1, h2, h3, p { margin-top: 0; }
   .resource-row__arrow { width: 24px; height: 24px; }
   .resource-row__summary { font-size: .82rem; }
 }
+
+/* Leader profile: a content-led academic biography. The portrait is kept at
+   its native 3:4 proportion; the rest of the page uses an editorial grid,
+   quiet rules, and numbered reading cues instead of a stack of cards. */
+.section--profile.section--leader {
+  padding-top: clamp(36px, 5vw, 72px);
+  padding-bottom: clamp(78px, 9vw, 132px);
+}
+.leader-page { max-width: 1160px; }
+.leader-hero {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
+  gap: clamp(42px, 8vw, 116px);
+  align-items: end;
+}
+.leader-portrait {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 3 / 4;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--paper-100);
+  box-shadow: var(--shadow-soft);
+}
+.leader-portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center top;
+}
+.leader-portrait > span {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  color: var(--blue-700);
+  font: 500 clamp(4rem, 10vw, 8rem)/1 var(--sans);
+}
+.leader-identity { min-width: 0; padding-bottom: 2px; }
+.leader-identity .section-label { margin-bottom: 22px; }
+.leader-identity h1 {
+  max-width: 760px;
+  margin: 0 0 18px;
+  color: var(--ink-950);
+  font: 400 clamp(3rem, 7vw, 5.8rem)/.98 var(--font-interface);
+  letter-spacing: -.045em;
+  text-wrap: balance;
+}
+.leader-role {
+  margin: 0 0 7px;
+  color: var(--blue-700);
+  font-size: clamp(1.08rem, 1.7vw, 1.35rem);
+  line-height: 1.35;
+}
+.leader-affiliation {
+  margin: 0 0 14px;
+  color: var(--ink-700);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.leader-email {
+  display: inline-block;
+  min-height: 44px;
+  padding: 10px 0;
+  color: var(--blue-700);
+  font-size: .92rem;
+  line-height: 1.3;
+  text-underline-offset: 4px;
+  overflow-wrap: anywhere;
+}
+.leader-email:focus-visible { outline: 2px solid var(--blue-600); outline-offset: 4px; }
+.leader-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(28px, 6vw, 74px);
+  margin: 36px 0 0;
+  padding: 20px 0 0;
+  border-top: 1px solid var(--line);
+}
+.leader-stat { min-width: 116px; }
+.leader-stat dt {
+  margin: 0 0 5px;
+  color: var(--ink-950);
+  font: 400 clamp(1.55rem, 3vw, 2.35rem)/1 var(--font-interface);
+  letter-spacing: -.04em;
+  font-variant-numeric: tabular-nums;
+}
+.leader-stat dd {
+  margin: 0;
+  color: var(--ink-500);
+  font: 600 10px/1.3 var(--mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.leader-divider {
+  margin-top: clamp(54px, 8vw, 96px);
+  border-top: 1px solid var(--line-strong);
+}
+.leader-sections {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(28px, 5vw, 72px);
+  row-gap: clamp(58px, 8vw, 100px);
+  padding-top: clamp(46px, 7vw, 82px);
+}
+.leader-section { min-width: 0; grid-column: span 6; }
+.leader-section--experience,
+.leader-section--books,
+.leader-section--publications { grid-column: 1 / -1; }
+.leader-section__heading {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+  margin: 0 0 22px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-strong);
+}
+.leader-section__number {
+  color: var(--blue-600);
+  font: 600 11px/1 var(--mono);
+  letter-spacing: .08em;
+}
+.leader-section__heading h2 {
+  margin: 0;
+  color: var(--ink-950);
+  font: 400 clamp(1.55rem, 2.5vw, 2.35rem)/1.12 var(--font-interface);
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+.leader-timeline { border-top: 1px solid var(--line); }
+.leader-timeline__item {
+  display: grid;
+  grid-template-columns: minmax(126px, .32fr) minmax(0, 1fr);
+  gap: 22px;
+  padding: 17px 0 18px;
+  border-bottom: 1px solid var(--line);
+}
+.leader-timeline__item time {
+  padding-top: 2px;
+  color: var(--blue-700);
+  font: 600 10px/1.45 var(--mono);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  overflow-wrap: anywhere;
+}
+.leader-timeline__body h3 {
+  margin: 0;
+  color: var(--ink-950);
+  font: 400 1rem/1.5 var(--font-interface);
+}
+.leader-timeline__org,
+.leader-timeline__note {
+  margin: 3px 0 0;
+  color: var(--ink-700);
+  font-size: .88rem;
+  line-height: 1.5;
+}
+.leader-timeline__note { color: var(--ink-500); }
+.leader-numbered,
+.leader-citations {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+  list-style: none;
+  counter-reset: leader-item;
+}
+.leader-numbered li,
+.leader-citations li {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 12px;
+  padding: 16px 0 17px;
+  border-bottom: 1px solid var(--line);
+  counter-increment: leader-item;
+}
+.leader-item-number {
+  padding-top: 3px;
+  color: var(--blue-600);
+  font: 600 10px/1.2 var(--mono);
+  letter-spacing: .08em;
+}
+.leader-numbered li p,
+.leader-citations li p {
+  margin: 0;
+  color: var(--ink-700);
+  font-size: .94rem;
+  line-height: 1.62;
+  overflow-wrap: anywhere;
+}
+.leader-citations li p {
+  color: var(--ink-900);
+  font-size: .9rem;
+  line-height: 1.65;
+}
+.leader-statement {
+  max-width: 900px;
+  margin: 0;
+  padding: 19px 0 4px;
+  color: var(--blue-700);
+  font-size: clamp(1.2rem, 2.3vw, 1.8rem);
+  line-height: 1.4;
+  text-wrap: balance;
+}
+html[lang^="zh"] .page--leader .leader-page { font-family: var(--font-cjk); }
+html[lang^="zh"] .page--leader .leader-identity h1,
+html[lang^="zh"] .page--leader .leader-section__heading h2 { letter-spacing: -.04em; }
+
+@media (max-width: 980px) {
+  .leader-hero { grid-template-columns: minmax(190px, 250px) minmax(0, 1fr); gap: 38px; }
+  .leader-timeline__item { grid-template-columns: minmax(112px, .34fr) minmax(0, 1fr); gap: 18px; }
+}
+
+@media (max-width: 620px) {
+  .section--profile.section--leader { padding-top: 24px; padding-bottom: 82px; }
+  .leader-hero { display: block; }
+  .leader-portrait { width: min(76vw, 282px); max-width: none; margin-bottom: 32px; }
+  .leader-identity h1 { margin-bottom: 15px; font-size: clamp(2.8rem, 14vw, 4.2rem); }
+  .leader-identity .section-label { margin-bottom: 16px; }
+  .leader-role { font-size: 1.08rem; }
+  .leader-affiliation { font-size: .94rem; }
+  .leader-stats { gap: 26px; margin-top: 24px; padding-top: 16px; }
+  .leader-stat dt { font-size: 1.7rem; }
+  .leader-sections { display: block; padding-top: 48px; }
+  .leader-section + .leader-section { margin-top: 58px; }
+  .leader-section__heading { grid-template-columns: 28px minmax(0, 1fr); gap: 9px; margin-bottom: 18px; }
+  .leader-section__heading h2 { font-size: 1.75rem; }
+  .leader-timeline__item { grid-template-columns: 1fr; gap: 5px; padding: 14px 0 15px; }
+  .leader-timeline__item time { font-size: 10px; }
+  .leader-timeline__body h3 { font-size: .97rem; }
+  .leader-timeline__org, .leader-timeline__note { font-size: .84rem; }
+  .leader-numbered li, .leader-citations li { grid-template-columns: 28px minmax(0, 1fr); gap: 9px; padding: 14px 0 15px; }
+  .leader-numbered li p, .leader-citations li p { font-size: .9rem; line-height: 1.65; }
+  .leader-statement { font-size: 1.25rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .leader-portrait img { transition: none; }
+}
