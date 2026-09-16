@@ -71,7 +71,7 @@
 {% elif page.layout == 'people' %}
 <section class="section section--people">
   <div class="shell people-groups">
-    {% for group in page.groups %}
+    {% for group in page.groups if group.members %}
     {% set group_loop = loop %}
     <div class="people-group reveal{% if group.layout == 'alumni' %} people-group--alumni{% endif %}">
       <div class="people-group__heading"><p class="section-label">{{ '%02d'|format(loop.index) }}</p><h2>{{ group.title }}</h2></div>
