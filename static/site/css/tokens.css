@@ -13,16 +13,16 @@
   --paper-200: #e8eef5;
   --line: rgba(16, 25, 35, .14);
   --line-strong: rgba(16, 25, 35, .26);
-  --blue-600: #245f91;
-  --blue-700: #17466f;
-  --blue-100: #e5eff8;
+  --blue-600: #146fb3;
+  --blue-700: #0d5792;
+  --blue-100: #e8f4ff;
   --hero-overlay: rgba(8, 20, 37, .58);
   /* the hero artwork and its orb layers are content-hashed by
      scripts/build_hero_layers.py; the home template injects the URLs from
      layers.json, so a regenerate never needs a CSS edit. The raw source is the
      fallback for the (broken) case where layers.json cannot be read. */
   --hero-art: url("../images/kandinsky-composition-viii.jpg");
-  --hero-accent: #245f91;
+  --hero-accent: #146fb3;
   --hero-accent-ink: #ffffff;
   --lens-r: 76px;
   --mx: -400px;

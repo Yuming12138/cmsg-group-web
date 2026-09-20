@@ -15,9 +15,9 @@ new visual version is approved.
 | `paper-100` | `#f6f9fc` | Subtle cool surface and hover tint |
 | `paper-200` | `#e8eef5` | Image placeholders and quiet fills |
 | `line` | `rgba(16, 25, 35, .14)` | Hairline borders |
-| `blue-600` | `#245f91` | Single accent, active states, calls to action |
-| `blue-700` | `#17466f` | Accent hover, links, and small text |
-| `blue-100` | `#e5eff8` | Accent tint |
+| `blue-600` | `#146fb3` | Clear technology blue for active states, calls to action, and data markers |
+| `blue-700` | `#0d5792` | Deeper readable blue for links, hover states, and small text |
+| `blue-100` | `#e8f4ff` | Cool technology-blue tint |
 | `hero-overlay` | `rgba(8, 20, 37, .58)` | Artwork legibility layer |
 
 ## Type
