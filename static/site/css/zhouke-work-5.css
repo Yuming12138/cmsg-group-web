@@ -1,0 +1,20 @@
+/* Additions for the JACS article; the existing research-news layout is retained. */
+.zhouke-work-page .work-figure--mechanism img { max-width: 360px; }
+.zhouke-work-page .work-figure--experiment img { max-width: 700px; }
+.zhouke-work-page .math-display { font-size: 18px; }
+.zhouke-work-page .math-display svg { display: block; margin: auto; max-width: 100%; height: auto; overflow: visible; }
+.zhouke-work-page .equation-mobile { display: none; }
+.zhouke-work-page .work-doi { font-family: var(--font-cjk); text-align: left; overflow-wrap: anywhere; }
+.zhouke-work-page .work-citation p + p { margin-top: 12px; }
+.zhouke-work-page .work-citation sup { font-size: .73em; }
+@media (max-width: 767.98px) {
+    .zhouke-work-page .work-article p { text-align: left; }
+    .zhouke-work-page .math-display { font-size: 17px; }
+    .zhouke-work-page .equation-desktop { display: none; }
+    .zhouke-work-page .equation-mobile { display: block; }
+}
+@media print {
+    .zhouke-work-page .equation-desktop { display: block; }
+    .zhouke-work-page .equation-mobile { display: none; }
+    .zhouke-work-page .math-display { break-inside: avoid; }
+}

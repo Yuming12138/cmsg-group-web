@@ -10,7 +10,7 @@ from .content import SUPPORTED_LANGUAGES, load_content, load_site, load_ui
 
 
 site_bp = Blueprint("site", __name__)
-ZHOUKE_WORK_IDS = frozenset({1, 2, 3, 4})
+ZHOUKE_WORK_IDS = frozenset({1, 2, 3, 4, 5})
 LAYERS_PATH = Path(__file__).resolve().parent.parent / "static" / "site" / "hero" / "layers.json"
 
 
@@ -148,7 +148,7 @@ def zhouke_profile():
 
 @site_bp.get("/people/zhouke/work/<int:work_id>")
 def zhouke_work(work_id: int):
-    """Render one of the four legacy research stories for Ke Zhou."""
+    """Render a research story for Ke Zhou."""
 
     if work_id not in ZHOUKE_WORK_IDS:
         abort(404)

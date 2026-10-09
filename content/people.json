@@ -15,7 +15,8 @@
       {"name": "Maoyan Zhang / 张茂岩", "role": "PhD researcher · since 2023", "email": "maoyanzhang@foxmail.com", "initials": "MZ", "image": "/static/site/images/members/zhangmaoyan3.jpg"},
       {"name": "Weijian Jiang / 姜伟健", "role": "PhD researcher · since 2024", "email": "weijianjiang@126.com", "initials": "WJ", "image": "/static/site/images/members/jiangweijian.jpg"},
       {"name": "Guilian An / 安贵莲", "role": "PhD researcher", "email": "xiaoan202303@163.com", "image": "/static/site/images/members/anguilian.jpg"},
-      {"name": "Boyang Liang / 梁博洋", "role": "PhD researcher", "email": "leon0120@126.com", "image": "/static/site/images/members/liangboyang.png"}
+      {"name": "Boyang Liang / 梁博洋", "role": "PhD researcher", "email": "leon0120@126.com", "image": "/static/site/images/members/liangboyang.png"},
+      {"name": "Qi Wang / 王琪", "role": "PhD researcher", "email": "shfdnwxb@163.com", "image": "/static/site/images/members/wangqi-full.png", "photo": "/static/site/images/members/wangqi-original.jpg", "image_fit": "contain"}
     ]},
     {"title": "Master", "members": [
       {"name": "Kaiwei Feng / 冯凯威", "role": "Master researcher · since 2024", "email": "fkw12698967164@163.com", "initials": "KF", "image": "/static/site/images/members/fengkaiwei.jpg"},
@@ -27,10 +28,9 @@
       {"name": "Fulin Hu / 胡福临", "role": "Master researcher", "email": "854293618@qq.com", "image": "/static/site/images/members/hufulin.jpg"},
       {"name": "Ye Jiang / 蒋烨", "role": "Master researcher", "email": "jiangye0206@163.com", "image": "/static/site/images/members/jiangye.jpg"},
       {"name": "Bingbo Tong / 仝兵博", "role": "Master researcher", "email": "bbtong@stu.suda.edu.cn", "image": "/static/site/images/members/tongbingbo.jpg"},
-      {"name": "Jiale Yu / 余佳乐", "role": "Master researcher", "email": "15857243705@163.com", "image": "/static/site/images/members/yujiale.jpg"}
+      {"name": "Jiale Yu / 余家乐", "role": "Master researcher", "email": "15857243705@163.com", "image": "/static/site/images/members/yujiale.jpg"}
     ]},
     {"title": "Visiting Student", "members": [
-      {"name": "Qi Wang / 王琪", "role": "Visiting student", "email": "shfdnwxb@163.com", "image": "/static/site/images/members/wangqi-full.png", "photo": "/static/site/images/members/wangqi-original.jpg", "image_fit": "contain"}
     ]},
     {"title": "Undergraduate", "members": [
       {"name": "Wei Yan / 严威", "role": "New Energy Materials and Devices", "email": "1131951661@qq.com", "initials": "WY", "image": "/static/site/images/members/yanwei.jpg"}
