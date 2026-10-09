@@ -248,92 +248,128 @@ body {
 }
 
 /* ==========================================================================
-   HERO SECTION (STANFORD / MIT ACADEMIC LAB BILLBOARD)
+   HERO SECTION (GOOGLE ANTIGRAVITY PARTICLE WAVE BILLBOARD)
    ========================================================================== */
-.hero--contour {
+.hero--particles {
   position: relative;
-  min-height: 94vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--lab-blue-900);
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #050d20;
   color: var(--lab-white);
   overflow: hidden;
-  padding: 120px 0 70px;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-.hero--contour .hero__inner {
+.hero__particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+.hero--particles .hero__wash {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 65% 55% at 50% 50%,
+    rgba(5, 13, 32, 0.72) 0%,
+    rgba(5, 13, 32, 0.42) 50%,
+    rgba(5, 13, 32, 0.88) 100%
+  );
+}
+
+.hero--particles .hero__inner {
   position: relative;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100vh !important;
+  padding: 0 24px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box;
+}
+
+.hero--particles .hero__content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  max-width: 1040px;
   width: 100%;
+  padding: 0 !important;
 }
 
-.hero__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  padding: 7px 18px;
-  border-radius: var(--lab-radius-full);
-  background: rgba(0, 167, 216, 0.16);
-  border: 1px solid rgba(0, 167, 216, 0.4);
-  color: var(--lab-cyan-300);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  margin-bottom: 26px;
-  backdrop-filter: blur(8px);
-  animation: hero-fade-in 600ms ease forwards;
-}
-
-.hero__badge-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: var(--lab-cyan-400);
-  box-shadow: 0 0 10px var(--lab-cyan-400);
-}
-
-.hero--contour h1 {
-  font-size: clamp(2.6rem, 5vw, 4.4rem);
+.hero--particles h1 {
+  font-size: clamp(2.6rem, 5.2vw, 4.4rem);
   font-weight: 800;
-  line-height: 1.18;
+  line-height: 1.2;
   letter-spacing: -0.02em;
-  margin-bottom: 26px;
-  max-width: 1080px;
+  margin: 0 auto 24px auto !important;
+  max-width: 1040px;
   color: var(--lab-white);
-  text-shadow: 0 4px 32px rgba(0, 0, 0, 0.65);
-  animation: hero-fade-in 700ms ease forwards;
+  text-align: center !important;
+  text-shadow: 0 4px 32px rgba(0, 0, 0, 0.75);
 }
 
-.hero--contour h1 strong {
-  background: linear-gradient(135deg, #ffffff 30%, var(--lab-cyan-300) 100%);
+.hero--particles h1 strong {
+  background: linear-gradient(135deg, #ffffff 40%, #38bdf8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.hero--contour .hero__summary {
+.hero--particles .hero__summary {
   font-size: clamp(1.15rem, 1.8vw, 1.35rem);
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.92);
   max-width: 860px;
-  margin: 0 auto 38px;
+  margin: 0 auto 38px auto !important;
   font-weight: 400;
-  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
-  animation: hero-fade-in 800ms ease forwards;
+  text-align: center !important;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
 }
 
-.hero__actions-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero--particles .hero__actions-group {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   flex-wrap: wrap;
-  gap: 18px;
-  margin-bottom: 44px;
-  animation: hero-fade-in 900ms ease forwards;
+  gap: 16px;
+  margin: 0 auto !important;
+}
+
+.hero--particles .hero__scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(56, 189, 248, 0.85);
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin: 0;
+  pointer-events: none;
+  animation: hero-bob 2.2s ease-in-out infinite;
 }
 
 .btn-lab {
