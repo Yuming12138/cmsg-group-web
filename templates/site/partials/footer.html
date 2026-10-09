@@ -1,13 +1,42 @@
 <footer class="site-footer">
-  <div class="shell site-footer__grid">
-    <div>
-      <p class="footer-kicker">{{ site.name }}</p>
-      <p class="footer-note">{{ site.footer.note }}</p>
+  <div class="shell">
+    <div class="site-footer__grid">
+      <div class="footer-col-brand">
+        <h4>{{ site.full_name }}</h4>
+        <p>{{ site.footer.note }}</p>
+        <p style="margin-top: 10px; color: var(--lab-slate-400); font-size: 13px;">
+          {% if language == 'zh' %}
+          聚焦能源转换材料、缺陷物理、第一性原理计算与人工智能材料逆向设计。
+          {% else %}
+          Focusing on energy materials, defect physics, first-principles calculations, and AI materials design.
+          {% endif %}
+        </p>
+      </div>
+
+      <div class="footer-col-nav">
+        <h5>{% if language == 'zh' %}学术导航{% else %}Navigation{% endif %}</h5>
+        <ul class="footer-links-list">
+          <li><a href="{{ href_for('/research') }}">{% if language == 'zh' %}前沿研究{% else %}Research Thrusts{% endif %}</a></li>
+          <li><a href="{{ href_for('/publications') }}">{% if language == 'zh' %}学术论文{% else %}Publications{% endif %}</a></li>
+          <li><a href="{{ href_for('/people') }}">{% if language == 'zh' %}科研团队{% else %}Lab Members{% endif %}</a></li>
+          <li><a href="{{ href_for('/code-platform') }}">{% if language == 'zh' %}开源软件{% else %}Code & Platforms{% endif %}</a></li>
+          <li><a href="{{ href_for('/news') }}">{% if language == 'zh' %}新闻动态{% else %}News & Milestones{% endif %}</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col-contact">
+        <h5>{% if language == 'zh' %}联系与地址{% else %}Contact & Location{% endif %}</h5>
+        <div style="display: flex; flex-direction: column; gap: 8px; color: var(--lab-slate-400); font-size: 13px;">
+          <span>{{ site.footer.location }}</span>
+          <span>{% if language == 'zh' %}江苏省苏州市相城区华元东路1号{% else %}1 Huayuan East Rd, Xiangcheng, Suzhou, China{% endif %}</span>
+          <a href="mailto:{{ site.footer.email }}" style="color: var(--lab-cyan-300); font-weight: 600; text-decoration: none;">{{ site.footer.email }}</a>
+        </div>
+      </div>
     </div>
-    <div class="footer-meta">
-      <span>{{ site.footer.location }}</span>
-      <a href="mailto:{{ site.footer.email }}">{{ site.footer.email }}</a>
-      <span>© {{ site_year }} {{ site.full_name }}</span>
+
+    <div class="footer-bottom">
+      <span>© {{ site_year }} {{ site.full_name }} · Soochow University</span>
+      <span>Computational Materials Science Group · All Rights Reserved</span>
     </div>
   </div>
 </footer>

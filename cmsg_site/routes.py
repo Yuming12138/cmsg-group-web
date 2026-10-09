@@ -60,11 +60,28 @@ def _localized_href(href: str, language: str) -> str:
 @site_bp.get("/")
 def home():
     language = _language()
+    home_data = load_content("home.json", language)
+    publications = load_content("publications.json", language)
+    news = load_content("news.json", language)
+    people = load_content("people.json", language)
+    code = load_content("code-platform.json", language)
+
+    recent_publications = publications.get("items", [])[:4]
+    recent_news = news.get("items", [])[:4]
+
+    faculty = []
+    if people.get("groups") and len(people["groups"]) > 0:
+        faculty = people["groups"][0].get("members", [])
+
     return render_template(
         "site/home.html",
         active_page="home",
-        home=load_content("home.json", language),
+        home=home_data,
         hero_layers=load_hero_layers(),
+        recent_publications=recent_publications,
+        recent_news=recent_news,
+        faculty=faculty,
+        code_platforms=code.get("groups", []),
     )
 
 

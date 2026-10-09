@@ -6,28 +6,295 @@
 {% endblock %}
 
 {% block content %}
-{# The hero is a live scalar field drawn as topographic contours: three drifting
-   waves stand in for a potential-energy surface, and the pointer is allowed to
-   push on it. Hovering presses a dimple into the field; clicking sends a ring
-   out through it that interferes with the standing contours. #}
+{# 1. HERO SECTION (STANFORD / MIT ACADEMIC LAB BILLBOARD WITH LIVE PES FIELD) #}
 <section class="hero hero--contour" data-hero aria-labelledby="hero-title">
   <canvas class="hero__contour" data-contour aria-hidden="true"></canvas>
   <div class="hero__wash" aria-hidden="true"></div>
   <div class="hero__grain" aria-hidden="true"></div>
   <div class="shell hero__inner">
     <div class="hero__content">
+      <div class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        <span>{{ home.hero.badge|default('Computational Materials Science Group · Soochow University') }}</span>
+      </div>
       <h1 id="hero-title">
         <span>{{ home.hero.welcome_prefix }}</span>
         <strong>{{ home.hero.welcome_group }}</strong>
         <span>{{ home.hero.welcome_suffix }}</span>
       </h1>
       <p class="hero__summary">{{ home.hero.summary }}</p>
-      <div class="hero__actions">
-        <a class="button button--accent" href="{{ href_for(home.hero.cta.href) }}">{{ home.hero.cta.label }} <span aria-hidden="true">↗</span></a>
+      <div class="hero__actions-group">
+        <a class="btn-lab btn-lab--primary" href="{{ href_for(home.hero.cta_primary.href|default('/research')) }}">
+          {{ home.hero.cta_primary.label|default('Explore Research') }} <span aria-hidden="true">↗</span>
+        </a>
+        <a class="btn-lab btn-lab--secondary" href="{{ href_for(home.hero.cta_secondary.href|default('/publications')) }}">
+          {{ home.hero.cta_secondary.label|default('Publications') }} <span aria-hidden="true">↗</span>
+        </a>
+        <a class="btn-lab btn-lab--ghost" href="{{ href_for(home.hero.cta_team.href|default('/people')) }}">
+          {{ home.hero.cta_team.label|default('Lab Team') }} <span aria-hidden="true">→</span>
+        </a>
+      </div>
+      <div class="hero__scroll-indicator">
+        <span>↓ {{ home.hero.scroll_hint|default('Scroll to explore') }}</span>
       </div>
     </div>
   </div>
 </section>
+
+{# 2. METRICS & IMPACT BAR (LAB IMPACT METRICS) #}
+{% if home.stats %}
+<section class="lab-stats-band" aria-label="Laboratory Metrics">
+  <div class="shell">
+    <div class="lab-stats-grid">
+      {% for stat in home.stats %}
+      <div class="lab-stat-card">
+        <div class="lab-stat-value">{{ stat.value }}</div>
+        <div class="lab-stat-label">{{ stat.label }}</div>
+        <p class="lab-stat-sub">{{ stat.sub }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# 3. RESEARCH THRUSTS (MIT/STANFORD LAB BENTO GRID) #}
+<section class="lab-section lab-section--soft" id="research-thrusts">
+  <div class="shell">
+    <div class="lab-section__header">
+      <div class="lab-section__eyebrow">
+        <span>01</span>
+        <span>/</span>
+        <span>{{ home.research.label|default('Research Thrusts') }}</span>
+      </div>
+      <h2 class="lab-section__title">{{ home.research.title }}</h2>
+      {% if home.research.subtitle %}
+      <p class="lab-section__subtitle">{{ home.research.subtitle }}</p>
+      {% endif %}
+    </div>
+
+    <div class="research-bento-grid">
+      {% for item in home.research['items'] %}
+      <a class="research-bento-card" href="{{ href_for(item.href|default('/research')) }}">
+        <div class="research-bento-card__meta">
+          <span class="research-bento-card__index">{{ '%02d'|format(loop.index) }}</span>
+          <span class="research-bento-card__tag-kicker">{{ item.meta }}</span>
+        </div>
+        <h3 class="research-bento-card__title">{{ item.title }}</h3>
+        <p class="research-bento-card__summary">{{ item.summary }}</p>
+        {% if item.tags %}
+        <div class="research-bento-card__tags">
+          {% for tag in item.tags %}
+          <span class="tag-pill">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+        <div class="research-bento-card__footer">
+          <span>{{ ui.learn_more|default('Explore thrust') }}</span>
+          <span aria-hidden="true">→</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# 4. DUAL COLUMN: FEATURED PUBLICATIONS & LAB NEWS (HIGH-EFFICIENCY INDEX) #}
+<section class="lab-section">
+  <div class="shell">
+    <div class="lab-split-grid">
+      {# Publications Column #}
+      <div class="pub-feed-column">
+        <div class="pub-feed-header">
+          <h3>
+            <span>{{ home.publications_preview.title|default('Featured Publications') }}</span>
+          </h3>
+          <a class="feed-more-link" href="{{ href_for('/publications') }}">
+            {{ home.publications_preview.cta|default('View All Publications') }} →
+          </a>
+        </div>
+        <div class="pub-feed-list">
+          {% for pub in recent_publications %}
+          <article class="pub-card-compact">
+            <div class="pub-card-compact__meta">
+              <span class="journal-badge">{{ pub.type }}</span>
+              <span class="pub-card-compact__year">{{ pub.date }}</span>
+            </div>
+            <h4 class="pub-card-compact__title">
+              {% if pub.href %}
+              <a href="{{ pub.href }}" target="_blank" rel="noopener noreferrer">{{ pub.title }}</a>
+              {% else %}
+              {{ pub.title }}
+              {% endif %}
+            </h4>
+            <div class="pub-card-compact__authors">{{ pub.authors }}</div>
+            {% if pub.doi %}
+            <div class="pub-card-compact__actions">
+              <a class="doi-pill" href="{{ pub.href|default('https://doi.org/' ~ pub.doi) }}" target="_blank" rel="noopener noreferrer">
+                <span>DOI: {{ pub.doi }}</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+            {% endif %}
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+
+      {# News & Milestones Column #}
+      <div class="news-feed-column">
+        <div class="news-feed-header">
+          <h3>
+            <span>{{ home.news_preview.title|default('News & Highlights') }}</span>
+          </h3>
+          <a class="feed-more-link" href="{{ href_for('/news') }}">
+            {{ home.news_preview.cta|default('All News') }} →
+          </a>
+        </div>
+        <div class="news-feed-list">
+          {% for item in recent_news %}
+          <a class="news-card-compact" href="{{ item.href|default(href_for('/news')) }}" {% if item.href and item.href.startswith('http') %}target="_blank" rel="noopener noreferrer"{% endif %}>
+            <div class="news-card-compact__date-box">
+              <span>{{ item.date }}</span>
+            </div>
+            <div class="news-card-compact__body">
+              <span class="news-card-compact__type">[{{ item.type|default('News') }}]</span>
+              <h5 class="news-card-compact__title">{{ item.title }}</h5>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# 5. FACULTY LEADERSHIP & RESEARCH TEAM #}
+<section class="lab-section lab-section--soft">
+  <div class="shell">
+    <div class="lab-section__header">
+      <div class="lab-section__eyebrow">
+        <span>02</span>
+        <span>/</span>
+        <span>{{ home.faculty_preview.label|default('Faculty Leadership') }}</span>
+      </div>
+      <h2 class="lab-section__title">{{ home.faculty_preview.title|default('Principal Investigators') }}</h2>
+      <p class="lab-section__subtitle">{{ home.faculty_preview.subtitle|default('Guiding research in computational materials physics and AI-driven materials design.') }}</p>
+    </div>
+
+    <div class="faculty-spotlight-grid">
+      {% for mem in faculty %}
+      <div class="faculty-card">
+        {% if mem.image %}
+        <img class="faculty-card__portrait" src="{{ mem.image }}" alt="{{ mem.name }}" loading="lazy">
+        {% endif %}
+        <div class="faculty-card__info">
+          <h3 class="faculty-card__name">{{ mem.name }}</h3>
+          <div class="faculty-card__role">{{ mem.role }}</div>
+          <p class="faculty-card__desc">
+            {% if '尹万健' in mem.name or 'Wan-Jian' in mem.name %}
+            国家级人才计划入选者，聚焦计算凝聚态物理、新型能源转换材料第一性原理计算与高通量逆向设计。
+            {% elif '周柯' in mem.name or 'Ke Zhou' in mem.name %}
+            聚焦微纳米限域尺度力学输运物理机理与 AI 驱动反常热膨胀（Invar）新材料发现。
+            {% else %}
+            课题组核心科研人员，开展多尺度计算与材料智能设计。
+            {% endif %}
+          </p>
+          <div class="faculty-card__footer">
+            {% if mem.href %}
+            <a class="faculty-card__link" href="{{ href_for(mem.href) }}">{{ ui.view_profile|default('View Profile') }} →</a>
+            {% endif %}
+            {% if mem.email %}
+            <a class="faculty-card__email" href="mailto:{{ mem.email }}">{{ mem.email }}</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="team-banner-card">
+      <div class="team-banner-card__text">
+        <h4>{{ ui.meet_team|default('Explore Our Full Research Constellation') }}</h4>
+        <p>{{ ui.team_desc|default('Meet our postdocs, PhD researchers, Master candidates, and alumni across the globe.') }}</p>
+      </div>
+      <a class="btn-lab btn-lab--primary" href="{{ href_for('/people') }}">
+        {{ ui.view_all_members|default('Explore All Members') }} (20+) →
+      </a>
+    </div>
+  </div>
+</section>
+
+{# 6. COMPUTATIONAL PLATFORMS & SOFTWARE #}
+<section class="lab-section">
+  <div class="shell">
+    <div class="lab-section__header">
+      <div class="lab-section__eyebrow">
+        <span>03</span>
+        <span>/</span>
+        <span>{{ home.platform_preview.label|default('Open Science') }}</span>
+      </div>
+      <h2 class="lab-section__title">{{ home.platform_preview.title|default('Computational Tools & Code Platforms') }}</h2>
+      <p class="lab-section__subtitle">{{ home.platform_preview.subtitle|default('In-house developed open-source algorithmic frameworks for the materials science community.') }}</p>
+    </div>
+
+    <div class="platforms-grid">
+      <div class="platform-card">
+        <div class="platform-card__header">
+          <h3 class="platform-card__name">3DREAM</h3>
+          <span class="platform-card__badge">Open Algorithm</span>
+        </div>
+        <p class="platform-card__desc">
+          三维缺陷重构与进化算法工具（Three-Dimensional Defect Reconstruction and Evolutionary Algorithm for Materials），用于复杂半导体与新能源材料微观缺陷结构的智能重构与自动化解析。
+        </p>
+        <div class="platform-card__actions">
+          <a class="btn-lab btn-lab--secondary" style="color: var(--lab-slate-900); border-color: var(--lab-slate-300);" href="{{ href_for('/code-platform') }}">
+            查看平台文档 →
+          </a>
+        </div>
+      </div>
+
+      <div class="platform-card">
+        <div class="platform-card__header">
+          <h3 class="platform-card__name">GN-OA</h3>
+          <span class="platform-card__badge">Graph Neural Net</span>
+        </div>
+        <p class="platform-card__desc">
+          基于图神经网络表征与多目标优化算法（Graph Network with Optimization Algorithm）的高效晶体结构预测框架，极大加速大规模新型晶体材料的全局搜索。
+        </p>
+        <div class="platform-card__actions">
+          <a class="btn-lab btn-lab--secondary" style="color: var(--lab-slate-900); border-color: var(--lab-slate-300);" href="{{ href_for('/code-platform') }}">
+            查看平台文档 →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# 7. JOIN US / PROSPECTIVE STUDENTS BANNER #}
+<section class="lab-section lab-section--soft" style="padding-bottom: 110px;">
+  <div class="shell">
+    <div class="join-us-banner">
+      <div class="join-us-banner__content">
+        <div class="join-us-banner__badge">
+          <span>★ {{ home.join_us.label|default('Opportunities') }}</span>
+        </div>
+        <h2 class="join-us-banner__title">{{ home.join_us.title }}</h2>
+        <p class="join-us-banner__body">{{ home.join_us.body }}</p>
+        {% if home.join_us.highlight %}
+        <p class="join-us-banner__highlight">{{ home.join_us.highlight }}</p>
+        {% endif %}
+        <div style="margin-top: 24px;">
+          <a class="btn-lab btn-lab--primary" href="{{ home.join_us.cta_href|default('mailto:wjyin@suda.edu.cn') }}">
+            {{ home.join_us.cta_label|default('Contact PI') }} ✉
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 {% endblock %}
 
 {% block scripts_extra %}

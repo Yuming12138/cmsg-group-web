@@ -4,64 +4,93 @@
     "description": "The Computational Materials Science Group at Soochow University studies materials with physics-based simulation, data, and machine learning."
   },
   "hero": {
+    "badge": "Computational Materials Science Group · Soochow University",
     "welcome_prefix": "Welcome to",
     "welcome_group": "Computational Materials Science Group",
     "welcome_suffix": " @ Soochow University!",
-    "summary": "We start from fundamental laws to emergent matter: understanding how structure, stability, and function arise, and using that understanding to design and synthesize new forms of matter.",
-    "cta": {"label": "DELVE", "href": "/research"},
-    "field_note": "Potential energy surface · live field",
-    "artwork": "Wassily Kandinsky · Composition VIII · 1923",
-    "edition": "Visual study 01 / CMSG, Suzhou"
+    "summary": "From fundamental physics to emergent matter: understanding how structure, stability, and function arise, and using physics-informed computation to discover and design new materials.",
+    "cta_primary": {"label": "Explore Research", "href": "/research"},
+    "cta_secondary": {"label": "Publications", "href": "/publications"},
+    "cta_team": {"label": "Lab Team", "href": "/people"},
+    "scroll_hint": "Scroll to explore",
+    "field_note": "Potential energy surface · live field"
   },
+  "stats": [
+    {"value": "160+", "label": "Publications", "sub": "Nat. Commun., JACS, ACS Nano, etc."},
+    {"value": "3", "label": "Research Thrusts", "sub": "Inverse Design · ML · Transport"},
+    {"value": "20+", "label": "Lab Members", "sub": "Faculty, Postdocs, PhDs & Masters"},
+    {"value": "100%", "label": "Excellence & Outcomes", "sub": "Covered for eligible graduate alumni"}
+  ],
   "intro": {
-    "label": "The group",
-    "title": "CMSG brings physics, data, and materials design into one working practice.",
-    "body": "Based in the School of Energy and the Soochow Institute of Energy and Materials Innovations, we build computational tools and collaborations that make complex materials questions easier to see, test, and share."
+    "label": "The Laboratory",
+    "title": "CMSG brings physics, data, and materials design into one unified working practice.",
+    "body": "Based in the School of Energy and the Soochow Institute of Energy and Materials Innovations (SIEMIS) at Soochow University, we develop computational methodologies, interatomic potentials, and open-source tools to tackle complex materials problems with clarity and precision."
   },
   "research": {
-    "label": "Selected directions",
-    "title": "Questions first. Methods in service of understanding.",
+    "label": "Research Thrusts",
+    "title": "Pioneering research pillars bridging atomic physics and macroscopic function.",
+    "subtitle": "We tackle challenging problems in energy materials and condensed matter physics using first-principles calculations and AI.",
     "items": [
       {
         "index": "01",
         "title": "Materials inverse design",
-        "summary": "Starting from target properties, we search for suitable candidates across the vast space defined by elements, stoichiometry, and structure.",
-        "meta": "FULL (A, C, S) SPACE · PROPERTY-DRIVEN SEARCH",
-        "href": "/research"
+        "summary": "Starting from target macroscopic properties, we search for suitable candidates across the vast multidimensional space defined by element types, chemical stoichiometries, and crystal structures.",
+        "meta": "FULL (A, C, S) SPACE · PROPERTY-DRIVEN",
+        "href": "/research",
+        "tags": ["DFT", "Machine Learning Potentials", "Inverse Design", "Global Optimization"]
       },
       {
         "index": "02",
-        "title": "Physical discovery",
-        "summary": "We investigate the physical mechanisms behind macroscopic material properties, using superhard and negative-thermal-expansion materials to uncover interpretable and transferable structure-property relationships.",
+        "title": "Physical discovery & interpretable AI",
+        "summary": "Investigating physical mechanisms behind macro material behavior—ranging from superhard structures to negative thermal expansion—uncovering interpretable, transferable physical descriptors.",
         "meta": "PHYSICAL MECHANISMS · STRUCTURE–PROPERTY",
-        "href": "/research"
+        "href": "/research",
+        "tags": ["Negative Thermal Expansion", "2D Invar", "Universal ML Potential", "Superhard C-N"]
       },
       {
         "index": "03",
-        "title": "Water and nanoconfined transport",
-        "summary": "We study how confinement reshapes molecular interactions, dynamics, and transport at the molecular scale, seeking mechanisms to control nanofluidic friction, water diffusion, and water activation.",
-        "meta": "MICROSCOPIC MECHANISMS · TRANSPORT CONTROL",
-        "href": "/research"
+        "title": "Water & nanoconfined transport",
+        "summary": "Understanding how nanoscale spatial confinement reshapes molecular interactions, dynamics, and transport, uncovering microscopic paths to control nanofluidic friction and water activation.",
+        "meta": "MICROSCOPIC TRANSPORT · CONFINED PHYSICS",
+        "href": "/research",
+        "tags": ["Nanofluidics", "Molecular Dynamics", "Solid-Liquid Interface", "Water Transport"]
       }
     ]
   },
+  "publications_preview": {
+    "label": "Latest Discoveries",
+    "title": "Featured Publications",
+    "subtitle": "Selected recent peer-reviewed articles from our research group.",
+    "cta": "View All 160+ Publications"
+  },
+  "news_preview": {
+    "label": "Lab Milestones",
+    "title": "News & Highlights",
+    "subtitle": "Recent updates, grants, academic talks, and lab activities.",
+    "cta": "All News & Events"
+  },
+  "faculty_preview": {
+    "label": "Faculty Leadership",
+    "title": "Principal Investigators",
+    "subtitle": "Guiding research in computational condensed matter physics and AI-driven materials discovery."
+  },
+  "platform_preview": {
+    "label": "Open Science",
+    "title": "Computational Tools & Code Platforms",
+    "subtitle": "In-house developed open-source codes and algorithmic frameworks for the materials science community.",
+    "cta": "Explore Software & Code"
+  },
+  "join_us": {
+    "label": "Prospective Researchers",
+    "title": "Join Our Research Group",
+    "body": "We welcome enthusiastic undergraduate interns, graduate students (Master & PhD), and postdoctoral researchers from physics, chemistry, materials science, mechanical engineering, computer science, and related fields.",
+    "highlight": "We emphasize efficiency, independence, and scientific rigor in an inclusive and collaborative environment.",
+    "cta_label": "Get in Touch",
+    "cta_href": "mailto:wjyin@suda.edu.cn"
+  },
   "signals": [
     {"value": "SUDA", "label": "Soochow University"},
-    {"value": "SIEMIS", "label": "Materials innovation"},
-    {"value": "CMSG", "label": "Computational practice"}
-  ],
-  "updates": {
-    "label": "Latest signals",
-    "title": "A flexible stream for publications, news, and events.",
-    "items": [
-      {"type": "Publication", "date": "2025.09", "title": "Machine-learning potential molecular dynamics reveals the critical role of flexibility in nanofluidic friction.", "href": "/publications"},
-      {"type": "News", "date": "2024.08", "title": "Machine learning enables the discovery of 2D Invar and anti-Invar monolayers.", "href": "/news"},
-      {"type": "Event", "date": "2025.04", "title": "Spring outing · Xishan Island", "href": "/events"}
-    ]
-  },
-  "closing": {
-    "title": "A group website should make the work easier to enter.",
-    "body": "Start with the people, follow the publications, and return as the research archive grows.",
-    "cta": {"label": "Browse publications", "href": "/publications"}
-  }
+    {"value": "SIEMIS", "label": "Materials Innovation"},
+    {"value": "CMSG", "label": "Computational Practice"}
+  ]
 }
