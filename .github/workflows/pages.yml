@@ -1,0 +1,51 @@
+name: GitHub Pages preview
+
+on:
+  push:
+    branches: [experiment/github-pages]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages-preview
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install render dependencies
+        run: pip install -r requirements.txt
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: Render and validate both languages
+        run: python scripts/build_pages.py --base-path '${{ steps.pages.outputs.base_path }}'
+      - name: Upload static website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: output/pages
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy GitHub Pages preview
+        id: deployment
+        uses: actions/deploy-pages@v4

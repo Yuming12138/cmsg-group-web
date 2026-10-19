@@ -20,6 +20,9 @@ tmp/
 # Deployment snapshots kept outside source control
 backups/
 
+# Generated GitHub Pages site (uploaded as an Actions artifact)
+output/pages*/
+
 # Distributable archives are published through GitHub Releases or a CDN
 static/download/*.zip
 
