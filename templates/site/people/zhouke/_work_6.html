@@ -1,0 +1,88 @@
+<article class="work-article" id="article">
+
+    <a class="work-back" href="{{ href_for(url_for('site.zhouke_profile')) }}"><span aria-hidden="true">←</span>返回周柯个人主页</a>
+
+    <div class="work-kicker">近期代表性工作 · ACS Nano</div>
+
+    <h1 class="work-title">限域活水：纳米限域水的电子预活化和选择性断键</h1>
+
+    <div class="work-meta"><span>研究团队：苏州大学周柯等人</span><span>ACS Nano · 2026</span></div>
+
+    <p class="work-lead">水在极端纳米限域通道中的结构和化学行为长期备受关注。近期苏州大学周柯副教授等人针对极端 2D 纳米限域水的自解离过程（2H₂O ⇌ H₃O⁺ + OH⁻）开展了第一性原理与机器学习势分子动力学模拟研究。<strong>该工作揭示了一种自解离能垒更低、质子交换更为活跃的“限域活水（confined living water）”状态，并阐明了其微观物理起源：二维限域界面并非均匀削弱所有 OH 键，而是打破同一水分子两根 OH 键的电子等价性，触发面内 OH 键的电子预活化与选择性断裂；受挫氢键网络的近身接力与增强的面内集体极化进一步协同降低自解离自由能，并稳定生成的离子。</strong></p>
+
+    {# 论文首页图片待补：作者提供后放在正文开头。 #}
+
+    <p>Szent-Györgyi（1937 年诺贝尔生理学或医学奖得主）曾将水称为“生命的母体”（matrix of life）。水分子的组织方式及其不断重构的氢键网络，影响着生命过程中的分子间作用、物质输运与电荷传递。因此，理解水的结构与动力学，也是认识水如何支配生命活动的重要基础。2005 年，《Science》在创刊 125 周年之际列出 125 个重要科学问题，其中就包括“水的结构是什么？”。当水进入仅能容纳分子层厚度的原子级纳米通道时，这一问题又有了新的维度：几何约束究竟只是改变了分子的空间排布，还是会深入电子尺度，重塑键的强弱、质子运动与集体响应？理解这些跨尺度的物理联系，是认识纳米限域水独特性质与输运行为的重要基础。</p>
+
+    <h2 class="work-section-title">水分子从三维体相到二维纳米限域</h2>
+
+    <p>在宏观日常世界中，液态水是典型的三维各向同性液体。无论是杯中水还是流动雨滴，水分子都处在连续四面体氢键网络的包围下，每个分子的两根 OH 键在电子环境上没有系统性差别，可以自由转动和移动。</p>
+
+    <p>然而，当水分子进入纳米级孔隙——如岩石微裂隙、生物膜离子通道或石墨烯等二维材料层间时，空间被急剧压缩至仅有一层分子的尺度。在严苛的几何限制下，原本自由舒展的水分子必须“排队站立”，水分子的取向、电子云分布和氢键连接模式均被强制重组。</p>
+
+    <p>日常饮用的纯净水接近中性，pH 值约为 7.0。而当 H₂O 进入原子级纳米通道，石墨烯限域的单层二维水对应的 pH 可低至约 3（300 K、约 1.6 GPa），质子活度明显提高，并呈现出自解离能垒更低、质子交换更为活跃的“限域活水”特征。自解离同时生成 H₃O⁺ 和 OH⁻，因此这里的“活”指反应与交换更加活跃，并非指水变酸。</p>
+
+    <figure class="work-figure"><a href="{{ url_for('static', filename='images/members/zhouke/work_6/fig1-from-bulk-to-confined.png') }}" target="_blank" rel="noopener noreferrer" aria-label="从宏观体相水到二维纳米限域水的结构和氢键网络示意图"><img src="{{ url_for('static', filename='images/members/zhouke/work_6/fig1-from-bulk-to-confined.png') }}" alt="从宏观体相水到二维纳米限域水的结构和氢键网络示意图" width="2926" height="949" decoding="async"></a>
+        <figcaption>图 1｜从宏观体相到原子级狭缝：左侧为日常宏观体相液态水；中图为石墨烯纳米限域通道中单层分子厚度的 2D 限域水结构；右侧为 Voronoi 图表示下的“限域活水”（living water），2D 单层限域水表现为更易解离、质子交换更活跃。“活水”概念借鉴自南京航空航天大学郭万林院士于 2026 年 10 月 17 日在第七届长三角力学论坛所作大会报告的 PPT。</figcaption>
+    </figure>
+
+    <h2 class="work-section-title">水的自解离及分解能垒</h2>
+
+    <p>水是天然的“质子库”，水自解离（2H₂O ⇌ H₃O⁺ + OH⁻）是自然界中许多基础酸碱化学与质子传输过程的起点。在常温常压的体相水中，自解离是极为罕见的热力学事件：平均每 5 亿多个水分子中，才有一对解离成 H₃O⁺ 和 OH⁻ 离子，其自解离能垒高达 15 kcal/mol。</p>
+
+    <p>研究团队采用基于 Voronoi 多边形集合变量（CV）的增强采样 MLP-MD，对比了体相水与单层限域水中形成分离离子态的自解离能垒。结果显示：在相同密度（1.0 g/cm³）下，2D 单层限域水的自解离能垒降低至 11.79 kcal/mol，相比体相水的 14.96 kcal/mol 下降了 3.17 kcal/mol。按 exp(3.17 kcal mol⁻¹/RT) 估算，自解离概率接近体相水的 200 倍。</p>
+
+    <figure class="work-figure"><a href="{{ url_for('static', filename='images/members/zhouke/work_6/fig2-self-dissociation.png') }}" target="_blank" rel="noopener noreferrer" aria-label="体相水与单层限域水自解离过程及自由能比较"><img src="{{ url_for('static', filename='images/members/zhouke/work_6/fig2-self-dissociation.png') }}" alt="体相水与单层限域水自解离过程及自由能比较" width="2488" height="1720" loading="lazy" decoding="async"></a>
+        <figcaption>图 2｜(a)(b)(c) 体相水与单层限域水自解离比较；(d) 为从水分子（H₂O）、过渡态（TS）到离子对（H₃O⁺···OH⁻）的过程。</figcaption>
+    </figure>
+
+    <p>研究还比较了限域下不同密度或压强的差异，发现增加密度或压强可以进一步降低自解离能垒。当密度为 1.18 g/cm³、压强为 1.6 GPa 时，水的自解离能垒可低至 7 kcal/mol，对应的 pH 为 3，自解离概率约为常温常压液态水的 38 万倍。</p>
+
+    <figure class="work-figure work-figure--narrow"><a href="{{ url_for('static', filename='images/members/zhouke/work_6/fig3-density-free-energy.png') }}" target="_blank" rel="noopener noreferrer" aria-label="不同面密度的二维单层限域水自解离自由能比较"><img src="{{ url_for('static', filename='images/members/zhouke/work_6/fig3-density-free-energy.png') }}" alt="不同面密度的二维单层限域水自解离自由能比较" width="1152" height="844" loading="lazy" decoding="async"></a>
+        <figcaption>图 3｜体相水与不同面密度的 2D 单层限域水在自解离过程中各特征状态的自由能比较。</figcaption>
+    </figure>
+
+    <h2 class="work-section-title">面内 OH 键的选择性电子预活化：“反呼吸”模式</h2>
+
+    <p>限域究竟如何降低这一步的自解离能垒？答案不只在“层变薄”或“整体压缩”，还藏在单个 OH 键的电子结构变化里。利用最大局域化 Wannier 函数（MLWF，可以把电子云拆解成可逐帧追踪的电子中心），研究追踪了水分子的成键电子对与孤对电子的位置演化，揭示了一个此前较少被关注的键分辨电子机制。</p>
+
+    <p>在石墨烯单层水中，水分子包含两类处于完全不同微观环境的 OH 键：一类是沿着二维层内延伸的面内 OH 键，另一类是指向石墨烯层的悬挂 OH 键。</p>
+
+    <p>常规共价键在伸缩振动时表现出“呼吸”模式：键拉长时成键电子随之向外扩展，键收缩时电子向内靠拢，电子位移与核坐标同向变化。石墨烯层的悬挂 OH 键就是这样的呼吸模式。</p>
+
+    <p>然而，面内 OH 键在热涨落下拉长时，其成键电子中心（BP）并没有随质子向外移动，反而朝母体氧原子方向明显回缩。这意味着在质子尚未真正脱离之前，O–H 之间的共价电子共享已经提前削弱，使该键进入“预活化”状态。此状态被称为“反呼吸”模式。</p>
+
+    <figure class="work-figure work-figure--activation"><a href="{{ url_for('static', filename='images/members/zhouke/work_6/fig4-oh-pre-activation.png') }}" target="_blank" rel="noopener noreferrer" aria-label="极端限域下单层水中 OH 键的选择性电子预活化与电子不等价性"><img src="{{ url_for('static', filename='images/members/zhouke/work_6/fig4-oh-pre-activation.png') }}" alt="极端限域下单层水中 OH 键的选择性电子预活化与电子不等价性" width="2481" height="1609" loading="lazy" decoding="async"></a>
+        <figcaption>图 4｜极端限域下单层水中 OH 键的选择性电子预活化与电子不等价性。MLWF 分析展示了成键电子对（BP）与孤对电子（LP）沿解离坐标的位移演变，证实面内 OH 键先于质子转移发生共价电子回缩。</figcaption>
+    </figure>
+
+    <h2 class="work-section-title">受挫氢键网络主导的近身接力</h2>
+
+    <p>质子离开母体分子后，并不是在真空中孤立穿梭，而是依赖周围氢键网络的紧密协作。单层限域会显著增强氧原子间三体角约 55° 的局部结构，对应受挫、弱氢键或间隙水构型；在这种环境下，水分子也更常出现 D₁A₂ 氢键拓扑（接受两个氢键、给出一个氢键）。两者共同说明：二维受限条件下，大量水分子无法满足传统的四面体配位。</p>
+
+    <p>正是这种微观几何受挫，让受体水分子能够在狭缝内灵活扭转、靠近。当预活化的面内 OH 键伸长时，邻近的受体氧原子迅速靠近，氢键瞬时增强，质子顺势被“接力”转移到邻位水分子，生成水合氢离子（H₃O⁺）。这类局部重排提供了不同于体相水的质子转移通道。</p>
+
+    <figure class="work-figure"><a href="{{ url_for('static', filename='images/members/zhouke/work_6/fig5-hydrogen-bond-relay.png') }}" target="_blank" rel="noopener noreferrer" aria-label="受挫氢键拓扑与间隙质子转移网络"><img src="{{ url_for('static', filename='images/members/zhouke/work_6/fig5-hydrogen-bond-relay.png') }}" alt="受挫氢键拓扑与间隙质子转移网络" width="2092" height="1492" loading="lazy" decoding="async"></a>
+        <figcaption>图 5｜受挫氢键拓扑与间隙质子转移网络。氧原子三体角在 55° 附近的特征构型为质子转移提供了易于重排的结构通道，使离子生成更像近距离接力而非孤立断裂。</figcaption>
+    </figure>
+
+    <h2 class="work-section-title">极端限域水的介电行为</h2>
+
+    <p>计算表明，密度为 1.0 g/cm³ 的二维单层限域水，其面内介电常数约为 110。虽然单个水分子的偶极矩有所减小，分子间更强的取向关联却增强了整个水层的极化响应，有助于削弱 H₃O⁺ 与 OH⁻ 之间的吸引，并稳定分离后的离子，即更强的离子水合作用。</p>
+
+    <p>不同温度下的自由能结果进一步显示，限域水自解离伴随更明显的熵减，提示离子形成过程中水合环境的重排与有序化更为显著，与更强的离子水合作用相一致。分子内部的电子预活化促进特定 OH 键的选择性断裂，分子之间的集体极化则帮助稳定带电产物，两者共同降低水自解离的自由能代价。</p>
+
+    <figure class="work-figure work-figure--dielectric"><a href="{{ url_for('static', filename='images/members/zhouke/work_6/fig6-dielectric-response.png') }}" target="_blank" rel="noopener noreferrer" aria-label="温度依赖的自由能与介电响应"><img src="{{ url_for('static', filename='images/members/zhouke/work_6/fig6-dielectric-response.png') }}" alt="温度依赖的自由能与介电响应" width="2088" height="856" loading="lazy" decoding="async"></a>
+        <figcaption>图 6｜温度依赖结果显示，限域下自解离伴随更明显的熵减；尽管单分子偶极矩减小，增强的取向协同仍提升了面内电荷屏蔽能力，有助于稳定生成的离子。</figcaption>
+    </figure>
+
+    <p class="work-note">从单键尺度的电子重排到水层尺度的集体响应，该研究揭示了<strong>极端限域下的多尺度耦合机制</strong>：<strong>几何约束打破同一水分子两根 OH 键的电子等价性，诱发强弱键分化与选择性断裂</strong>；<strong>氢键网络的协同重排和增强的面内集体极化，则促进质子交换并稳定分离电荷</strong>。这些跨尺度过程共同塑造了自解离能垒更低、质子交换更活跃的“<strong>限域活水</strong>”状态，表明<strong>纳米限域不仅改变物质的空间排布，还能重塑其电子分布与集体动力学</strong>，为理解微纳通道、材料界面及地质孔隙中的限域输运提供新的物理视角。</p>
+
+    <p>苏州大学2025级研究生张重阳和2023级研究生王晨宇为论文共同第一作者，周柯副教授为通讯作者，其他作者还包括苏州大学尹万健教授、复旦大学程观剑博士。</p>
+
+    <section class="work-citation" aria-labelledby="citation-title">
+        <h2 id="citation-title">论文信息</h2>
+        <p>Chongyang Zhang, Chenyu Wang, Guanjian Cheng, Wanjian Yin, Ke Zhou*, “Selective Electronic Pre-Activation of OH Bonds in Extremely Confined Water” (2026).</p>
+    </section>
+
+</article>

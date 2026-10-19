@@ -24,7 +24,30 @@
     <meta name="twitter:image" content="https://www.comates.group/static/images/members/zhouke/work_5/jacs-article.png">
     <meta name="citation_title" content="The Shear-Bond Descriptor and Universal Machine-Learning Potential Enable Large-Scale Discovery of Negative Thermal Expansion Materials">
     <meta name="citation_journal_title" content="Journal of the American Chemical Society">
+    <meta name="citation_publication_date" content="2026/10/08">
     <meta name="citation_doi" content="10.1021/jacs.6c07432">
+    {% elif work_id == 6 %}
+    <link rel="stylesheet" href="{{ asset('site/css/zhouke-work-6.css') }}">
+    <link rel="canonical" href="https://www.comates.group/people/zhouke/work/6">
+    <meta property="og:title" content="{{ work.meta.title }}">
+    <meta property="og:description" content="{{ work.meta.description }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.comates.group/people/zhouke/work/6">
+    <meta property="og:image" content="https://www.comates.group/static/images/members/zhouke/work_6/fig1-from-bulk-to-confined.png">
+    <meta property="og:image:secure_url" content="https://www.comates.group/static/images/members/zhouke/work_6/fig1-from-bulk-to-confined.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:alt" content="从宏观体相水到二维纳米限域水的结构和氢键网络示意图">
+    <meta property="og:locale" content="zh_CN">
+    <meta itemprop="name" content="{{ work.meta.title }}">
+    <meta itemprop="description" content="{{ work.meta.description }}">
+    <meta itemprop="image" content="https://www.comates.group/static/images/members/zhouke/work_6/fig1-from-bulk-to-confined.png">
+    <link rel="image_src" href="https://www.comates.group/static/images/members/zhouke/work_6/fig1-from-bulk-to-confined.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ work.meta.title }}">
+    <meta name="twitter:description" content="{{ work.meta.description }}">
+    <meta name="twitter:image" content="https://www.comates.group/static/images/members/zhouke/work_6/fig1-from-bulk-to-confined.png">
+    <meta name="citation_title" content="Selective Electronic Pre-Activation of OH Bonds in Extremely Confined Water">
+    <meta name="citation_journal_title" content="ACS Nano">
     {% endif %}
 {% endblock %}
 
@@ -35,7 +58,7 @@
 {% endblock %}
 
 {% block scripts_extra %}
-{% if work_id != 5 %}
+{% if work_id <= 4 %}
 <script>
   window.MathJax = {
     tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },

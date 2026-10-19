@@ -3,6 +3,7 @@
 import json
 from functools import lru_cache
 from pathlib import Path
+from urllib.parse import urlsplit, urlunsplit
 
 from flask import Blueprint, abort, redirect, render_template, request, url_for
 
@@ -10,7 +11,7 @@ from .content import SUPPORTED_LANGUAGES, load_content, load_site, load_ui
 
 
 site_bp = Blueprint("site", __name__)
-ZHOUKE_WORK_IDS = frozenset({1, 2, 3, 4, 5})
+ZHOUKE_WORK_IDS = frozenset({1, 2, 3, 4, 5, 6})
 LAYERS_PATH = Path(__file__).resolve().parent.parent / "static" / "site" / "hero" / "layers.json"
 
 
@@ -53,8 +54,9 @@ def _localized_href(href: str, language: str) -> str:
 
     if language == "en" or not href or not href.startswith("/"):
         return href
-    separator = "&" if "?" in href else "?"
-    return f"{href}{separator}language={language}"
+    parts = urlsplit(href)
+    query = f"{parts.query}&language={language}" if parts.query else f"language={language}"
+    return urlunsplit((parts.scheme, parts.netloc, parts.path, query, parts.fragment))
 
 
 @site_bp.get("/")
@@ -76,6 +78,7 @@ def home():
     return render_template(
         "site/home.html",
         active_page="home",
+        page=home_data,
         home=home_data,
         hero_layers=load_hero_layers(),
         recent_publications=recent_publications,

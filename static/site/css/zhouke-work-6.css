@@ -1,0 +1,39 @@
+/* Layout refinements specific to the ACS Nano confined-water story. */
+.zhouke-work-page .work-figure--narrow img {
+    max-width: 460px;
+}
+
+.zhouke-work-page .work-figure--activation img {
+    max-width: 880px;
+}
+
+.zhouke-work-page .work-figure--dielectric img {
+    max-width: 680px;
+}
+
+.zhouke-work-page .work-title,
+.zhouke-work-page .work-section-title,
+.zhouke-work-page .work-citation h2 {
+    font-weight: 700;
+}
+
+.zhouke-work-page .work-lead strong,
+.zhouke-work-page .work-note strong {
+    font-weight: 700;
+}
+
+.zhouke-work-page .work-lead {
+    text-align: left;
+}
+
+.zhouke-work-page .work-note {
+    margin-top: 36px !important;
+}
+
+@media (max-width: 767.98px) {
+    .zhouke-work-page .work-figure--narrow img,
+    .zhouke-work-page .work-figure--activation img,
+    .zhouke-work-page .work-figure--dielectric img {
+        max-width: 100%;
+    }
+}
