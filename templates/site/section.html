@@ -98,7 +98,7 @@
           <div class="person-card__avatar{% if member.image %} person-card__avatar--image{% endif %}" aria-hidden="true">
             {% if responsive %}
             <picture>
-              <source type="image/webp" srcset="{{ responsive.srcset }}" sizes="(max-width: 620px) 86px, (max-width: 980px) 100px, 112px">
+              <source type="image/webp" srcset="{{ responsive.srcset }}" sizes="(max-width: 620px) 96px, 128px">
               <img src="{{ responsive.fallback }}" alt="" width="{{ responsive.width }}" height="{{ responsive.height }}" decoding="async"{% if group_loop.first %} loading="eager" fetchpriority="high"{% else %} loading="lazy" fetchpriority="low"{% endif %}>
             </picture>
             {% elif member.image %}
@@ -109,7 +109,7 @@
           <div class="person-card__body">
             <h3>{% if member_href %}<a class="person-card__name-link" href="{{ member_href }}">{{ member.name }}</a>{% else %}{{ member.name }}{% endif %}</h3>
             <p>{{ member.role }}</p>
-            {% if member.email %}<a class="person-card__email" href="mailto:{{ member.email }}" aria-label="{{ ui.email }}: {{ member.email }}"><span>{{ ui.email }}</span>{{ member.email }}</a>{% endif %}
+            {% if member.email %}<a class="person-card__email" href="mailto:{{ member.email }}" aria-label="{{ ui.email }}: {{ member.email }}">{{ member.email }}</a>{% endif %}
           </div>
         </article>
         {% endfor %}
@@ -145,20 +145,19 @@
 <section class="section section--resources">
   <div class="shell resource-groups">
     {% for group in page.groups %}
-    <section class="resource-group reveal" style="--resource-index: {{ loop.index }};">
-      <div class="resource-group__heading"><span class="resource-group__shape" aria-hidden="true"></span><span class="resource-group__number">{{ '%02d'|format(loop.index) }}</span>
+    <section class="resource-group reveal">
+      <div class="resource-group__heading">
         <h2>{{ group.title }}</h2>
       </div>
-      <span class="resource-group__axis" aria-hidden="true"></span>
       {% if group.categories %}
       <div class="resource-category-grid">
         {% for category in group.categories %}
         <div class="resource-category">
+          <h3 class="resource-category__title">{{ category.title }}</h3>
           <div class="resource-list">
             {% for item in category["items"] %}
             <a class="resource-row" href="{{ item.href }}" target="_blank" rel="noreferrer noopener">
-              <span class="resource-row__index">{{ '%02d'|format(loop.index) }}</span>
-              <span class="resource-row__body"><strong>{{ item.title }}</strong></span>
+              <span class="resource-row__body"><strong>{{ item.title }}</strong>{% if item.summary %}<span class="resource-row__summary">{{ item.summary }}</span>{% endif %}</span>
               <span class="resource-row__arrow" aria-hidden="true">↗</span>
             </a>
             {% endfor %}
@@ -170,8 +169,7 @@
       <div class="resource-list">
         {% for item in group["items"] %}
         <a class="resource-row" href="{{ item.href }}" target="_blank" rel="noreferrer noopener">
-          <span class="resource-row__index">{{ item.index }}</span>
-          <span class="resource-row__body"><strong>{{ item.title }}</strong></span>
+          <span class="resource-row__body"><strong>{{ item.title }}</strong>{% if item.summary %}<span class="resource-row__summary">{{ item.summary }}</span>{% endif %}</span>
           <span class="resource-row__arrow" aria-hidden="true">↗</span>
         </a>
         {% endfor %}
@@ -209,7 +207,6 @@
   <div class="shell news-index">
     <header class="news-index__header reveal">
       <h1 id="news-page-title">{{ page.kicker }}</h1>
-      <span class="news-index__header-mark" aria-hidden="true"></span>
     </header>
     <div class="news-list">
       {% for item in page['items'] %}

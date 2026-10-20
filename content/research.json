@@ -1,11 +1,35 @@
 {
-  "meta": {"title": "AI-Driven Physical Discovery and Materials Design · CMSG", "description": "AI-driven physical discovery and materials inverse design research."},
+  "meta": {"title": "AI-Driven Physical Discovery and Materials Design · CMSG", "description": "Materials inverse design, interpretable physical discovery, and physics-informed synthesis planning."},
   "layout": "research-detail",
   "kicker": "Research",
   "title": "Questions first. Methods in service of understanding.",
   "intro": "We use machine learning not only to predict material properties, but also to formulate physical descriptors, explore materials space, and design new candidates in reverse.",
   "items": [
     {"index": "01", "title": "Materials inverse design", "meta": "FULL (A, C, S) SPACE · PROPERTY-DRIVEN SEARCH", "summary": "Starting from target properties, we search for suitable candidates across the vast space defined by elements, stoichiometry, and structure."},
-    {"index": "02", "title": "Physical discovery", "meta": "PHYSICAL MECHANISMS · STRUCTURE–PROPERTY", "summary": "We investigate the physical mechanisms behind macroscopic material properties, using superhard and negative-thermal-expansion materials to uncover interpretable and transferable structure-property relationships."}
-  ]
+    {"index": "02", "title": "Physical discovery", "meta": "PHYSICAL MECHANISMS · STRUCTURE–PROPERTY", "summary": "We investigate the physical mechanisms behind macroscopic material properties, using superhard and negative-thermal-expansion materials to uncover interpretable and transferable structure-property relationships."},
+    {"index": "03", "title": "Materials synthesizability and synthesis planning", "meta": "PHYSICS-INFORMED RETRIEVAL · INTERPRETABLE SYNTHESIS", "summary": "Connect predicted crystals with experimental realization through evidence-linked synthesizability assessment and synthesis-route planning."}
+  ],
+  "synthesizability": {
+    "title": "Materials Synthesizability and Synthesis Planning",
+    "intro": "Connect predicted crystals with experimental realization by combining physical descriptors, historical synthesis knowledge, and language-model reasoning.",
+    "work_title": "Interpretable inorganic crystal synthesis planning with physics-informed retrieval",
+    "paragraphs": [
+      "Thermodynamic stability alone does not establish whether a material can be synthesized or specify how to make it. PIRAG-LM treats synthesizability as a route-dependent assessment, evaluating candidate pathways through thermodynamic feasibility, kinetics, and accessibility.",
+      "A structured synthesis knowledge base covers 13,820 experimentally synthesized inorganic crystals and links each material to literature-derived routes, precursors, processing conditions, and evidence. Chemical, structural, and thermodynamic similarity retrieve relevant precedents; the language model uses these records to propose synthesis plans and explain their evidence and anticipated challenges.",
+      "In the manuscript's evaluation, synthesis-method prediction reaches 91.4% accuracy, compared with 72.1% for the language model alone. Experimental synthesis of five new compounds through solid-state and solution routes demonstrates how the framework can help translate crystal predictions into experimentally realized materials."
+    ],
+    "image": "site/research/assets/pirag-lm-framework.webp",
+    "image_width": 1800,
+    "image_height": 1679,
+    "image_alt": "Figure 1 of the PIRAG-LM manuscript: structured synthesis knowledge-base construction, physics-informed retrieval, and interpretable synthesis planning",
+    "citation": {
+      "title": "Interpretable inorganic crystal synthesis planning with physics-informed retrieval-augmented language models",
+      "authors": "Wei-Jian Jiang, Ye-Nan Sha, Hui Guo, Jie Chen, Yu-Cai Liang, Ke Zhou, Qi-Long Gao, Dong-Lin Han, Xin-Gao Gong, Wan-Jian Yin",
+      "status": "Manuscript",
+      "pdf": "site/research/papers/pirag-lm-synthesis-planning.pdf",
+      "pdf_label": "Read the PDF",
+      "code_url": "https://github.com/Jweijian/PIRAG-LM",
+      "code_label": "PIRAG-LM code"
+    }
+  }
 }

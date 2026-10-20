@@ -5,6 +5,7 @@
   "intro": "Selected milestones from the group’s publications and community, kept short enough to revisit.",
   "layout": "list",
   "items": [
+    {"date": "2026.10.08", "type": "JACS", "title": "Large-scale discovery of negative thermal expansion materials", "summary": "Published in JACS on October 8, the study combines a shear-bond descriptor with universal machine-learning potentials to predict 3,665 negative-thermal-expansion crystals, with experimental synthesis and characterization of 11 previously unreported compounds.", "href": "https://doi.org/10.1021/jacs.6c07432"},
     {"date": "2025.09", "type": "ACS Nano", "title": "New work on machine-learning interatomic potentials", "summary": "A study in ACS Nano connects potential-based molecular dynamics with flexibility in solid–liquid nanofluidic friction.", "href": "https://doi.org/10.1021/acsnano.5c08363"},
     {"date": "2025.05", "type": "J. Phys. Chem. Lett.", "title": "De novo inverse design of superhard C–N compounds", "summary": "A global machine-learning potential and multiobjective optimization workflow explores new superhard compounds.", "href": "https://doi.org/10.1021/acs.jpclett.5c00181"},
     {"date": "2024.08", "type": "Nat. Commun.", "title": "Discovery of 2D Invar and anti-Invar monolayers", "summary": "Machine learning broadens the search for two-dimensional materials with unusual thermal expansion behaviour.", "href": "https://doi.org/10.1038/s41467-024-51379-6"},

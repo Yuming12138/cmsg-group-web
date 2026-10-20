@@ -9,6 +9,16 @@
   "layout": "publications",
   "items": [
     {
+      "number": 165,
+      "date": "2026",
+      "type": "Journal of the American Chemical Society",
+      "title": "The Shear-Bond Descriptor and Universal Machine-Learning Potential Enable Large-Scale Discovery of Negative Thermal Expansion Materials",
+      "authors": "Guangming Chen, Shun Tian, Kaiwei Feng, Yilun Liu, Wanjian Yin, Qilong Gao, Ke Zhou",
+      "venue": "2026",
+      "doi": "10.1021/jacs.6c07432",
+      "href": "https://doi.org/10.1021/jacs.6c07432"
+    },
+    {
       "number": 164,
       "date": "2025",
       "type": "ACS Nano",

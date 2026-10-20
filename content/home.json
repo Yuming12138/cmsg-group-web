@@ -9,17 +9,47 @@
     "welcome_group": "Computational Materials Science Group",
     "welcome_suffix": " @ Soochow University!",
     "summary": "From fundamental physics to emergent matter: understanding how structure, stability, and function arise, and using physics-informed computation to discover and design new materials.",
-    "cta_primary": {"label": "Explore Research", "href": "/research"},
-    "cta_secondary": {"label": "Publications", "href": "/publications"},
-    "cta_team": {"label": "Lab Team", "href": "/people"},
+    "cta_primary": {
+      "label": "Explore research",
+      "href": "/research"
+    },
+    "cta_secondary": {
+      "label": "Publications",
+      "href": "/publications"
+    },
+    "cta_team": {
+      "label": "Lab Team",
+      "href": "/people"
+    },
     "scroll_hint": "Scroll to explore",
-    "field_note": "Potential energy surface · live field"
+    "field_note": "Potential energy surface · live field",
+    "headline": [
+      "Understand matter.",
+      "Discover what's next."
+    ],
+    "affiliation": "Soochow University · School of Energy · SIEMIS"
   },
   "stats": [
-    {"value": "160+", "label": "Publications", "sub": "Nat. Commun., JACS, ACS Nano, etc."},
-    {"value": "3", "label": "Research Thrusts", "sub": "Inverse Design · ML · Transport"},
-    {"value": "20+", "label": "Lab Members", "sub": "Faculty, Postdocs, PhDs & Masters"},
-    {"value": "100%", "label": "Excellence & Outcomes", "sub": "Covered for eligible graduate alumni"}
+    {
+      "value": "160+",
+      "label": "Publications",
+      "sub": "Nat. Commun., JACS, ACS Nano, etc."
+    },
+    {
+      "value": "3",
+      "label": "Research Thrusts",
+      "sub": "Inverse Design · Physical Discovery · Synthesizability"
+    },
+    {
+      "value": "20+",
+      "label": "Lab Members",
+      "sub": "Faculty, Postdocs, PhDs & Masters"
+    },
+    {
+      "value": "100%",
+      "label": "Excellence & Outcomes",
+      "sub": "Covered for eligible graduate alumni"
+    }
   ],
   "intro": {
     "label": "The Laboratory",
@@ -34,63 +64,109 @@
       {
         "index": "01",
         "title": "Materials inverse design",
-        "summary": "Starting from target macroscopic properties, we search for suitable candidates across the vast multidimensional space defined by element types, chemical stoichiometries, and crystal structures.",
+        "summary": "Start with a target property. Search across composition and crystal structure to discover materials with physics-informed machine learning.",
         "meta": "FULL (A, C, S) SPACE · PROPERTY-DRIVEN",
-        "href": "/research",
-        "tags": ["DFT", "Machine Learning Potentials", "Inverse Design", "Global Optimization"]
+        "href": "/research#inverse-design",
+        "tags": [
+          "DFT",
+          "Machine Learning Potentials",
+          "Inverse Design",
+          "Global Optimization"
+        ],
+        "image": "site/research/assets/materials-inverse-design.jpeg",
+        "image_width": 984,
+        "image_height": 569,
+        "cta": "Explore inverse design",
+        "image_alt": "Materials inverse-design and machine-learning optimization framework"
       },
       {
         "index": "02",
-        "title": "Physical discovery & interpretable AI",
-        "summary": "Investigating physical mechanisms behind macro material behavior—ranging from superhard structures to negative thermal expansion—uncovering interpretable, transferable physical descriptors.",
+        "title": "Physical discovery. Interpretable AI.",
+        "summary": "Connect atomic structure to macroscopic behavior. Explore the physics behind superhard compounds and unusual thermal expansion.",
         "meta": "PHYSICAL MECHANISMS · STRUCTURE–PROPERTY",
-        "href": "/research",
-        "tags": ["Negative Thermal Expansion", "2D Invar", "Universal ML Potential", "Superhard C-N"]
+        "href": "/research#physical-discovery",
+        "tags": [
+          "Negative Thermal Expansion",
+          "2D Invar",
+          "Universal ML Potential",
+          "Superhard C-N"
+        ],
+        "image": "site/research/assets/nte-landscape-full.webp",
+        "image_width": 2376,
+        "image_height": 1548,
+        "cta": "Explore physical discovery",
+        "image_alt": "Materials thermal-expansion landscape"
       },
       {
         "index": "03",
-        "title": "Water & nanoconfined transport",
-        "summary": "Understanding how nanoscale spatial confinement reshapes molecular interactions, dynamics, and transport, uncovering microscopic paths to control nanofluidic friction and water activation.",
-        "meta": "MICROSCOPIC TRANSPORT · CONFINED PHYSICS",
-        "href": "/research",
-        "tags": ["Nanofluidics", "Molecular Dynamics", "Solid-Liquid Interface", "Water Transport"]
+        "title": "Materials synthesizability & synthesis planning",
+        "summary": "From whether a material can be synthesized to how. Combine physical similarity, experimental evidence, and language models to assess candidate routes, select precursors, and plan processing conditions.",
+        "meta": "PHYSICS-INFORMED RETRIEVAL · INTERPRETABLE SYNTHESIS",
+        "href": "/research#synthesizability",
+        "tags": [
+          "Synthesizability",
+          "Retrieval-Augmented Generation",
+          "Synthesis Routes",
+          "Experimental Validation"
+        ],
+        "image": "site/research/assets/pirag-lm-synthesis-planning.webp",
+        "image_width": 2200,
+        "image_height": 639,
+        "cta": "Explore synthesizability",
+        "image_alt": "PIRAG-LM synthesis planning: chemical, structural, and thermodynamic precedents inform precursors, processing conditions, and interpretable synthesizability assessments"
       }
     ]
   },
   "publications_preview": {
     "label": "Latest Discoveries",
-    "title": "Featured Publications",
+    "title": "Recent publications.",
     "subtitle": "Selected recent peer-reviewed articles from our research group.",
-    "cta": "View All 160+ Publications"
+    "cta": "View all publications"
   },
   "news_preview": {
     "label": "Lab Milestones",
-    "title": "News & Highlights",
+    "title": "From the group.",
     "subtitle": "Recent updates, grants, academic talks, and lab activities.",
-    "cta": "All News & Events"
+    "cta": "View all news"
   },
   "faculty_preview": {
     "label": "Faculty Leadership",
-    "title": "Principal Investigators",
-    "subtitle": "Guiding research in computational condensed matter physics and AI-driven materials discovery."
+    "title": "People behind the discoveries.",
+    "subtitle": "Guiding research in computational condensed matter physics and AI-driven materials discovery.",
+    "cta": "Meet the team",
+    "profile_cta": "View profile",
+    "roles": ["Professor · PI", "Associate Professor"],
+    "descriptions": [
+      "First-principles simulations, energy materials, and full-space inverse materials design.",
+      "Nanoscale transport physics and AI-driven materials discovery."
+    ]
   },
   "platform_preview": {
     "label": "Open Science",
-    "title": "Computational Tools & Code Platforms",
-    "subtitle": "In-house developed open-source codes and algorithmic frameworks for the materials science community.",
-    "cta": "Explore Software & Code"
+    "title": "Open tools. Shared discoveries.",
+    "subtitle": "Software and reproducible workflows for the materials research community.",
+    "cta": "Explore code & platforms"
   },
   "join_us": {
     "label": "Prospective Researchers",
-    "title": "Join Our Research Group",
-    "body": "We welcome enthusiastic undergraduate interns, graduate students (Master & PhD), and postdoctoral researchers from physics, chemistry, materials science, mechanical engineering, computer science, and related fields.",
+    "title": "Explore the next question with us.",
+    "body": "We welcome students, postdoctoral researchers, and collaborators across physics, chemistry, materials science, mechanics, and computing.",
     "highlight": "We emphasize efficiency, independence, and scientific rigor in an inclusive and collaborative environment.",
-    "cta_label": "Get in Touch",
+    "cta_label": "Contact the group",
     "cta_href": "mailto:wjyin@suda.edu.cn"
   },
   "signals": [
-    {"value": "SUDA", "label": "Soochow University"},
-    {"value": "SIEMIS", "label": "Materials Innovation"},
-    {"value": "CMSG", "label": "Computational Practice"}
+    {
+      "value": "SUDA",
+      "label": "Soochow University"
+    },
+    {
+      "value": "SIEMIS",
+      "label": "Materials Innovation"
+    },
+    {
+      "value": "CMSG",
+      "label": "Computational Practice"
+    }
   ]
 }
