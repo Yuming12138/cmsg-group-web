@@ -4,18 +4,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ page.meta.description if page is defined and page.meta is defined else site.description }}">
-    <meta name="theme-color" content="{{ '#001337' if active_page|default('home') == 'home' else '#ffffff' }}">
+    <meta name="theme-color" content="#ffffff">
     <link rel="icon" type="image/svg+xml" href="{{ asset('site/images/cmsg_logo.svg') }}">
     <link rel="alternate icon" type="image/png" href="{{ url_for('static', filename='site/images/icon.png') }}">
 
     <title>{{ page.meta.title if page is defined and page.meta is defined else site.full_name }}</title>
     <link rel="stylesheet" href="{{ asset('site/css/tokens.css') }}">
     <link rel="stylesheet" href="{{ asset('site/css/site.css') }}">
-    <link rel="stylesheet" href="{{ asset('site/css/lab-theme.css') }}">
     {% if active_page == 'research' %}
     <link rel="stylesheet" href="{{ asset('site/css/research.css') }}">
     {% endif %}
+    <link rel="stylesheet" href="{{ asset('site/css/header.css') }}">
     {% block head_extra %}{% endblock %}
+    <link rel="stylesheet" href="{{ asset('site/css/footer.css') }}">
   </head>
   <body class="page page--{{ active_page|default('home') }}">
     <a class="skip-link" href="#main-content">{{ ui.skip_to_content }}</a>

@@ -1,7 +1,7 @@
 <header class="site-header" data-site-header>
-  <div class="site-header__inner shell">
+  <div class="site-header__inner">
     <a class="brand" href="{{ url_for('site.home', language=language) if language != 'en' else url_for('site.home') }}" aria-label="{{ ui.home_aria }}">
-      <img class="brand__logo-img" src="{{ asset('site/images/cmsg_logo.svg') }}" alt="CMSG Logo" width="48" height="48">
+      <img class="brand__logo-img" src="{{ asset('site/images/cmsg_logo.svg') }}" alt="CMSG Logo" width="30" height="30">
 
       <div class="brand__text">
         <span class="brand__wordmark">{{ site.name }}</span>

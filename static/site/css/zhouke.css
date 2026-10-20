@@ -589,7 +589,7 @@ html[lang^="zh"] .zhouke-profile-content {
   max-width: none;
   margin: 0;
   color: var(--ink-950);
-  font: 700 36px/1.45 var(--font-cjk);
+  font: 400 36px/1.45 var(--font-interface);
   letter-spacing: 0;
   text-wrap: wrap;
 }
@@ -669,9 +669,9 @@ html[lang^="zh"] .zhouke-profile-content {
 .zhouke-work-page .work-citation h2 {
   margin: 38px 0 16px;
   padding-bottom: 9px;
-  border-bottom: 2px solid var(--blue-100);
-  color: var(--blue-700);
-  font: 700 23px/1.45 var(--font-cjk);
+  border-bottom: 1px solid var(--line);
+  color: var(--ink-950);
+  font: 500 23px/1.45 var(--font-interface);
   letter-spacing: 0;
   text-wrap: wrap;
 }

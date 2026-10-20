@@ -9,17 +9,47 @@
     "welcome_group": "计算材料科学课题组",
     "welcome_suffix": " @ 苏州大学！",
     "summary": "从微观物理定律出发，走向宏观涌现的新材料世界：深入理解结构、稳定性与功能的物理机理，融合第一性原理与人工智能，探索与设计全新物质形态。",
-    "cta_primary": {"label": "探索核心研究", "href": "/research"},
-    "cta_secondary": {"label": "学术论文", "href": "/publications"},
-    "cta_team": {"label": "科研团队", "href": "/people"},
+    "cta_primary": {
+      "label": "探索研究",
+      "href": "/research"
+    },
+    "cta_secondary": {
+      "label": "学术论文",
+      "href": "/publications"
+    },
+    "cta_team": {
+      "label": "科研团队",
+      "href": "/people"
+    },
     "scroll_hint": "向下滚动浏览",
-    "field_note": "势能面 · 交互物理场"
+    "field_note": "势能面 · 交互物理场",
+    "headline": [
+      "从理解物质，",
+      "到创造新材料。"
+    ],
+    "affiliation": "苏州大学 · 能源学院 · 能源与材料创新研究院"
   },
   "stats": [
-    {"value": "160+", "label": "学术论文", "sub": "Nat. Commun., JACS, ACS Nano 等高水平期刊"},
-    {"value": "3", "label": "核心研究支柱", "sub": "材料逆向设计 · 物理机制 · 限域输运"},
-    {"value": "20+", "label": "科研梯队成员", "sub": "教授、副教授、硕博研究生及访问学者"},
-    {"value": "100%", "label": "卓越发展与深造", "sub": "国家奖学金覆盖与高水平深造就业"}
+    {
+      "value": "160+",
+      "label": "学术论文",
+      "sub": "Nat. Commun., JACS, ACS Nano 等高水平期刊"
+    },
+    {
+      "value": "3",
+      "label": "核心研究支柱",
+      "sub": "材料逆向设计 · 物理机制 · 可合成性"
+    },
+    {
+      "value": "20+",
+      "label": "科研梯队成员",
+      "sub": "教授、副教授、硕博研究生及访问学者"
+    },
+    {
+      "value": "100%",
+      "label": "卓越发展与深造",
+      "sub": "国家奖学金覆盖与高水平深造就业"
+    }
   ],
   "intro": {
     "label": "实验室概况",
@@ -33,58 +63,105 @@
     "items": [
       {
         "title": "材料逆向设计",
-        "summary": "从目标宏观性质出发，在由元素类型、化学配比与晶体结构构成的庞大多维空间中进行全局智能搜索与高通量逆向发现。",
+        "summary": "从目标性质出发，将物理规律与机器学习结合，在元素、组分和晶体结构的广阔空间中寻找新材料。",
         "meta": "全空间（A、C、S）· 性质导向搜索",
-        "tags": ["第一性原理", "机器学习势", "逆向设计", "全局优化算法"]
+        "tags": [
+          "第一性原理",
+          "机器学习势",
+          "逆向设计",
+          "全局优化算法"
+        ],
+        "image": "site/research/assets/materials-inverse-design.jpeg",
+        "image_width": 984,
+        "image_height": 569,
+        "href": "/research#inverse-design",
+        "cta": "探索材料逆向设计",
+        "image_alt": "材料逆向设计与机器学习优化框架"
       },
       {
-        "title": "物理机制发现与可解释模型",
-        "summary": "围绕材料宏观物性背后的微观机理，从二维反常热膨胀（Invar效应）与超硬碳氮化合物出发，发掘可解释、可迁移的原子尺度物理描述符。",
+        "title": "物理机制与可解释模型",
+        "summary": "从原子结构理解宏观物性，探索超硬材料与反常热膨胀背后的物理机制和可迁移规律。",
         "meta": "物理机制 · 结构-性质规律",
-        "tags": ["负热膨胀", "二维 Invar", "通用原子大模型", "超硬碳氮材料"]
+        "tags": [
+          "负热膨胀",
+          "二维 Invar",
+          "通用原子大模型",
+          "超硬碳氮材料"
+        ],
+        "image": "site/research/assets/nte-landscape-full.webp",
+        "image_width": 2376,
+        "image_height": 1548,
+        "href": "/research#physical-discovery",
+        "cta": "探索物理机制",
+        "image_alt": "材料热膨胀与模量关系图"
       },
       {
-        "title": "水与纳米限域输运",
-        "summary": "从分子尺度揭示极限低维限域对分子间相互作用与动力学的重塑规律，发掘调控固液界面摩擦、水分子扩散与活化的微观物理路径。",
-        "meta": "微观机制 · 界面输运调控",
-        "tags": ["纳流体力学", "固液界面", "分子动力学", "水活化"]
+        "title": "材料可合成性与合成规划",
+        "title_parts": ["材料可合成性", "与合成规划"],
+        "summary": "从“能否合成”走向“如何合成”：结合物理相似性、实验文献与语言模型，评估材料可合成性并规划前驱体和工艺路线。",
+        "meta": "物理信息检索 · 可解释合成规划",
+        "tags": [
+          "可合成性",
+          "检索增强生成",
+          "合成路线",
+          "实验验证"
+        ],
+        "image": "site/research/assets/pirag-lm-synthesis-planning.webp",
+        "image_width": 2200,
+        "image_height": 639,
+        "href": "/research#synthesizability",
+        "cta": "探索可合成性",
+        "image_alt": "PIRAG-LM 合成规划：结合化学、结构和热力学先例，生成前驱体、工艺条件与可解释的可合成性评估"
       }
     ]
   },
   "publications_preview": {
     "label": "最新学术突破",
-    "title": "代表性学术论文",
+    "title": "近期学术论文",
     "subtitle": "课题组近期在权威学术期刊发表的研究论文精选。",
-    "cta": "查看全部 160+ 篇论文"
+    "cta": "查看全部论文"
   },
   "news_preview": {
     "label": "实验室动态",
-    "title": "要闻与学术动态",
+    "title": "课题组动态。",
     "subtitle": "科研进展、学术会议、基金项目与课题组活动速递。",
-    "cta": "查看全部动态与活动"
+    "cta": "查看全部动态"
   },
   "faculty_preview": {
     "label": "学术带头人",
-    "title": "导师与学术梯队",
-    "subtitle": "致力于计算凝聚态物理、人工智能驱动材料科学与微纳米力学的交叉研究。"
+    "title": "一起探索材料的可能。",
+    "subtitle": "致力于计算凝聚态物理、人工智能驱动材料科学与微纳米力学的交叉研究。",
+    "cta": "认识科研团队",
+    "profile_cta": "查看个人主页",
+    "roles": ["教授 · 课题组负责人", "副教授"],
+    "descriptions": [
+      "聚焦第一性原理计算、新型能源材料与全空间材料逆向设计。",
+      "聚焦微纳米尺度输运物理与人工智能驱动的材料发现。"
+    ]
   },
   "platform_preview": {
     "label": "开源学术平台",
-    "title": "自主研发科研平台与计算工具",
-    "subtitle": "面向计算物理与材料科学共同体打造的高性能开源算法库与软件工具。",
-    "cta": "查看开源代码与平台"
+    "title": "开放工具。共同发现。",
+    "subtitle": "面向材料科学共同体，开放计算工具、算法与可复现的科研方法。",
+    "cta": "探索代码与平台"
   },
   "join_us": {
     "label": "招生与招聘",
-    "title": "加入计算材料科学课题组",
-    "body": "长期招收物理、化学、材料、能源、力学、计算机及机械等理工科背景的保研硕士生、申请考核制博士生及优秀本科生科研实习；常年招聘博士后研究人员。",
+    "title": "一起探索下一个问题。",
+    "body": "欢迎物理、化学、材料、能源、力学与计算机等领域的学生、博士后和研究者，与我们一起理解和设计新材料。",
     "highlight": "管理风格开放包容，注重科研效率与独立思考，节奏平缓有序，全方位支持学生学术深造与个人职业发展。",
-    "cta_label": "联系导师交流",
+    "cta_label": "联系课题组",
     "cta_href": "mailto:wjyin@suda.edu.cn"
   },
   "signals": [
-    {"label": "苏州大学"},
-    {"label": "材料创新"},
-    {"label": "计算实践"}
+    {
+      "label": "苏州大学"
+    },
+    {
+      "label": "材料创新"
+    },
+    {
+      "label": "计算实践"
+    }
   ]
 }

@@ -4,7 +4,7 @@
       <div class="footer-col-brand">
         <h4>{{ site.full_name }}</h4>
         <p>{{ site.footer.note }}</p>
-        <p style="margin-top: 10px; color: var(--lab-slate-400); font-size: 13px;">
+        <p class="footer-col-brand__description">
           {% if language == 'zh' %}
           聚焦能源转换材料、缺陷物理、第一性原理计算与人工智能材料逆向设计。
           {% else %}
@@ -26,10 +26,10 @@
 
       <div class="footer-col-contact">
         <h5>{% if language == 'zh' %}联系与地址{% else %}Contact & Location{% endif %}</h5>
-        <div style="display: flex; flex-direction: column; gap: 8px; color: var(--lab-slate-400); font-size: 13px;">
+        <div class="footer-col-contact__details">
           <span>{{ site.footer.location }}</span>
-          <span>{% if language == 'zh' %}江苏省苏州市相城区华元东路1号{% else %}1 Huayuan East Rd, Xiangcheng, Suzhou, China{% endif %}</span>
-          <a href="mailto:{{ site.footer.email }}" style="color: var(--lab-cyan-300); font-weight: 600; text-decoration: none;">{{ site.footer.email }}</a>
+          <span>{% if language == 'zh' %}江苏省苏州市姑苏区莫邪路688号{% else %}688 Moye Road, Gusu District, Suzhou, Jiangsu, China{% endif %}</span>
+          <a href="mailto:{{ site.footer.email }}">{{ site.footer.email }}</a>
         </div>
       </div>
     </div>
